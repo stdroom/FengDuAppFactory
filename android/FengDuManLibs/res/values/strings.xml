@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FengDuManLibs</string>
+
+    <string name="main_tab_name_one">美眉养眼</string>
+    <string name="main_tab_name_two">男士约会</string>
+    <string name="main_tab_name_three">男士养生</string>
+    <string name="main_tab_name_four">男人气质</string>
+    <string name="main_tab_name_five">我</string>
+    
+</resources>
