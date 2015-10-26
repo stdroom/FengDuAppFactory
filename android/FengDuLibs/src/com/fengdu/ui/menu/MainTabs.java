@@ -21,7 +21,13 @@ import com.fengdu.ui.fragment.PhotosViewPagerFragment;
  * @version  	 
  */
 public enum MainTabs {
-	NEWS(0, R.string.main_tab_name_one, R.drawable.tab_icon_new,
+	ONE(0, R.string.main_tab_name_one, R.drawable.tab_icon_one,
+			PhotosViewPagerFragment.class),
+	TWO(0, R.string.main_tab_name_two, R.drawable.tab_icon_two,
+			PhotosViewPagerFragment.class),
+	THREE(0, R.string.main_tab_name_three, R.drawable.tab_icon_three,
+			PhotosViewPagerFragment.class),
+	FOUR(0, R.string.main_tab_name_four, R.drawable.tab_icon_four,
 			PhotosViewPagerFragment.class);
 
 	private int idx;
