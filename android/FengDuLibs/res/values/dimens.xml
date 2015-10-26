@@ -5,4 +5,9 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="navigation_drawer_width">240dp</dimen>
+    
+    
+     <dimen name="drop_down_list_footer_progress_bar_height">36dp</dimen>
+    <dimen name="drop_down_list_header_progress_bar_height">36dp</dimen>
+     <dimen name="drop_down_list_footer_font_size">14sp</dimen>
 </resources>

@@ -21,7 +21,11 @@
     <color name="record_title_1">#F7F7F7</color>
     <color name="record_title_2">#D2D2D2</color>
 
-    
+    <color name="drop_down_list_header_font_color">#000000</color>
+    <!-- drop down list header second font color -->
+    <color name="drop_down_list_header_second_font_color">#000000</color>
+    <!-- drop down list footer font color -->
+    <color name="drop_down_list_footer_font_color">#A2A3A2</color>
     
     <color name="diving_gray">#eae9e7</color>
     <color name="divideline_gray">#c0c0c0</color>
@@ -96,11 +100,6 @@
     <item name="subscribe_item_normal_bg_night" type="color">@color/subscribe_item_focused_bg_night</item>
     <item name="subscribe_item_normal_stroke_night" type="color">@color/subscribe_item_focused_stroke_night</item>
     
-    <color name="drop_down_list_header_font_color">#000000</color>
-    <!-- drop down list header second font color -->
-    <color name="drop_down_list_header_second_font_color">#000000</color>
-    <!-- drop down list footer font color -->
-    <color name="drop_down_list_footer_font_color">#A2A3A2</color>
     
     <color name="not_read_text_color">#003e73</color>
     <color name="has_read_text_color">#8391a6</color>

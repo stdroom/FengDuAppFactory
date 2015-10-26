@@ -5,4 +5,25 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+     <!-- 下拉刷新  end -->
+    <string name="drop_down_list_header_default_text">Click to refresh&#8230;</string>
+    <string name="drop_down_list_header_pull_text">Drop Down to refresh&#8230;</string>
+    <string name="drop_down_list_header_release_text">Release to refresh&#8230;</string>
+    <string name="drop_down_list_header_loading_text">加载中&#8230;</string>
+    <string name="drop_down_list_footer_default_text"></string>
+    <string name="drop_down_list_footer_loading_text">加载中&#8230;</string>
+    <string name="drop_down_list_footer_no_more_text">无更多信息</string>
+    <string name="image_content">Image</string>
+    <string name="httpError">连接失败,请稍候再试</string>
+    <!-- 下拉刷新  end -->
+    
+    
+    <string name="version_download_sd_str">无法下载安装文件，请检查SD卡是否挂载</string>
+	<string name="version_checking_str">正在检测，请稍后...</string>
+	<string name="version_dialog_title_str">我们非常卖力的开发出了新版本，是否更新？</string>
+	<string name="version_dialog_sure_str">立即更新</string>
+	<string name="version_dialog_cancle_str">以后再说</string>
+	<string name="version_neednot_str">您当前已经是最新版本</string>
+	<string name="version_cannot_str">无法获取版本更新信息</string>
+	<string name="version_tips_str">系统提示</string>
 </resources>

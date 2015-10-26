@@ -11,6 +11,8 @@
 */
 
 package com.fengdu.android;
+
+
 /**
  * 类名: AppConfig <br/>
  * 功能: 配置文件 路径 缓存地址等 QQID UmengId等. <br/>
@@ -21,5 +23,19 @@ package com.fengdu.android;
  */
 public class AppConfig {
 
+public static boolean imgFlag = true;
+	
+	public static boolean windowFlag = true;
+
+	
+	/** 正式版客户端文件根目录 */
+	public static final String officialRoot = "/specialfocus";
+	/**json文件保存地址*/
+	public static final String jsonPath = "/json/";
+	/** 图片文件地址 */
+	public static final String imgPath = "/image/";
+	public static final String htmlPath = "/html/";
+	
+	
 }
 
