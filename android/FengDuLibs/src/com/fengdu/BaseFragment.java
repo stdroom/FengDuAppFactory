@@ -13,6 +13,7 @@
 package com.fengdu;
 
 
+import com.fengdu.interf.BaseFragmentInterface;
 import com.mike.aframe.MKLog;
 
 import android.support.v4.app.Fragment;
@@ -27,7 +28,8 @@ import android.widget.RelativeLayout;
  * @author leixun
  * @version 
  */
-public abstract class BaseFragment extends Fragment{
+public class BaseFragment extends Fragment implements android.view.View.OnClickListener,
+	BaseFragmentInterface{
 	protected RelativeLayout mLoadingLayout;
 	protected RelativeLayout mNoNetLayout;
 	
@@ -39,7 +41,7 @@ public abstract class BaseFragment extends Fragment{
 	 * 2015年9月2日下午5:36:02
 	 * @since 1.0
 	 */
-	protected abstract void initView();
+//	protected abstract void initView();
 	
     /** 
      * 在这里实现Fragment数据的缓加载. 
@@ -96,6 +98,27 @@ public abstract class BaseFragment extends Fragment{
 		} else {
 			MKLog.d(BaseFragment.class.getSimpleName(), "mNoNetLayout is null");
 		}
+	}
+
+	@Override
+	public void initView(View view) {
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initData() {
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onClick(View arg0) {
+		
+		// TODO Auto-generated method stub
+		
 	}
 
 }

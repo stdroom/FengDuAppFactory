@@ -70,7 +70,7 @@ public class MainActivity extends BaseFragmentActivity implements OnTouchListene
             });
             Bundle bundle = new Bundle();
             bundle.putString("key", URLs.HOST+"news/2/");
-            mTabHost.addTab(tab, mainTab.getClz(), null);
+            mTabHost.addTab(tab, mainTab.getClz(), bundle);
 
 //            mTabHost.getTabWidget().getChildAt(i).setOnTouchListener(this);
 		}

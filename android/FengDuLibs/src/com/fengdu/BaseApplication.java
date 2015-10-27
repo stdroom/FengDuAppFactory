@@ -21,6 +21,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import android.app.Application;
 import android.content.Context;
@@ -42,6 +44,7 @@ public class BaseApplication extends Application{
 	public void onCreate() {
 		super.onCreate();
 		this.globalContext = this;
+		initImageLoader(this);
 	}
 	
 	
@@ -126,6 +129,25 @@ public class BaseApplication extends Application{
 		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo ni = cm.getActiveNetworkInfo();
 		return ni != null && ni.isConnectedOrConnecting();
+	}
+	
+	public static void initImageLoader(Context context) {
+		// This configuration tuning is custom. You can tune every option, you
+		// may tune some of them,
+		// or you can create default configuration by
+		// ImageLoaderConfiguration.createDefault(this);
+		// method.
+		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
+				.threadPriority(Thread.NORM_PRIORITY - 2)
+				.denyCacheImageMultipleSizesInMemory()
+				.memoryCacheSize(8 * 1024 * 1024)
+//				.discCacheFileNameGenerator(new HashCodeFileNameGenerator())
+//				.diskCacheSize(50 * 1024 * 1024) // 50 Mb
+//				.tasksProcessingOrder(QueueProcessingType.LIFO)
+//				.writeDebugLogs() // Remove for release app
+				.build();
+		// Initialize ImageLoader with configuration.
+		ImageLoader.getInstance().init(config);
 	}
 }
 

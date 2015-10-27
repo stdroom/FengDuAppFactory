@@ -11,7 +11,9 @@ package com.fengdu.ui.menu;
 
 import com.fengdu.R;
 import com.fengdu.ui.fragment.ArticleFragment;
+import com.fengdu.ui.fragment.FirstViewPagerFragment;
 import com.fengdu.ui.fragment.PhotosViewPagerFragment;
+import com.fengdu.ui.fragment.SecondViewPagerFragment;
 
 /**
  * 类名: MainTabs <br/>
@@ -23,9 +25,9 @@ import com.fengdu.ui.fragment.PhotosViewPagerFragment;
  */
 public enum MainTabs {
 	ONE(0, R.string.main_tab_name_one, R.drawable.tab_icon_one,
-			PhotosViewPagerFragment.class),
+			FirstViewPagerFragment.class),
 	TWO(0, R.string.main_tab_name_two, R.drawable.tab_icon_two,
-			ArticleFragment.class),
+			SecondViewPagerFragment.class),
 	THREE(0, R.string.main_tab_name_three, R.drawable.tab_icon_three,
 			PhotosViewPagerFragment.class),
 	FOUR(0, R.string.main_tab_name_four, R.drawable.tab_icon_four,

@@ -17,7 +17,16 @@
     <string name="httpError">连接失败,请稍候再试</string>
     <!-- 下拉刷新  end -->
     
+    <!-- Error View -->
+    <string name="error_view_click_to_refresh">点击屏幕,重新加载</string>
+    <string name="error_view_no_data">暂无内容</string>
+    <string name="error_view_loading">加载中…</string>
+    <string name="error_view_load_error_click_to_refresh">内容加载失败\r\n点击重新加载</string>
+    <string name="error_view_network_error_click_to_refresh">没有可用的网络</string>
+    <string name="tip_network_error">没有可用的网络</string>
     
+    
+    <!-- 新版本 -->
     <string name="version_download_sd_str">无法下载安装文件，请检查SD卡是否挂载</string>
 	<string name="version_checking_str">正在检测，请稍后...</string>
 	<string name="version_dialog_title_str">我们非常卖力的开发出了新版本，是否更新？</string>

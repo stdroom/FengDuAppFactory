@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.fengdu.widgets;
+package com.fengdu.widgets.swiptlistview;
 
 import android.content.Context;
 import android.content.res.TypedArray;

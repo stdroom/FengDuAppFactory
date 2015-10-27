@@ -1,4 +1,4 @@
-package com.fengdu.widgets;
+package com.fengdu.widgets.swiptlistview;
 
 public class BaseSwipeListViewListener implements SwipeListViewListener {
     @Override

@@ -28,7 +28,7 @@ import com.fengdu.parse.ArticleItemPagesParse;
 import com.fengdu.ui.fragment.adapter.ArticleListAdapter;
 import com.fengdu.utils.ExcutorServiceUtils;
 import com.fengdu.utils.SettingsManager;
-import com.fengdu.widgets.SwipeListView;
+import com.fengdu.widgets.swiptlistview.SwipeListView;
 import com.mike.aframe.MKLog;
 import com.mike.aframe.database.KJDB;
 import com.mike.aframe.utils.DensityUtils;
@@ -98,7 +98,7 @@ public class ArticleFragment  extends BaseFragment implements SwipeRefreshLayout
 	}
 	
 	@Override
-	protected void initView() {
+	public void initView(View view) {
 		mSwipeLayout = (SwipeRefreshLayout)mView.findViewById(R.id.swipe_container);
 		mArticle_listview = (SwipeListView)mView.findViewById(R.id.article_listview);
 		initSwapLayout();
@@ -159,7 +159,7 @@ public class ArticleFragment  extends BaseFragment implements SwipeRefreshLayout
 			ViewGroup container,  Bundle savedInstanceState) {
 		MKLog.d("state", "onCreateView:"+this.urls);
 		mView = LayoutInflater.from(mContext).inflate(R.layout.fragment_articles, null);
-		initView();
+		initView(mView);
 		isPrepared = true;
 		isRefresh = false;
     	isPullFlag = false;
@@ -169,7 +169,7 @@ public class ArticleFragment  extends BaseFragment implements SwipeRefreshLayout
 
 	
 	
-	private void initData(){
+	public void initData(){
 		if(isPrepared){
 			if(null==mArticleList || mArticleList.size()==0){
 				MKLog.d("urls","开始读服务端-》"+this.urls);

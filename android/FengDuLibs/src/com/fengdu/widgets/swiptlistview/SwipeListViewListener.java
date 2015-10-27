@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.fengdu.widgets;
+package com.fengdu.widgets.swiptlistview;
 
 /**
  * Listener to get callback notifications for the SwipeListView
