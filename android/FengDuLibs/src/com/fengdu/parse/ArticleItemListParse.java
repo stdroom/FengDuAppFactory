@@ -52,81 +52,70 @@ public class ArticleItemListParse {
 	 * @since 1.0
 	 */
 	public static ArrayList<ArticleItemBean> getArticleItemList(KJDB kjDb,Document content,boolean isRefresh) throws Exception{
-		 Element article = content.getElementById("article");
-         MKLog.d("element", article.toString());
-         Elements elements = article.children();
+		Elements elements = content.getElementsByClass("clearfix");
          ArrayList<ArticleItemBean> tempList = new ArrayList<ArticleItemBean>();
-         for(Element linkss : elements)
-         {	 
-        	 if(!linkss.hasAttr("class") || !"post".equals(linkss.attr("class"))){
-        		 continue;
-        	 }
-        	 String title = "";
-         	 String imgUrl = "";
-         	 String summary = "";
-         	 String link = "";
-        	 Elements titleImg = linkss.getElementsByTag("img");
-        	 for(Element bean : titleImg){
-        		 if(bean.hasAttr("alt")){	// 标题
-        			 title = bean.attr("alt");
-        		 }
-        		 if(bean.hasAttr("src")){	// 图像地址
-        			 imgUrl = bean.attr("src");
-        		 }
-        	 }
-        	 
-        	 Elements contentUrl = linkss.getElementsByClass("summary");
-        	 for(Element bean:contentUrl){
-        		 if(bean.hasAttr("class")){	// 内容摘要
-        			 summary = bean.text();
-        		 }
-        		 Elements contentBean = bean.getElementsByTag("a");
-        		 for(Element bean2:contentBean){
-        			 if(bean2.hasAttr("href")){	// 跳转链接
-        				 link = bean2.attr("href");
-        			 }
-        		 }
-        	 }
-        	 String time = "";
-        	 ArrayList<String> tags = new ArrayList<String>();
-        	 String tagUrl = "";
-        	 Elements timeTag = linkss.getElementsByClass("postmeta");
-        	 for(Element links: timeTag){
-        		 Elements spans = links.getElementsByTag("span");
-        		 for(Element bean:spans){
-        			 if(bean.hasAttr("class")){
-        				 if("left_author_span".equals(bean.attr("class"))){
-        					 time = bean.text();
-        					 continue;
+         MKLog.d("list", elements.toString());
+         for(Element lik : elements){
+        	 Elements ele = lik.getElementsByTag("li");
+        	 if(ele.size()>0){
+        		 for(Element linkss : ele)
+        		 {	 
+        			 String title = "";
+        			 String imgUrl = "";
+        			 String summary = "";
+        			 String link = "";
+        			 Elements titleImg = linkss.getElementsByTag("img");
+        			 for(Element bean : titleImg){
+        				 if(bean.hasAttr("alt")){	// 标题
+        					 title = bean.attr("alt");
         				 }
-        				 if("left_tag_span".equals(bean.attr("class"))){
-        					 Elements childen = bean.children();
-        					 for(Element child:childen){
-        						 if(child.hasAttr("href")){
-        							 tagUrl = child.attr("href");
-        							 tags.add(child.text());
+        				 if(bean.hasAttr("src")){	// 图像地址
+        					 imgUrl = bean.attr("src");
+        				 }
+        			 }
+        			 
+        			 Elements contentUrl = linkss.getElementsByClass("sDes");
+        			 for(Element bean:contentUrl){
+        				 if(bean.hasAttr("class")){	// 内容摘要
+        					 summary = bean.text();
+        				 }
+        				 Elements contentBean = bean.getElementsByTag("a");
+        				 for(Element bean2:contentBean){
+        					 if(bean2.hasAttr("href")){	// 跳转链接
+        						 link = bean2.attr("href");
+        					 }
+        				 }
+        			 }
+        			 String time = "";
+        			 ArrayList<String> tags = new ArrayList<String>();
+        			 Elements timeTag = linkss.getElementsByClass("time");
+        			 for(Element links: timeTag){
+        				 Elements spans = links.getElementsByTag("span");
+        				 for(Element bean:spans){
+        					 if(bean.hasAttr("class")){
+        						 if("time".equals(bean.attr("class"))){
+        							 time = bean.text();
+        							 continue;
         						 }
         					 }
         				 }
         			 }
+        			 ArticleItemBean bean = new ArticleItemBean();
+        			 bean.setTitle(title);
+        			 bean.setDate(time);
+        			 bean.setImgUrl(imgUrl);
+        			 bean.setSummary(summary);
+        			 bean.setUrl(link);
+        			 bean.setTags(tags);
+        			 bean.setMd5(MD5Utils.md5(link));
+//        	 ArticleItemBean selectBean = kjDb.findById(bean.getMd5(), ArticleItemBean.class);
+//        	 if(selectBean==null){
+//        		 tempList.add(bean);
+//        		 kjDb.save(bean);
+//        	 }else if(isRefresh && selectBean!=null){
+        			 tempList.add(bean);
+//        	 }
         		 }
-        		 
-        		 
-        	 }
-        	 ArticleItemBean bean = new ArticleItemBean();
-        	 bean.setTitle(title);
-        	 bean.setDate(time);
-        	 bean.setImgUrl(imgUrl);
-        	 bean.setSummary(summary);
-        	 bean.setUrl(link);
-        	 bean.setTags(tags);
-        	 bean.setMd5(MD5Utils.md5(link));
-        	 ArticleItemBean selectBean = kjDb.findById(bean.getMd5(), ArticleItemBean.class);
-        	 if(selectBean==null){
-        		 tempList.add(bean);
-        		 kjDb.save(bean);
-        	 }else if(isRefresh && selectBean!=null){
-        		 tempList.add(bean);
         	 }
          }
          return tempList;
@@ -144,82 +133,82 @@ public class ArticleItemListParse {
 	 * @throws Exception
 	 * @since 1.0
 	 */
-	public static ArrayList<ArticleItemBean> getArticleItemLists(KJDB kjDb,Document content) throws Exception{
-		Element article = content.getElementById("article");
-		MKLog.d("element", article.toString());
-		Elements elements = article.children();
-		ArrayList<ArticleItemBean> tempList = new ArrayList<ArticleItemBean>();
-		for(Element linkss : elements)
-		{	 
-			if(!linkss.hasAttr("class") || !"post".equals(linkss.attr("class"))){
-				continue;
-			}
-			String title = "";
-			String imgUrl = "";
-			String summary = "";
-			String link = "";
-			Elements titleImg = linkss.getElementsByTag("img");
-			for(Element bean : titleImg){
-				if(bean.hasAttr("alt")){	// 标题
-					title = bean.attr("alt");
-				}
-				if(bean.hasAttr("src")){	// 图像地址
-					imgUrl = bean.attr("src");
-				}
-			}
-			
-			Elements contentUrl = linkss.getElementsByClass("summary");
-			for(Element bean:contentUrl){
-				if(bean.hasAttr("class")){	// 内容摘要
-					summary = bean.text();
-				}
-				Elements contentBean = bean.getElementsByTag("a");
-				for(Element bean2:contentBean){
-					if(bean2.hasAttr("href")){	// 跳转链接
-						link = bean2.attr("href");
-					}
-				}
-			}
-			String time = "";
-			ArrayList<String> tags = new ArrayList<String>();
-			String tagUrl = "";
-			Elements timeTag = linkss.getElementsByClass("postmeta");
-			for(Element links: timeTag){
-				Elements spans = links.getElementsByTag("span");
-				for(Element bean:spans){
-					if(bean.hasAttr("class")){
-						if("left_author_span".equals(bean.attr("class"))){
-							time = bean.text();
-							continue;
-						}
-						if("left_tag_span".equals(bean.attr("class"))){
-							Elements childen = bean.children();
-							for(Element child:childen){
-								if(child.hasAttr("href")){
-									tagUrl = child.attr("href");
-									tags.add(child.text());
-								}
-							}
-						}
-					}
-				}
-				
-				
-			}
-			ArticleItemBean bean = new ArticleItemBean();
-			bean.setTitle(title);
-			bean.setDate(time);
-			bean.setImgUrl(imgUrl);
-			bean.setSummary(summary);
-			bean.setUrl(link);
-			bean.setTags(tags);
-			bean.setMd5(MD5Utils.md5(link));
-			ArticleItemBean selectBean = kjDb.findById(bean.getMd5(), ArticleItemBean.class);
-			if(selectBean==null){
-				tempList.add(bean);
-			}
-		}
-		return tempList;
-	}
+//	public static ArrayList<ArticleItemBean> getArticleItemLists(KJDB kjDb,Document content) throws Exception{
+//		Element article = content.getElementById("article");
+//		MKLog.d("element", article.toString());
+//		Elements elements = article.children();
+//		ArrayList<ArticleItemBean> tempList = new ArrayList<ArticleItemBean>();
+//		for(Element linkss : elements)
+//		{	 
+//			if(!linkss.hasAttr("class") || !"post".equals(linkss.attr("class"))){
+//				continue;
+//			}
+//			String title = "";
+//			String imgUrl = "";
+//			String summary = "";
+//			String link = "";
+//			Elements titleImg = linkss.getElementsByTag("img");
+//			for(Element bean : titleImg){
+//				if(bean.hasAttr("alt")){	// 标题
+//					title = bean.attr("alt");
+//				}
+//				if(bean.hasAttr("src")){	// 图像地址
+//					imgUrl = bean.attr("src");
+//				}
+//			}
+//			
+//			Elements contentUrl = linkss.getElementsByClass("summary");
+//			for(Element bean:contentUrl){
+//				if(bean.hasAttr("class")){	// 内容摘要
+//					summary = bean.text();
+//				}
+//				Elements contentBean = bean.getElementsByTag("a");
+//				for(Element bean2:contentBean){
+//					if(bean2.hasAttr("href")){	// 跳转链接
+//						link = bean2.attr("href");
+//					}
+//				}
+//			}
+//			String time = "";
+//			ArrayList<String> tags = new ArrayList<String>();
+//			String tagUrl = "";
+//			Elements timeTag = linkss.getElementsByClass("postmeta");
+//			for(Element links: timeTag){
+//				Elements spans = links.getElementsByTag("span");
+//				for(Element bean:spans){
+//					if(bean.hasAttr("class")){
+//						if("left_author_span".equals(bean.attr("class"))){
+//							time = bean.text();
+//							continue;
+//						}
+//						if("left_tag_span".equals(bean.attr("class"))){
+//							Elements childen = bean.children();
+//							for(Element child:childen){
+//								if(child.hasAttr("href")){
+//									tagUrl = child.attr("href");
+//									tags.add(child.text());
+//								}
+//							}
+//						}
+//					}
+//				}
+//				
+//				
+//			}
+//			ArticleItemBean bean = new ArticleItemBean();
+//			bean.setTitle(title);
+//			bean.setDate(time);
+//			bean.setImgUrl(imgUrl);
+//			bean.setSummary(summary);
+//			bean.setUrl(link);
+//			bean.setTags(tags);
+//			bean.setMd5(MD5Utils.md5(link));
+//			ArticleItemBean selectBean = kjDb.findById(bean.getMd5(), ArticleItemBean.class);
+//			if(selectBean==null){
+//				tempList.add(bean);
+//			}
+//		}
+//		return tempList;
+//	}
 }
 

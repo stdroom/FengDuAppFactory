@@ -35,19 +35,18 @@ public class ArticleItemPagesParse {
 	
 	public static PagesInfo getPagesInfo(String urls,Document content){
 		PagesInfo pages = new PagesInfo();
-		 Element nextPage = content.getElementById("pages");
-         Elements nextelement = nextPage.getElementsByTag("a");
-         for(Element element:nextelement){
-        	 if("下一页".equals(element.text())){
-        		 pages.setHasNextPage(true);
-        		 pages.setNextPageUrl(element.attr("href").trim());
-        		 break;
-        	 }
-        	 MKLog.d("element",element.toString());
-         }
-        if(!pages.getHasNextPage()){
-        	pages.setNextPageUrl("");
-        }
+//		 Elements nextPage = content.getElementsByClass("linle-pag");
+//         for(Element element:nextPage){
+//        	 if("下一页".equals(element.text())){
+//        		 pages.setHasNextPage(true);
+//        		 pages.setNextPageUrl(element.attr("href").trim());
+//        		 break;
+//        	 }
+//        	 MKLog.d("element",element.toString());
+//         }
+//        if(!pages.getHasNextPage()){
+//        	pages.setNextPageUrl("");
+//        }
 		return pages;
 	}
 

@@ -29,7 +29,7 @@ public class MKConfig {
 	/**
      * 是否调试
      */
-    public static final boolean isDebug = false;
+    public static final boolean isDebug = true;
     /**
      * 与isDebug结合使用
 	 *	verbose|debug|info|warn|error

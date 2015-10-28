@@ -35,11 +35,11 @@ public class SecondViewPagerFragment extends BaseViewPagerFragment implements
 		 String[] title = getResources().getStringArray(
 	                R.array.second_viewpage_arrays);
 	        adapter.addTab(title[0], "news", ArticleFragment.class,
-	                getBundle("news/5/"));
+	                getBundle("/dashan/"));
 	        adapter.addTab(title[1], "news_week", ArticleFragment.class,
-	                getBundle("news/4/"));
+	                getBundle("/yuehui/"));
 	        adapter.addTab(title[2], "latest_blog", ArticleFragment.class,
-	                getBundle("news/3/"));
+	                getBundle("/pua/"));
         
     }
 

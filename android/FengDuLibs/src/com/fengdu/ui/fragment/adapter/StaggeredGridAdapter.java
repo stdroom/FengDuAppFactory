@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 public class StaggeredGridAdapter extends BaseAdapter{
 
@@ -58,19 +59,22 @@ public class StaggeredGridAdapter extends BaseAdapter{
 			convertView = mInflater.inflate(R.layout.staggered_grid_child_item, parent,false);
 
 			viewHolder.mImageView = (DynamicHeightImageView) convertView.findViewById(R.id.child_image);
+			viewHolder.mTitleTv = (TextView)convertView.findViewById(R.id.news_title);
 			convertView.setTag(viewHolder);
 		}else{
 			viewHolder = (ViewHolder) convertView.getTag();
 			viewHolder.mImageView.setImageResource(R.drawable.friends_sends_pictures_no);
 		}
-		
+		viewHolder.mImageView.setHeightRatio(bean.getImage_height()/bean.getImage_width());
+		viewHolder.mTitleTv.setText(bean.getDesc());
 		ImageLoader.getInstance().displayImage(bean.getImage_url(), viewHolder.mImageView, mOption);
-
+		
 		return convertView;
 	}
 
 	public static class ViewHolder{
 		public DynamicHeightImageView mImageView;
+		private TextView mTitleTv;
 	}
 	
 }

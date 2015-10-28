@@ -24,12 +24,12 @@ public class ImageBean implements Serializable{
 	String desc = "";
 	
 	String image_url = "";
-	int image_width = 0;
-	int image_height= 0;
+	float image_width = 0;
+	float image_height= 0;
 	
 	String thumbnail = "";
-	int thumbnail_width = 0;
-	int thumbnail_height = 0;
+	float thumbnail_width = 0;
+	float thumbnail_height = 0;
 	public String getDesc() {
 		return desc;
 	}
@@ -42,35 +42,36 @@ public class ImageBean implements Serializable{
 	public void setImage_url(String image_url) {
 		this.image_url = image_url;
 	}
-	public int getImage_width() {
-		return image_width;
-	}
-	public void setImage_width(int image_width) {
-		this.image_width = image_width;
-	}
-	public int getImage_height() {
-		return image_height;
-	}
-	public void setImage_height(int image_height) {
-		this.image_height = image_height;
-	}
 	public String getThumbnail() {
 		return thumbnail;
 	}
 	public void setThumbnail(String thumbnail) {
 		this.thumbnail = thumbnail;
 	}
-	public int getThumbnail_width() {
+	public float getImage_width() {
+		return image_width;
+	}
+	public void setImage_width(float image_width) {
+		this.image_width = image_width;
+	}
+	public float getImage_height() {
+		return image_height;
+	}
+	public void setImage_height(float image_height) {
+		this.image_height = image_height;
+	}
+	public float getThumbnail_width() {
 		return thumbnail_width;
 	}
-	public void setThumbnail_width(int thumbnail_width) {
+	public void setThumbnail_width(float thumbnail_width) {
 		this.thumbnail_width = thumbnail_width;
 	}
-	public int getThumbnail_height() {
+	public float getThumbnail_height() {
 		return thumbnail_height;
 	}
-	public void setThumbnail_height(int thumbnail_height) {
+	public void setThumbnail_height(float thumbnail_height) {
 		this.thumbnail_height = thumbnail_height;
 	}
+	
 }
 

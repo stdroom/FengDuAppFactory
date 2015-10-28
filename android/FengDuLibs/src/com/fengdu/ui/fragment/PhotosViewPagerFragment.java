@@ -30,6 +30,7 @@ import com.fengdu.bean.PagesInfo;
 import com.fengdu.bean.UpdateBean;
 import com.fengdu.parse.ArticleItemListParse;
 import com.fengdu.parse.ArticleItemPagesParse;
+import com.fengdu.ui.activity.PictureItemActivity;
 import com.fengdu.ui.fragment.adapter.ArticleListAdapter;
 import com.fengdu.ui.fragment.adapter.StaggeredGridAdapter;
 import com.fengdu.utils.ExcutorServiceUtils;
@@ -70,6 +71,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 	private TextView mActionText;
     
 	private String urls = "";
+	RequestQueue mQueue= null;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -89,6 +91,8 @@ public class PhotosViewPagerFragment extends BaseFragment{
                 this.urls = args.getString("key");
             }
         }
+        mQueue = Volley.newRequestQueue(getActivity());
+		mQueue.start();
 	}
 
 	
@@ -104,10 +108,13 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				// TODO Auto-generated method stub
-//				Intent intent = new Intent(getActivity(),PictureItemActivity.class);
-//				intent.putExtra("path_position", position);
-//				intent.putStringArrayListExtra("all_path", (ArrayList<String>)list);
-//				startActivity(intent);
+				Intent intent = new Intent(getActivity(),PictureItemActivity.class);
+				Bundle bundle = new Bundle();
+				ArrayList<ImageBean> bean = new ArrayList<ImageBean>();
+				bean.add(list.get(position));
+				bundle.putSerializable("key", bean);
+				intent.putExtras(bundle);
+				startActivity(intent);
 			}
 		});
 		initData();
@@ -121,8 +128,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 	}
 	
 	public void initData(){
-		RequestQueue mQueue = Volley.newRequestQueue(getActivity());
-		mQueue.start();
+		
 		VolleyManager.getInstance().beginSubmitRequest(
 				mQueue, 
 				new FastJSONRequest(urls, "", new Listener<JSONObject>() {
@@ -137,6 +143,8 @@ public class PhotosViewPagerFragment extends BaseFragment{
 								JSONArray arrays = obj.getJSONArray("data");
 								int size = arrays!=null ? arrays.size():0;
 								list = new ArrayList<ImageBean>();
+								MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), urls+"");
+								MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), obj+"");
 								for(int i = 0 ; i < size ;i++){
 									ImageBean bean = new ImageBean();
 									JSONObject json = (JSONObject)arrays.get(i);

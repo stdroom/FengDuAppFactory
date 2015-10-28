@@ -7,13 +7,12 @@
  *
 */
 
-package com.fengdu.ui.menu;
+package com.fengduman.android.menu;
 
-import com.fengdu.R;
-import com.fengdu.ui.fragment.ArticleFragment;
 import com.fengdu.ui.fragment.FirstViewPagerFragment;
 import com.fengdu.ui.fragment.PhotosViewPagerFragment;
 import com.fengdu.ui.fragment.SecondViewPagerFragment;
+import com.fengduman.android.R;
 
 /**
  * 类名: MainTabs <br/>
