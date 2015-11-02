@@ -24,13 +24,13 @@ import com.fengduman.android.R;
  */
 public enum MainTabs {
 	ONE(0, R.string.main_tab_name_one, R.drawable.tab_icon_one,
-			FirstViewPagerFragment.class),
+			SecondViewPagerFragment.class),
 	TWO(0, R.string.main_tab_name_two, R.drawable.tab_icon_two,
 			SecondViewPagerFragment.class),
 	THREE(0, R.string.main_tab_name_three, R.drawable.tab_icon_three,
-			PhotosViewPagerFragment.class),
+			FirstViewPagerFragment.class),
 	FOUR(0, R.string.main_tab_name_four, R.drawable.tab_icon_four,
-			PhotosViewPagerFragment.class);
+			FirstViewPagerFragment.class);
 
 	private int idx;
 	private int resName;

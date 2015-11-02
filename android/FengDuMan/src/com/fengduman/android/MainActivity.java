@@ -58,7 +58,7 @@ public class MainActivity extends BaseMainActivity{
             bundle.putString("key", URLs.HOST+"news/2/");
             mTabHost.addTab(tab, mainTab.getClz(), bundle);
 
-//            mTabHost.getTabWidget().getChildAt(i).setOnTouchListener(this);
+//          mTabHost.getTabWidget().getChildAt(i).setOnTouchListener(this);
 		}
 	}
 
