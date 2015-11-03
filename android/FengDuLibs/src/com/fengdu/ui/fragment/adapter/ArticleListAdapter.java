@@ -121,14 +121,14 @@ public class ArticleListAdapter extends BaseAdapter{
 				break;
 			}
 		}
-		if(!AppConfig.imgFlag){
+//		if(!AppConfig.imgFlag){
 			if(!"".equals(bean.getImgUrl()+"") && !(bean.getImgUrl()+"").contains("defaultpic.gif")){
-				kjBitMap.display(holder.mArticleImg,URLs.HOST+bean.getImgUrl(),
+				kjBitMap.display(holder.mArticleImg,bean.getImgUrl(),
 						holder.mArticleImg.getWidth(),holder.mArticleImg.getHeight());
 			}
-		}else{
-			holder.mArticleImg.setImageDrawable(this.mContext.getResources().getDrawable(R.drawable.default_img));
-		}
+//		}else{
+//			holder.mArticleImg.setImageDrawable(this.mContext.getResources().getDrawable(R.drawable.default_img));
+//		}
 		return convertView;
 	}
 	

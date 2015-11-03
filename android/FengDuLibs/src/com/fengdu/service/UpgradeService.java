@@ -15,7 +15,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import com.fengdu.R;
-import com.fengdu.ui.MainActivity;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -71,8 +70,8 @@ public class UpgradeService extends Service{
 		//设置任务栏中下载进程显示的views
 		views=new RemoteViews(getPackageName(),R.layout.update);
 		notification.contentView=views;
-		PendingIntent contentIntent=PendingIntent.getActivity(this,0,new Intent(this,MainActivity.class),0);
-		notification.setLatestEventInfo(this,"","",contentIntent);
+//		PendingIntent contentIntent=PendingIntent.getActivity(this,0,new Intent(this,MainActivity.class),0);
+//		notification.setLatestEventInfo(this,"","",contentIntent);
 		//将下载任务添加到任务栏中
 		nm.notify(notificationId,notification);
 		myHandler=new MyHandler(Looper.myLooper(),this);

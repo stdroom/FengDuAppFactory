@@ -1,0 +1,77 @@
+/**
+ * 工程名: FengDuLibs
+ * 文件名: ImageBean.java
+ * 包名: com.fengdu.bean
+ * 日期: 2015年10月27日下午3:43:55
+ * QQ: 378640336
+ *
+*/
+
+package com.fengdu.bean;
+
+import java.io.Serializable;
+
+/**
+ * 类名: ImageBean <br/>
+ * 功能: TODO 添加功能描述. <br/>
+ * 日期: 2015年10月27日 下午3:43:55 <br/>
+ *
+ * @author   leixun
+ * @version  	 
+ */
+public class ImageBean implements Serializable{
+
+	String desc = "";
+	
+	String image_url = "";
+	float image_width = 0;
+	float image_height= 0;
+	
+	String thumbnail = "";
+	float thumbnail_width = 0;
+	float thumbnail_height = 0;
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	public String getImage_url() {
+		return image_url;
+	}
+	public void setImage_url(String image_url) {
+		this.image_url = image_url;
+	}
+	public String getThumbnail() {
+		return thumbnail;
+	}
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
+	public float getImage_width() {
+		return image_width;
+	}
+	public void setImage_width(float image_width) {
+		this.image_width = image_width;
+	}
+	public float getImage_height() {
+		return image_height;
+	}
+	public void setImage_height(float image_height) {
+		this.image_height = image_height;
+	}
+	public float getThumbnail_width() {
+		return thumbnail_width;
+	}
+	public void setThumbnail_width(float thumbnail_width) {
+		this.thumbnail_width = thumbnail_width;
+	}
+	public float getThumbnail_height() {
+		return thumbnail_height;
+	}
+	public void setThumbnail_height(float thumbnail_height) {
+		this.thumbnail_height = thumbnail_height;
+	}
+	
+}
+

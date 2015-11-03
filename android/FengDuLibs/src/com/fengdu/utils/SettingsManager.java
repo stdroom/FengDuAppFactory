@@ -18,7 +18,7 @@
 
 package com.fengdu.utils;
 
-import com.fengdu.widgets.SwipeListView;
+import com.fengdu.widgets.swiptlistview.SwipeListView;
 
 public class SettingsManager {
 

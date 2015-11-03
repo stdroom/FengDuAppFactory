@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="first_viewpage_arrays">
+        <item>美女</item>
+        <item>明星</item>
+    </string-array>
+    <string-array name="second_viewpage_arrays">
+        <item>搭讪</item>
+        <item>约会</item>
+        <item>泡典</item>
+    </string-array>
+</resources>

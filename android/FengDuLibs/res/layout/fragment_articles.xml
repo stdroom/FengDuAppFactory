@@ -10,7 +10,7 @@
         android:id="@+id/swipe_container"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent" >
-	        <com.sepcialfocus.android.widgets.swiptlistview.SwipeListView
+	        <com.fengdu.widgets.swiptlistview.SwipeListView
 	            android:id="@+id/article_listview"
 	            android:layout_width="match_parent"
 	            android:layout_height="match_parent"
@@ -27,7 +27,7 @@
 	            swipe:swipeIsDropDownStyle="false"
 	        	swipe:swipeIsOnBottomStyle="true"
 	        	swipe:swipeIsAutoLoadOnBottom="true">
-	        </com.sepcialfocus.android.widgets.swiptlistview.SwipeListView>
+	        </com.fengdu.widgets.swiptlistview.SwipeListView>
 	</android.support.v4.widget.SwipeRefreshLayout>
 
 <!-- 

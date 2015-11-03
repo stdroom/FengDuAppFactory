@@ -21,7 +21,7 @@ package com.fengdu.android;
  */
 public class URLs {
 
-	public static final String HOST = "";
+	public static final String HOST = "http://www.fengdu100.com/paoniu";
 	
 	public static final String URL_GET_CHECK_VERSION = "";
 }

@@ -84,8 +84,5 @@ public class BaseFragmentActivity extends FragmentActivity{
 	protected void onResume() {
 		super.onResume();
 	}
-
-	
-
 }
 

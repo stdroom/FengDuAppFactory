@@ -1,0 +1,78 @@
+/**
+ * 工程名: FengDuLibs
+ * 文件名: BaseMainActivity.java
+ * 包名: com.fengdu.ui
+ * 日期: 2015年10月28日下午4:00:02
+ * QQ: 378640336
+ *
+*/
+
+package com.fengdu.ui;
+
+import com.fengdu.BaseFragmentActivity;
+import com.fengdu.R;
+import com.fengdu.android.URLs;
+import com.fengdu.ui.menu.MyFragmentTabHost;
+
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.TabHost.TabContentFactory;
+import android.widget.TabHost.TabSpec;
+
+/**
+ * 类名: BaseMainActivity <br/>
+ * 功能: TODO 添加功能描述. <br/>
+ * 日期: 2015年10月28日 下午4:00:02 <br/>
+ *
+ * @author   leixun
+ * @version  	 
+ */
+public abstract class BaseMainActivity extends BaseFragmentActivity implements OnTouchListener {			
+	long exitTime;
+
+	protected MyFragmentTabHost mTabHost = null;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setTheme(R.style.AppBaseTheme_Light);
+		setContentView(R.layout.activity_main);
+		findViewById();
+		initTabs();
+	}
+	
+	private void findViewById(){
+		mTabHost = (MyFragmentTabHost)findViewById(android.R.id.tabhost);
+		mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);   
+	}
+
+	protected abstract void initTabs();
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		return false;
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		/** 一个鄙人感觉不错的退出体验*/
+		if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){   
+	        if((System.currentTimeMillis()-exitTime) > 2000){  
+	            exitTime = System.currentTimeMillis();   
+	            Toast.makeText(this, "再按一次退出"+getResources().getString(R.string.app_name), Toast.LENGTH_SHORT).show();
+	        } else {
+	            finish();
+	            System.exit(0);
+	        }
+	        return true;   
+	    }
+		return super.onKeyDown(keyCode, event);
+	}
+}
+
