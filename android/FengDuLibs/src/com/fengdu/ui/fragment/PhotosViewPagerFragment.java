@@ -110,8 +110,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(getActivity(),PictureItemActivity.class);
 				Bundle bundle = new Bundle();
-				ArrayList<ImageBean> bean = new ArrayList<ImageBean>();
-				bean.add(list.get(position));
+				ImageBean bean = list.get(position);
 				bundle.putSerializable("key", bean);
 				intent.putExtras(bundle);
 				startActivity(intent);
@@ -137,32 +136,37 @@ public class PhotosViewPagerFragment extends BaseFragment{
 					public void onResponse(JSONObject obj,
 							String executeMethod, String flag,
 							boolean dialogFlag) {
-						if ("0".equals(flag)){	// 取出results
-							if (obj!=null){
-								
-								JSONArray arrays = obj.getJSONArray("data");
-								int size = arrays!=null ? arrays.size():0;
-								list = new ArrayList<ImageBean>();
-								MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), urls+"");
-								MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), obj+"");
-								for(int i = 0 ; i < size ;i++){
-									ImageBean bean = new ImageBean();
-									JSONObject json = (JSONObject)arrays.get(i);
-									bean.setDesc(json.getString("desc"));
-									bean.setImage_height(json.getIntValue("image_height"));
-									bean.setImage_width(json.getIntValue("image_width"));
-									bean.setImage_url(json.getString("image_url"));
-									bean.setThumbnail(json.getString("thumbnail_url"));
-									bean.setThumbnail_height(json.getIntValue("thumbnail_height"));
-									bean.setThumbnail_width(json.getIntValue("thumbnail_width"));
-									list.add(bean);
+						if (obj!=null){
+							
+							JSONArray arrays = obj.getJSONArray("data");
+							int size = arrays!=null ? arrays.size():0;
+							list = new ArrayList<ImageBean>();
+							MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), urls+"");
+							MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), obj+"");
+							for(int i = 0 ; i < size ;i++){
+								ImageBean bean = new ImageBean();
+								JSONObject json = (JSONObject)arrays.get(i);
+								bean.setDesc(json.getString("title"));
+//								bean.setImage_height(json.getIntValue("image_height"));
+//								bean.setImage_width(json.getIntValue("image_width"));
+								bean.setImage_url(json.getString("thumbnail"));
+								bean.setTotalNum(json.getIntValue("pagenum"));
+								String imgPaths = json.getString("imgpaths");
+								if(!"".equals(imgPaths)){
+									String[] img = imgPaths.split(";");
+									int length = img.length;
+									ArrayList<String> paths = new ArrayList<String>();
+									for(int j=0 ;j < length;j++){
+										String path = URLs.IMAGE_HOST+json.getString("cataid")+"/"+img[j];
+										paths.add(path);
+									}
+									bean.setPagePaths(paths);
 								}
-								myHandler.sendEmptyMessage(0x110);
-							} else {
-								MKLog.e(getClass().getName(), "can't get data"); 
+								list.add(bean);
 							}
+							myHandler.sendEmptyMessage(0x110);
 						} else {
-							MKLog.e(getClass().getName(), "The Response flag is not right");
+							MKLog.e(getClass().getName(), "can't get data"); 
 						}
 					}
 				}, new ErrorListener() {

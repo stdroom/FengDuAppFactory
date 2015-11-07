@@ -10,6 +10,7 @@
 package com.fengdu.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * 类名: ImageBean <br/>
@@ -30,6 +31,10 @@ public class ImageBean implements Serializable{
 	String thumbnail = "";
 	float thumbnail_width = 0;
 	float thumbnail_height = 0;
+	int totalNum = 0;
+	
+	ArrayList<String> pagePaths;
+	
 	public String getDesc() {
 		return desc;
 	}
@@ -72,6 +77,17 @@ public class ImageBean implements Serializable{
 	public void setThumbnail_height(float thumbnail_height) {
 		this.thumbnail_height = thumbnail_height;
 	}
-	
+	public int getTotalNum() {
+		return totalNum;
+	}
+	public void setTotalNum(int totalNum) {
+		this.totalNum = totalNum;
+	}
+	public ArrayList<String> getPagePaths() {
+		return pagePaths;
+	}
+	public void setPagePaths(ArrayList<String> pagePaths) {
+		this.pagePaths = pagePaths;
+	}
 }
 

@@ -24,5 +24,11 @@ public class URLs {
 	public static final String HOST = "http://www.fengdu100.com/paoniu";
 	
 	public static final String URL_GET_CHECK_VERSION = "";
+	
+	public static final String IMAGE_HOST = "http://7xo27p.com1.z0.glb.clouddn.com/teamimg/native/";
+	
+	public static final String MY_HOST = "http://121.42.204.13:8080";
+	
+	public static final String URL_GET_IMAGE = MY_HOST + "/ms/image/getList.do";
 }
 

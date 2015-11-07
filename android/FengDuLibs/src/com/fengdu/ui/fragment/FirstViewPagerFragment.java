@@ -9,8 +9,6 @@
 
 package com.fengdu.ui.fragment;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 
 import com.fengdu.BaseViewPagerFragment;
 import com.fengdu.R;
@@ -20,7 +18,6 @@ import com.fengdu.interf.OnTabReselectListener;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Base64;
 import android.view.View;
 
 /**
@@ -46,13 +43,7 @@ public class FirstViewPagerFragment extends BaseViewPagerFragment implements
 
     private Bundle getBundle(String urls) {
         Bundle bundle = new Bundle();
-        try {
-			bundle.putString("key", "http://image.baidu.com/channel/listjson?pn=0&rn=30&tag1="+URLEncoder.encode(urls,"UTF-8")+"&ie=utf8");
-		} catch (UnsupportedEncodingException e) {
-			
-			e.printStackTrace();
-			
-		}
+		bundle.putString("key", URLs.URL_GET_IMAGE);
         return bundle;
     }
 

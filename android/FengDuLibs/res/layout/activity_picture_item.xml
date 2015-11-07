@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    <uk.co.senab.photoview.PhotoView
-        android:id="@+id/photoView"
-        android:layout_width="fill_parent"
-        android:layout_height="530dp"/>    
-   <Gallery  
-        android:id="@+id/gallery"  
-        android:layout_width="fill_parent"  
-        android:layout_height="100dp"
-        android:layout_marginBottom="10dp"/>  
-
-</LinearLayout>
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        style="@style/fill_fill">
+    </android.support.v4.view.ViewPager>
+    <TextView
+        android:id="@+id/pageNumTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text=""/>
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/pageNumTv"
+        android:text=""/>
+</RelativeLayout>

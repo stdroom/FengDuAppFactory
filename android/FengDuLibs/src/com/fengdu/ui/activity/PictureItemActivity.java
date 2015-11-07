@@ -14,18 +14,13 @@ import java.util.ArrayList;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
 import com.fengdu.bean.ImageBean;
-import com.fengdu.ui.activity.adapter.GalleryImageAdapter;
+import com.fengdu.ui.activity.adapter.ImageAdapter;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.download.ImageDownloader.Scheme;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.Gallery;
-import uk.co.senab.photoview.PhotoView;
+import android.support.v4.view.ViewPager;
+import android.widget.TextView;
 
 /**
  * 类名: PictureItemActivity <br/>
@@ -35,40 +30,32 @@ import uk.co.senab.photoview.PhotoView;
  * @author   leixun
  * @version  	 
  */
-public class PictureItemActivity extends BaseFragmentActivity{
+public class PictureItemActivity extends BaseFragmentActivity implements ViewPager.OnPageChangeListener{
 	private ArrayList<ImageBean> mList;
 	private DisplayImageOptions mOptions;
+	private ViewPager viewPager;
+	private ImageAdapter imgAdapter;
+	private ImageBean bean;
+	TextView titleTv;
+	TextView pageNumTv;
+	int totalSize;
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_picture_item); 
 		initOptions();
-		
-		Gallery gallery = (Gallery) findViewById(R.id.gallery);
-		final PhotoView photoView = (PhotoView) findViewById(R.id.photoView); 
-		
 		Intent intent = getIntent();
-		mList = (ArrayList<ImageBean>)intent.getExtras().getSerializable("key");
-		
-		gallery.setAdapter(new GalleryImageAdapter(this,mList,mOptions)); 
-		gallery.setSelection(0);
-
-		gallery.setOnItemSelectedListener(new OnItemSelectedListener() {
-
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view,
-					int position, long id) {
-				// TODO Auto-generated method stub
-				ImageBean bean = mList.get(position);
-				ImageLoader.getInstance().displayImage(bean.getImage_url(), photoView, mOptions);
-			}
-
-			@Override
-			public void onNothingSelected(AdapterView<?> parent) {
-				
-			}
-		});
+		bean = (ImageBean)intent.getExtras().getSerializable("key");
+		viewPager = (ViewPager)findViewById(R.id.viewpager);
+		pageNumTv = (TextView)findViewById(R.id.pageNumTv);
+		titleTv = (TextView)findViewById(R.id.titleTv);
+		imgAdapter = new ImageAdapter(bean.getPagePaths(),this);
+		viewPager.setAdapter(imgAdapter);
+		totalSize = bean.getPagePaths().size();
+		titleTv.setText(bean.getDesc());
+		viewPager.setOnPageChangeListener(this);
 	}
 	
 	private void initOptions(){
@@ -80,6 +67,22 @@ public class PictureItemActivity extends BaseFragmentActivity{
 		.cacheOnDisk(true)
 		.considerExifParams(true)
 		.build();
+	}
+
+	@Override
+	public void onPageScrollStateChanged(int arg0) {
+		
+	}
+
+	@Override
+	public void onPageScrolled(int arg0, float arg1, int arg2) {
+		
+		
+	}
+
+	@Override
+	public void onPageSelected(int arg0) {
+		pageNumTv.setText(arg0+"/"+totalSize);
 	}
 }
 
