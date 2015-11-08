@@ -36,14 +36,18 @@ public class FirstViewPagerFragment extends BaseViewPagerFragment implements
 		String[] title = getResources().getStringArray(
                 R.array.first_viewpage_arrays);
         adapter.addTab(title[0], "news1", PhotosViewPagerFragment.class,
-                getBundle(title[0]));
+                getBundle("?cataid=1103"));
         adapter.addTab(title[1], "news_week1", PhotosViewPagerFragment.class,
-                getBundle(title[1]));
+                getBundle("?cataid=1104"));
+        adapter.addTab(title[2], "news3", PhotosViewPagerFragment.class,
+                getBundle("?cataid=1105"));
+        adapter.addTab(title[3], "news_week4", PhotosViewPagerFragment.class,
+                getBundle("?cataid=1107"));
     }
 
     private Bundle getBundle(String urls) {
         Bundle bundle = new Bundle();
-		bundle.putString("key", URLs.URL_GET_IMAGE);
+		bundle.putString("key", URLs.URL_GET_IMAGE+urls);
         return bundle;
     }
 
