@@ -7,11 +7,17 @@
     android:orientation="vertical"
     android:background="@drawable/bg" >
     
-    <com.fengdu.widgets.stragedview.StaggeredGridView
-        android:id="@+id/image_grid"
+    <com.fengdu.widgets.PullToRefreshView 
+        android:id="@+id/pull_refresh_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-		app:column_count="2"
-        app:item_margin="8dp">
-    </com.fengdu.widgets.stragedview.StaggeredGridView>
+        android:orientation="vertical" >
+	    <com.fengdu.widgets.stragedview.StaggeredGridView
+	        android:id="@+id/image_grid"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+			app:column_count="2"
+	        app:item_margin="8dp">
+	    </com.fengdu.widgets.stragedview.StaggeredGridView>
+    </com.fengdu.widgets.PullToRefreshView>
 </LinearLayout>

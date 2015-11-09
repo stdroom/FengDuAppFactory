@@ -5,9 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/main_head"
+        layout="@layout/main_head"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/main_head"
         android:orientation="vertical" >
 
         <FrameLayout

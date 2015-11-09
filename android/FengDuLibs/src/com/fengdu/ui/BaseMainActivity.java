@@ -13,6 +13,8 @@ import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
 import com.fengdu.android.URLs;
 import com.fengdu.ui.menu.MyFragmentTabHost;
+import com.fengdu.ui.slide.DrawerView;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -20,9 +22,11 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ImageView;
 import android.widget.TabHost.TabContentFactory;
 import android.widget.TabHost.TabSpec;
 
@@ -38,18 +42,35 @@ public abstract class BaseMainActivity extends BaseFragmentActivity implements O
 	long exitTime;
 
 	protected MyFragmentTabHost mTabHost = null;
+	SlidingMenu side_drawer;
+	ImageView mTopHead;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setTheme(R.style.AppBaseTheme_Light);
 		setContentView(R.layout.activity_main);
 		findViewById();
+		initSlidingMenu();
 		initTabs();
 	}
 	
 	private void findViewById(){
 		mTabHost = (MyFragmentTabHost)findViewById(android.R.id.tabhost);
 		mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);   
+		mTopHead = (ImageView)findViewById(R.id.top_head);
+		//左滑
+		mTopHead.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					if(side_drawer.isMenuShowing()){
+						side_drawer.showContent();
+					}else{
+						side_drawer.showMenu();
+					}
+				}
+			});
 	}
 
 	protected abstract void initTabs();
@@ -59,11 +80,18 @@ public abstract class BaseMainActivity extends BaseFragmentActivity implements O
 		return false;
 	}
 	
+	private void initSlidingMenu() {
+		side_drawer = new DrawerView(this).initSlidingMenu();
+		
+	}
+	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		/** 一个鄙人感觉不错的退出体验*/
 		if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){   
-	        if((System.currentTimeMillis()-exitTime) > 2000){  
+			if(side_drawer.isMenuShowing() ||side_drawer.isSecondaryMenuShowing()){
+				side_drawer.showContent();
+			}else if((System.currentTimeMillis()-exitTime) > 2000){  
 	            exitTime = System.currentTimeMillis();   
 	            Toast.makeText(this, "再按一次退出"+getResources().getString(R.string.app_name), Toast.LENGTH_SHORT).show();
 	        } else {

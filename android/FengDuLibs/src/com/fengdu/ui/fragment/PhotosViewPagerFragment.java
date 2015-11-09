@@ -38,6 +38,8 @@ import com.fengdu.utils.ImageLoadAsyncTask;
 import com.fengdu.volley.FastJSONRequest;
 import com.fengdu.volley.VolleyManager;
 import com.fengdu.volley.FastResponse.Listener;
+import com.fengdu.widgets.PullToRefreshView;
+import com.fengdu.widgets.PullToRefreshView.OnFooterRefreshListener;
 import com.fengdu.widgets.stragedview.StaggeredGridView;
 import com.mike.aframe.MKLog;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -64,6 +66,7 @@ import android.widget.AdapterView.OnItemClickListener;
  */
 public class PhotosViewPagerFragment extends BaseFragment{
 
+	private PullToRefreshView mPullToRefreshView;
 	private StaggeredGridView mGridView;
 	private ArrayList<ImageBean> list;
 	private StaggeredGridAdapter mAdapter;
@@ -72,6 +75,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
     
 	private String urls = "";
 	RequestQueue mQueue= null;
+	int pageSize = 0;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -101,6 +105,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		View view = inflater.inflate(R.layout.staggered_grid, container,false);
+		mPullToRefreshView = (PullToRefreshView)view.findViewById(R.id.pull_refresh_view);
 		mGridView = (StaggeredGridView) view.findViewById(R.id.image_grid);
 		mGridView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -116,7 +121,18 @@ public class PhotosViewPagerFragment extends BaseFragment{
 				startActivity(intent);
 			}
 		});
-		initData();
+		mPullToRefreshView.setOnFooterRefreshListener(new OnFooterRefreshListener() {
+			
+			@Override
+			public void onFooterRefresh(PullToRefreshView view) {
+				pageSize = pageSize+1;
+				String url = urls+"&page="+pageSize;
+				initData(url);
+			}
+		});
+		list = new ArrayList<ImageBean>();
+		pageSize = 1;
+		initData(urls+"&page="+pageSize);
 		return view;
 	}
 
@@ -126,7 +142,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 		mGridView.setAdapter(mAdapter);
 	}
 	
-	public void initData(){
+	public void initData(final String urls){
 		
 		VolleyManager.getInstance().beginSubmitRequest(
 				mQueue, 
@@ -140,7 +156,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 							
 							JSONArray arrays = obj.getJSONArray("data");
 							int size = arrays!=null ? arrays.size():0;
-							list = new ArrayList<ImageBean>();
+							
 							MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), urls+"");
 							MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), obj+"");
 							for(int i = 0 ; i < size ;i++){
@@ -181,9 +197,13 @@ public class PhotosViewPagerFragment extends BaseFragment{
 		public void handleMessage(Message msg) {
 			if(msg.what == 0x110){
 				if(list != null){
+					if(mAdapter==null){
+						mAdapter = new StaggeredGridAdapter(getActivity(), list, mOptions);
+						mGridView.setAdapter(mAdapter);
+					}
+					mAdapter.notifyDataSetChanged();
+					mPullToRefreshView.onFooterRefreshComplete();
 					//图片路径的list
-					mAdapter = new StaggeredGridAdapter(getActivity(), list, mOptions);
-					mGridView.setAdapter(mAdapter);
 				}else{
 //					new ImageLoadAsyncTask(getActivity()).execute();
 				}

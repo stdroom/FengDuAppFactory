@@ -19,6 +19,8 @@ import com.fengdu.interf.OnTabReselectListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
+import android.widget.GridView;
+import android.widget.ListView;
 
 /**
  * 类名: FirstViewPagerFragment <br/>
@@ -30,7 +32,6 @@ import android.view.View;
  */
 public class FirstViewPagerFragment extends BaseViewPagerFragment implements
 	OnTabReselectListener{
-
 	@Override
     protected void onSetupTabAdapter(ViewPageFragmentAdapter adapter) {
 		String[] title = getResources().getStringArray(
