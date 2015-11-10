@@ -16,7 +16,7 @@
 	        android:id="@+id/image_grid"
 	        android:layout_width="match_parent"
 	        android:layout_height="match_parent"
-			app:column_count="2"
+			app:column_count="3"
 	        app:item_margin="8dp">
 	    </com.fengdu.widgets.stragedview.StaggeredGridView>
     </com.fengdu.widgets.PullToRefreshView>

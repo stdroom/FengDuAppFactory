@@ -126,13 +126,13 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			@Override
 			public void onFooterRefresh(PullToRefreshView view) {
 				pageSize = pageSize+1;
-				String url = urls+"&page="+pageSize;
+				String url = urls+"&page="+pageSize+"&rows=20";
 				initData(url);
 			}
 		});
 		list = new ArrayList<ImageBean>();
 		pageSize = 1;
-		initData(urls+"&page="+pageSize);
+		initData(urls+"&page="+pageSize+"&rows=20");
 		return view;
 	}
 
@@ -163,8 +163,8 @@ public class PhotosViewPagerFragment extends BaseFragment{
 								ImageBean bean = new ImageBean();
 								JSONObject json = (JSONObject)arrays.get(i);
 								bean.setDesc(json.getString("title"));
-//								bean.setImage_height(json.getIntValue("image_height"));
-//								bean.setImage_width(json.getIntValue("image_width"));
+								bean.setImage_height(json.getIntValue("height"));
+								bean.setImage_width(json.getIntValue("width"));
 								bean.setImage_url(json.getString("thumbnail"));
 								bean.setTotalNum(json.getIntValue("pagenum"));
 								String imgPaths = json.getString("imgpaths");
