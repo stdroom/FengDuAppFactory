@@ -304,24 +304,9 @@
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
+        <include layout="@layout/fragment_navigation_drawer_foot"/>
+
         
-
-        <!-- myapp:thumb="@drawable/wiper_switch_slipper_btn" 
-        <com.xzh.slidmenudemo.widght.SwitchButton
-            android:id="@+id/night_mode_btn"
-            style="@style/Switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true" />-->
-        <!-- myapp:track="@drawable/wiper_switch_btn" -->
-
-        <TextView
-            android:id="@+id/night_mode_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15.0dip"
-            android:textColor="@color/left_drawer_night_mode_text"
-            android:textSize="15.0sp" />
     </LinearLayout>
 
 </LinearLayout>

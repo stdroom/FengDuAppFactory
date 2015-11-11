@@ -9,6 +9,7 @@
 
 package com.fengdu.ui;
 
+import com.fengdu.BaseApplication;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
 import com.fengdu.android.URLs;
@@ -47,7 +48,11 @@ public abstract class BaseMainActivity extends BaseFragmentActivity implements O
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setTheme(R.style.AppBaseTheme_Light);
+		if(BaseApplication.globalContext.getNightModeSwitch()){
+			setTheme(R.style.AppBaseTheme_Night);
+		}else{
+			setTheme(R.style.AppBaseTheme_Light);
+		}
 		setContentView(R.layout.activity_main);
 		findViewById();
 		initSlidingMenu();

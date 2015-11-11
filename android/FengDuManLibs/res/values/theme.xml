@@ -22,7 +22,7 @@
         <item name="comment_reply_container_bg">@drawable/day_comment_reply_container_bg</item>
         <item name="message_bg_left">@drawable/chat_from_bg_normal</item>
         <item name="message_bg_right">@drawable/chat_to_bg_normal</item>
-
+		<item name="title_bar_bg_color">@color/day_title_bar_bg_color</item>
     </style>
 
     <!-- 夜间模式 -->
@@ -44,6 +44,7 @@
         <item name="comment_reply_container_bg">@drawable/night_comment_reply_container_bg</item>
         <item name="message_bg_left">@drawable/night_chat_from_bg_normal</item>
         <item name="message_bg_right">@drawable/chat_to_bg_pressed</item>
+        <item name="title_bar_bg_color">@color/night_title_bar_bg_color</item>
     </style>
 
     <!-- 全透明的背景 -->

@@ -1,4 +1,5 @@
 /**
+
  * 工程�?: MainActivity
  * 文件�?: AppConstant.java
  * 包名: com.sepcialfocus.android.config
@@ -46,6 +47,7 @@ public class AppConstant {
 	public static final String YOUMI_APPID = "d6ed809e39ffe869";
 	public static final String YOUMI_APPSECRET = "08420089c668f93d";
 	
+	public static final String KEY_NIGHT_MODE_SWITCH="night_mode_switch";
 	  /**
      * QQ登录ID
      */

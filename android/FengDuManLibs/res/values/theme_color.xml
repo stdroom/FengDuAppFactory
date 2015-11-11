@@ -12,6 +12,7 @@
     <color name="day_windows_bg">#fafafa</color>
     <color name="day_edit_color">#333333</color>
     <color name="day_edit_hit_color">#999999</color>
+    <color name="day_title_bar_bg_color">#ff00ff</color>
 
     <!-- night -->
     <color name="night_colorPrimary">#008000</color>
@@ -24,5 +25,6 @@
     <color name="night_windows_bg">#1f1f1f</color>
     <color name="night_edit_color">#666666</color>
     <color name="night_edit_hit_color">#999999</color>
+    <color name="night_title_bar_bg_color">#00ff00</color>
 
 </resources>

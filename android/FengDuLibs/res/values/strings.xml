@@ -83,4 +83,7 @@
     <string name="favorite_btn_edit">编辑</string>
     <string name="favorite_btn_cancel">取消</string>
     <string name="dislike_dlg_lable_speech">读文章</string>
+    
+    <string name="switch_on"></string>
+    <string name="switch_off"></string>
 </resources>

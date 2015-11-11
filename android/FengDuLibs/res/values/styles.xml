@@ -110,5 +110,21 @@
         <item name="android:textSize">8.0sp</item>
         <item name="android:textColor">#ff000000</item>
     </style>
+    
+     <!-- 菜单ImageView的样式 -->
+    <style name="MenuItemImageViewStyle">
+        <item name="android:layout_width">24dip</item>
+        <item name="android:layout_height">24dip</item>
+        <item name="android:layout_marginRight">15dip</item>
+    </style>
+
+    <!-- 菜单TextView的样式 -->
+    <style name="MenuItemTextViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/drawer_menu_text</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 
 </resources>

@@ -9,6 +9,7 @@
 
 package com.fengdu.ui.slide;
 
+import com.fengdu.BaseApplication;
 import com.fengdu.R;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
@@ -81,7 +82,7 @@ public class DrawerView implements View.OnClickListener{
 //		}else{
 //			night_mode_text.setText(activity.getResources().getString(R.string.action_day_mode));
 //		}
-		
+		localSlidingMenu.findViewById(R.id.menu_item_theme).setOnClickListener(this);
 		setting_btn =(RelativeLayout)localSlidingMenu.findViewById(R.id.setting_btn);
 		setting_btn.setOnClickListener(this);
 	}
@@ -97,7 +98,27 @@ public class DrawerView implements View.OnClickListener{
 //		default:
 //			break;
 //		}
+		int id = v.getId();
+		if(id == R.id.menu_item_theme){
+			switchTheme();
+		}
 	}
+	
+	private void switchTheme() {
+        if (BaseApplication.globalContext.getNightModeSwitch()) {
+        	BaseApplication.globalContext.setNightModeSwitch(false);
+        } else {
+        	BaseApplication.globalContext.setNightModeSwitch(true);
+        }
+
+        if (BaseApplication.globalContext.getNightModeSwitch()) {
+            activity.setTheme(R.style.AppBaseTheme_Night);
+        } else {
+            activity.setTheme(R.style.AppBaseTheme_Light);
+        }
+
+       activity.recreate();
+    }
 
 }
 
