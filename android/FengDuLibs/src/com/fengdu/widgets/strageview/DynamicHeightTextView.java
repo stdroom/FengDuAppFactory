@@ -1,21 +1,23 @@
-package com.fengdu.widgets.stragedview.util;
+package com.fengdu.widgets.strageview;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
- * An {@link android.widget.ImageView} layout that maintains a consistent width to height aspect ratio.
+ *
+ * A {@link android.widget.TextView} that maintains a consistent width to height aspect ratio.
+ * In the real world this would likely extend ImageView.
  */
-public class DynamicHeightImageView extends ImageView {
+public class DynamicHeightTextView extends TextView {
 
     private double mHeightRatio;
 
-    public DynamicHeightImageView(Context context, AttributeSet attrs) {
+    public DynamicHeightTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public DynamicHeightImageView(Context context) {
+    public DynamicHeightTextView(Context context) {
         super(context);
     }
 

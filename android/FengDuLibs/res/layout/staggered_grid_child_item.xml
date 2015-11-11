@@ -5,11 +5,10 @@
     android:orientation="vertical"
     android:background="@drawable/news_item_bg" >
     
-    <com.fengdu.widgets.stragedview.util.DynamicHeightImageView
+    <com.fengdu.widgets.strageview.DynamicHeightImageView
         android:id="@+id/child_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="center" />
+        android:layout_height="match_parent"/>
     <TextView
         android:id="@+id/news_title"
         android:layout_width="wrap_content"
