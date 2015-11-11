@@ -48,11 +48,6 @@ public abstract class BaseMainActivity extends BaseFragmentActivity implements O
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		if(BaseApplication.globalContext.getNightModeSwitch()){
-			setTheme(R.style.AppBaseTheme_Night);
-		}else{
-			setTheme(R.style.AppBaseTheme_Light);
-		}
 		setContentView(R.layout.activity_main);
 		findViewById();
 		initSlidingMenu();
