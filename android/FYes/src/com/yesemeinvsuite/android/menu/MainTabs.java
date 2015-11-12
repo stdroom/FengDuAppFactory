@@ -7,10 +7,9 @@
  *
 */
 
-package com.fengduman.android.menu;
+package com.yesemeinvsuite.android.menu;
 
-import com.fengdu.ui.fragment.PhotosViewPagerFragment;
-import com.fengduman.android.R;
+import com.yesemeinvsuite.android.R;
 
 /**
  * 类名: MainTabs <br/>

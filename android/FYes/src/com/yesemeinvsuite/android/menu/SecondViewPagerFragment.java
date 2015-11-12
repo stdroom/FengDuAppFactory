@@ -1,54 +1,52 @@
 /**
  * 工程名: FengDuLibs
- * 文件名: FirstViewPagerFragment.java
+ * 文件名: SecondViewPagerFragment.java
  * 包名: com.fengdu.ui.fragment
- * 日期: 2015年10月27日上午11:28:23
+ * 日期: 2015年10月27日下午4:42:42
  * QQ: 378640336
  *
 */
 
-package com.fengdu.ui.fragment;
-
+package com.yesemeinvsuite.android.menu;
 
 import com.fengdu.BaseViewPagerFragment;
-import com.fengdu.R;
 import com.fengdu.adapter.ViewPageFragmentAdapter;
 import com.fengdu.android.URLs;
 import com.fengdu.interf.OnTabReselectListener;
+import com.fengdu.ui.fragment.ArticleFragment;
+import com.yesemeinvsuite.android.R;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
-import android.widget.GridView;
-import android.widget.ListView;
 
 /**
- * 类名: FirstViewPagerFragment <br/>
+ * 类名: SecondViewPagerFragment <br/>
  * 功能: TODO 添加功能描述. <br/>
- * 日期: 2015年10月27日 上午11:28:23 <br/>
+ * 日期: 2015年10月27日 下午4:42:42 <br/>
  *
  * @author   leixun
  * @version  	 
  */
-public class FirstViewPagerFragment extends BaseViewPagerFragment implements
+public class SecondViewPagerFragment extends BaseViewPagerFragment implements
 	OnTabReselectListener{
+	
 	@Override
     protected void onSetupTabAdapter(ViewPageFragmentAdapter adapter) {
-		String[] title = getResources().getStringArray(
-                R.array.first_viewpage_arrays);
-        adapter.addTab(title[0], "news1", PhotosViewPagerFragment.class,
-                getBundle("?cataid=1103"));
-        adapter.addTab(title[1], "news_week1", PhotosViewPagerFragment.class,
-                getBundle("?cataid=1104"));
-        adapter.addTab(title[2], "news3", PhotosViewPagerFragment.class,
-                getBundle("?cataid=1105"));
-        adapter.addTab(title[3], "news_week4", PhotosViewPagerFragment.class,
-                getBundle("?cataid=1107"));
+		 String[] title = getResources().getStringArray(
+	                R.array.second_viewpage_arrays);
+	        adapter.addTab(title[0], "news", ArticleFragment.class,
+	                getBundle("/dashan/"));
+	        adapter.addTab(title[1], "news_week", ArticleFragment.class,
+	                getBundle("/yuehui/"));
+	        adapter.addTab(title[2], "latest_blog", ArticleFragment.class,
+	                getBundle("/pua/"));
+        
     }
 
     private Bundle getBundle(String urls) {
         Bundle bundle = new Bundle();
-		bundle.putString("key", URLs.URL_GET_IMAGE+urls);
+        bundle.putString("key", URLs.HOST+urls);
         return bundle;
     }
 

@@ -7,13 +7,14 @@
  *
 */
 
-package com.fengdu.ui.fragment;
+package com.fengduman.android.menu;
 
 import com.fengdu.BaseViewPagerFragment;
-import com.fengdu.R;
 import com.fengdu.adapter.ViewPageFragmentAdapter;
 import com.fengdu.android.URLs;
 import com.fengdu.interf.OnTabReselectListener;
+import com.fengdu.ui.fragment.ArticleFragment;
+import com.fengduman.android.R;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

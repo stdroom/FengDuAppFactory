@@ -16,6 +16,7 @@ import com.fengdu.android.URLs;
 import com.fengdu.ui.menu.MyFragmentTabHost;
 import com.fengdu.ui.slide.DrawerView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.umeng.analytics.MobclickAgent;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ import android.widget.Toast;
 import android.widget.ImageView;
 import android.widget.TabHost.TabContentFactory;
 import android.widget.TabHost.TabSpec;
+import net.youmi.android.spot.SpotManager;
 
 /**
  * 类名: BaseMainActivity <br/>
@@ -49,6 +51,14 @@ public abstract class BaseMainActivity extends BaseFragmentActivity implements O
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+//		AdManager.getInstance(this).init(AppConstant.YOUMI_APPID, AppConstant.YOUMI_APPSECRET, false);
+		SpotManager.getInstance(this).loadSpotAds();
+		SpotManager.getInstance(this).setAnimationType(
+				SpotManager.ANIM_ADVANCE);
+		SpotManager.getInstance(this).setSpotOrientation(
+				SpotManager.ORIENTATION_PORTRAIT);
+		// 友盟发送策略
+		MobclickAgent.updateOnlineConfig(this);
 		findViewById();
 		initSlidingMenu();
 		initTabs();

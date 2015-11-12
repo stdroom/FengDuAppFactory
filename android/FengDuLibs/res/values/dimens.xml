@@ -25,4 +25,9 @@
     <!-- starte -->
     <dimen name="header_footer_left_right_padding">24dp</dimen>
     <dimen name="header_footer_top_bottom_padding">12dp</dimen>
+    
+    <dimen name="title_height">50dp</dimen>
+    <dimen name="title_img_height">2dp</dimen>
+    <dimen name="title_size">5.6sp</dimen>
+    <dimen name="title_add_width">13dp</dimen>
 </resources>
