@@ -18,5 +18,6 @@
     <attr name="quickoption_icon_voice_selector" format="reference"/>
     <attr name="quickoption_icon_scan_selector" format="reference"/>
     <attr name="quickoption_icon_note_selector" format="reference"/>
+    <attr name="title_bar_bg_color" format="reference"/>
 
 </resources>
