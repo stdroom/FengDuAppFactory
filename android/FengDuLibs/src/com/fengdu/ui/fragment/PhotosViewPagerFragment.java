@@ -83,6 +83,8 @@ public class PhotosViewPagerFragment extends BaseFragment{
 	int pageSize = 0;
 	
 	private boolean isRequest = false;
+	
+	private View view = null;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -111,7 +113,9 @@ public class PhotosViewPagerFragment extends BaseFragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View view = inflater.inflate(R.layout.staggered_grid, container,false);
+		if(view == null){
+			view = inflater.inflate(R.layout.staggered_grid, container,false);
+		}
 		mGridView = (PullToRefreshStaggeredGridView) view.findViewById(R.id.pull_grid_view);
 		mGridView.setMode(PullToRefreshBase.Mode.PULL_FROM_START);
         View footerView;
@@ -119,7 +123,6 @@ public class PhotosViewPagerFragment extends BaseFragment{
         mGridView.getRefreshableView().setFooterView(footerView);
         mGridView.setAdapter(mAdapter);
 		((StaggeredGridView)mGridView.getRefreshableView()).setOnItemClickListener(new OnItemClickListener() {
-			
 			@Override
 			public void onItemClick(StaggeredGridView parent, View view, int position, long id) {
 				Intent intent = new Intent(getActivity(),PictureItemActivity.class);
@@ -148,16 +151,25 @@ public class PhotosViewPagerFragment extends BaseFragment{
 				initData(urls+"&page="+1+"&rows=20");
 			}
 		});
-		list = new ArrayList<ImageBean>();
-		pageSize = 1;
-		initData(urls+"&page="+pageSize+"&rows=20");
+		MKLog.d("PhotosViewPagerFragment", "onCreateView");
 		return view;
 	}
 
-	public void setImageAdapter(List<ImageBean> list) {
-		// TODO Auto-generated method stub
-		mAdapter = new StaggeredGridAdapter(getActivity(), list,mOptions);
-		mGridView.setAdapter(mAdapter);
+	@Override
+	public void onResume(){
+		lazyLoad();
+		super.onResume();
+	}
+	
+	public void lazyLoad(){
+		if(mAdapter!=null && mAdapter.getCount()>0 && list!=null && list.size()>0){
+			mGridView.setAdapter(mAdapter);
+			return;
+		}else{
+			list = new ArrayList<ImageBean>();
+			pageSize = 1;
+			initData(urls+"&page="+pageSize+"&rows=20");
+		}
 	}
 	
 	public void initData(final String urls){

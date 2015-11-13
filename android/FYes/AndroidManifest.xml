@@ -34,6 +34,28 @@
         </activity>
         <activity
             android:name="com.fengdu.ui.activity.PictureItemActivity"/>
+        
+        <!-- 有米ad start-->
+        <activity
+		    android:name="net.youmi.android.AdBrowser"
+		    android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+		    android:theme="@android:style/Theme.Light.NoTitleBar" >
+		</activity>
+		<service
+		    android:name="net.youmi.android.AdService"
+		    android:exported="false">
+		</service>
+		<receiver
+		    android:name="net.youmi.android.AdReceiver" >
+		    <intent-filter>
+		        <action android:name="android.intent.action.PACKAGE_ADDED" />
+		        <data android:scheme="package" />
+		    </intent-filter>
+		</receiver>
+      <!-- 有米ad end -->
+        
+        <meta-data android:value="56455aede0f55af416004099" android:name="UMENG_APPKEY"/>
+		<meta-data android:value="小米" android:name="UMENG_CHANNEL"/>
     </application>
 
 </manifest>

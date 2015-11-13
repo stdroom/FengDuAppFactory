@@ -16,8 +16,11 @@ package com.fengdu;
 import com.fengdu.interf.BaseFragmentInterface;
 import com.mike.aframe.MKLog;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 /**
@@ -117,9 +120,38 @@ public class BaseFragment extends Fragment implements android.view.View.OnClickL
 	@Override
 	public void onClick(View arg0) {
 		
-		// TODO Auto-generated method stub
-		
 	}
 
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		MKLog.d(this.getClass().getSimpleName(), "onCreate");
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		MKLog.d(this.getClass().getSimpleName(), "onPause");
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		MKLog.d(this.getClass().getSimpleName(), "onResume");
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		MKLog.d(this.getClass().getSimpleName(), "onStart");
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		MKLog.d(this.getClass().getSimpleName(), "onStop");
+	}
+	
+	
 }
 
