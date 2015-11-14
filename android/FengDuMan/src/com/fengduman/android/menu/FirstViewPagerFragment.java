@@ -58,7 +58,6 @@ public class FirstViewPagerFragment extends BaseViewPagerFragment implements
         mViewPager.setOffscreenPageLimit(3);
     }
 
-
     @Override
     public void onClick(View v) {
 

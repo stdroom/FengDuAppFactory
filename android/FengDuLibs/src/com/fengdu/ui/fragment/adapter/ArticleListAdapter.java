@@ -19,6 +19,7 @@ import com.fengdu.R;
 import com.fengdu.android.AppConfig;
 import com.fengdu.android.URLs;
 import com.fengdu.bean.ArticleItemBean;
+import com.fengdu.utils.ThemeSwitchUtils;
 import com.mike.aframe.bitmap.KJBitmap;
 import com.mike.aframe.bitmap.KJBitmapConfig;
 import com.mike.aframe.bitmap.utils.BitmapCreate;
@@ -90,9 +91,9 @@ public class ArticleListAdapter extends BaseAdapter{
 //			holder.mArticleTagTwoTv.setTextColor(this.mContext.getResources().getColor(R.color.readed_tags_text_color));
 //			holder.mArticleTagThrTv.setTextColor(this.mContext.getResources().getColor(R.color.readed_tags_text_color));
 			holder.mArticleContentTv.setTextColor(this.mContext.getResources().getColor(R.color.read_content_text_color));
-			holder.mArticleTitleTv.setTextColor(this.mContext.getResources().getColor(R.color.has_read_text_color));
+			holder.mArticleTitleTv.setTextColor(this.mContext.getResources().getColor(ThemeSwitchUtils.getTitleReadedColor()));
 		}else{
-			holder.mArticleTitleTv.setTextColor(this.mContext.getResources().getColor(R.color.not_read_text_color));
+			holder.mArticleTitleTv.setTextColor(this.mContext.getResources().getColor(ThemeSwitchUtils.getTitleUnReadedColor()));
 //			holder.mArticleTagOneTv.setTextColor(this.mContext.getResources().getColor(R.color.not_read_tags_text_color));
 //			holder.mArticleTagTwoTv.setTextColor(this.mContext.getResources().getColor(R.color.not_read_tags_text_color));
 //			holder.mArticleTagThrTv.setTextColor(this.mContext.getResources().getColor(R.color.not_read_tags_text_color));
