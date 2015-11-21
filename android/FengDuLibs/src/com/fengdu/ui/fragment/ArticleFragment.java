@@ -399,7 +399,7 @@ public class ArticleFragment  extends BaseFragment implements SwipeRefreshLayout
 				}
 				break;
 			case 0x113:
-				Toast.makeText(getActivity(), "写入成功", Toast.LENGTH_SHORT).show();
+//				Toast.makeText(getActivity(), "写入成功", Toast.LENGTH_SHORT).show();
 				break;
 			}
 		}

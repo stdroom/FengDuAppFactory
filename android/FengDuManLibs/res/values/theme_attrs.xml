@@ -3,6 +3,7 @@
     <attr name="textColor" format="reference"/>
     <attr name="infoTextColor" format="reference"/>
     <attr name="layout_bg_normal" format="reference"/>
+    <!-- 上下部菜单的下上 分割线 -->
     <attr name="lineColor" format="reference"/>
     <attr name="windows_bg" format="reference"/>
     <attr name="sliding_block_bg" format="reference"/>
@@ -18,5 +19,20 @@
     <attr name="quickoption_icon_voice_selector" format="reference"/>
     <attr name="quickoption_icon_scan_selector" format="reference"/>
     <attr name="quickoption_icon_note_selector" format="reference"/>
+    <!-- 标题栏色 也算是主题色调 -->
+    <attr name="title_bar_bg_color" format="reference"/>
+    
+    <!-- app常用背景色 -->
+    <attr name="app_bg_color" format="reference"/>
+    
+    <!-- app常用分隔线颜色 -->
+    <attr name="list_gray_line" format="reference"/>
+    
+    <!-- 文章列表 标题色 -->
+    <attr name="has_read_text_color" format="reference"/>
+    <attr name="not_read_text_color" format="reference"/>
+    
+    <!-- 图片列表 item 背景 -->
+	<attr name="img_item_bg" format="reference"/>
 
 </resources>

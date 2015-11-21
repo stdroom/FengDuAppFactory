@@ -5,19 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg" >
+    android:background="?attr/app_bg_color" >
     
-    <com.fengdu.widgets.PullToRefreshView 
-        android:id="@+id/pull_refresh_view"
+    <com.fengdu.widgets.pullview.PullToRefreshStaggeredGridView
+        android:id="@+id/pull_grid_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" >
-	    <com.fengdu.widgets.stragedview.StaggeredGridView
-	        android:id="@+id/image_grid"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-			app:column_count="2"
-	        app:item_margin="8dp">
-	    </com.fengdu.widgets.stragedview.StaggeredGridView>
-    </com.fengdu.widgets.PullToRefreshView>
+    </com.fengdu.widgets.pullview.PullToRefreshStaggeredGridView>
 </LinearLayout>

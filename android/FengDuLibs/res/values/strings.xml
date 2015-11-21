@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">FengDuLibs</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
@@ -25,6 +24,14 @@
     <string name="error_view_network_error_click_to_refresh">没有可用的网络</string>
     <string name="tip_network_error">没有可用的网络</string>
     
+    <string name="pull_to_refresh_pull_label">Pull to refresh…</string>
+    <string name="pull_to_refresh_release_label">Release to refresh…</string>
+    <string name="pull_to_refresh_refreshing_label">Loading…</string>
+
+    <!-- Just use standard Pull Down String when pulling up. These can be set for languages which require it -->
+    <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
+    <string name="pull_to_refresh_from_bottom_release_label">@string/pull_to_refresh_release_label</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
     
     <!-- 新版本 -->
     <string name="version_download_sd_str">无法下载安装文件，请检查SD卡是否挂载</string>
@@ -75,4 +82,7 @@
     <string name="favorite_btn_edit">编辑</string>
     <string name="favorite_btn_cancel">取消</string>
     <string name="dislike_dlg_lable_speech">读文章</string>
+    
+    <string name="switch_on"></string>
+    <string name="switch_off"></string>
 </resources>

@@ -29,7 +29,9 @@ public static boolean imgFlag = true;
 
 	
 	/** 正式版客户端文件根目录 */
-	public static final String officialRoot = "/specialfocus";
+	public static final String officialRoot = "/fengduman";
+	
+	public static final String sharedFile ="fengdu";
 	/**json文件保存地址*/
 	public static final String jsonPath = "/json/";
 	/** 图片文件地址 */

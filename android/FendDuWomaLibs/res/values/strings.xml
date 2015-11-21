@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">FendDuWomaLibs</string>
+    <string name="app_name">格调女人</string>
 
     <string name="main_tab_name_one">帅哥养眼</string>
-    <string name="main_tab_name_two">美女约会</string>
-    <string name="main_tab_name_three">女人养生</string>
-    <string name="main_tab_name_four">男人气质</string>
+    <string name="main_tab_name_two">美女搭配</string>
+    <string name="main_tab_name_three">美女养生</string>
+    <string name="main_tab_name_four">美女气质</string>
     <string name="main_tab_name_five">我</string>
+    
 </resources>

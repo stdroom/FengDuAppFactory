@@ -18,6 +18,8 @@
   	<color name="green">#009900</color>
     <color name="blue">#000099</color>
     
+    <color name="switchtextcolor">#FFFFFF</color>
+    
     <color name="record_title_1">#F7F7F7</color>
     <color name="record_title_2">#D2D2D2</color>
 
@@ -42,11 +44,7 @@
     <color name="app_divider_green_color">#27c5a4</color>
     <color name="app_divider_c8">#c8c8c8</color>
     <color name="app_divider_d7">#d7d7d7</color>
-    <color name="common_divider_color">#FFCCCCCC</color>
     
-    <!-- app常用区域背景色 -->
-    <color name="app_bg_color">#F4F4F4</color>
-    <color name="normal_background">#FFFdFEFF</color>
     
     <!-- app常用字体颜色 -->
     <color name="text_color_white">#ffffff</color>
@@ -100,9 +98,6 @@
     <item name="subscribe_item_normal_bg_night" type="color">@color/subscribe_item_focused_bg_night</item>
     <item name="subscribe_item_normal_stroke_night" type="color">@color/subscribe_item_focused_stroke_night</item>
     
-    
-    <color name="not_read_text_color">#003e73</color>
-    <color name="has_read_text_color">#8391a6</color>
     
     <color name="readed_tags_text_color">#b4b4b4</color>
     <color name="not_read_tags_text_color">#ff00ff</color>

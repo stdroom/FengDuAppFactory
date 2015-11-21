@@ -12,6 +12,7 @@
 
 package com.fengdu;
 
+import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -29,6 +30,16 @@ import com.mike.aframe.MKLog;
 public class BaseFragmentActivity extends FragmentActivity{
 	protected RelativeLayout mLoadingLayout;
 	protected RelativeLayout mNoNetLayout;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		if(BaseApplication.globalContext.getNightModeSwitch()){
+			setTheme(R.style.AppBaseTheme_Night);
+		}else{
+			setTheme(R.style.AppBaseTheme_Light);
+		}
+	}
 	
 	/**
 	 * 

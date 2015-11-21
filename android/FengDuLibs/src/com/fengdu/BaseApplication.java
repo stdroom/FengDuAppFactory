@@ -21,6 +21,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+import com.fengdu.android.AppConfig;
+import com.fengdu.android.AppConstant;
+import com.mike.aframe.utils.PreferenceHelper;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
@@ -123,6 +126,14 @@ public class BaseApplication extends Application{
 		if(data.exists())
 			exist = true;
 		return exist;
+	}
+	
+	public boolean getNightModeSwitch(){
+		return PreferenceHelper.readBoolean(this, AppConfig.sharedFile,AppConstant.KEY_NIGHT_MODE_SWITCH, false);
+	}
+
+	public void setNightModeSwitch(boolean flag){
+		PreferenceHelper.write(this, AppConfig.sharedFile, AppConstant.KEY_NIGHT_MODE_SWITCH, flag);
 	}
 	
 	public boolean isNetworkConnected(){

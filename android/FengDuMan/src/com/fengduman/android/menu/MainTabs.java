@@ -9,9 +9,7 @@
 
 package com.fengduman.android.menu;
 
-import com.fengdu.ui.fragment.FirstViewPagerFragment;
 import com.fengdu.ui.fragment.PhotosViewPagerFragment;
-import com.fengdu.ui.fragment.SecondViewPagerFragment;
 import com.fengduman.android.R;
 
 /**

@@ -16,7 +16,7 @@
         android:layout_toRightOf="@id/article_img"
         android:layout_alignTop="@id/article_img"
         android:layout_marginLeft="5dp"
-        android:textColor="@color/has_read_text_color"
+        android:textColor="?attr/has_read_text_color"
         android:textSize="18sp"
         android:text=""
         android:maxLines="2"

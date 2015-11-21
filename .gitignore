@@ -12,5 +12,16 @@
 /android/FengDuMan/bin
 /android/FengDuManLibs/gen
 /android/FengDuManLibs/bin
+<<<<<<< HEAD
 /android/library_SlidingMenu/gen
 /android/library_SlidingMenu/bin
+=======
+/android/FYes/gen
+/android/FYes/bin
+/android/FYesLibs/gen
+/android/FYesLibs/bin
+/android/ad_youmi/gen
+/android/ad_youmi/bin
+/android/ad_youmi/gen
+/android/ad_youmi/bin
+>>>>>>> d57d59ecf17a653549029cf0271bae4b6cc93995

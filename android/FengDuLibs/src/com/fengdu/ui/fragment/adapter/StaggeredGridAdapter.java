@@ -6,7 +6,7 @@ import java.util.Map;
 
 import com.fengdu.R;
 import com.fengdu.bean.ImageBean;
-import com.fengdu.widgets.stragedview.util.DynamicHeightImageView;
+import com.fengdu.widgets.strageview.DynamicHeightImageView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
