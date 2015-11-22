@@ -138,7 +138,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			public void onLoadmore() {
 				if(!isRequest){
 					pageSize = pageSize+1;
-					String url = urls+"&page="+pageSize+"&rows=20";
+					String url = urls+"&page="+pageSize+"&pageSize=20";
 					initData(url);
 				}else{
 				}
@@ -148,7 +148,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 
 			@Override
 			public void onRefresh(PullToRefreshBase<StaggeredGridView> refreshView) {
-				initData(urls+"&page="+1+"&rows=20");
+				initData(urls+"&page="+1+"&pageSize=20");
 			}
 		});
 		MKLog.d("PhotosViewPagerFragment", "onCreateView");
@@ -168,7 +168,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 		}else{
 			list = new ArrayList<ImageBean>();
 			pageSize = 1;
-			initData(urls+"&page="+pageSize+"&rows=20");
+			initData(urls+"&page="+pageSize+"&pageSize=20");
 		}
 	}
 	
@@ -196,15 +196,15 @@ public class PhotosViewPagerFragment extends BaseFragment{
 									bean.setDesc(json.getString("title"));
 									bean.setImage_height(json.getIntValue("height"));
 									bean.setImage_width(json.getIntValue("width"));
-									bean.setImage_url(json.getString("thumbnail"));
-									bean.setTotalNum(json.getIntValue("pagenum"));
-									String imgPaths = json.getString("imgpaths");
+									bean.setImage_url(json.getString("thumbNail"));
+									bean.setTotalNum(json.getIntValue("pageNum"));
+									String imgPaths = json.getString("imgPaths");
 									if(!"".equals(imgPaths)){
 										String[] img = imgPaths.split(";");
 										int length = img.length;
 										ArrayList<String> paths = new ArrayList<String>();
 										for(int j=0 ;j < length;j++){
-											String path = URLs.IMAGE_HOST+json.getString("cataid")+"/"+img[j];
+											String path = URLs.IMAGE_HOST+json.getString("cata_id")+"/"+img[j];
 											paths.add(path);
 										}
 										bean.setPagePaths(paths);

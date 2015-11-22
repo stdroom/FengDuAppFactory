@@ -6,11 +6,13 @@ import org.apache.http.impl.io.HttpResponseParser;
 
 import com.alibaba.fastjson.JSONObject;
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.toolbox.HttpHeaderParser;
+import com.fengdu.utils.StringCompress;
 import com.fengdu.volley.FastResponse.Listener;
 
 public class FastJSONRequest extends Request<JSONObject>{
@@ -51,6 +53,9 @@ public class FastJSONRequest extends Request<JSONObject>{
 	public FastJSONRequest(int method,String url,String executeMethod,String flag,boolean dialogFlag,Listener<JSONObject> listener,
 			ErrorListener errorListener) {
 		super(method, url, errorListener);
+		this.setRetryPolicy(new DefaultRetryPolicy(15000, 
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES, 
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 		this.listener = listener;
 		this.executeMethod = executeMethod;
 		this.flag = flag;
@@ -61,8 +66,10 @@ public class FastJSONRequest extends Request<JSONObject>{
 	protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
 		JSONObject json = null;
 		try{
-			json = JSONObject.parseObject(
-					new String(response.data,HttpHeaderParser.parseCharset(response.headers)));
+			String str = new String(response.data,HttpHeaderParser.parseCharset(response.headers));
+			String rep = StringCompress.uncompress(str);
+			System.out.println(rep);
+			json = JSONObject.parseObject(rep);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
