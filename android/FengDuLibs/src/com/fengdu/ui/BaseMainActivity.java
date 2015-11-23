@@ -9,28 +9,21 @@
 
 package com.fengdu.ui;
 
-import com.fengdu.BaseApplication;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
-import com.fengdu.android.URLs;
 import com.fengdu.ui.menu.MyFragmentTabHost;
 import com.fengdu.ui.slide.DrawerView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.umeng.analytics.MobclickAgent;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ImageView;
-import android.widget.TabHost.TabContentFactory;
-import android.widget.TabHost.TabSpec;
 import net.youmi.android.spot.SpotManager;
 
 /**
