@@ -14,6 +14,9 @@
 package com.fengdu.android;
 public class AppConstant {
 	
+	/** 后台注册的appid */
+	public static final int APPID = 102601;
+	
 	public static final String UPYUN = "http://xmpigai.b0.upaiyun.com";
 	public static final String SHARE_ICON = "http://xmpigai.b0.upaiyun.com/test/img/enjoyread.png";
 	

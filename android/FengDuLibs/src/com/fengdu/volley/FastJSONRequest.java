@@ -1,5 +1,6 @@
 package com.fengdu.volley;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.http.impl.io.HttpResponseParser;
@@ -20,6 +21,7 @@ public class FastJSONRequest extends Request<JSONObject>{
 	private String executeMethod = "";
 	private String flag = "";
 	private boolean dialogFlag = true;
+	private HashMap<String,String> headers;
 	
 	/**
 	 * 默认GET方法
@@ -81,14 +83,14 @@ public class FastJSONRequest extends Request<JSONObject>{
 		listener.onResponse(response,executeMethod,flag,dialogFlag);
 	}
 
-//	@Override
-//	public Map<String, String> getHeaders() throws AuthFailureError {
-//		return this.headers;
-//	}
-//
-//	public void setHaders(Map<String, String> params) {
-//		this.headers = params;
-//	}
+	@Override
+	public Map<String, String> getHeaders() throws AuthFailureError {
+		return this.headers;
+	}
+
+	public void setHaders(HashMap<String, String> params) {
+		this.headers = params;
+	}
 	
 	
 

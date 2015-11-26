@@ -28,6 +28,7 @@ public class VolleyManager {
 	public void beginSubmitRequest(RequestQueue queue,FastJSONRequest request){
 		if (BaseApplication.globalContext != null){
 			if (BaseApplication.globalContext.isNetworkConnected()){
+				request.setHaders(BaseApplication.globalContext.getHeaders());
 				queue.add(request);
 			} else {
 				MKLog.e(getClass().getName(), "the net work is broken");

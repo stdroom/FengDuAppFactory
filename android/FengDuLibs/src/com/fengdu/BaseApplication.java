@@ -16,13 +16,16 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InvalidClassException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.HashMap;
 
 import com.fengdu.android.AppConfig;
 import com.fengdu.android.AppConstant;
+import com.fengdu.android.URLs;
 import com.mike.aframe.utils.PreferenceHelper;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -43,6 +46,8 @@ import android.net.NetworkInfo;
 public class BaseApplication extends Application{
 	/** 全局上下文 */
 	public static BaseApplication globalContext;
+	
+	private HashMap<String,String> headers;
 	@Override
 	public void onCreate() {
 		super.onCreate();
@@ -50,6 +55,13 @@ public class BaseApplication extends Application{
 		initImageLoader(this);
 	}
 	
+	public HashMap<String,String> getHeaders(){
+		if(headers == null){
+			headers = new HashMap<String,String>();
+			headers.put("appid", AppConstant.APPID+"");
+		}
+		return headers;
+	}
 	
 
 	/**

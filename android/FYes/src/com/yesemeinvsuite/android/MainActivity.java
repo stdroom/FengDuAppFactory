@@ -41,13 +41,13 @@ public class MainActivity extends BaseSecondMainActivity{
 			Bundle bundle = null;
 			switch(i){
 			case 1:
-				bundle = getBundle("?cataid=1103");
+				bundle = getBundle("?cataid=1");
 				break;
 			case 2:
-				bundle = getBundle("?cataid=1104");
+				bundle = getBundle("?cataid=1");
 				break;
 			case 3:
-				bundle = getBundle("?cataid=1105");
+				bundle = getBundle("?cataid=2");
 				break;
 			case 4:
 				bundle = getBundle("?cataid=1107");
