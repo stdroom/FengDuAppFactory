@@ -39,6 +39,7 @@ public class BaseFragmentActivity extends FragmentActivity{
 		}else{
 			setTheme(R.style.AppBaseTheme_Light);
 		}
+		BaseApplication.globalContext.cleanHeaders();
 	}
 	
 	/**

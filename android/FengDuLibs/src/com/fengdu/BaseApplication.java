@@ -27,6 +27,7 @@ import com.fengdu.android.AppConfig;
 import com.fengdu.android.AppConstant;
 import com.fengdu.android.URLs;
 import com.mike.aframe.utils.PreferenceHelper;
+import com.mike.aframe.utils.SystemTool;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
@@ -59,10 +60,19 @@ public class BaseApplication extends Application{
 		if(headers == null){
 			headers = new HashMap<String,String>();
 			headers.put("appid", AppConstant.APPID+"");
+			headers.put("osversion", android.os.Build.VERSION.RELEASE+"");
+			headers.put("client_type", "android");
+			headers.put("imei",SystemTool.getPhoneIMEI(this)); //手机序列号
+			headers.put("lang",SystemTool.getLang(this)); //手机语言
+			headers.put("phone_type", android.os.Build.MODEL);	// 手机型号
+			headers.put("timestamp", SystemTool.getTimeStamp()+""); //时间戳　可用于判断是否是同一次启动
 		}
 		return headers;
 	}
 	
+	public void cleanHeaders(){
+		headers = null;
+	}
 
 	/**
 	 * 保存对象
