@@ -11,14 +11,17 @@ package com.fengdu.ui;
 
 import java.util.ArrayList;
 
+import com.fengdu.BaseApplication;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
+import com.fengdu.ui.activity.SearchActivity;
 import com.fengdu.ui.adapter.MyFragmentAdapter;
 import com.fengdu.ui.slide.DrawerView;
 import com.fengdu.utils.UpdateManager;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.umeng.analytics.MobclickAgent;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -66,6 +69,7 @@ public abstract class BaseSecondMainActivity extends BaseFragmentActivity implem
 	
 	SlidingMenu side_drawer;
 	ImageView mTopHead;
+	ImageView mTopMore;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -96,6 +100,7 @@ public abstract class BaseSecondMainActivity extends BaseFragmentActivity implem
 		mFragmentViewPager.setAdapter(mFragmentPagerAdapter);
 		mFragmentViewPager.setOnPageChangeListener(this);
 		mTopHead = (ImageView)findViewById(R.id.top_head);
+		mTopMore = (ImageView)findViewById(R.id.top_more);
 		//左滑
 		mTopHead.setOnClickListener(new OnClickListener() {
 				
@@ -109,6 +114,14 @@ public abstract class BaseSecondMainActivity extends BaseFragmentActivity implem
 					}
 				}
 			});
+		mTopMore.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(BaseSecondMainActivity.this,SearchActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 
 	private void initMenu(){

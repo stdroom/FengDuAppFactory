@@ -33,5 +33,6 @@ public class URLs {
 	
 	public static final String URL_GET_IMAGE = MY_HOST + "/web/image/getImage";
 	
+	public static final String URL_SEARCH_IMAGE = MY_HOST + "/web/image/searchImage";
 }
 

@@ -35,6 +35,9 @@
         <activity
             android:name="com.fengdu.ui.activity.PictureItemActivity"/>
         
+        <activity
+            android:name="com.fengdu.ui.activity.SearchActivity"/>
+        
         <!-- 有米ad start-->
         <activity
 		    android:name="net.youmi.android.AdBrowser"

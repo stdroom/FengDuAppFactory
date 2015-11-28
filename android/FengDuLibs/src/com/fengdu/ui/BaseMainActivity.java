@@ -9,6 +9,7 @@
 
 package com.fengdu.ui;
 
+import com.fengdu.BaseApplication;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
 import com.fengdu.ui.menu.MyFragmentTabHost;

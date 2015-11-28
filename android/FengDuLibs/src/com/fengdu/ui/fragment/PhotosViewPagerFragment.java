@@ -254,5 +254,13 @@ public class PhotosViewPagerFragment extends BaseFragment{
 		}
 		
 	};
+	
+	public void refreshData(String urls){
+		// 1 初始化数据
+		this.urls = urls;
+		list = new ArrayList<ImageBean>();
+		pageSize = 1;
+		initData(urls+"&page="+pageSize+"&pageSize=20");
+	}
 }
 
