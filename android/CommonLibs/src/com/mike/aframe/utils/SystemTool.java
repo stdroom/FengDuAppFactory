@@ -92,6 +92,13 @@ public final class SystemTool {
     	String sd = sdf.format(new Date(stamp));  
     	return sd;
     }
+    public static String getTimFromStamps(long stamp){
+    	
+    	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+    	
+    	String sd = sdf.format(new Date(stamp));  
+    	return sd;
+    }
     
     /**
      * 获取系统语言	yyb特制返回参数

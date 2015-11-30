@@ -96,7 +96,7 @@ public abstract class BaseSecondMainActivity extends BaseFragmentActivity implem
 		mFragmentViewPager = (ViewPager)findViewById(R.id.fragment_viewpager);
 		mFragmentPagerAdapter = new MyFragmentAdapter(
 				getSupportFragmentManager());
-		mFragmentViewPager.setOffscreenPageLimit(1);
+		mFragmentViewPager.setOffscreenPageLimit(4);
 		mFragmentViewPager.setAdapter(mFragmentPagerAdapter);
 		mFragmentViewPager.setOnPageChangeListener(this);
 		mTopHead = (ImageView)findViewById(R.id.top_head);

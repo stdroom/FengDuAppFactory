@@ -44,13 +44,13 @@ public class MainActivity extends BaseSecondMainActivity{
 				bundle = getBundle("?cataid=1");
 				break;
 			case 2:
-				bundle = getBundle("?cataid=1");
-				break;
-			case 3:
 				bundle = getBundle("?cataid=2");
 				break;
-			case 4:
+			case 3:
 				bundle = getBundle("?cataid=3");
+				break;
+			case 4:
+				bundle = getBundle("?cataid=4");
 				break;
 				default:
 					bundle = getBundle("?cataid=1103");

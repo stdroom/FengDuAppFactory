@@ -54,6 +54,7 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 		imgAdapter = new ImageAdapter(bean.getPagePaths(),this);
 		viewPager.setAdapter(imgAdapter);
 		totalSize = bean.getPagePaths().size();
+		viewPager.setOffscreenPageLimit(totalSize);
 		titleTv.setText(bean.getDesc());
 		viewPager.setOnPageChangeListener(this);
 	}

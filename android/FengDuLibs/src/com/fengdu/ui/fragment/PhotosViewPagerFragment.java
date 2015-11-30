@@ -10,10 +10,6 @@
 package com.fengdu.ui.fragment;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -24,22 +20,12 @@ import com.android.volley.toolbox.Volley;
 import com.fengdu.BaseFragment;
 import com.fengdu.R;
 import com.fengdu.android.URLs;
-import com.fengdu.bean.ArticleItemBean;
 import com.fengdu.bean.ImageBean;
-import com.fengdu.bean.PagesInfo;
-import com.fengdu.bean.UpdateBean;
-import com.fengdu.parse.ArticleItemListParse;
-import com.fengdu.parse.ArticleItemPagesParse;
 import com.fengdu.ui.activity.PictureItemActivity;
-import com.fengdu.ui.fragment.adapter.ArticleListAdapter;
 import com.fengdu.ui.fragment.adapter.StaggeredGridAdapter;
-import com.fengdu.utils.ExcutorServiceUtils;
-import com.fengdu.utils.ImageLoadAsyncTask;
 import com.fengdu.volley.FastJSONRequest;
 import com.fengdu.volley.VolleyManager;
 import com.fengdu.volley.FastResponse.Listener;
-import com.fengdu.widgets.PullToRefreshView;
-import com.fengdu.widgets.PullToRefreshView.OnFooterRefreshListener;
 import com.fengdu.widgets.pullview.PullToRefreshBase;
 import com.fengdu.widgets.pullview.PullToRefreshBase.OnRefreshListener;
 import com.fengdu.widgets.pullview.PullToRefreshStaggeredGridView;
@@ -47,9 +33,9 @@ import com.fengdu.widgets.strageview.StaggeredGridView;
 import com.fengdu.widgets.strageview.StaggeredGridView.OnItemClickListener;
 import com.fengdu.widgets.strageview.StaggeredGridView.OnLoadmoreListener;
 import com.mike.aframe.MKLog;
+import com.mike.aframe.utils.SystemTool;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -57,10 +43,8 @@ import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * 类名: PhotosViewPagerFragment <br/>
@@ -116,6 +100,16 @@ public class PhotosViewPagerFragment extends BaseFragment{
 		if(view == null){
 			view = inflater.inflate(R.layout.staggered_grid, container,false);
 		}
+		mLoadingLayout = (RelativeLayout)view.findViewById(R.id.layout_loading_bar);
+		mNoNetLayout = (RelativeLayout)view.findViewById(R.id.layout_refresh_onclick);
+		mNoNetLayout.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				pageSize = 1;
+				initData(urls+"&page="+pageSize+"&pageSize=20");
+			}
+		});
 		mGridView = (PullToRefreshStaggeredGridView) view.findViewById(R.id.pull_grid_view);
 		mGridView.setMode(PullToRefreshBase.Mode.PULL_FROM_START);
         View footerView;
@@ -163,7 +157,6 @@ public class PhotosViewPagerFragment extends BaseFragment{
 	
 	public void lazyLoad(){
 		if(mAdapter!=null && mAdapter.getCount()>0 && list!=null && list.size()>0){
-			mGridView.setAdapter(mAdapter);
 			return;
 		}else{
 			list = new ArrayList<ImageBean>();
@@ -175,6 +168,11 @@ public class PhotosViewPagerFragment extends BaseFragment{
 	public void initData(final String urls){
 		if(!isRequest){
 			isRequest = true;
+			if(list==null || list.size()==0){
+				setLoadingVisible(true);
+				setNoNetVisible(false);
+				mGridView.setVisibility(View.GONE);
+			}
 			VolleyManager.getInstance().beginSubmitRequest(
 					mQueue, 
 					new FastJSONRequest(urls, "", new Listener<JSONObject>() {
@@ -200,6 +198,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 									bean.setTotalNum(json.getIntValue("pageNum"));
 									String imgPaths = json.getString("imgPaths");
 									
+									bean.setUpdatedTime(SystemTool.getTimFromStamps(json.getLong("updateed_at"))+"");
 									if(!"".equals(imgPaths)){
 										String[] img = imgPaths.split(";");
 										int length = img.length;
@@ -207,7 +206,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 										for(int j=0 ;j < length;j++){
 											String path = URLs.IMAGE_HOST+json.getString("cata_id")+"/"+img[j];
 											paths.add(path);
-										}
+										}	
 										bean.setPagePaths(paths);
 									}else{
 										
@@ -255,6 +254,9 @@ public class PhotosViewPagerFragment extends BaseFragment{
 					mAdapter.notifyDataSetChanged();
 					mGridView.getRefreshableView().showFooterView();
 					mGridView.onRefreshComplete();
+					mGridView.setVisibility(View.VISIBLE);
+					setNoNetVisible(false);
+					setLoadingVisible(false);
 					//图片路径的list
 				}else{
 //					new ImageLoadAsyncTask(getActivity()).execute();
@@ -262,6 +264,11 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			}else if(msg.what==0x111){// 请求正常无数据	
 				
 			}else if(msg.what==0x112){// 请求失败
+				if(list== null || list.size()==0){
+					setNoNetVisible(true);
+					mGridView.setVisibility(View.GONE);
+					setLoadingVisible(false);
+				}
 				mGridView.getRefreshableView().showFooterView();
 				mGridView.onRefreshComplete();
 			}

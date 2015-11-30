@@ -32,6 +32,7 @@ public class ImageBean implements Serializable{
 	float thumbnail_width = 0;
 	float thumbnail_height = 0;
 	int totalNum = 0;
+	String updatedTime= "";
 	
 	ArrayList<String> pagePaths;
 	
@@ -89,6 +90,13 @@ public class ImageBean implements Serializable{
 	public void setPagePaths(ArrayList<String> pagePaths) {
 		this.pagePaths = pagePaths;
 	}
+	public String getUpdatedTime() {
+		return updatedTime;
+	}
+	public void setUpdatedTime(String updatedTime) {
+		this.updatedTime = updatedTime;
+	}
+	
 	
 }
 

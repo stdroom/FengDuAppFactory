@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-
      <!-- 下拉刷新  end -->
     <string name="drop_down_list_header_default_text">Click to refresh&#8230;</string>
     <string name="drop_down_list_header_pull_text">Drop Down to refresh&#8230;</string>
