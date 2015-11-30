@@ -199,6 +199,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 									bean.setImage_url(json.getString("thumbNail"));
 									bean.setTotalNum(json.getIntValue("pageNum"));
 									String imgPaths = json.getString("imgPaths");
+									
 									if(!"".equals(imgPaths)){
 										String[] img = imgPaths.split(";");
 										int length = img.length;
@@ -208,6 +209,19 @@ public class PhotosViewPagerFragment extends BaseFragment{
 											paths.add(path);
 										}
 										bean.setPagePaths(paths);
+									}else{
+										
+										imgPaths = json.getString("srcImgpaths");
+										if(!"".equals(imgPaths)){
+											String[] img = imgPaths.split(";");
+											int length = img.length;
+											ArrayList<String> paths = new ArrayList<String>();
+											for(int j=0 ;j < length;j++){
+												String path = img[j];
+												paths.add(path);
+											}
+											bean.setPagePaths(paths);
+										}
 									}
 									list.add(bean);
 								}

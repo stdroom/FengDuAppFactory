@@ -89,5 +89,6 @@ public class ImageBean implements Serializable{
 	public void setPagePaths(ArrayList<String> pagePaths) {
 		this.pagePaths = pagePaths;
 	}
+	
 }
 
