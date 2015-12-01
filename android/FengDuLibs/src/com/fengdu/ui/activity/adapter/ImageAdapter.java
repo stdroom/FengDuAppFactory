@@ -14,14 +14,19 @@ import java.util.List;
 
 import com.fengdu.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 import uk.co.senab.photoview.PhotoView;
 
 /**
@@ -58,8 +63,30 @@ public class ImageAdapter extends PagerAdapter{
 		View imageLayout = inflater.inflate(R.layout.viewpager_item, view, false);
 		assert imageLayout != null;
 		PhotoView imageView = (PhotoView) imageLayout.findViewById(R.id.photoView);
-
-		ImageLoader.getInstance().displayImage(list.get(position), imageView);
+		final TextView tv = (TextView)imageLayout.findViewById(R.id.ratio);
+		ImageLoader.getInstance().displayImage(list.get(position), imageView,
+				new ImageLoadingListener() {
+			
+			@Override
+			public void onLoadingStarted(String imageUri, View view) {
+				((ImageView)view).setImageResource(R.drawable.meizi_default);
+			}
+			
+			@Override
+			public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+				((ImageView)view).setImageResource(R.drawable.loading_fail);
+			}
+			
+			@Override
+			public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+				tv.setText(loadedImage.getWidth()+"x"+loadedImage.getHeight());
+			}
+			
+			@Override
+			public void onLoadingCancelled(String imageUri, View view) {
+				
+			}
+		});
 		view.addView(imageLayout, 0);
 		return imageLayout;
 	}
