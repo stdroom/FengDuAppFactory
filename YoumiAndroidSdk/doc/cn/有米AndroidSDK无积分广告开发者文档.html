@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>有米 Android 无积分开发者文档 &mdash; Youmi Android SDK Document 5.3.3 文档</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/youmi.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Youmi Android SDK Document 5.3.3 文档" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/logo.png">
+          有米广告 Android SDK 文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>v5.3.3</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="有米AndroidSDK积分管理及相关功能.html">积分管理及相关功能</a></li>
+                <li><a href="有米AndroidSDK实用工具.html">实用工具</a></li>
+                <li><a href="有米AndroidSDK常见问题.html">常见问题</a></li>
+                <li><a href="changelog.html">更新说明</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">有米 Android 无积分开发者文档</a><ul>
+<li><a class="reference internal" href="#android-sdk">一、有米 Android SDK 通用基本配置</a></li>
+<li><a class="reference internal" href="#id2">二、配置无积分广告组件</a></li>
+<li><a class="reference internal" href="#id3">三、无积分广告调用（重要）</a><ul>
+<li><a class="reference internal" href="#id4">1、插屏广告调用</a></li>
+<li><a class="reference internal" href="#chap-no-cn-2-2">2、广告条调用</a></li>
+<li><a class="reference internal" href="#id18">3、开屏广告</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sdk">四、SDK 实用工具（可选）</a><ul>
+<li><a class="reference internal" href="#id24">1、检查更新</a></li>
+<li><a class="reference internal" href="#id26">2、在线配置</a></li>
+<li><a class="reference internal" href="#id27">3、关闭有米 Debug Log</a></li>
+<li><a class="reference internal" href="#id29">4、通知栏提示配置开关</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id31">五、SDK 常见问题</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="android">
+<h1>有米 Android 无积分开发者文档<a class="headerlink" href="#android" title="永久链接至标题">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">小技巧</p>
+<p>欢迎您使用有米广告SDK，为了保证能正常接收有米的广告，保障各位开发者的收益，请您严格按照SDK里doc文件夹下的文档步骤来嵌入SDK ，或按照SDK里的demo源码来嵌入。</p>
+<p>以下注意事项，请仔细阅读：</p>
+<ol class="last arabic simple">
+<li>在有米后台创建应用获取发布ID和应用密钥时，请注意区分好Android和iOS平台，不能弄错平台。</li>
+<li>一对ID和应用密钥只能用在一个应用内，不能重复用在多个应用内，否者会拿不到正式广告。</li>
+<li>嵌入完sdk，可以拿到测试广告，测试没问题，需上传应用给有米审核，审核通过后才能拿到正式广告，正式广告才能产生收益。</li>
+<li>有米广告不支持模拟器，测试广告时请用真机来测试，另外，Android广告不支持Android平板，需要用手机来测试Android广告。</li>
+</ol>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">警告</p>
+<p class="last"><code class="docutils literal"><span class="pre">重要声明</span></code> ：请开发者严格按照本文档进行插屏广告SDK的嵌入。若发现有开发者因私自改动设置或代码，而导致广告展示异常并严重影响广告质量来非法获取广告收入的行为，有米将保留彻查、甚至不予结算、终止合作的权利。</p>
+</div>
+<div class="section" id="android-sdk">
+<h2>一、有米 Android SDK 通用基本配置<a class="headerlink" href="#android-sdk" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<p>在进行无积分的集成之前，请确保已经按照 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html">有米 Android SDK 通用基本配置文档</a> 进行通用配置。</p>
+</div>
+<div class="section" id="id2">
+<h2>二、配置无积分广告组件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<p>请将以下配置代码复制到 <code class="docutils literal"><span class="pre">AndroidManifest.xml</span></code> 文件中:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;activity</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdBrowser&quot;</span>
+    <span class="na">android:configChanges=</span><span class="s">&quot;keyboard|keyboardHidden|orientation|screenSize&quot;</span>
+    <span class="na">android:theme=</span><span class="s">&quot;@android:style/Theme.Light.NoTitleBar&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+<span class="nt">&lt;service</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdService&quot;</span>
+    <span class="na">android:exported=</span><span class="s">&quot;false&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+<span class="nt">&lt;receiver</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdReceiver&quot;</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.PACKAGE_ADDED&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;package&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/receiver&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>三、无积分广告调用（重要）<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>1、插屏广告调用<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id5">
+<h4>1.1 预加载插屏广告数据<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h4>
+<p>预加载广告数据，在应用启动初始化的时候调用，SDK 将会以异步方式预加载3～5条广告数据到本地缓存，当调用展示插屏接口时候便能立即展示广告。</p>
+<p>如果不先加载数据，调用展示插屏接口的时候，会等待广告数据加载成功再进行展示，会造成一定延时。</p>
+<p>启动初始化时调用：</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">loadSpotAds</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>1.2 设置插屏横竖屏展示与展示动画设置<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
+<div class="line-block">
+<div class="line">如果插屏广告设置了横屏模式，则当广告有横屏图片数据时，会使用横屏广告图片数据。</div>
+<div class="line">竖屏的值为 <code class="docutils literal"><span class="pre">SpotManager.ORIENTATION_PORTRAIT</span></code></div>
+<div class="line">横屏的值为 <code class="docutils literal"><span class="pre">SpotManager.ORIENTATION_LANDSCAPE</span></code></div>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">setSpotOrientation</span><span class="o">(</span>
+            <span class="n">SpotManager</span><span class="o">.</span><span class="na">ORIENTATION_LANDSCAPE</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="first admonition-title">注意</p>
+<p class="last">如果横屏广告资源还没齐全。设置成横屏模式可能会依然使用竖屏广告，在广告之后补充后，会逐渐变成横屏广告数据</p>
+</div>
+<p>插屏出现动画效果</p>
+<div class="line-block">
+<div class="line">0: <code class="docutils literal"><span class="pre">ANIM_NONE</span></code> 为无动画</div>
+<div class="line">1: <code class="docutils literal"><span class="pre">ANIM_SIMPLE</span></code> 为简单动画效果</div>
+<div class="line">2: <code class="docutils literal"><span class="pre">ANIM_ADVANCE</span></code> 为高级动画效果</div>
+</div>
+<p>默认值为2.插屏动画效果不在4.0以下系统起作用</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">setAnimationType</span><span class="o">(</span><span class="n">SpotManager</span><span class="o">.</span><span class="na">ANIM_ADVANCE</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h4>1.3 展示插屏广告<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">showSpotAds</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">小技巧</p>
+<p class="last">展示插屏广告，一般可以在应用启动或者游戏通关等场景中调用。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h4>1.4 插屏监听接口（可选）<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
+<p>SDK 提供给有需要的开发者使用插屏监听接口，用于监听插屏的状态</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">showSpotAds</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="k">new</span> <span class="n">SpotDialogListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onShowSuccess</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;Youmi&quot;</span><span class="o">,</span> <span class="s">&quot;onShowSuccess&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onShowFailed</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;Youmi&quot;</span><span class="o">,</span> <span class="s">&quot;onShowFailed&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSpotClosed</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;sdkDemo&quot;</span><span class="o">,</span> <span class="s">&quot;closed&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSpotClick</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">isWebPath</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;YoumiAdDemo&quot;</span><span class="o">,</span> <span class="s">&quot;插屏点击&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h4>1.5 插屏退出<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h4>
+<p>SDK 提供插屏外部退出函数，可设置点击“后退键”或“Home键”关闭插屏,但调用后退键退出广告展示3秒内调用无效。</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBackPressed</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="c1">// 如果有需要，可以点击后退关闭插播广告。</span>
+    <span class="k">if</span> <span class="o">(!</span><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">disMiss</span><span class="o">())</span> <span class="o">{</span>
+        <span class="c1">// 弹出退出窗口，可以使用自定义退屏弹出和回退动画,参照demo,若不使用动画，传入-1</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onBackPressed</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="nd">@Override</span>
+
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">onDestroy</span><span class="o">();</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">onDestroy</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h4>1.6 插屏流程错误检查<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h4>
+<p>如果插屏嵌入出现问题，请去除其他插屏调用函数和初始化后调用以下方法，在清除APP缓存数据后启动APP。并根据logcat中tag为Youmisdk和SDKChecking的
+信息找出问题，如果不能解决，请将日志信息反馈给我们帮助找出问题。此方法为调试方位，请不要在正式使用时调用该函数。</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">checkSDKProcess</span><span class="o">(</span><span class="n">String</span> <span class="n">appId</span><span class="o">,</span> <span class="n">String</span> <span class="n">appSecret</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="chap-no-cn-2-2">
+<span id="id11"></span><h3>2、广告条调用<a class="headerlink" href="#chap-no-cn-2-2" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id12">
+<h4>2.1 广告条尺寸<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
+<p>AdSize 提供了五种广告条尺寸提供给开发者使用：</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="o">*</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">FIT_SCREEN</span>    <span class="c1">// 自适应屏幕宽度</span>
+<span class="o">*</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">SIZE_320x50</span>   <span class="c1">// 手机</span>
+<span class="o">*</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">SIZE_300x250</span>  <span class="c1">// 手机，平板</span>
+<span class="o">*</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">SIZE_468x60</span>   <span class="c1">// 平板</span>
+<span class="o">*</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">SIZE_728x90</span>   <span class="c1">// 平板</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h4>2.2 嵌入广告条<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h4>
+<div class="section" id="id14">
+<h5>2.2.1 普通布局（适用于应用）<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h5>
+<div class="section" id="id15">
+<h6>1) 配置布局文件<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h6>
+<p>复制以下代码到要展示广告的 Activity 的 layout 文件中，并且放在合适的位置：</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;LinearLayout</span>
+    <span class="na">android:id=</span><span class="s">&quot;@+id/adLayout&quot;</span>
+    <span class="na">android:layout_width=</span><span class="s">&quot;fill_parent&quot;</span>
+    <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+    <span class="na">android:gravity=</span><span class="s">&quot;center_horizontal&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adview">
+<h6>2) 将 AdView 加入布局<a class="headerlink" href="#adview" title="永久链接至标题">¶</a></h6>
+<p>在展示广告的 Activity 类中，添加如下代码：</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="c1">// 实例化广告条</span>
+<span class="n">AdView</span> <span class="n">adView</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AdView</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">FIT_SCREEN</span><span class="o">);</span>
+
+<span class="c1">// 获取要嵌入广告条的布局</span>
+<span class="n">LinearLayout</span> <span class="n">adLayout</span><span class="o">=(</span><span class="n">LinearLayout</span><span class="o">)</span><span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">adLayout</span><span class="o">);</span>
+
+<span class="c1">// 将广告条加入到布局中</span>
+<span class="n">adLayout</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">adView</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id16">
+<h5>2.2.2 悬浮布局（适用于游戏）<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h5>
+<p>在展示广告的 Activity 的 onCreate 中，添加如下代码：</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="c1">// 实例化 LayoutParams（重要）</span>
+<span class="n">FrameLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">layoutParams</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FrameLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">(</span> <span class="n">FrameLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">FILL_PARENT</span><span class="o">,</span>
+    <span class="n">FrameLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">WRAP_CONTENT</span><span class="o">);</span>
+
+<span class="c1">// 设置广告条的悬浮位置</span>
+<span class="n">layoutParams</span><span class="o">.</span><span class="na">gravity</span> <span class="o">=</span> <span class="n">Gravity</span><span class="o">.</span><span class="na">BOTTOM</span> <span class="o">|</span> <span class="n">Gravity</span><span class="o">.</span><span class="na">RIGHT</span><span class="o">;</span> <span class="c1">// 这里示例为右下角</span>
+
+<span class="c1">// 实例化广告条</span>
+<span class="n">AdView</span> <span class="n">adView</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AdView</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">FIT_SCREEN</span><span class="o">);</span>
+
+    <span class="c1">// 调用 Activity 的 addContentView 函数</span>
+<span class="k">this</span><span class="o">.</span><span class="na">addContentView</span><span class="o">(</span><span class="n">adView</span><span class="o">,</span> <span class="n">layoutParams</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h4>2.3 广告条监听接口（可选）<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h4>
+<p>SDK 提供给有需要的开发者使用广告条监听接口，用于监听广告条的状态</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">adView</span><span class="o">.</span><span class="na">setAdListener</span><span class="o">(</span><span class="k">new</span> <span class="n">AdViewListener</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSwitchedAd</span><span class="o">(</span><span class="n">AdView</span> <span class="n">adView</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 切换广告并展示</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceivedAd</span><span class="o">(</span><span class="n">AdView</span> <span class="n">adView</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 请求广告成功</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFailedToReceivedAd</span><span class="o">(</span><span class="n">AdView</span> <span class="n">adView</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 请求广告失败</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id18">
+<h3>3、开屏广告<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<p>开屏广告为应用开启时进入主页面的过度页面广告。用户通过点击关闭按钮和等待5秒后关闭开屏广告并进入到APP/游戏主界面。开屏需要在上一次启动时加载，
+所以会造成第一次开启时没有开屏的情况。</p>
+<div class="section" id="id19">
+<h4>3.1 开屏加载<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h4>
+<p>如果已经使用了插屏，则不需要再调用开屏的加载。假如只使用开屏，请加入开屏数据加载函数。</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">loadSplashSpotAds</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id20">
+<h4>3.2 开屏广告简单调用<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h4>
+<p>如果APP/游戏只需要简单的在开启前展示开屏，则使用简单开屏调用方式即可</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">showSplashSpotAds</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="first admonition-title">注意</p>
+<ul class="last simple">
+<li>为了更好的展示开屏，请使用在开屏所在Activity设置竖屏展示，开屏暂时不支持横屏展示。</li>
+<li>游戏设置全屏无标题展示插屏效果更好</li>
+<li>此提示适用于下一条</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id21">
+<h4>3.3 开屏广告自定义场景使用。<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h4>
+<p>某些APP本身有自身的开启过度画面和数据加载画面，可以将开屏作为控件加入到原来的开启画面中。使用得当，可以实现网易新闻等一些应用的开屏效果，请参考demo中的实现方法。</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SplashView</span> <span class="n">splashView</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SplashView</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">YoumiNormalAdsDemo</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+<span class="c1">//开屏也可以作为控件加入到界面中。</span>
+<span class="n">setContentView</span><span class="o">(</span><span class="n">splashView</span><span class="o">.</span><span class="na">getSplashView</span><span class="o">());</span>
+
+<span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">showSplashSpotAds</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">splashView</span><span class="o">,</span>
+        <span class="k">new</span> <span class="n">SpotDialogListener</span><span class="o">()</span> <span class="o">{</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onShowSuccess</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;YoumiAdDemo&quot;</span><span class="o">,</span> <span class="s">&quot;开屏展示成功&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onShowFailed</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;YoumiAdDemo&quot;</span><span class="o">,</span> <span class="s">&quot;开屏展示失败。&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSpotClosed</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;YoumiAdDemo&quot;</span><span class="o">,</span> <span class="s">&quot;开屏关闭。&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSpotClick</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">isWebPath</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;YoumiAdDemo&quot;</span><span class="o">,</span> <span class="s">&quot;插屏点击&quot;</span><span class="o">);</span>
+                <span class="o">}</span>
+        <span class="o">});</span>
+</pre></div>
+</div>
+<div class="section" id="id22">
+<h5>自定义开屏的选项<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h5>
+<p>设置是否显示倒计时，默认显示</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">splashView</span><span class="o">.</span><span class="na">setShowReciprocal</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>设置是否显示关闭按钮，默认为不显示</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">splashView</span><span class="o">.</span><span class="na">hideCloseBtn</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>传入跳转的intent，若传入intent，初始化时目标activity传入null</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="n">splashView</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>展示失败后是否直接跳转，默认为是</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">splashView</span><span class="o">.</span><span class="na">setIsJumpTargetWhenFail</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sdk">
+<h2>四、SDK 实用工具（可选）<a class="headerlink" href="#sdk" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id24">
+<h3>1、<a class="reference external" href="有米AndroidSDK实用工具.html#chap-1">检查更新</a><a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id26">
+<h3>2、<a class="reference external" href="有米AndroidSDK实用工具.html#chap-2">在线配置</a><a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id27">
+<h3>3、<a class="reference external" href="有米AndroidSDK实用工具.html#chap-3">关闭有米 Debug Log</a><a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id29">
+<h3>4、<a class="reference external" href="有米AndroidSDK实用工具.html#chap-4">通知栏提示配置开关</a><a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h3>
+</div>
+</div>
+<div class="section" id="id31">
+<h2>五、<a class="reference external" href="有米AndroidSDK常见问题.html">SDK 常见问题</a><a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-right"><a href="#">返回顶端</a></p>
+            <p>© Copyright 2015, Youmi.net</p>
+        </div>
+    </footer>
+    <script>
+        $("#dLabelLocalToc").html('导航 <b class="caret"></b>');
+        $(".admonition-title").html('注意：');
+    </script>
+
+  </body>
+</html>

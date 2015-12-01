@@ -12,11 +12,12 @@
     <color name="day_windows_bg">#fafafa</color>
     <color name="day_edit_color">#333333</color>
     <color name="day_edit_hit_color">#999999</color>
-    <color name="day_title_bar_bg_color">#ff00ff</color>
+    <color name="day_title_bar_bg_color">#aaea8598</color>
     <color name="day_app_bg_color">#F4F4F4</color>
     <color name="day_common_divider_color">#FFCCCCCC</color>
     <color name="day_has_read_text_color">#8391a6</color>
     <color name="day_not_read_text_color">#003e73</color>
+    <color name="day_img_item_bg">#00000000</color>
 
     <!-- night -->
     <color name="night_colorPrimary">#008000</color>
@@ -29,10 +30,11 @@
     <color name="night_windows_bg">#1f1f1f</color>
     <color name="night_edit_color">#666666</color>
     <color name="night_edit_hit_color">#999999</color>
-    <color name="night_title_bar_bg_color">#00ff00</color>
+    <color name="night_title_bar_bg_color">#fdea8598</color>
     <color name="night_app_bg_color">#222222</color>
     <color name="night_common_divider_color">#33cccccc</color>
     <color name="night_has_read_text_color">#88ffffff</color>
     <color name="night_not_read_text_color">#aaffffff</color>
+    <color name="night_img_item_bg">#88000000</color>
 
 </resources>

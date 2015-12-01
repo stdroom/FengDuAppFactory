@@ -34,4 +34,5 @@
     
     <!-- 图片列表 item 背景 -->
 	<attr name="img_item_bg" format="reference"/>
+	
 </resources>

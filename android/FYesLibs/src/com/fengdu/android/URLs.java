@@ -27,9 +27,9 @@ public class URLs {
 	
 	public static final String IMAGE_HOST = "http://7xo27p.com1.z0.glb.clouddn.com/teamimg/native/";
 	
-	public static final String MY_HOST = "http://192.168.1.9:8080";
+//	public static final String MY_HOST = "http://192.168.1.9:8080";
 //	public static final String MY_HOST = "http://172.26.194.1:8080";
-//	public static final String MY_HOST = "http://192.168.10.112:8080";
+	public static final String MY_HOST = "http://115.28.224.54:8080";
 	
 	public static final String URL_GET_IMAGE = MY_HOST + "/web/image/getImage";
 	

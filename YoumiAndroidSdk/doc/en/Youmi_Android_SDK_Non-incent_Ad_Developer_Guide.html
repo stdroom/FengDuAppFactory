@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Youmi Android SDK Non-incent Ad Developer Guide &mdash; Youmi Android SDK Document 5.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/youmi.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Youmi Android SDK Document 5.3.3 documentation" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/logo.png">
+          Youmi Ad Android SDK Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>v5.3.3</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html">Rewards Management && Related Function</a></li>
+                <li><a href="Youmi_Android_SDK_Tools.html">Tools</a></li>
+                <li><a href="Youmi_Android_SDK_FAQ.html">FAQ</a></li>
+                <li><a href="changelog.html">ChangeLog</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Youmi Android SDK Non-incent Ad Developer Guide</a><ul>
+<li><a class="reference internal" href="#youmi-android-sdk-general-configuration">1. Youmi Android SDK general configuration</a></li>
+<li><a class="reference internal" href="#configure-non-incent-ad-components">2. Configure Non-incent Ad Components</a></li>
+<li><a class="reference internal" href="#invoke-non-incent-ad-important">3. Invoke Non-incent Ad (Important)</a><ul>
+<li><a class="reference internal" href="#invoke-interstitial">1) Invoke Interstitial</a></li>
+<li><a class="reference internal" href="#invoke-banner">2) Invoke banner</a></li>
+<li><a class="reference internal" href="#opening-interstitial">3) Opening Interstitial</a></li>
+<li><a class="reference internal" href="#video-ad">4) Video Ad</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sdk-tools-optional">3. SDK Tools (Optional)</a><ul>
+<li><a class="reference internal" href="#id2">1) Check and Update</a></li>
+<li><a class="reference internal" href="#id3">2) Online Configuration</a></li>
+<li><a class="reference internal" href="#id4">3) End Youmi Debug Log</a></li>
+<li><a class="reference internal" href="#id5">4) Configure Setting Switch of Push Notification</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#faq-of-non-incent-ad">4. FAQ of Non-Incent Ad</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="youmi-android-sdk-non-incent-ad-developer-guide">
+<h1>Youmi Android SDK Non-incent Ad Developer Guide<a class="headerlink" href="#youmi-android-sdk-non-incent-ad-developer-guide" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Welcome to download Youmi Ad SDK; In order to ensure you receiving Youmi ad normally and guarantee you ad revenue, we may need you to stick to the steps listed in the documentation under the doc file, or please take referrance to the demo source code.</p>
+<p>Please read the following tips before integration:</p>
+<ol class="last arabic simple">
+<li>When you are creating the app on the Youmi backend to get APPID and KEY, please be noted that you MUST select the right OS;</li>
+<li>One pair of APPID and KEY only can be applied to one app; P.S: please do NOT use the same APPID and KEY in different apps, otherwise you may NOT able to receive ad normally;</li>
+<li>You can receive test ad after integration; After test and confirmation, please upload the apk/ipa on Youmi website for review; After review approval you will receive official ads that brings you revenue immediately;</li>
+<li>Please noticed that Youmi ad do NOT support Simulator, You MUST test on real mobile Device; Besides, Android pad is not appliable here for test, please test Android ad on phone only.</li>
+</ol>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last"><code class="docutils literal"><span class="pre">Important</span></code>: You MUST stick to the Guide hereby to proceed the integration; Any unauthorized change of SDK setting or coding is forbidden; If any misconduct that cause unusual display and affect the ad quality, Youmi reserves the rights to investigate, refuse payment or terminate the cooperation.</p>
+</div>
+<div class="section" id="youmi-android-sdk-general-configuration">
+<h2>1. Youmi Android SDK general configuration<a class="headerlink" href="#youmi-android-sdk-general-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Before add the Non-incent Ad, please make sure you have already finished the general configuration according to <a class="reference external" href="Youmi_Adnroid_SDK_General_Configuration_Developer_Guide.html">Youmi Adnroid SDK General Configuration Developer Guide</a>.</p>
+</div>
+<div class="section" id="configure-non-incent-ad-components">
+<h2>2. Configure Non-incent Ad Components<a class="headerlink" href="#configure-non-incent-ad-components" title="Permalink to this headline">¶</a></h2>
+<p>Please copy the following configuration code to <code class="docutils literal"><span class="pre">AndroidManifest.xml</span></code> file:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;application</span>
+    <span class="na">android:hardwareAccelerated=</span><span class="s">&quot;true&quot;</span>
+    <span class="na">android:icon=</span><span class="s">&quot;@drawable/ic_launcher&quot;</span>
+    <span class="na">android:label=</span><span class="s">&quot;@string/app_name&quot;</span>
+    <span class="na">android:theme=</span><span class="s">&quot;@style/MyTheme.NoTitleBar.CustomBackground&quot;</span> <span class="nt">&gt;</span>
+
+    <span class="nt">&lt;activity</span>
+        <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdBrowser&quot;</span>
+        <span class="na">android:configChanges=</span><span class="s">&quot;keyboard|keyboardHidden|orientation|screenSize&quot;</span>
+        <span class="na">android:theme=</span><span class="s">&quot;@android:style/Theme.Light.NoTitleBar&quot;</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;/activity&gt;</span>
+    <span class="nt">&lt;service</span>
+        <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdService&quot;</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;/service&gt;</span>
+    <span class="nt">&lt;receiver</span>
+        <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdReceiver&quot;</span> <span class="nt">&gt;</span>
+        <span class="nt">&lt;intent-filter&gt;</span>
+            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.PACKAGE_ADDED&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;package&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/intent-filter&gt;</span>
+    <span class="nt">&lt;/receiver&gt;</span>
+
+<span class="nt">&lt;/application&gt;</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p><strong>p.s.</strong></p>
+<ul class="last simple">
+<li>Becase we may inplement animation effect in version of interstitial; eable hardware speed-up supports better animation display; Some out-dated system maybe not support hardware speed-up, to avoid this problem, please add <code class="docutils literal"><span class="pre">android:hardwareAccelerated=&quot;true&quot;</span></code> to the activity.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="invoke-non-incent-ad-important">
+<h2>3. Invoke Non-incent Ad (Important)<a class="headerlink" href="#invoke-non-incent-ad-important" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="invoke-interstitial">
+<h3>1) Invoke Interstitial<a class="headerlink" href="#invoke-interstitial" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="preload-data-of-interstitial">
+<h4>1.1 Preload data of Interstitial<a class="headerlink" href="#preload-data-of-interstitial" title="Permalink to this headline">¶</a></h4>
+<p>Preload ad data and invoke it during initialization; SDK will load 3-5 ad data to local cache asynchronously, and display interstitial immediately when the API is invoked;</p>
+<p>If you choose not to preload the data, it may be some delay of display after the invoke.</p>
+<p>Invoke during initialization starts:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">loadSpotAds</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-orientation-of-interstitial-and-animation">
+<h4>1.2 Set orientation of Interstitial and animation<a class="headerlink" href="#set-orientation-of-interstitial-and-animation" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">If you set the interstitial to landscape, you will implement landscape image data when you receive landscape image data.</div>
+<div class="line">Value of portrait <code class="docutils literal"><span class="pre">SpotManager.ORIENTATION_PORTRAIT</span></code></div>
+<div class="line">Value of landscape <code class="docutils literal"><span class="pre">SpotManager.ORIENTATION_LANDSCAPE</span></code></div>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">setSpotOrientation</span><span class="o">(</span><span class="n">SpotManager</span><span class="o">.</span><span class="na">ORIENTATION_LANDSCAPE</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If the landscape ad data is imcompleted. The landscape mode may display portrait ad, and it will turns back to display landscape when the related data completed.</p>
+</div>
+<p>Show animation in interstitial</p>
+<div class="line-block">
+<div class="line">0: <code class="docutils literal"><span class="pre">ANIM_NONE</span></code> means NO animation</div>
+<div class="line">1: <code class="docutils literal"><span class="pre">ANIM_SIMPLE</span></code> means Basic animation effect</div>
+<div class="line">2: <code class="docutils literal"><span class="pre">ANIM_ADVANCE</span></code> means premium animation effect</div>
+</div>
+<p>The value is 2 by default; P.S. the Animation effect does NOT work on system before 4.0</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">setAnimationType</span><span class="o">(</span><span class="n">SpotManager</span><span class="o">.</span><span class="na">ANIM_ADVANCE</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="display-interstitial">
+<h4>1.3 Display Interstitial<a class="headerlink" href="#display-interstitial" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showSpotAds</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You can invoke interstitials at the start page of the app, or the scene of  level interval in games.</p>
+</div>
+</div>
+<div class="section" id="interstitial-monitoring-api-optianal">
+<h4>1.4 Interstitial Monitoring API（Optianal）<a class="headerlink" href="#interstitial-monitoring-api-optianal" title="Permalink to this headline">¶</a></h4>
+<p>SDK provides the Interstitial monitoring API to Developers, for monitoring the status of Interstitial</p>
+<p><em>Example:</em></p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">showSpotAds</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="k">new</span> <span class="n">SpotDialogListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onShowSuccess</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;Youmi&quot;</span><span class="o">,</span> <span class="s">&quot;onShowSuccess&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onShowFailed</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;Youmi&quot;</span><span class="o">,</span> <span class="s">&quot;onShowFailed&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSpotClosed</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;sdkDemo&quot;</span><span class="o">,</span> <span class="s">&quot;closed&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exit-of-interstitial">
+<h4>1.5 Exit of Interstitial<a class="headerlink" href="#exit-of-interstitial" title="Permalink to this headline">¶</a></h4>
+<p>SDK provide the external exit function of Interstitial, you are able to set &#8220;Backward&#8221; or &#8220;Home&#8221; button to close the Interstitial. The invoke of &#8220;backward&#8221; botton to close Interstitial is invalid during 3 seconds of ad display.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBackPressed</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="c1">// If you need to you can set using &quot;backward&quot; botton to close Interstitial.</span>
+    <span class="k">if</span> <span class="o">(!</span><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">disMiss</span><span class="o">())</span> <span class="o">{</span>
+        <span class="c1">// Pop-up exit window, you can use customized exit pop-up or animation; Please refer to the demo, input -1 if you don&#39;t use animation</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onBackPressed</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">onDestroy</span><span class="o">();</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">onDestroy</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="invoke-banner">
+<span id="chap-2-2"></span><h3>2) Invoke banner<a class="headerlink" href="#invoke-banner" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="banner-size">
+<h4>2.1 Banner Size<a class="headerlink" href="#banner-size" title="Permalink to this headline">¶</a></h4>
+<p>AdSize provides 5 banner sizes for developer to choose from:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="o">*</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">FIT_SCREEN</span>    <span class="c1">// self-adapted screen width</span>
+<span class="o">*</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">SIZE_320x50</span>   <span class="c1">// Mobile</span>
+<span class="o">*</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">SIZE_300x250</span>  <span class="c1">// Mobile, Pad</span>
+<span class="o">*</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">SIZE_468x60</span>   <span class="c1">// Pad</span>
+<span class="o">*</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">SIZE_728x90</span>   <span class="c1">// Pad</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="integrate-banner">
+<h4>2.2 Integrate banner<a class="headerlink" href="#integrate-banner" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="ordinary-layout-applies-to-application">
+<h5>2.2.1 Ordinary Layout (applies to application)<a class="headerlink" href="#ordinary-layout-applies-to-application" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="configure-layout-file">
+<h6>1) Configure layout file<a class="headerlink" href="#configure-layout-file" title="Permalink to this headline">¶</a></h6>
+<p>Copy the following code to layout file in Activity, and put it to the right place:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;LinearLayout</span>
+    <span class="na">android:id=</span><span class="s">&quot;@+id/adLayout&quot;</span>
+    <span class="na">android:layout_width=</span><span class="s">&quot;fill_parent&quot;</span>
+    <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+    <span class="na">android:gravity=</span><span class="s">&quot;center_horizontal&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-adview-to-layout">
+<h6>2) Put Adview to layout<a class="headerlink" href="#put-adview-to-layout" title="Permalink to this headline">¶</a></h6>
+<p>Add following code to Activity to display ad:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="c1">// Instantial banner</span>
+<span class="n">AdView</span> <span class="n">adView</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AdView</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">FIT_SCREEN</span><span class="o">);</span>
+
+<span class="c1">// Get banner layout</span>
+<span class="n">LinearLayout</span> <span class="n">adLayout</span><span class="o">=(</span><span class="n">LinearLayout</span><span class="o">)</span><span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">adLayout</span><span class="o">);</span>
+
+<span class="c1">// put banner to layout</span>
+<span class="n">adLayout</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">adView</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="floating-layout-applies-to-game">
+<h5>2.2.2 Floating layout (applies to game)<a class="headerlink" href="#floating-layout-applies-to-game" title="Permalink to this headline">¶</a></h5>
+<p>add following code to onCreate of Activity to display ad:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="c1">// Instantial LayoutParams (important)</span>
+<span class="n">FrameLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">layoutParams</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FrameLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">(</span> <span class="n">FrameLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">FILL_PARENT</span><span class="o">,</span>
+    <span class="n">FrameLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">WRAP_CONTENT</span><span class="o">);</span>
+
+<span class="c1">// Set Floating space for banner</span>
+<span class="n">layoutParams</span><span class="o">.</span><span class="na">gravity</span> <span class="o">=</span> <span class="n">Gravity</span><span class="o">.</span><span class="na">BOTTOM</span> <span class="o">|</span> <span class="n">Gravity</span><span class="o">.</span><span class="na">RIGHT</span><span class="o">;</span> <span class="c1">// Here at the bottom right</span>
+
+<span class="c1">// Instantial banner</span>
+<span class="n">AdView</span> <span class="n">adView</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AdView</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">AdSize</span><span class="o">.</span><span class="na">FIT_SCREEN</span><span class="o">);</span>
+
+    <span class="c1">// Invoke addContentView in Activity</span>
+<span class="k">this</span><span class="o">.</span><span class="na">addContentView</span><span class="o">(</span><span class="n">adView</span><span class="o">,</span> <span class="n">layoutParams</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="banner-monitoring-api-optional">
+<h4>2.3 Banner monitoring API (optional)<a class="headerlink" href="#banner-monitoring-api-optional" title="Permalink to this headline">¶</a></h4>
+<p>SDK provides develoepr banner monitoring API for developer to monitor banner statu</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">adView</span><span class="o">.</span><span class="na">setAdListener</span><span class="o">(</span><span class="k">new</span> <span class="n">AdViewListener</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSwitchedAd</span><span class="o">(</span><span class="n">AdView</span> <span class="n">adView</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Switch banner and display</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceivedAd</span><span class="o">(</span><span class="n">AdView</span> <span class="n">adView</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//request ad Successfully</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFailedToReceivedAd</span><span class="o">(</span><span class="n">AdView</span> <span class="n">adView</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// request ad failed</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="opening-interstitial">
+<h3>3) Opening Interstitial<a class="headerlink" href="#opening-interstitial" title="Permalink to this headline">¶</a></h3>
+<p>Opening Interstitial is interstitial that display on the transitional page when app starts. User can click on the &#8220;exit&#8221; button, or choose to wait for 5 seconds then can enter to the main interface of APP/Game.</p>
+<p>Opening Interstitial shall be preloaded during the previous start. As a result, it may cause there is no opening Interstitial in the first start.</p>
+<div class="section" id="opening-interstitial-loading">
+<h4>3.1 Opening Interstitial Loading<a class="headerlink" href="#opening-interstitial-loading" title="Permalink to this headline">¶</a></h4>
+<p>If you DO implement interstitial, you don&#8217;t need to invoke the loading of opening Interstitial. If you only use need Opening Interstitial, please add Opening Interstitial data to load functions.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">loadSplashSpotAds</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="simple-invoke-of-opening-interstitial">
+<h4>3.2 Simple invoke of Opening Interstitial<a class="headerlink" href="#simple-invoke-of-opening-interstitial" title="Permalink to this headline">¶</a></h4>
+<p>If you only need to display Opening Interstitial when APP/Game starts, please implement the simple invoke way</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showSplashSpotAds</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">Class</span><span class="o">&lt;?&gt;</span> <span class="n">targetActivity</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>In order to better display the Opening Interstisial, please set it portrait in the Activity of the Opening. Currently Open Interstitial do NOT support landscape display.</li>
+<li>Recommandation: Game setting full-screen with No-title</li>
+<li>This notice is appliable to the following.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="comustize-scenes-for-the-opening-interstitial">
+<h4>3.3 Comustize scenes for the Opening Interstitial<a class="headerlink" href="#comustize-scenes-for-the-opening-interstitial" title="Permalink to this headline">¶</a></h4>
+<p>Some APPs may have their own transitional page or data-loading page, you can put opening Interstitial as the widget to the orginal opening page.
+You can take reference of the NETEASE News, please read the implement method in demo.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">SplashView</span> <span class="n">splashView</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SplashView</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">YoumiNormalAdsDemo</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+<span class="c1">//Opening Interstitial can be added to the interface as widget.</span>
+<span class="n">setContentView</span><span class="o">(</span><span class="n">splashView</span><span class="o">.</span><span class="na">getSplashView</span><span class="o">());</span>
+
+<span class="n">SpotManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">showSplashSpotAds</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">splashView</span><span class="o">,</span>
+        <span class="k">new</span> <span class="n">SpotDialogListener</span><span class="o">()</span> <span class="o">{</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onShowSuccess</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;YoumiAdDemo&quot;</span><span class="o">,</span> <span class="s">&quot;Opening Display succeed&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onShowFailed</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;YoumiAdDemo&quot;</span><span class="o">,</span> <span class="s">&quot;Opening Display failed&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSpotClosed</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;YoumiAdDemo&quot;</span><span class="o">,</span> <span class="s">&quot;Opening Closed。&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+</pre></div>
+</div>
+<div class="section" id="custimized-the-setting-of-opening">
+<h5>Custimized the setting of Opening<a class="headerlink" href="#custimized-the-setting-of-opening" title="Permalink to this headline">¶</a></h5>
+<p>Set whether to show Countdown. It will be shown by default.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">splashView</span><span class="o">.</span><span class="na">setShowReciprocal</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Set whether to show the CLOSE button. It is set to be not showing by default.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">splashView</span><span class="o">.</span><span class="na">hideCloseBtn</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Input the direct intent, if input intent, targeting Activity will input null during Initialization.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="n">splashView</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Whether direct forward when display failed. It is YES by default.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">splashView</span><span class="o">.</span><span class="na">setIsJumpTargetWhenFail</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="video-ad">
+<h3>4) Video Ad<a class="headerlink" href="#video-ad" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="loading-and-display-of-full-screen-video-ad">
+<h4>4.1 Loading and display of full-screen video ad<a class="headerlink" href="#loading-and-display-of-full-screen-video-ad" title="Permalink to this headline">¶</a></h4>
+<p>Full-Screen video ad will direct user to a page that plays video, and then display interstitials showing ad details.</p>
+<p>Add video widget to <code class="docutils literal"><span class="pre">AndroidManifest.xml</span></code></p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;activity</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.video.VideoActivity&quot;</span>
+    <span class="na">android:configChanges=</span><span class="s">&quot;keyboard|keyboardHidden|screenSize|orientation&quot;</span>
+    <span class="na">android:screenOrientation=</span><span class="s">&quot;landscape&quot;</span>
+    <span class="na">android:theme=</span><span class="s">&quot;@android:style/Theme.NoTitleBar&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+</pre></div>
+</div>
+<p>Loading Video resources, but not download video now.  We suggest you to invoke this at the scene before video plays.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">VideoAdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">requestVideoAd</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>Load Video resource and add callback. If you already get the data, you may get the cache data in the repeated request.
+As a result, the request function can be used to indentified if there are any video ads available.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">VideoAdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">requestVideoAd</span><span class="o">(</span><span class="k">new</span> <span class="n">VideoAdRequestListener</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestSucceed</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;Request Succeed&quot;</span><span class="o">);</span>
+
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestFail</span><span class="o">(</span><span class="kt">int</span> <span class="n">errorCode</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">// About Error Code: -1 means Internet Disconnected, please check the Internet Status; -2007 means No ads available at present; -3312 means hitting the daily playtime limit; Others please refer to problem of device.</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;Request failed. Error code:&quot;</span> <span class="o">+</span> <span class="n">errorCode</span><span class="o">);</span>
+        <span class="o">}</span>
+
+<span class="o">});</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">About Error Code: -1 means Internet Disconnected, please check the Internet Status; -2007 means No ads available at present; -3312 means hitting the daily playtime limit; Others please refer to problem of device, like using Simulator or other devices with No IMEI.
+Any questions please come to our Technical Support Team.</p>
+</div>
+<p>Display video, you may see need to wait and load the video resource at the first time. After the first play of video it will preload the next video immediately.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">VideoAdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">showVideo</span><span class="o">(</span><span class="n">context</span><span class="o">,</span>
+        <span class="k">new</span> <span class="n">VideoAdListener</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="c1">// Video play failed</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onVideoPlayFail</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;failed&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="c1">// Video play completed</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onVideoPlayComplete</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;complete&quot;</span><span class="o">);</span>
+                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">&quot;You get the reward of 1 coin&quot;</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="c1">// Whether it succeed to send the video play complete record to Server</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onVideoCallback</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">// whether send callback of video play record succesful</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;completeEffect:&quot;</span> <span class="o">+</span> <span class="n">callback</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="c1">// Exit during the video play</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onVideoPlayInterrupt</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;interrupt&quot;</span><span class="o">);</span>
+                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">&quot;Video is not completed, you may NOT able to receive rewards&quot;</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDownloadComplete</span><span class="o">(</span><span class="n">String</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;download complete: &quot;</span> <span class="o">+</span> <span class="n">id</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewApkDownloadStart</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;Start Downloading&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onVideoLoadComplete</span><span class="o">()</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;Video Loading Completed&quot;</span><span class="o">);</span>
+<span class="o">});</span>
+</pre></div>
+</div>
+<p>Add the following code to <code class="docutils literal"><span class="pre">onDestroy</span></code> function in the display <code class="docutils literal"><span class="pre">activity</span></code></p>
+<div class="highlight-java"><div class="highlight"><pre><span class="nd">@Override</span>
+        <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{</span>
+                        <span class="n">VideoAdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">onDestroy</span><span class="o">();</span>
+                        <span class="kd">super</span><span class="o">.</span><span class="na">onDestroy</span><span class="o">();</span>
+        <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="video-ad-custimized-setting">
+<h4>4.2 Video ad custimized Setting<a class="headerlink" href="#video-ad-custimized-setting" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="get-intro-page-resouces-of-video-ad">
+<h4>1.Get intro page resouces of Video Ad.<a class="headerlink" href="#get-intro-page-resouces-of-video-ad" title="Permalink to this headline">¶</a></h4>
+<p>If you need to get the Video intro page in advance (e.g. get it to put in the native ad slot), you can invoke the following function to get the ad details.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">VideoInfoModel</span> <span class="n">model</span> <span class="o">=</span> <span class="n">VideoAdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">catchVideoInfo</span><span class="o">();</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>This operation is time-consuming and please do NOT used in the UI thread. For more detailed usage please refer to Demo.</li>
+<li>VideoInfoModel classification can get the Ad name, icon, image and introduction content.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="get-sdk-setting-object-and-set-the-configuration-all-the-sdk-configurations-are-optional">
+<h4>2. Get SDK setting object and set the configuration. All the SDK configurations are optional.<a class="headerlink" href="#get-sdk-setting-object-and-set-the-configuration-all-the-sdk-configurations-are-optional" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-java"><div class="highlight"><pre><span class="c1">// Set Exit</span>
+<span class="n">VideoAdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">getVideoAdSetting</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">setInterruptsTips</span><span class="o">(</span><span class="s">&quot;Exit Video during play may cause no rewards\n Are you sure to quit now&quot;</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setCloseBtnImage</span><span class="o">(</span><span class="n">closeImage</span><span class="o">).</span><span class="na">setHideControlBar</span><span class="o">(</span><span class="n">isHideoclose</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">setLoadingLogo</span><span class="o">(</span><span class="n">dark</span><span class="o">,</span> <span class="n">lightis</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Set the Video notice when exit</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">setInterruptsTips</span><span class="o">(</span><span class="s">&quot;Exit Video during play may cause no rewards&quot;</span> <span class="o">+</span> <span class="s">&quot; \nAre you sure to quit now？&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Set the logo for video loading：</p>
+<p>Replace the logo for video loading, Youmi Logo will be shown by default. You need two logo images in the same shapes, one is with the brighter color and the other shall be dark.
+Convert and input the base64 strings. The size of image shall not not bigger than 10k, and here 5k is the suggested size.</p>
+<p>You can use tool to convert the logo into the format of Base64: <a class="reference external" href="http://www.fishlee.net/Tools/GetImageBase64Code">http://www.fishlee.net/Tools/GetImageBase64Code</a>  (p.s.  the converted string shall be in the browser format but without <code class="docutils literal"><span class="pre">data:image/png;base64</span></code> , otherwise it could not be used on Android.)</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">setLoadingLogo</span><span class="o">(</span><span class="n">darkLogo</span><span class="o">,</span> <span class="n">lightLogo</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Set the CLOSE button image, meanwhile it needs to be converted to base64 string and input.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">setCloseBtnImage</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Set whether to display the Exit dialog; Display is set by default.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">setShowExitDialog</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">isShow</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>If it is set to false, you revenue may decreased for lower completed view.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ad-download-list">
+<h4>4.3 Ad Download List<a class="headerlink" href="#ad-download-list" title="Permalink to this headline">¶</a></h4>
+<p>Here Video ad provides Ad Download List to Developers. You can monitor the download process by monitoring the download list.
+It can also be used to notify users to complete the install task after download, or delete the apk directly with the Delete API.</p>
+<p>Here we are aimed to improve the ad conversion rate; high conversion rate helps to get more ads and higher play time limits.
+Besides, higher coversion rate brings higher payouts.
+We suggest you to implement this function.</p>
+<p>You can implement in this way:</p>
+<p>1.Get Download List.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">VideoInfoModel</span><span class="o">&gt;</span> <span class="n">downloadList</span><span class="o">;</span>
+
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">showDownloadList</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">downloadList</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">downloadList</span> <span class="o">=</span> <span class="n">VideoAdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">getApkDownloadTaskList</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">downloadList</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;size is 0&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">downloadList</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;id: &quot;</span> <span class="o">+</span> <span class="n">downloadList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">id</span> <span class="o">+</span> <span class="s">&quot;    name: &quot;</span> <span class="o">+</span> <span class="n">downloadList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">name</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>2.Monitor each download task.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">VideoAdListener</span> <span class="n">videoListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">VideoAdListener</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="c1">// Video Play failed</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onVideoPlayFail</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;failed&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="c1">// Video Play completed</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onVideoPlayComplete</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;complete&quot;</span><span class="o">);</span>
+                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">&quot;You get 1 coin reward&quot;</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="c1">// Whether it succeed to send the video play complete record to Server</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onVideoCallback</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">// whether send callback of video play record succesful</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;completeEffect:&quot;</span> <span class="o">+</span> <span class="n">callback</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="c1">// Exit during video play</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onVideoPlayInterrupt</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;interrupt&quot;</span><span class="o">);</span>
+                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">&quot;Exit Video during play may cause no rewards&quot;</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDownloadComplete</span><span class="o">(</span><span class="n">String</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;download complete: &quot;</span> <span class="o">+</span> <span class="n">id</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewApkDownloadStart</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;Start to download&quot;</span><span class="o">);</span>
+                <span class="n">setListener</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onVideoLoadComplete</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;Video loading not completed&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">};</span>
+
+<span class="c1">// Optional, you can monitor each download task.</span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">setListener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">downloadList</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="kd">final</span> <span class="n">VideoInfoModel</span> <span class="n">model</span> <span class="o">=</span> <span class="n">downloadList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">downloadList</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">model</span><span class="o">.</span><span class="na">getDownloadListener</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">model</span><span class="o">.</span><span class="na">setDownloadListener</span><span class="o">(</span><span class="k">new</span> <span class="n">VideoApkDownloadListener</span><span class="o">()</span> <span class="o">{</span>
+
+                                <span class="nd">@Override</span>
+                                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onApkDownloaidStart</span><span class="o">()</span> <span class="o">{</span>
+                                        <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;Start to download&quot;</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="na">name</span><span class="o">);</span>
+                                <span class="o">}</span>
+
+                                <span class="nd">@Override</span>
+                                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onApkDownloadSuccess</span><span class="o">()</span> <span class="o">{</span>
+                                        <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;Video loading not completed&quot;</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="na">name</span><span class="o">);</span>
+                                <span class="o">}</span>
+
+                                <span class="nd">@Override</span>
+                                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onApkDownloadProgressUpdate</span><span class="o">(</span><span class="kt">long</span> <span class="n">contentLength</span><span class="o">,</span> <span class="kt">long</span> <span class="n">completeLength</span><span class="o">,</span> <span class="kt">int</span> <span class="n">percent</span><span class="o">,</span>
+                                                <span class="kt">long</span> <span class="n">speedBytesPerS</span><span class="o">)</span> <span class="o">{</span>
+                                        <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;Donwload Percentage:&quot;</span> <span class="o">+</span> <span class="n">percent</span> <span class="o">+</span> <span class="s">&quot;   &quot;</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="na">name</span><span class="o">);</span>
+                                <span class="o">}</span>
+
+                                <span class="nd">@Override</span>
+                                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onApkDownloadFail</span><span class="o">()</span> <span class="o">{</span>
+                                        <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;videoPlay&quot;</span><span class="o">,</span> <span class="s">&quot;Download failed&quot;</span><span class="o">);</span>
+                                <span class="o">}</span>
+                        <span class="o">});</span>
+                <span class="o">}</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Install or delete accorading to the task demand.</li>
+</ol>
+<div class="highlight-java"><div class="highlight"><pre><span class="c1">// Install APK, e.g. install the fifth APK</span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">installApk</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">downloadList</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">downloadList</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="n">downloadList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">num</span><span class="o">).</span><span class="na">id</span><span class="o">;</span>
+                <span class="n">VideoAdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">handleInstallApk</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Install the latest APK</span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">installApk</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">downloadList</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">downloadList</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">VideoAdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">handleInstallApk</span><span class="o">();</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Deleted the targeting APK</span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">deleteAPK</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">downloadList</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">downloadList</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="n">downloadList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">num</span><span class="o">).</span><span class="na">id</span><span class="o">;</span>
+                <span class="n">VideoAdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">deleteApk</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ad-server-callback">
+<h4>4.4 Ad Server Callback<a class="headerlink" href="#ad-server-callback" title="Permalink to this headline">¶</a></h4>
+<p>If you have needs to proceed Server callback, please set the callback url on  <a class="reference external" href="https://www.youmi.net/apps/setting">「Youmi Developer Dashboard」</a> .
+When Youmi Server recevived a valid play record, it will add related parameters (parameters you can refer to in following chart) and send callback (in GET) to Developer&#8217;s Server, according to the callback url you set on Youmi dashboard.</p>
+<div class="section" id="parameters">
+<h5>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h5>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="5%" />
+<col width="10%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Para. Details</th>
+<th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Details</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>App ID</td>
+<td>app</td>
+<td>String</td>
+<td>APPID</td>
+</tr>
+<tr class="row-odd"><td>Ad Name</td>
+<td>ad</td>
+<td>String</td>
+<td>Ad name, it shall be the app name if the ad type is app</td>
+</tr>
+<tr class="row-even"><td>Ad Identify</td>
+<td>adid</td>
+<td>int</td>
+<td>Ad ID</td>
+</tr>
+<tr class="row-odd"><td>User ID</td>
+<td>user</td>
+<td>String</td>
+<td>User ID: Developer can set his own User ID, or set this string as the preserved string for callback</td>
+</tr>
+<tr class="row-even"><td>Device ID</td>
+<td>device</td>
+<td>String</td>
+<td>ifa for iOS, imei for Android</td>
+</tr>
+<tr class="row-odd"><td>Create Time</td>
+<td>time</td>
+<td>int</td>
+<td>The time when Youmi received</td>
+</tr>
+<tr class="row-even"><td>Store Id</td>
+<td>storeid</td>
+<td>int</td>
+<td>Store ID</td>
+</tr>
+<tr class="row-odd"><td>Sign</td>
+<td>sign</td>
+<td>String</td>
+<td>Signature</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>Here in this protocol shall apply to UTF-8.</li>
+<li>Some string may includes special charater, please use urldecode when receives request.</li>
+<li>$dev_server_secret：Developer Server KEY that provided to Developer by Youmi.
+Please log in <a class="reference external" href="https://www.youmi.net/apps/setting">「Youmi Developer Dashboard」</a> and set the Server URL. After setting you will get an exclusive KEY for the app.
+P.S. this KEY is for the Server, and it is not the APP KEY. Please seperate these two KEYs.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sdk-tools-optional">
+<h2>3. SDK Tools (Optional)<a class="headerlink" href="#sdk-tools-optional" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>1) <a class="reference external" href="Youmi_Android_SDK_Tools.html#chap-1">Check and Update</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id3">
+<h3>2) <a class="reference external" href="Youmi_Android_SDK_Tools.html#chap-2">Online Configuration</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id4">
+<h3>3) <a class="reference external" href="Youmi_Android_SDK_Tools.html#chap-3">End Youmi Debug Log</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id5">
+<h3>4) <a class="reference external" href="Youmi_Android_SDK_Tools.html#chap-4">Configure Setting Switch of Push Notification</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="faq-of-non-incent-ad">
+<h2>4. FAQ of Non-Incent Ad<a class="headerlink" href="#faq-of-non-incent-ad" title="Permalink to this headline">¶</a></h2>
+<p>Click and check on <a class="reference external" href="Youmi_Android_SDK_FAQ.html#chap-3">FAQ about Non-incent Ad</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-right"><a href="#">Top</a></p>
+            <p>© Copyright 2015, Youmi.net</p>
+        </div>
+    </footer>
+    <script>
+        $("#dLabelLocalToc").html('Navigation <b class="caret"></b>');
+        $(".admonition-title").html('Attention:');
+    </script>
+
+  </body>
+</html>

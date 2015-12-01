@@ -56,6 +56,7 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 		totalSize = bean.getPagePaths().size();
 		viewPager.setOffscreenPageLimit(totalSize);
 		titleTv.setText(bean.getDesc());
+		pageNumTv.setText(1+"/"+totalSize);
 		viewPager.setOnPageChangeListener(this);
 	}
 	
@@ -83,7 +84,8 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 
 	@Override
 	public void onPageSelected(int arg0) {
-		pageNumTv.setText(arg0+"/"+totalSize);
+		int num = arg0+1;
+		pageNumTv.setText(num+"/"+totalSize);
 	}
 }
 

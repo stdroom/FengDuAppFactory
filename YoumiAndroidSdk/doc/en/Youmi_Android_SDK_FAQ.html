@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Youmi Android SDK FAQ &mdash; Youmi Android SDK Document 5.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/youmi.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Youmi Android SDK Document 5.3.3 documentation" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/logo.png">
+          Youmi Ad Android SDK Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>v5.3.3</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html">Rewards Management && Related Function</a></li>
+                <li><a href="Youmi_Android_SDK_Tools.html">Tools</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="changelog.html">ChangeLog</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Youmi Android SDK FAQ</a><ul>
+<li><a class="reference internal" href="#introductions">1. Introductions</a><ul>
+<li><a class="reference internal" href="#environment-configuration">1) Environment Configuration</a></li>
+<li><a class="reference internal" href="#about-test-mode">2. About Test Mode</a></li>
+<li><a class="reference internal" href="#using-target-sdk-17-above-to-compile">3. Using target-sdk 17 above to compile</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#faq-of-rewarded-advertisement">2. FAQ of Rewarded Advertisement</a><ul>
+<li><a class="reference internal" href="#can-t-open-offerwall">1) Can&#8217;t open offerwall</a></li>
+<li><a class="reference internal" href="#can-t-acquire-currency-points">2) Can&#8217;t acquire currency points</a></li>
+<li><a class="reference internal" href="#can-i-test-the-ads-before-it-pass-the-audit">3) Can I test the ADs before it pass the audit</a></li>
+<li><a class="reference internal" href="#fail-in-server-callback-signature-verification">4) Fail in server-callback signature verification</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#faq-of-non-incent-advertisement">3. FAQ of Non-Incent Advertisement</a><ul>
+<li><a class="reference internal" href="#interstitials-can-be-loaded-but-can-t-be-clicked-and-closed">1) Interstitials can be loaded, but can&#8217;t be clicked and closed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#faq-of-sharing-task">4. FAQ of Sharing Task</a><ul>
+<li><a class="reference internal" href="#can-t-share-to-wechat-moments">1) Can&#8217;t share to WeChat Moments</a></li>
+<li><a class="reference internal" href="#not-rewards-gained-after-sharing">2) Not rewards gained after sharing</a></li>
+<li><a class="reference internal" href="#return-to-a-blank-page-after-share">3) Return to a blank page after share</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="youmi-android-sdk-faq">
+<h1>Youmi Android SDK FAQ<a class="headerlink" href="#youmi-android-sdk-faq" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+<div class="section" id="introductions">
+<h2>1. Introductions<a class="headerlink" href="#introductions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="environment-configuration">
+<h3>1) Environment Configuration<a class="headerlink" href="#environment-configuration" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="which-character-coding-that-youmi-sdk-will-use">
+<h4>(1) Which character coding that Youmi SDK will use<a class="headerlink" href="#which-character-coding-that-youmi-sdk-will-use" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Youmi SDK will use UTF-8 character coding. Please use UTF-8 coding environment when integrating advertisement and importing sample programs. Otherwise, wrong-coding jumbles will happen.</li>
+</ul>
+</div>
+<div class="section" id="which-android-sdk-versions-are-compatible-with-youmi-sdk">
+<h4>(2) Which Android SDK versions are compatible with Youmi SDK<a class="headerlink" href="#which-android-sdk-versions-are-compatible-with-youmi-sdk" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Android SDK version 2.1 and above are compatible with Youmi SDK. Version below 2.1 might have some compatible issue.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="about-test-mode">
+<span id="chap-1-2"></span><h3>2. About Test Mode<a class="headerlink" href="#about-test-mode" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>About <strong>Incent Ad</strong> : under the test mode you will get reward returned but no revenue paid.</li>
+<li>About <strong>Non-incent Ad</strong> : No limits for ad display and play, but there is no revenue for test display or play.</li>
+</ul>
+<p>The following situations shall always under test mode:</p>
+<ol class="arabic simple">
+<li>Device with no exclusive IMEI (e.g. some Android pad)</li>
+<li>Application before Youmi review approval</li>
+<li>Approved by Youmi before, but change pkg name in following version but still using the previous APPID and KEY</li>
+<li><a class="reference external" href="Youmi_Adnroid_SDK_General_Configuration_Developer_Guide.html#chap-1-3">Initialize</a>  and set the app to testmode</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><strong>P.S.</strong> After invoking <a class="reference external" href="Youmi_Adnroid_SDK_General_Configuration_Developer_Guide.html#chap-1-3">initilization API</a>, current app info will be displayed in <code class="docutils literal"><span class="pre">tag:YoumiSdk</span></code> of <strong>LogCat</strong></p>
+</div>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+<div class="section" id="using-target-sdk-17-above-to-compile">
+<span id="chap-1-3"></span><h3>3. Using target-sdk 17 above to compile<a class="headerlink" href="#using-target-sdk-17-above-to-compile" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="android-javascriptinterface-security-holes-repair">
+<h4>1. Android JavascriptInterface security holes repair<a class="headerlink" href="#android-javascriptinterface-security-holes-repair" title="Permalink to this headline">¶</a></h4>
+<p>Android version lower thant 4.2 will have security holes. It can make use of the special interface function addJavascriptInterface in webview to penetrate webkit to control Android machine.
+<a class="reference external" href="http://www.rapid7.com/db/modules/exploit/android/browser/webview_addjavascriptinterface">View addJavascriptInterface security holes statement</a></p>
+<p>Android 4.2(API 17) already use the new interface function, to repair security holes. There are official statement for <a class="reference external" href="http://developer.android.com/reference/android/webkit/WebView.html#addJavascriptInterface%28java.lang.Object,%20java.lang.String%29">JavascriptInterface in webview</a> :</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><strong>IMPORTANT：</strong>
+This method can be used to allow JavaScript to control the host application. This is a powerful feature, but also presents a security risk for applications targeted to API level&nbsp;JELLY_BEAN&nbsp;or below, because JavaScript could use reflection to access an injected object&#8217;s public fields. Use of this method in a WebView containing untrusted content could allow an attacker to manipulate the host application in unintended ways, executing Java code with the permissions of the host application. Use extreme care when using this method in a WebView which could contain untrusted content.
+JavaScript interacts with Java object on a private, background thread of this WebView. Care is therefore required to maintain thread safety.
+The Java object&#8217;s fields are not accessible.</p>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">Youmi Android SDK repair these security holes. Therefore, target-sdk 17 and above versions are needed to repair the security holes.</p>
+</div>
+</div>
+<div class="section" id="will-there-be-any-compatible-issue-with-lower-version-when-using-target-sdk-17-and-above-versions-to-compile">
+<h4>2.  Will there be any compatible issue with lower version when using target-sdk 17 and above versions to compile?<a class="headerlink" href="#will-there-be-any-compatible-issue-with-lower-version-when-using-target-sdk-17-and-above-versions-to-compile" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><dl class="first docutils">
+<dt>In Proguard Configuration file:</dt>
+<dd><ul class="first last simple">
+<li>target works in compiling. It is used for compiling, target to which API version (SDK version) to compile.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>in <code class="docutils literal"><span class="pre">AndroidManifest.xml</span></code> file：</dt>
+<dd><ul class="first last simple">
+<li>minSdkVersion and maxSdkVersion work in program installation. They are used for targeting which version of devices can install this application.</li>
+<li>targetSdkVersion works in program running. It is used for targeting higher version device to run program.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>Therefore, using target-sdk 17 and above versions won&#8217;t cause any compatible issue with lower version machine.</strong>
+<strong>Meanwhile, if you set android:targetSdkVersion and targetSdkVersion&gt;=17 in file AndroidManifest.xml, then you need to set target-sdk to be above 17 in proguard configuration file.</strong></p>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="faq-of-rewarded-advertisement">
+<span id="chap-2"></span><h2>2. FAQ of Rewarded Advertisement<a class="headerlink" href="#faq-of-rewarded-advertisement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="can-t-open-offerwall">
+<span id="chap-2-1"></span><h3>1) Can&#8217;t open offerwall<a class="headerlink" href="#can-t-open-offerwall" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-4">Confirm that offerwall configuration is correct</a></li>
+<li><a class="reference external" href="Youmi_Adnroid_SDK_General_Configuration_Developer_Guide.html#chap-1-4">Check proguard configuration</a></li>
+<li>Try to finish task with other phones, excluding the influence of specific phone</li>
+</ol>
+</div>
+<div class="section" id="can-t-acquire-currency-points">
+<h3>2) Can&#8217;t acquire currency points<a class="headerlink" href="#can-t-acquire-currency-points" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-4">Confirm that offerwall configuration is correct</a></li>
+<li>Check if the task is finished normally according to the task hint</li>
+<li>Check if the app is open automatically after successfully installing</li>
+<li>Try to finish task with other phones, excluding the influence of specific phone</li>
+</ol>
+</div>
+<div class="section" id="can-i-test-the-ads-before-it-pass-the-audit">
+<h3>3) Can I test the ADs before it pass the audit<a class="headerlink" href="#can-i-test-the-ads-before-it-pass-the-audit" title="Permalink to this headline">¶</a></h3>
+<p>Yes, you can. But the ADs are test ADs, you can get the currency points, but you can&#8217;t get money revenue for the ADs. You can get get money revenue with the formal ADs(After passing the audit).</p>
+</div>
+<div class="section" id="fail-in-server-callback-signature-verification">
+<h3>4) Fail in server-callback signature verification<a class="headerlink" href="#fail-in-server-callback-signature-verification" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-3">Check if server callback is used correctly or not</a></li>
+<li>Log in <a class="reference external" href="https://www.youmi.net/apps/lists">Youmi Developer Control Panel</a> Confirm the appid and server-callback key is corresponding to the application.</li>
+<li>Check if using <strong>utf-8</strong> encoding to process the received parameters</li>
+<li>Before involving in signature, confirm that the three parameters <strong>Ad Name</strong> 、 <strong>User ID</strong> 、 <strong>Deceive ID</strong> are processed by <strong>urldecode</strong></li>
+<li>Confirm that the signature algorithm is <strong>MD5（32 bits, lower-case）</strong></li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><strong>Be Noticed:</strong> If developers change the server call-back address url in Youmi Developer Control Panel, it will need some time for it to take effect.</p>
+</div>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+</div>
+<div class="section" id="faq-of-non-incent-advertisement">
+<span id="chap-3"></span><h2>3. FAQ of Non-Incent Advertisement<a class="headerlink" href="#faq-of-non-incent-advertisement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="interstitials-can-be-loaded-but-can-t-be-clicked-and-closed">
+<h3>1) Interstitials can be loaded, but can&#8217;t be clicked and closed<a class="headerlink" href="#interstitials-can-be-loaded-but-can-t-be-clicked-and-closed" title="Permalink to this headline">¶</a></h3>
+<p>Please check if there is the below permission inside <code class="docutils literal"><span class="pre">AndroidManifext.xml</span></code> :</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.SYSTEM_ALERT_WINDOW&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+</div>
+<div class="section" id="faq-of-sharing-task">
+<span id="chap-4"></span><h2>4. FAQ of Sharing Task<a class="headerlink" href="#faq-of-sharing-task" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="can-t-share-to-wechat-moments">
+<h3>1) Can&#8217;t share to WeChat Moments<a class="headerlink" href="#can-t-share-to-wechat-moments" title="Permalink to this headline">¶</a></h3>
+<p>Solution:</p>
+<ol class="arabic simple">
+<li>The current mobile phone has no installed wechat or the version of wechat is too low to share to Moments. In addition, our sdk will show the relatived tips about this problem;</li>
+<li>If you implement Proguard configuration, please check whether the proguard file had benn successfully set <a class="reference external" href="Youmi_Adnroid_SDK_General_Configuration_Developer_Guide.html#chap-1-4">Youmi SDK Proguard Setting</a>  ， <a class="reference external" href="Youmi_Android_SDK_Sharing_Task_Developer_Guide.html#chap-sh-4-1-2">Wechat SDK Proguard Configuration</a> ;</li>
+<li>Please check whether the Signature of the current app is the same with the Signature you register in weixin website.</li>
+</ol>
+</div>
+<div class="section" id="not-rewards-gained-after-sharing">
+<h3>2) Not rewards gained after sharing<a class="headerlink" href="#not-rewards-gained-after-sharing" title="Permalink to this headline">¶</a></h3>
+<p>Solution:</p>
+<ol class="arabic simple">
+<li>If you implement Proguard configuration, please check whether the proguard file had been successfully set <a class="reference external" href="Youmi_Adnroid_SDK_General_Configuration_Developer_Guide.html#chap-1-4">Youmi SDK Proguard Setting</a>  ， <a class="reference external" href="Youmi_Android_SDK_Sharing_Task_Developer_Guide.html#chap-sh-4-1-2">Wechat SDK Proguard Configuration</a> ；</li>
+<li>Please check whether correctly configure <a class="reference external" href="Youmi_Android_SDK_Sharing_Task_Developer_Guide.html#chap-sh-4-1-4">activity to receive the sharing result</a> 。</li>
+</ol>
+</div>
+<div class="section" id="return-to-a-blank-page-after-share">
+<h3>3) Return to a blank page after share<a class="headerlink" href="#return-to-a-blank-page-after-share" title="Permalink to this headline">¶</a></h3>
+<p>Analysis:</p>
+<ul class="simple">
+<li>After sharing the ad content to Wechat, it shall starts <code class="docutils literal"><span class="pre">pkg</span> <span class="pre">name</span> <span class="pre">+</span> <span class="pre">.wxapi.WXEntryActivity</span></code>, otherwise it may brings problem.</li>
+</ul>
+<p>Solution:</p>
+<ul class="simple">
+<li>In <code class="docutils literal"><span class="pre">onCreate(Bundle</span> <span class="pre">savedInstanceState)</span></code> and <code class="docutils literal"><span class="pre">onNewIntent(Intent</span> <span class="pre">intent)</span></code>  of <code class="docutils literal"><span class="pre">pkg</span> <span class="pre">name</span> <span class="pre">+</span> <span class="pre">.wxapi.WXEntryActivity</span></code>, you shall invoke <code class="docutils literal"><span class="pre">finish()</span></code> to end <code class="docutils literal"><span class="pre">WXEntryActivity</span></code> directly.</li>
+</ul>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-right"><a href="#">Top</a></p>
+            <p>© Copyright 2015, Youmi.net</p>
+        </div>
+    </footer>
+    <script>
+        $("#dLabelLocalToc").html('Navigation <b class="caret"></b>');
+        $(".admonition-title").html('Attention:');
+    </script>
+
+  </body>
+</html>

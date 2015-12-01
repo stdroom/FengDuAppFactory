@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Youmi Android SDK Sharing Task Developer Guide &mdash; Youmi Android SDK Document 5.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/youmi.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Youmi Android SDK Document 5.3.3 documentation" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/logo.png">
+          Youmi Ad Android SDK Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>v5.3.3</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html">Rewards Management && Related Function</a></li>
+                <li><a href="Youmi_Android_SDK_Tools.html">Tools</a></li>
+                <li><a href="Youmi_Android_SDK_FAQ.html">FAQ</a></li>
+                <li><a href="changelog.html">ChangeLog</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Youmi Android SDK Sharing Task Developer Guide</a><ul>
+<li><a class="reference internal" href="#youmi-android-sdk-general-configuration">1. Youmi Android SDK general configuration</a></li>
+<li><a class="reference internal" href="#configure-sharing-ad-components">2. Configure Sharing Ad Components</a></li>
+<li><a class="reference internal" href="#sharing-task-code-integration-important">3. Sharing task Code Integration (Important)</a><ul>
+<li><a class="reference internal" href="#initialization-of-sharing-task-and-resource-recycle">1) Initialization of Sharing task and Resource Recycle</a></li>
+<li><a class="reference internal" href="#display-the-full-screen-sharewall">2) Display the full-screen ShareWall</a></li>
+<li><a class="reference internal" href="#display-the-floating-half-screen-sharewall">3) Display the floating half-screen Sharewall</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#integration-the-sharing-task-channel-important">4. Integration the Sharing task channel (Important)</a><ul>
+<li><a class="reference internal" href="#configure-wechat">1) Configure Wechat</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rewards-management-and-related-function-important">5. Rewards Management and related function (important)</a><ul>
+<li><a class="reference internal" href="#id1">1) Client-side Reward Manager</a></li>
+<li><a class="reference internal" href="#id2">2) Monitor the change of Reward Balance</a></li>
+<li><a class="reference internal" href="#id3">3) Monitor Reward Order&#8217;s Arrival</a></li>
+<li><a class="reference internal" href="#id4">4) Configure Reward Arrival Notification</a></li>
+<li><a class="reference internal" href="#id5">5) Server-side Hosting Reward</a></li>
+<li><a class="reference internal" href="#id6">6) Verify Offerwall Configuration</a></li>
+<li><a class="reference internal" href="#id7">7) Configure Offerwall UI</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sdk-tools-optional">6. SDK Tools (Optional)</a><ul>
+<li><a class="reference internal" href="#id8">1) Check and Update</a></li>
+<li><a class="reference internal" href="#id9">2) Online Configuration</a></li>
+<li><a class="reference internal" href="#id10">3) End Youmi Debug Log</a></li>
+<li><a class="reference internal" href="#id11">4) Configure Setting Switch of Push Notification</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#faq-of-sharing-task">7. FAQ of Sharing Task</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="youmi-android-sdk-sharing-task-developer-guide">
+<h1>Youmi Android SDK Sharing Task Developer Guide<a class="headerlink" href="#youmi-android-sdk-sharing-task-developer-guide" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Welcome to download Youmi Ad SDK. In order to ensure you receiving Youmi ad normally and guarantee you ad revenue, we may need you to stick to the steps listed in the documentation under the doc file, or please take referrance to the demo source code.</p>
+<p>Please read the following tips before integration:</p>
+<ol class="last arabic simple">
+<li>When you are creating the app on the Youmi backend to get APPID and KEY, please be noted that you MUST select the right OS;</li>
+<li>One pair of APPID and KEY only can be applied to one app; P.S: please do NOT use the same APPID and KEY in different apps, otherwise you may NOT able to receive ad normally;</li>
+<li>You can receive test ad after integration; After test and confirmation, please upload the apk/ipa on Youmi website for review; After review approval you will receive official ads that brings you revenue immediately;</li>
+<li>Please noticed that Youmi ad do NOT support Simulator, You MUST test on real mobile Device; Besides, Android pad is not appliable here for test, please test Android ad on phone only.</li>
+</ol>
+</div>
+<div class="section" id="youmi-android-sdk-general-configuration">
+<h2>1. Youmi Android SDK general configuration<a class="headerlink" href="#youmi-android-sdk-general-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Before add the Sharing task, please make sure you have already finished the general configuration according to <a class="reference external" href="Youmi_Adnroid_SDK_General_Configuration_Developer_Guide.html">Youmi Android SDK General Configuration Developer Guide</a> .</p>
+</div>
+<div class="section" id="configure-sharing-ad-components">
+<h2>2. Configure Sharing Ad Components<a class="headerlink" href="#configure-sharing-ad-components" title="Permalink to this headline">¶</a></h2>
+<p>Please copy the following configuration code to <code class="docutils literal"><span class="pre">AndroidManifest.xml</span></code> file:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;activity</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdBrowser&quot;</span>
+    <span class="na">android:configChanges=</span><span class="s">&quot;keyboard|keyboardHidden|orientation|screenSize&quot;</span>
+    <span class="na">android:theme=</span><span class="s">&quot;@android:style/Theme.Light.NoTitleBar&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+<span class="nt">&lt;service</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdService&quot;</span>
+    <span class="na">android:exported=</span><span class="s">&quot;false&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+<span class="nt">&lt;service</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.ExpService&quot;</span>
+    <span class="na">android:exported=</span><span class="s">&quot;false&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+<span class="nt">&lt;receiver</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdReceiver&quot;</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.PACKAGE_ADDED&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;package&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/receiver&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sharing-task-code-integration-important">
+<span id="chap-sh-3"></span><h2>3. Sharing task Code Integration (Important)<a class="headerlink" href="#sharing-task-code-integration-important" title="Permalink to this headline">¶</a></h2>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Since the release of Youmi Android Offerwall SDK V5.3.0, Youmi Offerwall supports Sharing task; Here User gets rewards when he shares the ad contents on his social networks, meanwhile, developer get relevant revenue.</p>
+<p>Youmi Sharing ad is paid based on CPA+CPC model; one Sharing may bring infinite rewards and revenue.</p>
+<p>Time of rewards and settlement:</p>
+<ul class="last simple">
+<li>（CPA）after user shared the ad content successfully, he gets the first sharing reward and developer gets the first sharing revenue;</li>
+<li>（CPC）whenever new users click or share the shared link, the original user will get the rewards and developer get revenue;</li>
+<li>（CPA）Part of the Sharing task supports deep-link task; whenever new users completed assigned task in the shared link, they can get rewards and developer earn revenue at the same time.</li>
+</ul>
+</div>
+<div class="section" id="initialization-of-sharing-task-and-resource-recycle">
+<h3>1) Initialization of Sharing task and Resource Recycle<a class="headerlink" href="#initialization-of-sharing-task-and-resource-recycle" title="Permalink to this headline">¶</a></h3>
+<p>Please start the initialization before invoke other function of Sharing Task (e.g. invoke the following code in <code class="docutils literal"><span class="pre">onCreate</span></code> of the first Activity)</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">onAppLaunch</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>In the exit of the app (e.g. in the <code class="docutils literal"><span class="pre">onDestroy</span></code> method of Activity), invoke following code to complete the Sharing task Offerwall resource recycle.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">onAppExit</span><span class="o">();</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><strong>Notice:</strong> <a class="reference external" href="Youmi_Android_SDK_OfferWall_Developer_Guide.html#chap-3-1">Offerwall</a> and <strong>Sharing Task</strong> are implementing initialization and resource recycle with the same code; As the result, if you want to integrate Offerwall and Sharing task at the same time, the relevant code only need to be invoked one time.</p>
+</div>
+</div>
+<div class="section" id="display-the-full-screen-sharewall">
+<h3>2) Display the full-screen ShareWall<a class="headerlink" href="#display-the-full-screen-sharewall" title="Permalink to this headline">¶</a></h3>
+<p>Please invoke the following code to display the full-screen Sharewall:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showShareWall</span><span class="o">();</span>
+
+<span class="c1">// Meanwhile this method is also applied to the following reload</span>
+<span class="c1">// Support full-screen Offerwall exit monitoring callback</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showShareWall</span><span class="o">(</span><span class="n">Interface_ActivityListener</span> <span class="n">listener</span><span class="o">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Interface_ActivityListener</span></code> defines as follow:：</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Interface_ActivityListener</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * full-screen sharewall Activity send callback when invoking onDestory,</span>
+<span class="cm">     * and it will executed in the UI thread</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityDestroy</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="display-the-floating-half-screen-sharewall">
+<h3>3) Display the floating half-screen Sharewall<a class="headerlink" href="#display-the-floating-half-screen-sharewall" title="Permalink to this headline">¶</a></h3>
+<p>Please invoke the following code in UI thread, to display the floating half-screen Sharewall:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager.</span>
+<span class="o">...</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showShareWallDialog</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">);</span>
+
+<span class="c1">// Meanwhile this method supports following reload</span>
+
+<span class="c1">// input dialog to end the monitor</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showShareWallDialog</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="n">OffersWallDialogListener</span> <span class="n">listener</span><span class="o">);</span>
+
+<span class="c1">// input dialog Wide, height and pixel</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showShareWallDialog</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">);</span>
+
+<span class="c1">// input dialog wide, height and pixel, and end the monitor</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showShareWallDialog</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">,</span> <span class="n">OffersWallDialogListener</span> <span class="n">listener</span><span class="o">);</span>
+
+<span class="c1">// input the dialog wide and height proportion (0~1)</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showShareWallDialog</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="kt">double</span> <span class="n">scaleOfScreenWidth</span><span class="o">,</span> <span class="kt">double</span> <span class="n">scaleOfScreenHeight</span><span class="o">);</span>
+
+<span class="c1">// input the dialog wide and height proportion (0~1) and end the monitor</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showShareWallDialog</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="kt">double</span> <span class="n">scaleOfScreenWidth</span><span class="o">,</span> <span class="kt">double</span> <span class="n">scaleOfScreenHeight</span><span class="o">,</span> <span class="n">OffersWallDialogListener</span> <span class="n">listener</span><span class="o">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">OffersWallDialogListener</span></code> define as follows:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OffersWallDialogListener</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * send callback when end the dialog</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDialogClose</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="integration-the-sharing-task-channel-important">
+<span id="chap-sh-4"></span><h2>4. Integration the Sharing task channel (Important)<a class="headerlink" href="#integration-the-sharing-task-channel-important" title="Permalink to this headline">¶</a></h2>
+<p><strong>Your user could shre the ad content to social network when you configure the social networks (e.g. Wechat, QQ and Weibo) with the following Guide.</strong></p>
+<div class="section" id="configure-wechat">
+<h3>1) Configure Wechat<a class="headerlink" href="#configure-wechat" title="Permalink to this headline">¶</a></h3>
+<p>Please follow the steps to configure Wechat share, then the ad content can be shared to Wechat platform.</p>
+<div class="section" id="import-wechat-sdk">
+<h4>(1) import Wechat SDK<a class="headerlink" href="#import-wechat-sdk" title="Permalink to this headline">¶</a></h4>
+<p>unzip the SDK, and import <code class="docutils literal"><span class="pre">extralibs/libammsdk.jar</span></code> to the assigned <strong>libs</strong> in the project.</p>
+</div>
+<div class="section" id="configure-wechat-sdk-proguard-setting">
+<span id="chap-sh-4-1-2"></span><h4>(2) Configure Wechat SDK proguard setting<a class="headerlink" href="#configure-wechat-sdk-proguard-setting" title="Permalink to this headline">¶</a></h4>
+<p>If your project are using proguard packing, please MUST add the following code, otherwise you are not able to process the sharing normally:</p>
+<div class="highlight-java"><div class="highlight"><pre># weixin sdk
+-dontwarn com.tencent.mm.sdk.**
+-keep class com.tencent.mm.sdk.** {
+    *;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-wechat-appid">
+<h4>(3) Configure Wechat appid<a class="headerlink" href="#configure-wechat-appid" title="Permalink to this headline">¶</a></h4>
+<p>Current SDK <code class="docutils literal"><span class="pre">v5.3.0</span></code> supports sharing to the Wechat Platform, developer may need to register your app on Wechat Developer platform and get the relevant APPID, and send your wechat APPID to Youmi.</p>
+<div class="section" id="a-apply-for-wechat-appid">
+<h5>a. Apply for Wechat appid<a class="headerlink" href="#a-apply-for-wechat-appid" title="Permalink to this headline">¶</a></h5>
+<ol class="arabic simple">
+<li>Please login <a class="reference external" href="https://open.weixin.qq.com/">Wechat Developer Platform</a> and register the developer account, and apply for the Wechat appid for the current app;</li>
+<li>When you register your Android app and get the APPID on the Wechat Developer Platform, you <strong>need to provide md5 value in the official signature of your app</strong>; You can get it with the tool provided by Wechat, or you can get it by invoking this following method directly.</li>
+</ol>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="c1">// Get the md5 in current signature, p.s.: MUST invoke this after packing with official signature file</span>
+<span class="n">String</span> <span class="n">signatureMd5String</span> <span class="o">=</span> <span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">getSignatureMd5String</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="b-register-wechat-appid-to-sdk">
+<h5>b. Register Wechat APPID to SDK<a class="headerlink" href="#b-register-wechat-appid-to-sdk" title="Permalink to this headline">¶</a></h5>
+<p>When you registered the APP and get the Wechat APPID, before implementation of the sharewall, please register Wechat APPID to Youmi by invoking with the following code (e.g. invoke the following code in <code class="docutils literal"><span class="pre">onCreate</span></code> of the first activity when app starts)</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="c1">// Only returs true means successful registration, then you can implement more function normally</span>
+<span class="kt">boolean</span> <span class="n">isRegisterSuccess</span> <span class="o">=</span> <span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">registerToWx</span><span class="o">(</span><span class="n">String</span> <span class="n">weixinAppid</span><span class="o">);</span>
+<span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;youmi&quot;</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;Register appid %s&quot;</span><span class="o">,</span> <span class="n">isRegisterSuccess</span> <span class="o">?</span> <span class="s">&quot;Successed&quot;</span> <span class="o">:</span> <span class="s">&quot;Failed&quot;</span><span class="o">));</span>
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p>There are some situations may cause returning false:</p>
+<ol class="last arabic simple">
+<li>Please <a class="reference external" href="#chap-sh-4-1-2">check the Wechat proguard configuration</a> to make sure if it has been configured correctly</li>
+<li>The current mobile phone has not been installed wechat.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="configure-the-activity-to-recevie-the-sharing-result">
+<span id="chap-sh-4-1-4"></span><h4>(4) Configure the Activity to recevie the sharing result<a class="headerlink" href="#configure-the-activity-to-recevie-the-sharing-result" title="Permalink to this headline">¶</a></h4>
+<p>When the ad content has been shared to Wechat, Wechat platform will send callback including <code class="docutils literal"><span class="pre">pkgname</span> <span class="pre">+</span> <span class="pre">.wxapi.WXEntryActivity</span></code> to the application which starts the sharing request;
+More details please refer to Wechat official instruction <a class="reference external" href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;lang=zh_CN&amp;token=b60fa21e664d4e8df1017d44a58a6f7282c5e964&amp;appid=wxbe86d519b643cf08">here</a></p>
+<div class="section" id="a-edit-activity-code">
+<h5>a. edit activity code<a class="headerlink" href="#a-edit-activity-code" title="Permalink to this headline">¶</a></h5>
+<p>In case to notify Youmi the successful sharing result, you meed to invoke Youmi&#8217;s proceed caode in the abovementioned activity, following the <code class="docutils literal"><span class="pre">super</span></code> line, and rewrite <code class="docutils literal"><span class="pre">onCreate(Bundle</span> <span class="pre">savedInstanceState)</span></code> and <code class="docutils literal"><span class="pre">onNewIntent(Intent</span> <span class="pre">intent)</span></code>.</p>
+<p><em>Instance coding:</em></p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">package</span> <span class="nn">PackageName.wxapi</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WXEntryActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+
+        <span class="c1">// add Youmi proceed method</span>
+        <span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">handleIntent</span><span class="o">(</span><span class="n">getIntent</span><span class="o">());</span>
+
+        <span class="c1">// other proceed methods</span>
+        <span class="c1">// ....</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onNewIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+
+        <span class="c1">// add Youmi proceed method</span>
+        <span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">handleIntent</span><span class="o">(</span><span class="n">getIntent</span><span class="o">());</span>
+
+        <span class="c1">// other proceed methods</span>
+        <span class="c1">// ....</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="b-please-configure-activity-to-androidmanifest-xml-file">
+<h5>b. Please configure activity to AndroidManifest.xml file<a class="headerlink" href="#b-please-configure-activity-to-androidmanifest-xml-file" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;activity</span>
+    <span class="na">android:name=</span><span class="s">&quot;PackageName.wxapi.WXEntryActivity&quot;</span>
+    <span class="na">android:exported=</span><span class="s">&quot;true&quot;</span>
+    <span class="nt">&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="rewards-management-and-related-function-important">
+<h2>5. Rewards Management and related function (important)<a class="headerlink" href="#rewards-management-and-related-function-important" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>1) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html">Client-side Reward Manager</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id2">
+<h3>2) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-2-2">Monitor the change of Reward Balance</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id3">
+<h3>3) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-2-3">Monitor Reward Order&#8217;s Arrival</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id4">
+<h3>4) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-2-4">Configure Reward Arrival Notification</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id5">
+<h3>5) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-3">Server-side Hosting Reward</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id6">
+<h3>6) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-4">Verify Offerwall Configuration</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id7">
+<h3>7) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-5">Configure Offerwall UI</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="sdk-tools-optional">
+<h2>6. SDK Tools (Optional)<a class="headerlink" href="#sdk-tools-optional" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>1) <a class="reference external" href="Youmi_Android_SDK_Tools.html#chap-1">Check and Update</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id9">
+<h3>2) <a class="reference external" href="Youmi_Android_SDK_Tools.html#chap-2">Online Configuration</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id10">
+<h3>3) <a class="reference external" href="Youmi_Android_SDK_Tools.html#chap-3">End Youmi Debug Log</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id11">
+<h3>4) <a class="reference external" href="Youmi_Android_SDK_Tools.html#chap-4">Configure Setting Switch of Push Notification</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="faq-of-sharing-task">
+<h2>7. FAQ of Sharing Task<a class="headerlink" href="#faq-of-sharing-task" title="Permalink to this headline">¶</a></h2>
+<p>Click and check on <a class="reference external" href="Youmi_Android_SDK_FAQ.html#chap-4">FAQ about Sharing Task</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-right"><a href="#">Top</a></p>
+            <p>© Copyright 2015, Youmi.net</p>
+        </div>
+    </footer>
+    <script>
+        $("#dLabelLocalToc").html('Navigation <b class="caret"></b>');
+        $(".admonition-title").html('Attention:');
+    </script>
+
+  </body>
+</html>

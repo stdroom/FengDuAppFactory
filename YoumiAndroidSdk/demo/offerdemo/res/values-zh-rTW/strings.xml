@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">有米積分廣告Demo</string>
+    <string name="action_settings">設置</string>
+    <string name="btn_show_offerswall">展示積分牆(全屏)</string>
+    <string name="btn_show_offerswall_dialog">展示積分牆(對話框)</string>
+    <string name="btn_show_shareswall">展示分享牆(全屏)</string>
+    <string name="btn_show_shareswall_dialog">展示分享牆(對話框)</string>
+    <string name="btn_award_points">獎勵10積分</string>
+    <string name="btn_spend_points">消費20積分</string>
+    <string name="btn_get_online_config">獲取在線參數</string>
+    <string name="btn_check_reach_ntp_time">是否達到指定網絡時間</string>
+    <string name="btn_check_ad_config">檢查廣告配置</string>
+
+</resources>

@@ -6,8 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="?attr/app_bg_color" >
-    
+    <FrameLayout 
+        android:id="@+id/frame_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <com.fengdu.widgets.pullview.PullToRefreshStaggeredGridView
+        android:layout_below="@id/frame_ad"
         android:id="@+id/pull_grid_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

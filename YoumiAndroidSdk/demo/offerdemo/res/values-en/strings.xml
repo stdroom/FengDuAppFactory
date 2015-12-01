@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Youmi Rewarded Advertisement Demo</string>
+    <string name="action_settings">Setting</string>
+    <string name="btn_show_offerswall">Show Offerwall(Activity)</string>
+    <string name="btn_show_offerswall_dialog">Show Offerwall(Dialog)</string>
+    <string name="btn_show_shareswall">Show ShareAdWall(Activity)</string>
+    <string name="btn_show_shareswall_dialog">ShowShareAdWall(Dialog)</string>
+    <string name="btn_award_points">Reward 10 points</string>
+    <string name="btn_spend_points">Consume 20 points</string>
+    <string name="btn_get_online_config">Acquire online parameters</string>
+    <string name="btn_check_reach_ntp_time">Reach Specified Online Time</string>
+    <string name="btn_check_ad_config">Check advertisement configuration</string>
+
+</resources>

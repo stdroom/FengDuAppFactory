@@ -47,8 +47,8 @@ public class AppConstant {
 	public static final int WEBVIEW_WIDTH = 320;
 	public static final int JUMP_CODE = 0x02;
 	
-	public static final String YOUMI_APPID = "d6ed809e39ffe869";
-	public static final String YOUMI_APPSECRET = "08420089c668f93d";
+	public static final String YOUMI_APPID = "d30e8f03d789cd48";
+	public static final String YOUMI_APPSECRET = "84ee18e82eb0378a";
 	
 	public static final String KEY_NIGHT_MODE_SWITCH="night_mode_switch";
 	  /**

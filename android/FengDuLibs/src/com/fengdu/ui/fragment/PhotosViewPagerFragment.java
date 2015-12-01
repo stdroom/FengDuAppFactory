@@ -36,15 +36,23 @@ import com.mike.aframe.MKLog;
 import com.mike.aframe.utils.SystemTool;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import net.youmi.android.banner.AdSize;
+import net.youmi.android.banner.AdView;
+import net.youmi.android.banner.AdViewListener;
 
 /**
  * 类名: PhotosViewPagerFragment <br/>
@@ -69,6 +77,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 	private boolean isRequest = false;
 	
 	private View view = null;
+	private FrameLayout mAdContainer;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -100,6 +109,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 		if(view == null){
 			view = inflater.inflate(R.layout.staggered_grid, container,false);
 		}
+		mAdContainer = (FrameLayout)view.findViewById(R.id.frame_ad);
 		mLoadingLayout = (RelativeLayout)view.findViewById(R.id.layout_loading_bar);
 		mNoNetLayout = (RelativeLayout)view.findViewById(R.id.layout_refresh_onclick);
 		mNoNetLayout.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +156,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			}
 		});
 		MKLog.d("PhotosViewPagerFragment", "onCreateView");
+		showBanner();
 		return view;
 	}
 
@@ -282,6 +293,38 @@ public class PhotosViewPagerFragment extends BaseFragment{
 		list = new ArrayList<ImageBean>();
 		pageSize = 1;
 		initData(urls+"&page="+pageSize+"&pageSize=20");
+	}
+	
+	private void showBanner() {
+
+		// 实例化LayoutParams(重要)
+		FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT,
+				FrameLayout.LayoutParams.WRAP_CONTENT);
+		// 设置广告条的悬浮位置
+		layoutParams.gravity = Gravity.BOTTOM | Gravity.RIGHT; // 这里示例为右下角
+		// 实例化广告条
+		AdView adView = new AdView(getActivity(), AdSize.FIT_SCREEN);
+		// 调用Activity的addContentView函数
+
+		// 监听广告条接口
+		adView.setAdListener(new AdViewListener() {
+
+			@Override
+			public void onSwitchedAd(AdView arg0) {
+				Log.i("YoumiAdDemo", "广告条切换");
+			}
+
+			@Override
+			public void onReceivedAd(AdView arg0) {
+				Log.i("YoumiAdDemo", "请求广告成功");
+			}
+
+			@Override
+			public void onFailedToReceivedAd(AdView arg0) {
+				Log.i("YoumiAdDemo", "请求广告失败");
+			}
+		});
+		mAdContainer.addView(adView, layoutParams);
 	}
 }
 

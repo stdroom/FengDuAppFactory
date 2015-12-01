@@ -27,7 +27,7 @@
 		<item name="list_gray_line">@drawable/day_list_gray_line</item>
 		<item name="has_read_text_color">@color/day_has_read_text_color</item>
 		<item name="not_read_text_color">@color/day_not_read_text_color</item>
-		<item name="img_item_bg">@drawable/day_image_item_bg</item>
+		<item name="img_item_bg">@color/day_img_item_bg</item>
     </style>
 
     <!-- 夜间模式 -->
@@ -54,7 +54,7 @@
         <item name="list_gray_line">@drawable/night_list_gray_line</item>
         <item name="has_read_text_color">@color/night_has_read_text_color</item>
         <item name="not_read_text_color">@color/night_not_read_text_color</item>
-        <item name="img_item_bg">@drawable/night_image_item_bg</item>
+        <item name="img_item_bg">@color/night_img_item_bg</item>
     </style>
 
     <!-- 全透明的背景 -->

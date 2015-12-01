@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Youmi Android SDK OfferWall Developer Guide &mdash; Youmi Android SDK Document 5.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/youmi.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Youmi Android SDK Document 5.3.3 documentation" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/logo.png">
+          Youmi Ad Android SDK Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>v5.3.3</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html">Rewards Management && Related Function</a></li>
+                <li><a href="Youmi_Android_SDK_Tools.html">Tools</a></li>
+                <li><a href="Youmi_Android_SDK_FAQ.html">FAQ</a></li>
+                <li><a href="changelog.html">ChangeLog</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Youmi Android SDK OfferWall Developer Guide</a><ul>
+<li><a class="reference internal" href="#youmi-android-sdk-general-configuration">1. Youmi Android SDK general configuration</a></li>
+<li><a class="reference internal" href="#configure-offerwall-components">2. Configure OfferWall Components</a></li>
+<li><a class="reference internal" href="#offerwall-code-integration-important">3. Offerwall code integration (Important)</a><ul>
+<li><a class="reference internal" href="#initialization-and-related-operation">1) Initialization and related operation</a></li>
+<li><a class="reference internal" href="#display-the-full-screen-offerwall">2) Display the full-screen OfferWall</a></li>
+<li><a class="reference internal" href="#display-the-floating-half-screen-sharewall">3) Display the floating half-screen Sharewall</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rewards-management-and-related-function-important">4. Rewards Management and related function (important)</a><ul>
+<li><a class="reference internal" href="#id1">1) Client-side Reward Manager</a></li>
+<li><a class="reference internal" href="#id2">2) Monitor the change of Reward Balance</a></li>
+<li><a class="reference internal" href="#id3">3) Monitor Reward Order&#8217;s Arrival</a></li>
+<li><a class="reference internal" href="#id4">4) Configure Reward Arrival Notification</a></li>
+<li><a class="reference internal" href="#id5">5) Server-side Hosting Reward</a></li>
+<li><a class="reference internal" href="#id6">6) Verify Offerwall Configuration</a></li>
+<li><a class="reference internal" href="#id7">7) Configure Offerwall UI</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sdk-tools-optional">5. SDK Tools (Optional)</a><ul>
+<li><a class="reference internal" href="#id8">1) Check and Update</a></li>
+<li><a class="reference internal" href="#id9">2) Online Configuration</a></li>
+<li><a class="reference internal" href="#id10">3) End Youmi Debug Log</a></li>
+<li><a class="reference internal" href="#id11">4) Configure Setting Switch of Push Notification</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#faq-of-offerwall">6. FAQ of OfferWall</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="youmi-android-sdk-offerwall-developer-guide">
+<h1>Youmi Android SDK OfferWall Developer Guide<a class="headerlink" href="#youmi-android-sdk-offerwall-developer-guide" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Welcome to download Youmi Ad SDK. In order to ensure you receiving Youmi ad normally and guarantee you ad revenue, we may need you to stick to the steps listed in the documentation under the doc file, or please take referrance to the demo source code.</p>
+<p>Please read the following tips before integration:</p>
+<ol class="last arabic simple">
+<li>When you are creating the app on the Youmi backend to get APPID and KEY, please be noted that you MUST select the right OS;</li>
+<li>One pair of APPID and KEY only can be applied to one app; P.S: please do NOT use the same APPID and KEY in different apps, otherwise you may NOT able to receive ad normally;</li>
+<li>You can receive test ad after integration; After test and confirmation, please upload the apk/ipa on Youmi website for review; After review approval you will receive official ads that brings you revenue immediately;</li>
+<li>Please noticed that Youmi ad do NOT support Simulator, You MUST test on real mobile Device; Besides, Android pad is not appliable here for test, please test Android ad on phone only.</li>
+</ol>
+</div>
+<div class="section" id="youmi-android-sdk-general-configuration">
+<h2>1. Youmi Android SDK general configuration<a class="headerlink" href="#youmi-android-sdk-general-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Before add the OfferWall, please make sure you have already finished the general configuration according to <a class="reference external" href="Youmi_Adnroid_SDK_General_Configuration_Developer_Guide.html">Youmi Android SDK General Configuration Developer Guide</a> .</p>
+</div>
+<div class="section" id="configure-offerwall-components">
+<h2>2. Configure OfferWall Components<a class="headerlink" href="#configure-offerwall-components" title="Permalink to this headline">¶</a></h2>
+<p>Please copy the below configuration code and paste it into file <code class="docutils literal"><span class="pre">AndroidManifest.xml</span></code> :</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;activity</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdBrowser&quot;</span>
+    <span class="na">android:configChanges=</span><span class="s">&quot;keyboard|keyboardHidden|orientation|screenSize&quot;</span>
+    <span class="na">android:theme=</span><span class="s">&quot;@android:style/Theme.Light.NoTitleBar&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+<span class="nt">&lt;service</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdService&quot;</span>
+    <span class="na">android:exported=</span><span class="s">&quot;false&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+<span class="nt">&lt;receiver</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdReceiver&quot;</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.PACKAGE_ADDED&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;package&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/receiver&gt;</span>
+<span class="nt">&lt;service</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.ExpService&quot;</span>
+    <span class="na">android:exported=</span><span class="s">&quot;false&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+</pre></div>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p><strong>Be Noticed:</strong></p>
+<ul class="last simple">
+<li>ExpService is a configuration item and must be added. Otherwise, the currency points can&#8217;t be acquired normally.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="offerwall-code-integration-important">
+<h2>3. Offerwall code integration (Important)<a class="headerlink" href="#offerwall-code-integration-important" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="initialization-and-related-operation">
+<span id="chap-3-1"></span><h3>1) Initialization and related operation<a class="headerlink" href="#initialization-and-related-operation" title="Permalink to this headline">¶</a></h3>
+<p>Please start the initialization before implementing the function of Offerwall (e.g. invoke the following code in <code class="docutils literal"><span class="pre">onCreate</span></code> of the first Activity)</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">onAppLaunch</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>In the exit of the app (e.g. in the <code class="docutils literal"><span class="pre">onDestroy</span></code> method of Activity), invoke following code to complete the Offerwall resource recycle.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">onAppExit</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="display-the-full-screen-offerwall">
+<h3>2) Display the full-screen OfferWall<a class="headerlink" href="#display-the-full-screen-offerwall" title="Permalink to this headline">¶</a></h3>
+<p>Please invoke the following code to display the full-screen Offerwall:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showOffersWall</span><span class="o">();</span>
+
+<span class="c1">// Meanwhile this method is also applied to the following reload</span>
+<span class="c1">// Support full-screen Offerwall exit monitoring callback</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showOffersWall</span><span class="o">(</span><span class="n">Interface_ActivityListener</span> <span class="n">listener</span><span class="o">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">Interface_ActivityListener</span></code> defines as follow:：</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Interface_ActivityListener</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * full-screen sharewall Activity send callback when invoking onDestory,</span>
+<span class="cm">     * and it will executed in the UI thread</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityDestroy</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="display-the-floating-half-screen-sharewall">
+<h3>3) Display the floating half-screen Sharewall<a class="headerlink" href="#display-the-floating-half-screen-sharewall" title="Permalink to this headline">¶</a></h3>
+<p>Please invoke the following code in UI thread, to display the floating half-screen Sharewall:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager.</span>
+<span class="o">...</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showOffersWallDialog</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">);</span>
+
+<span class="c1">// Meanwhile this method supports following reload</span>
+
+<span class="c1">// input dialog to end the monitor</span>
+<span class="c1">// OffersManager.getInstance(Context context).showOffersWallDialog(Activity activity, OffersWallDialogListener listener);</span>
+
+<span class="c1">// input dialog Wide, height and pixel</span>
+<span class="c1">// OffersManager.getInstance(Context context).showOffersWallDialog(Activity activity, int width, int height);</span>
+
+<span class="c1">// input dialog wide, height and pixel, and end the monitor</span>
+<span class="c1">// OffersManager.getInstance(Context context).showOffersWallDialog(Activity activity, int width, int height, OffersWallDialogListener listener);</span>
+
+<span class="c1">// input the dialog wide and height proportion (0~1)</span>
+<span class="c1">// OffersManager.getInstance(Context context).showOffersWallDialog(Activity activity, double scaleOfScreenWidth, double scaleOfScreenHeight);</span>
+
+<span class="c1">// input the dialog wide and height proportion (0~1) and end the monitor</span>
+<span class="c1">// OffersManager.getInstance(Context context).showOffersWallDialog(Activity activity, double scaleOfScreenWidth, double scaleOfScreenHeight, OffersWallDialogListener listener);</span>
+</pre></div>
+</div>
+<p>OffersWallDialogListener definition as below:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OffersWallDialogListener</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * send callback when end the dialog</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDialogClose</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="rewards-management-and-related-function-important">
+<h2>4. Rewards Management and related function (important)<a class="headerlink" href="#rewards-management-and-related-function-important" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>1) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html">Client-side Reward Manager</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id2">
+<h3>2) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-2-2">Monitor the change of Reward Balance</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id3">
+<h3>3) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-2-3">Monitor Reward Order&#8217;s Arrival</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id4">
+<h3>4) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-2-4">Configure Reward Arrival Notification</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id5">
+<h3>5) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-3">Server-side Hosting Reward</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id6">
+<h3>6) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-4">Verify Offerwall Configuration</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id7">
+<h3>7) <a class="reference external" href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html#chap-5">Configure Offerwall UI</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="sdk-tools-optional">
+<h2>5. SDK Tools (Optional)<a class="headerlink" href="#sdk-tools-optional" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>1) <a class="reference external" href="Youmi_Android_SDK_Tools.html#chap-1">Check and Update</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id9">
+<h3>2) <a class="reference external" href="Youmi_Android_SDK_Tools.html#chap-2">Online Configuration</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id10">
+<h3>3) <a class="reference external" href="Youmi_Android_SDK_Tools.html#chap-3">End Youmi Debug Log</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id11">
+<h3>4) <a class="reference external" href="Youmi_Android_SDK_Tools.html#chap-4">Configure Setting Switch of Push Notification</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="faq-of-offerwall">
+<h2>6. FAQ of OfferWall<a class="headerlink" href="#faq-of-offerwall" title="Permalink to this headline">¶</a></h2>
+<p>Click and check on <a class="reference external" href="Youmi_Android_SDK_FAQ.html#chap-2">FAQ about OfferWall</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-right"><a href="#">Top</a></p>
+            <p>© Copyright 2015, Youmi.net</p>
+        </div>
+    </footer>
+    <script>
+        $("#dLabelLocalToc").html('Navigation <b class="caret"></b>');
+        $(".admonition-title").html('Attention:');
+    </script>
+
+  </body>
+</html>

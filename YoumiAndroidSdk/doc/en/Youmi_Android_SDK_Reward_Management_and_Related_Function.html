@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Android Reward Management and Related Function &mdash; Youmi Android SDK Document 5.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/youmi.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Youmi Android SDK Document 5.3.3 documentation" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/logo.png">
+          Youmi Ad Android SDK Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>v5.3.3</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="#">Rewards Management && Related Function</a></li>
+                <li><a href="Youmi_Android_SDK_Tools.html">Tools</a></li>
+                <li><a href="Youmi_Android_SDK_FAQ.html">FAQ</a></li>
+                <li><a href="changelog.html">ChangeLog</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Android Reward Management and Related Function</a><ul>
+<li><a class="reference internal" href="#introduction">1. Introduction</a></li>
+<li><a class="reference internal" href="#client-side-hosting-reward">2. Client-side Hosting Reward</a><ul>
+<li><a class="reference internal" href="#client-side-reward-manager">1) Client-side Reward Manager</a><ul>
+<li><a class="reference internal" href="#a-query-points-balance">a) Query Points Balance</a></li>
+<li><a class="reference internal" href="#b-spend-points">b) Spend Points</a></li>
+<li><a class="reference internal" href="#c-award-points">c) Award Points</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#monitor-the-change-of-reward-balance">2) Monitor the change of Reward Balance</a></li>
+<li><a class="reference internal" href="#monitor-reward-order-s-arrival">3) Monitor Reward Order&#8217;s Arrival</a><ul>
+<li><a class="reference internal" href="#a-by-using-receiver">a) By Using Receiver</a></li>
+<li><a class="reference internal" href="#b-by-implement-interface">b) By implement interface</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configure-reward-arrival-notification">4) Configure Reward Arrival Notification</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#server-side-hosting-reward">3. Server-side Hosting Reward</a></li>
+<li><a class="reference internal" href="#verify-offerwall-configuration">4. Verify Offerwall Configuration</a></li>
+<li><a class="reference internal" href="#configure-offerwall-sharewall-ui">5. Configure Offerwall/Sharewall UI</a><ul>
+<li><a class="reference internal" href="#set-offerwall-title-text">1) Set Offerwall title text</a></li>
+<li><a class="reference internal" href="#set-offerwall-title-background-color">2) Set Offerwall title background color</a></li>
+<li><a class="reference internal" href="#set-whether-to-display-reward-balance-on-offerwall">3) Set whether to display reward balance on Offerwall</a></li>
+<li><a class="reference internal" href="#set-offerwall-orientation">4) Set Offerwall Orientation</a><ul>
+<li><a class="reference internal" href="#a-set-full-screen-display-orientation">a) Set full-screen display Orientation</a></li>
+<li><a class="reference internal" href="#b-set-dialog-offerwall-display-orientation">b) Set dialog Offerwall display Orientation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="android-reward-management-and-related-function">
+<h1>Android Reward Management and Related Function<a class="headerlink" href="#android-reward-management-and-related-function" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<span id="chap-1"></span><h2>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>here Youmi provides two way to manage rewards:</p>
+<ul>
+<li><p class="first"><em>Clinet-side Hosting Reward</em> :</p>
+<p><code class="docutils literal"><span class="pre">Complete</span> <span class="pre">the</span> <span class="pre">Task</span> <span class="pre">-&gt;</span> <span class="pre">Server</span> <span class="pre">generate</span> <span class="pre">rewards</span> <span class="pre">order</span> <span class="pre">-&gt;</span> <span class="pre">SDK</span> <span class="pre">get</span> <span class="pre">orders</span> <span class="pre">from</span> <span class="pre">requiring</span> <span class="pre">Server</span> <span class="pre">-&gt;</span> <span class="pre">Local</span> <span class="pre">saved</span> <span class="pre">and</span> <span class="pre">manage</span> <span class="pre">rewards</span></code></p>
+</li>
+<li><p class="first"><em>Server-side Hosting Reward</em> ：</p>
+<p><code class="docutils literal"><span class="pre">Complete</span> <span class="pre">the</span> <span class="pre">Task</span> <span class="pre">-&gt;</span> <span class="pre">Server</span> <span class="pre">generate</span> <span class="pre">rewards</span> <span class="pre">order</span> <span class="pre">-&gt;</span> <span class="pre">Youmi</span> <span class="pre">push</span> <span class="pre">the</span> <span class="pre">reward</span> <span class="pre">orders</span> <span class="pre">to</span> <span class="pre">Developer's</span> <span class="pre">Server</span> <span class="pre">-&gt;</span> <span class="pre">Developer's</span> <span class="pre">Server</span> <span class="pre">notifies</span> <span class="pre">the</span> <span class="pre">APP</span> <span class="pre">-&gt;</span> <span class="pre">Developer's</span> <span class="pre">APP</span> <span class="pre">notifies</span> <span class="pre">Users</span></code></p>
+</li>
+</ul>
+<p><strong>Here strongly recommend you to save and manage rewards with y our own Server, to improve safety of managing rewards.</strong></p>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+<div class="section" id="client-side-hosting-reward">
+<span id="chap-2"></span><h2>2. Client-side Hosting Reward<a class="headerlink" href="#client-side-hosting-reward" title="Permalink to this headline">¶</a></h2>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Since Offerwall SDK <strong>v5.3.0</strong>, the reward management type for clinet-side SDK Hositng will changed from <code class="docutils literal"><span class="pre">int</span></code> to <code class="docutils literal"><span class="pre">float</span></code>.</p>
+</div>
+<div class="section" id="client-side-reward-manager">
+<span id="chap-2-1"></span><h3>1) Client-side Reward Manager<a class="headerlink" href="#client-side-reward-manager" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="a-query-points-balance">
+<h4>a) Query Points Balance<a class="headerlink" href="#a-query-points-balance" title="Permalink to this headline">¶</a></h4>
+<p>Invoke the below interface to query user&#8217;s points account remaining balance:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.PointsManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="kt">float</span> <span class="n">pointsBalance</span> <span class="o">=</span> <span class="n">PointsManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">queryPoints</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="b-spend-points">
+<h4>b) Spend Points<a class="headerlink" href="#b-spend-points" title="Permalink to this headline">¶</a></h4>
+<p>Invoke the below method, use to spend user&#8217;s currency points account remaining balance:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.PointsManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="kt">boolean</span> <span class="n">isSuccess</span> <span class="o">=</span> <span class="n">PointsManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">spendPoints</span><span class="o">(</span><span class="kt">float</span> <span class="n">points</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><strong>Be noticed:</strong> This method return the result of spending currency points. It will return true if successfully spending, otherwise it will return false.</p>
+</div>
+</div>
+<div class="section" id="c-award-points">
+<h4>c) Award Points<a class="headerlink" href="#c-award-points" title="Permalink to this headline">¶</a></h4>
+<p>Invoke the below method to award currency points for the currency points account remaining balance:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.PointsManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="kt">boolean</span> <span class="n">isSuccess</span> <span class="o">=</span> <span class="n">PointsManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">awardPoints</span><span class="o">(</span><span class="kt">float</span> <span class="n">points</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><strong>Be Noticed:</strong> This method return the result of awarding currency points. It will return true if successfully spending, otherwise it will return false.</p>
+</div>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+</div>
+<div class="section" id="monitor-the-change-of-reward-balance">
+<span id="chap-2-2"></span><h3>2) Monitor the change of Reward Balance<a class="headerlink" href="#monitor-the-change-of-reward-balance" title="Permalink to this headline">¶</a></h3>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Since Offerwall SDK <strong>v5.3.0</strong>, the balance change notification type will changed from <code class="docutils literal"><span class="pre">int</span></code> to <code class="docutils literal"><span class="pre">float</span></code>.</p>
+</div>
+<p>If showing user&#8217;s currency points remaining in UI, the remaining will change (increase or decrease) due to some reasons. At that time, you need to refresh the showing value in UI. You can implement currency points remaining automatically refreshing in UI by using the below methods.</p>
+<ol class="loweralpha simple">
+<li>Make UI related Class(can be Activity or View related Class) to implement the interface <code class="docutils literal"><span class="pre">PointsChangeNotify</span></code></li>
+</ol>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">package</span> <span class="nn">net.youmi.android.offers</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PointsChangeNotify</span> <span class="o">{</span>
+    <span class="cm">/**</span>
+<span class="cm">     * Currency points remaining balance changing notification,</span>
+<span class="cm">     * this call-back will proceed in UI thread, can interactive directly with UI</span>
+<span class="cm">     * @param pointsBalance</span>
+<span class="cm">     *     current currency points remaining balance</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPointBalanceChange</span><span class="o">(</span><span class="kt">float</span> <span class="n">pointsBalance</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<ol class="loweralpha simple" start="2">
+<li>After UI initialize, invoke the below method to register the interface implemented in the first step:</li>
+</ol>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.PointsManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">PointsManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">registerNotify</span><span class="o">(</span><span class="n">PointsChangeNotify</span> <span class="n">listener</span><span class="o">);</span>
+</pre></div>
+</div>
+<ol class="loweralpha simple" start="3">
+<li>Call the below code to release the reference for interface before UI destroy, to prevent memory leak:</li>
+</ol>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.PointsManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">PointsManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">unRegisterNotify</span><span class="o">(</span><span class="n">PointsChangeNotify</span> <span class="n">listener</span><span class="o">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+<div class="section" id="monitor-reward-order-s-arrival">
+<span id="chap-2-3"></span><h3>3) Monitor Reward Order&#8217;s Arrival<a class="headerlink" href="#monitor-reward-order-s-arrival" title="Permalink to this headline">¶</a></h3>
+<p>After user finishes task and settle account in Youmi server, can use the below methods to make SDK to notify the earning order that users finish.</p>
+<div class="section" id="a-by-using-receiver">
+<h4>a) By Using Receiver<a class="headerlink" href="#a-by-using-receiver" title="Permalink to this headline">¶</a></h4>
+<p>Firstly, you need to define a class MyPointsReceiver (The name can be any name), but the class must extend from <code class="docutils literal"><span class="pre">net.youmi.android.offers.PointsReceiver</span></code> :</p>
+<p><strong>Example</strong> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">net.youmi.android.offers.EarnPointsOrderList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">net.youmi.android.offers.PointsReceiver</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyPointsReceiver</span> <span class="kd">extends</span> <span class="n">PointsReceiver</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onEarnPoints</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">EarnPointsOrderList</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// When SDK acquires user&#39;s earning points order, it will notify you immediately.</span>
+        <span class="c1">// Parameter EarnPointsOrderList is a currency points order list,</span>
+        <span class="c1">// you can process currency points details order here.</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onViewPoints</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// This is a funny function, when user get the currency points, offerwall SDK will show a hint message about</span>
+        <span class="c1">// getting currency points. If user clicks the notification, this function will be invoked.</span>
+        <span class="c1">// At that time, you can implement a jump term here, to guide user viewing page jump to</span>
+        <span class="c1">// the currency points remaining page designed by you. (eg. Activity like &quot;My account&quot;).</span>
+        <span class="c1">// This operation is optional, if you want to close the notification bar currency points hint,</span>
+        <span class="c1">// please invoke PointsManager.setEnableEarnPointsNotification(false)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Second step, you need to config MyPointsReceiver in <code class="docutils literal"><span class="pre">AndroidManifest.xml</span></code>:</p>
+<p><strong>Example</strong> :</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;receiver</span>
+    <span class="na">android:name=</span><span class="s">&quot;MyPointsReceiver&quot;</span>
+    <span class="na">android:exported=</span><span class="s">&quot;false&quot;</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;ep_YourAppId&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;vp_YourAppId&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/receiver&gt;</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p><strong>Attention:</strong></p>
+<p class="last">There is a very critical detail here, you must config two Actions for MyPointsReceiver, the Actions&#8217; names must be a string which begin with  <strong>&#8220;ep_&#8221;</strong> and <strong>&#8220;vp_&#8221;</strong>, end with your AppID. (You can get AppID from developer control panel, 16 characters length string, so the length of Action should be 19 characters)</p>
+</div>
+</div>
+<div class="section" id="b-by-implement-interface">
+<h4>b) By implement interface<a class="headerlink" href="#b-by-implement-interface" title="Permalink to this headline">¶</a></h4>
+<p>First step, make UI related Class(can be Activity or View related Class) to implement the interface <code class="docutils literal"><span class="pre">PointsEarnNotify</span></code></p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">package</span> <span class="nn">net.youmi.android.offers</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PointsEarnNotify</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Earning points order notification of specific apps, executed in UI thread</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPointEarn</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">EarnPointsOrderList</span> <span class="n">list</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Seconde step, after UI initializes, invoke the below method to register the interface implemented in the first step:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.PointsManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">PointsManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">registerPointsEarnNotify</span><span class="o">(</span><span class="n">PointsEarnNotify</span> <span class="n">listener</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Third step, call the below code to release the reference for interface before UI destroy, to prevent memory leak:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.PointsManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">PointsManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">unRegisterPointsEarnNotify</span><span class="o">(</span><span class="n">PointsEarnNotify</span> <span class="n">listener</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="section" id="ym-class-earnpointsorderlist">
+<h5>EarnPointsOrderList<a class="headerlink" href="#ym-class-earnpointsorderlist" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">package</span> <span class="nn">net.youmi.android.offers</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EarnPointsOrderList</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  get the name of currency points unit from server</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getCurrencyName</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * get order details according to index（EarnPointsOrderInfo）</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">EarnPointsOrderInfo</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">);</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Judge if the list is null or not</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * get the size of list</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ym-class-earnpointsorderinfo">
+<span id="chap-2-3-3-2"></span><h5>EarnPointsOrderInfo<a class="headerlink" href="#ym-class-earnpointsorderinfo" title="Permalink to this headline">¶</a></h5>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Since Offerwall <strong>v5.3.0</strong>,  the return type of <code class="docutils literal"><span class="pre">getPoints</span></code> in reward order will changed from <code class="docutils literal"><span class="pre">int</span></code> to <code class="docutils literal"><span class="pre">float</span></code> .</p>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">package</span> <span class="nn">net.youmi.android.offers</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">EarnPointsOrderInfo</span> <span class="o">{</span>
+    <span class="cm">/**</span>
+<span class="cm">     *  get order ID (Unique)</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getOrderID</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  get App Name</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getAppName</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  get the channel ID, which means the Youmi channel ID config in file AndroidManifest.xml</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getChannelId</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  get the developer customized user unique ID</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getCustomUserID</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Acquire status of currency points order:</span>
+<span class="cm">     *     (1) Means developers got the income and users got the currency points.</span>
+<span class="cm">     *     (2) Means developers didn&#39;t get the income, but users got the currency points</span>
+<span class="cm">     *          (hasn&#39;t passed audit or in test mode).</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getStatus</span><span class="o">()</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Message for this time getting currency points, like &quot;successfully install *** and get 100 coins!&quot;</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getMessage</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  The award currency points at this time</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getPoints</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Time of settle account for this time getting currency points</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">getSettlingTime</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="configure-reward-arrival-notification">
+<span id="chap-2-4"></span><h3>4) Configure Reward Arrival Notification<a class="headerlink" href="#configure-reward-arrival-notification" title="Permalink to this headline">¶</a></h3>
+<p>In order to make user more clearer about the reward status, we implement SDK to notifies user reward arrival with floating windows and push notification.
+This function is enabled by default, but you can disable it with the API provided by Reward manager <code class="docutils literal"><span class="pre">PointsManager</span></code>:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.PointsManager.</span>
+<span class="o">...</span>
+
+<span class="c1">// Disable reward arrival notification</span>
+<span class="n">PointsManager</span><span class="o">.</span><span class="na">setEnableEarnPointsNotification</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+
+<span class="c1">// Disable reward arrival floating notification</span>
+<span class="n">PointsManager</span><span class="o">.</span><span class="na">setEnableEarnPointsToastTips</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+</div>
+<div class="section" id="server-side-hosting-reward">
+<span id="chap-3"></span><h2>3. Server-side Hosting Reward<a class="headerlink" href="#server-side-hosting-reward" title="Permalink to this headline">¶</a></h2>
+<p><strong>MUST INVOKE</strong> Before <a class="reference external" href="Youmi_Android_SDK_OfferWall_Developer_Guide.html#chap-3-1">the initializing of OfferWall</a> , please invoke following API to set user indentifiers. User indentifier will be send to your Server by order:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="c1">// userid should be within 50 length and should not be null or &quot;&quot;</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">setCustomUserId</span><span class="o">(</span><span class="n">String</span> <span class="n">userid</span><span class="o">);</span>
+
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">setUsingServerCallBack</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>When user complete one reward task, Youmi Server will generate rewarded order record and send it to your Server end.</p>
+<p>More details please refer to <a class="reference external" href="http://wiki.youmi.net/Youmi_android_offers_order_callback_protocol">Youmi Android Offerwall Server callback protocol</a> .</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p>If you use Server-side Hosting Reward, here any reward functions related to the client end shall not be appliable any more:</p>
+<ul class="simple">
+<li><a class="reference external" href="#chap-2-1">Client-side Reward Manager</a></li>
+<li><a class="reference external" href="#chap-2-2">Monitor the change of Reward Balance</a></li>
+<li><a class="reference external" href="#chap-2-3">Monitor Reward Order&#8217;s Arrival</a></li>
+<li><a class="reference external" href="#chap-2-4">Configure Reward Arrival Nofitication</a></li>
+</ul>
+<p class="last">Here SDK is not able to inform client-end of order arrival. All reward process shall be realized by Server, which much enhance the reward safety.</p>
+</div>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+<div class="section" id="verify-offerwall-configuration">
+<span id="chap-4"></span><h2>4. Verify Offerwall Configuration<a class="headerlink" href="#verify-offerwall-configuration" title="Permalink to this headline">¶</a></h2>
+<p>If there is some mistake when integrating SDK, it will cause a consequence of no income or not acquiring currency points. After finish the configuration in document, please check the configuration is correct or not by invoking the below interface:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="c1">// Offerwall configuration checking (Not using &quot;Acquire through Receiver&quot; function):</span>
+<span class="kt">boolean</span> <span class="n">isSuccess</span> <span class="o">=</span> <span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">checkOffersAdConfig</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+
+<span class="c1">// Offerwall configuration checking (Using &quot;Acquire through Receiver&quot; function):</span>
+<span class="kt">boolean</span> <span class="n">isSuccess</span> <span class="o">=</span> <span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">checkOffersAdConfig</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p><strong>Attention:</strong></p>
+<p class="last">If return value from this interface is true, that means configuration is correct, you can delete the invoke. If return false, you need to check the output in <strong>LogCat</strong> by <code class="docutils literal"><span class="pre">tag:YoumiSdk</span></code> , there are related detail configuration error content in it.</p>
+</div>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+<div class="section" id="configure-offerwall-sharewall-ui">
+<span id="chap-5"></span><h2>5. Configure Offerwall/Sharewall UI<a class="headerlink" href="#configure-offerwall-sharewall-ui" title="Permalink to this headline">¶</a></h2>
+<p>Since <strong>Youmi Android OfferWall SDK v5.0.0</strong>, youmi provides part of our offerwall UI custmization function to Developers.</p>
+<div class="section" id="set-offerwall-title-text">
+<h3>1) Set Offerwall title text<a class="headerlink" href="#set-offerwall-title-text" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersBrowserConfig.</span>
+<span class="o">...</span>
+
+<span class="c1">// Set Offerwall List title</span>
+<span class="n">OffersBrowserConfig</span><span class="o">.</span><span class="na">setBrowserTitleText</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">);</span>
+
+<span class="c1">// Get Offerwall List tile</span>
+<span class="n">String</span> <span class="n">title</span> <span class="o">=</span> <span class="n">OffersBrowserConfig</span><span class="o">.</span><span class="na">getBrowserTitleText</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-offerwall-title-background-color">
+<h3>2) Set Offerwall title background color<a class="headerlink" href="#set-offerwall-title-background-color" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersBrowserConfig.</span>
+<span class="o">...</span>
+
+<span class="c1">// Set Offerwall title background color</span>
+<span class="n">OffersBrowserConfig</span><span class="o">.</span><span class="na">setBrowserTitleBackgroundColor</span><span class="o">(</span><span class="kt">int</span> <span class="n">color</span><span class="o">);</span>
+
+<span class="c1">// Get Offerwall title background color</span>
+<span class="kt">int</span> <span class="n">color</span> <span class="o">=</span> <span class="n">OffersBrowserConfig</span><span class="o">.</span><span class="na">getBrowserTitleBackgroundColor</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-whether-to-display-reward-balance-on-offerwall">
+<h3>3) Set whether to display reward balance on Offerwall<a class="headerlink" href="#set-whether-to-display-reward-balance-on-offerwall" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersBrowserConfig.</span>
+<span class="o">...</span>
+
+<span class="c1">// Set whether to display reward balance</span>
+<span class="c1">// true ：YES (by default)</span>
+<span class="c1">// false：NO</span>
+<span class="n">OffersBrowserConfig</span><span class="o">.</span><span class="na">setPointsLayoutVisibility</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">flag</span><span class="o">);</span>
+
+<span class="c1">// Get whether to show current reward balance</span>
+<span class="kt">boolean</span> <span class="n">flag</span> <span class="o">=</span> <span class="n">OffersBrowserConfig</span><span class="o">.</span><span class="na">isPointsLayoutVisbility</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-offerwall-orientation">
+<h3>4) Set Offerwall Orientation<a class="headerlink" href="#set-offerwall-orientation" title="Permalink to this headline">¶</a></h3>
+<p>According to the default configuration, Offerwall display shall following the device screen seeting; If you need to set the it fixed, you can handle it in this way:</p>
+<div class="section" id="a-set-full-screen-display-orientation">
+<h4>a) Set full-screen display Orientation<a class="headerlink" href="#a-set-full-screen-display-orientation" title="Permalink to this headline">¶</a></h4>
+<p>You can add <code class="docutils literal"><span class="pre">android:screenOrientation</span></code> to <code class="docutils literal"><span class="pre">net.youmi.android.AdBrowser</span></code> widget in <code class="docutils literal"><span class="pre">AndroidManifest.xml</span></code> , and choose your orientation ( <strong>landscape</strong>, <strong>portrait</strong>  ).</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;activity</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdBrowser&quot;</span>
+    <span class="na">android:configChanges=</span><span class="s">&quot;keyboard|keyboardHidden|orientation|screenSize&quot;</span>
+    <span class="na">android:screenOrientation=</span><span class="s">&quot;landscape&quot;</span>
+    <span class="na">android:theme=</span><span class="s">&quot;@android:style/Theme.Light.NoTitleBar&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="b-set-dialog-offerwall-display-orientation">
+<h4>b) Set dialog Offerwall display Orientation<a class="headerlink" href="#b-set-dialog-offerwall-display-orientation" title="Permalink to this headline">¶</a></h4>
+<p>Dialog display Orientation depends on the direction of input Activity objetct, therefore you only need to set the fixed activity direction.</p>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-right"><a href="#">Top</a></p>
+            <p>© Copyright 2015, Youmi.net</p>
+        </div>
+    </footer>
+    <script>
+        $("#dLabelLocalToc").html('Navigation <b class="caret"></b>');
+        $(".admonition-title").html('Attention:');
+    </script>
+
+  </body>
+</html>

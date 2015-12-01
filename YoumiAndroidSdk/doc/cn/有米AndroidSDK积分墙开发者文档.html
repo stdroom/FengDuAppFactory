@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>有米 Android SDK 积分墙开发者文档 &mdash; Youmi Android SDK Document 5.3.3 文档</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/youmi.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Youmi Android SDK Document 5.3.3 文档" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/logo.png">
+          有米广告 Android SDK 文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>v5.3.3</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="有米AndroidSDK积分管理及相关功能.html">积分管理及相关功能</a></li>
+                <li><a href="有米AndroidSDK实用工具.html">实用工具</a></li>
+                <li><a href="有米AndroidSDK常见问题.html">常见问题</a></li>
+                <li><a href="changelog.html">更新说明</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">有米 Android SDK 积分墙开发者文档</a><ul>
+<li><a class="reference internal" href="#id1">一、有米 Android SDK 通用基本配置</a></li>
+<li><a class="reference internal" href="#id3">二、配置积分墙广告组件</a></li>
+<li><a class="reference internal" href="#id4">三、积分墙代码集成（重要）</a><ul>
+<li><a class="reference internal" href="#chap-ow-cn-3-1">1、积分墙初始化及相关操作</a></li>
+<li><a class="reference internal" href="#id6">2、展示全屏积分墙</a></li>
+<li><a class="reference internal" href="#id7">3、展示悬浮半屏积分墙</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">四、积分管理及相关功能（重要）</a><ul>
+<li><a class="reference internal" href="#id10">1、积分管理基本操作</a></li>
+<li><a class="reference internal" href="#id12">2、监听积分余额变动</a></li>
+<li><a class="reference internal" href="#id14">3、监听积分订单到账通知</a></li>
+<li><a class="reference internal" href="#id16">4、配置积分到账提醒</a></li>
+<li><a class="reference internal" href="#id18">5、服务器托管积分</a></li>
+<li><a class="reference internal" href="#id20">6、验证积分墙配置</a></li>
+<li><a class="reference internal" href="#id22">7、配置积分墙样式</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sdk">五、SDK 实用工具（可选）</a><ul>
+<li><a class="reference internal" href="#id24">1、检查更新</a></li>
+<li><a class="reference internal" href="#id26">2、在线配置</a></li>
+<li><a class="reference internal" href="#id27">3、关闭有米 Debug Log</a></li>
+<li><a class="reference internal" href="#id29">4、通知栏提示配置开关</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id30">六、积分墙常见问题</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="android-sdk">
+<h1>有米 Android SDK 积分墙开发者文档<a class="headerlink" href="#android-sdk" title="永久链接至标题">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">小技巧</p>
+<p>欢迎您使用有米广告SDK，为了保证能正常接收有米的广告，保障各位开发者的收益，请您严格按照SDK里doc文件夹下的文档步骤来嵌入SDK ，或按照SDK里的demo源码来嵌入。</p>
+<p>以下注意事项，请仔细阅读：</p>
+<ol class="last arabic simple">
+<li>在有米后台创建应用获取发布ID和应用密钥时，请注意区分好Android和iOS平台，不能弄错平台。</li>
+<li>一对ID和应用密钥只能用在一个应用内，不能重复用在多个应用内，否则会拿不到正式广告。</li>
+<li>嵌入完sdk，可以拿到测试广告，测试没问题，需上传应用给有米审核，审核通过后才能拿到正式广告，正式广告才能产生收益。</li>
+<li>有米广告不支持模拟器，测试广告时请用真机来测试，另外，Android广告不支持Android平板，需要用手机来测试Android广告。</li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2>一、有米 Android SDK 通用基本配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<p>在进行积分墙的集成之前，请确保已经按照 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html">有米 Android SDK 通用基本配置文档</a> 进行通用配置。</p>
+</div>
+<div class="section" id="id3">
+<h2>二、配置积分墙广告组件<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<p>请将以下配置代码复制到 <code class="docutils literal"><span class="pre">AndroidManifest.xml</span></code> 文件中:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;activity</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdBrowser&quot;</span>
+    <span class="na">android:configChanges=</span><span class="s">&quot;keyboard|keyboardHidden|orientation|screenSize&quot;</span>
+    <span class="na">android:theme=</span><span class="s">&quot;@android:style/Theme.Light.NoTitleBar&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+<span class="nt">&lt;service</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdService&quot;</span>
+    <span class="na">android:exported=</span><span class="s">&quot;false&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+<span class="nt">&lt;service</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.ExpService&quot;</span>
+    <span class="na">android:exported=</span><span class="s">&quot;false&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+<span class="nt">&lt;receiver</span>
+    <span class="na">android:name=</span><span class="s">&quot;net.youmi.android.AdReceiver&quot;</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.PACKAGE_ADDED&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;package&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/receiver&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>三、积分墙代码集成（重要）<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="chap-ow-cn-3-1">
+<span id="id5"></span><h3>1、积分墙初始化及相关操作<a class="headerlink" href="#chap-ow-cn-3-1" title="永久链接至标题">¶</a></h3>
+<p>请在使用积分墙功能之前进行初始化（如：在应用启动的第一个 Activity 中的 <code class="docutils literal"><span class="pre">onCreate</span></code> 方法中调用以下代码）：</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">onAppLaunch</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>在应用退出的地方（如：Activity的 <code class="docutils literal"><span class="pre">onDestroy</span></code> 方法中）调用以下代码进行资源回收：</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">onAppExit</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>2、展示全屏积分墙<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>在 UI 线程中调用以下代码展示全屏积分墙：</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showOffersWall</span><span class="o">();</span>
+
+<span class="c1">// 同时本方法还支持以下重载</span>
+
+<span class="c1">// 自 Youmi Android OfferWall SDK v5.0.0 起, 支持全屏积分墙退出监听回调</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showOffersWall</span><span class="o">(</span><span class="n">Interface_ActivityListener</span> <span class="n">listener</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Interface_ActivityListener 定义如下：</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Interface_ActivityListener</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 全屏积分墙Activity 调用onDestory的时候回调，执行在ui线程中</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onActivityDestroy</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>3、展示悬浮半屏积分墙<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>在 UI 线程中调用以下代码展示悬浮半屏积分墙：</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.offers.OffersManager.</span>
+<span class="o">...</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showOffersWallDialog</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">);</span>
+
+<span class="c1">// 同时本方法还支持以下重载</span>
+
+<span class="c1">// 传入对话框关闭监听器</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showOffersWallDialog</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="n">OffersWallDialogListener</span> <span class="n">listener</span><span class="o">);</span>
+
+<span class="c1">// 传入对话框宽高像素</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showOffersWallDialog</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">);</span>
+
+<span class="c1">// 传入对话框宽高像素以及关闭监听器</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showOffersWallDialog</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">,</span> <span class="n">OffersWallDialogListener</span> <span class="n">listener</span><span class="o">);</span>
+
+<span class="c1">// 传入对话框宽高所占屏幕比例（0~1）</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showOffersWallDialog</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="kt">double</span> <span class="n">scaleOfScreenWidth</span><span class="o">,</span> <span class="kt">double</span> <span class="n">scaleOfScreenHeight</span><span class="o">);</span>
+
+<span class="c1">// 传入对话框宽高所占屏幕比例（0~1）以及关闭监听器</span>
+<span class="n">OffersManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">showOffersWallDialog</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="kt">double</span> <span class="n">scaleOfScreenWidth</span><span class="o">,</span> <span class="kt">double</span> <span class="n">scaleOfScreenHeight</span><span class="o">,</span> <span class="n">OffersWallDialogListener</span> <span class="n">listener</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>OffersWallDialogListener 定义如下：</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OffersWallDialogListener</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 对话框关闭时回调</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDialogClose</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>四、积分管理及相关功能（重要）<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="id10">
+<h3>1、<a class="reference external" href="有米AndroidSDK积分管理及相关功能.html">积分管理基本操作</a><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id12">
+<h3>2、<a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-2">监听积分余额变动</a><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id14">
+<h3>3、<a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-3">监听积分订单到账通知</a><a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id16">
+<h3>4、<a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-4">配置积分到账提醒</a><a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id18">
+<h3>5、<a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-3">服务器托管积分</a><a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id20">
+<h3>6、<a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-4">验证积分墙配置</a><a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id22">
+<h3>7、<a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-5">配置积分墙样式</a><a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h3>
+</div>
+</div>
+<div class="section" id="sdk">
+<h2>五、SDK 实用工具（可选）<a class="headerlink" href="#sdk" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="id24">
+<h3>1、<a class="reference external" href="有米AndroidSDK实用工具.html#chap-1">检查更新</a><a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id26">
+<h3>2、<a class="reference external" href="有米AndroidSDK实用工具.html#chap-2">在线配置</a><a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id27">
+<h3>3、<a class="reference external" href="有米AndroidSDK实用工具.html#chap-3">关闭有米 Debug Log</a><a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id29">
+<h3>4、<a class="reference external" href="有米AndroidSDK实用工具.html#chap-4">通知栏提示配置开关</a><a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h3>
+</div>
+</div>
+<div class="section" id="id30">
+<h2>六、积分墙常见问题<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<p>点击查看 <a class="reference external" href="有米AndroidSDK常见问题.html#chap-faq-cn-2">积分墙常见问题</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-right"><a href="#">返回顶端</a></p>
+            <p>© Copyright 2015, Youmi.net</p>
+        </div>
+    </footer>
+    <script>
+        $("#dLabelLocalToc").html('导航 <b class="caret"></b>');
+        $(".admonition-title").html('注意：');
+    </script>
+
+  </body>
+</html>

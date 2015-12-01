@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg" >
+
+    <TextView
+        android:id="@+id/youmitag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dip"
+        android:text="@string/youmi"
+        android:textColor="#3baa24"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/youmitag"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dip"
+        android:text="@string/versionTxt"
+        android:textColor="#3baa24"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/showSpot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="60dip"
+        android:layout_marginRight="60dip"
+        android:background="@drawable/buttonbg"
+        android:text="@string/showSpot"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/videoAdLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/showSpot" >
+
+        <ImageView
+            android:id="@+id/info_mainimage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/info_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/videoAdLayout"
+        android:visibility="gone" >
+
+        <include layout="@layout/video_info" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/showVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showSpot"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="60dip"
+        android:layout_marginRight="60dip"
+        android:layout_marginTop="20dip"
+        android:background="@drawable/buttonbg"
+        android:text="@string/showVideo"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/adLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/adLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dip"
+        android:text="@string/bottomTag"
+        android:textColor="#3baa24"
+        android:textSize="16sp" />
+
+</RelativeLayout>

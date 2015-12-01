@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>更新说明 &mdash; Youmi Android SDK Document 5.3.3 文档</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/youmi.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Youmi Android SDK Document 5.3.3 文档" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/logo.png">
+          有米广告 Android SDK 文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>v5.3.3</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="有米AndroidSDK积分管理及相关功能.html">积分管理及相关功能</a></li>
+                <li><a href="有米AndroidSDK实用工具.html">实用工具</a></li>
+                <li><a href="有米AndroidSDK常见问题.html">常见问题</a></li>
+                <li><a href="#">更新说明</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">更新说明</a><ul>
+<li><a class="reference internal" href="#chap-1">一、积分墙</a><ul>
+<li><a class="reference internal" href="#v5-3-3">v5.3.3</a></li>
+<li><a class="reference internal" href="#v5-3-2">v5.3.2</a></li>
+<li><a class="reference internal" href="#v5-3-1">v5.3.1</a></li>
+<li><a class="reference internal" href="#v5-3-0">v5.3.0</a></li>
+<li><a class="reference internal" href="#v5-1-3">v5.1.3</a></li>
+<li><a class="reference internal" href="#v5-1-2">v5.1.2</a></li>
+<li><a class="reference internal" href="#v5-1-0">v5.1.0</a></li>
+<li><a class="reference internal" href="#v5-0-0">v5.0.0</a></li>
+<li><a class="reference internal" href="#v4-10">v4.10</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chap-2">二、无积分</a><ul>
+<li><a class="reference internal" href="#v5-1-1">v5.1.1</a></li>
+<li><a class="reference internal" href="#id9">v5.1.0</a></li>
+<li><a class="reference internal" href="#id10">v5.0.0</a></li>
+<li><a class="reference internal" href="#id11">v4.10</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="id1">
+<h1>更新说明<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="chap-1">
+<span id="id2"></span><h2>一、积分墙<a class="headerlink" href="#chap-1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="v5-3-3">
+<h3>v5.3.3<a class="headerlink" href="#v5-3-3" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>再次修复部分机型上无法完成任务的问题</li>
+</ol>
+</div>
+<div class="section" id="v5-3-2">
+<h3>v5.3.2<a class="headerlink" href="#v5-3-2" title="永久链接至标题">¶</a></h3>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>修复部分机型上无法完成任务的问题</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-1-2">权限配置</a> 发生变更</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="v5-3-1">
+<h3>v5.3.1<a class="headerlink" href="#v5-3-1" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>积分墙支持Android 5.1.0系统</li>
+<li>修复分享任务偶尔出现无法分享的问题</li>
+</ol>
+</div>
+<div class="section" id="v5-3-0">
+<h3>v5.3.0<a class="headerlink" href="#v5-3-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">新增 <a class="reference external" href="有米AndroidSDK分享任务开发者文档.html#chap-ow-cn-3">分享任务</a> ，一次分享，坐拥无限收益</p>
+</li>
+<li><dl class="first docutils">
+<dt>自本版本起，SDK将不再支持下面用户数据统计功能api，旧版sdk仍可以继续使用</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">AdManager.getInstance(Context</span> <span class="pre">context).setUserDataCollect(true);</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>客户端积分托管系统，积分使用类型由 <code class="docutils literal"><span class="pre">int</span></code> -&gt; <code class="docutils literal"><span class="pre">float</span></code>, 受影响接口如下:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2">客户端积分管理接口</a></li>
+<li><a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-2">积分余额变动通知</a></li>
+<li><a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-3-3-2">客户端获取积分订单信息中的积分订单模型</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">其他bug修复</p>
+</li>
+</ol>
+</div>
+<div class="section" id="v5-1-3">
+<h3>v5.1.3<a class="headerlink" href="#v5-1-3" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复部分机型上或某些情况下无法展示积分墙的问题</li>
+</ol>
+</div>
+<div class="section" id="v5-1-2">
+<h3>v5.1.2<a class="headerlink" href="#v5-1-2" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复SDK在Android 5.1.0系统上使用通知栏会导致系统界面崩溃的问题</li>
+</ol>
+</div>
+<div class="section" id="v5-1-0">
+<h3>v5.1.0<a class="headerlink" href="#v5-1-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>积分墙支持Android 5.0系统</li>
+<li>优化广告状态显示问题</li>
+<li>提高积分获取成功率</li>
+<li>其他优化及修复已知bug</li>
+</ol>
+</div>
+<div class="section" id="v5-0-0">
+<h3>v5.0.0<a class="headerlink" href="#v5-0-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>优化积分墙加载速度</li>
+<li>支持积分墙下拉刷新、双击标题刷新</li>
+<li>取消主动开启积分墙测试模式</li>
+<li>支持定制积分墙部分界面</li>
+<li>提供全屏积分墙退出监听接口</li>
+<li>新增在线时间检查功能</li>
+<li>简化权限配置</li>
+<li>提高积分获取成功率</li>
+<li>优化用户数据统计功能</li>
+</ol>
+</div>
+<div class="section" id="v4-10">
+<h3>v4.10<a class="headerlink" href="#v4-10" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>SDK 不再支持积分广告条、积分插播</li>
+<li>简化积分墙 AndroidManifest.xml 的配置</li>
+<li>优化改进本地积分防刷处理</li>
+<li>优化改进积分获取</li>
+<li>优化广告精准投放机制</li>
+<li>优化改进服务器回调使用</li>
+<li>解决部分机型不能上积分墙的问题</li>
+<li>新增通知栏提示配置开关</li>
+<li>提供新的渠道号设置方法</li>
+<li>提供新的客户端监听积分订单赚取接口</li>
+<li>其他优化及修复已知bug</li>
+</ol>
+</div>
+</div>
+<div class="section" id="chap-2">
+<span id="id8"></span><h2>二、无积分<a class="headerlink" href="#chap-2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="v5-1-1">
+<h3>v5.1.1<a class="headerlink" href="#v5-1-1" title="永久链接至标题">¶</a></h3>
+<p>1.优化开屏广告
+2.开屏广告和插屏广告加载改为即时请求
+3.增加插屏广告数量
+4.修复一些已知的Bug</p>
+</div>
+<div class="section" id="id9">
+<h3>v5.1.0<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>整合视频广告</li>
+<li>优化视频广告</li>
+<li>其他优化以及修复已知bug</li>
+</ol>
+</div>
+<div class="section" id="id10">
+<h3>v5.0.0<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>增加开屏广告模式。</li>
+<li>插屏广告从网页版改为native版。</li>
+<li>增加插屏展示动画效果。</li>
+<li>插屏展示时间间隔从SDK控制改为后台控制。</li>
+<li>插屏展示模式改为即使模式（即广告资源没有加载完成时会直接返回失败而不是延迟弹出）</li>
+<li>去除自定义广告模式</li>
+</ol>
+</div>
+<div class="section" id="id11">
+<h3>v4.10<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>新增支持横屏应用的插屏形式</li>
+<li>调整安卓插屏加载机制，提升插屏展示性能</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-right"><a href="#">返回顶端</a></p>
+            <p>© Copyright 2015, Youmi.net</p>
+        </div>
+    </footer>
+    <script>
+        $("#dLabelLocalToc").html('导航 <b class="caret"></b>');
+        $(".admonition-title").html('注意：');
+    </script>
+
+  </body>
+</html>

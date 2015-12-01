@@ -1,0 +1,18 @@
+# view AndroidManifest.xml #generated:32
+-keep class com.youmi.android.addemo.SplashSpotActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:27
+-keep class com.youmi.android.addemo.YoumiNormalAdsDemo { <init>(...); }
+
+# view AndroidManifest.xml #generated:55
+-keep class net.youmi.android.AdBrowser { <init>(...); }
+
+# view AndroidManifest.xml #generated:60
+-keep class net.youmi.android.AdReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:52
+-keep class net.youmi.android.AdService { <init>(...); }
+
+# view AndroidManifest.xml #generated:44
+-keep class net.youmi.android.video.VideoActivity { <init>(...); }
+

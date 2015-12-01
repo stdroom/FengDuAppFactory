@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Youmi Android SDK Tools &mdash; Youmi Android SDK Document 5.3.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/youmi.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '5.3.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Youmi Android SDK Document 5.3.3 documentation" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/logo.png">
+          Youmi Ad Android SDK Guide</a>
+        <span class="navbar-text navbar-version pull-left"><b>v5.3.3</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="Youmi_Android_SDK_Reward_Management_and_Related_Function.html">Rewards Management && Related Function</a></li>
+                <li><a href="#">Tools</a></li>
+                <li><a href="Youmi_Android_SDK_FAQ.html">FAQ</a></li>
+                <li><a href="changelog.html">ChangeLog</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Youmi Android SDK Tools</a><ul>
+<li><a class="reference internal" href="#check-and-update">1. Check and Update</a><ul>
+<li><a class="reference internal" href="#synchronization-method-usage">1) Synchronization method usage</a></li>
+<li><a class="reference internal" href="#asynchronous-method-usuage">2) Asynchronous method usuage</a></li>
+<li><a class="reference internal" href="#ym-class-appupdateinfo">3) AppUpdateInfo</a></li>
+<li><a class="reference internal" href="#ym-class-checkappupdatecallback">4) CheckAppUpdateCallBack</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#online-configuration">2. Online Configuration</a><ul>
+<li><a class="reference internal" href="#use-online-parameters">1) Use online parameters</a></li>
+<li><a class="reference internal" href="#implement-online-time-checking">2) implement online time checking</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#end-youmi-debug-log">3. End Youmi Debug Log</a></li>
+<li><a class="reference internal" href="#configure-setting-switch-of-push-notification">4. Configure Setting Switch of Push Notification</a><ul>
+<li><a class="reference internal" href="#download-notification">1) Download notification</a></li>
+<li><a class="reference internal" href="#install-completion-notification">2) Install completion notification</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="youmi-android-sdk-tools">
+<h1>Youmi Android SDK Tools<a class="headerlink" href="#youmi-android-sdk-tools" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+<div class="section" id="check-and-update">
+<span id="chap-1"></span><h2>1. Check and Update<a class="headerlink" href="#check-and-update" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Youmi&#8217;s SDK offers checking update interface in application version, you can invoke it to prompt the users to upgrade in application.</div>
+<div class="line">After the application pass audits in <a class="reference external" href="https://www.youmi.net">「Youmi Home Site」</a> ，you can acquire the update information using Youmi&#8217;s SDK checking update interface.</div>
+<div class="line">It includes upgrade prompt and download address, with which you can move to the next step, for example, you can prompt the users to upgrade or download the newest install version.</div>
+</div>
+<div class="section" id="synchronization-method-usage">
+<h3>1) Synchronization method usage<a class="headerlink" href="#synchronization-method-usage" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.AdManager</span>
+<span class="kn">import</span> <span class="nn">net.youmi.android.update.AppUpdateInfo</span>
+<span class="kn">import</span> <span class="nn">net.youmi.android.update.CheckAppUpdateCallBack</span><span class="o">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * The return value AppUpdateInfo includes update prompt and download address</span>
+<span class="cm"> * If updateInfo equals to null, that means current version is the latest version, no need to move to the next step.</span>
+<span class="cm"> * If updateInfo doesn&#39;t equal to null, please process the download and install prompt flow.</span>
+<span class="cm"> */</span>
+<span class="n">AppUpdateInfo</span> <span class="n">updateInfo</span> <span class="o">=</span> <span class="n">AdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">syncCheckAppUpdate</span><span class="o">();</span>
+<span class="c1">// Be noticed, this method must be invoked in non-UI thread, otherwise, it might fail.</span>
+</pre></div>
+</div>
+<p><strong>Example:</strong> (Synchronized interface, must be invoked in non-UI thread. The example uses AsyncTask)</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.AdManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">net.youmi.android.update.AppUpdateInfo</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.app.AlertDialog</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.content.DialogInterface</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.net.Uri</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.os.AsyncTask</span><span class="o">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * This is an example to describe a tool class invoking update application interface</span>
+<span class="cm"> * developer customize, extends from AsyncTask</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UpdateHelper</span> <span class="kd">extends</span> <span class="n">AsyncTask</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">,</span> <span class="n">Void</span><span class="o">,</span> <span class="n">AppUpdateInfo</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">Context</span> <span class="n">mContext</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">UpdateHelper</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">mContext</span> <span class="o">=</span> <span class="n">context</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">AppUpdateInfo</span> <span class="nf">doInBackground</span><span class="o">(</span><span class="n">Void</span><span class="o">...</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="c1">// Invoke checkAppUpdate from AdManager inside doInBackground</span>
+            <span class="c1">// can acquire application upgrade information from Youmi server.</span>
+            <span class="c1">// The method must be invoked in non-UI thread, otherwise, it might fail</span>
+            <span class="k">return</span> <span class="n">AdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">mContext</span><span class="o">).</span><span class="na">syncCheckAppUpdate</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPostExecute</span><span class="o">(</span><span class="kd">final</span> <span class="n">AppUpdateInfo</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onPostExecute</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">result</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">result</span><span class="o">.</span><span class="na">getUrl</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">// If AppUpdateInfo is null or its url attribute is null,</span>
+                <span class="c1">// it can be judged that there is no new version.</span>
+                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">mContext</span><span class="o">,</span> <span class="s">&quot;Current Version is the latest version!&quot;</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+                <span class="k">return</span><span class="o">;</span>
+            <span class="o">}</span>
+
+             <span class="c1">// This is an dialog box to show upgrade information</span>
+            <span class="k">new</span> <span class="n">AlertDialog</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="n">mContext</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">&quot;New Version Found&quot;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getUpdateTips</span><span class="o">())</span> <span class="c1">// This is the version upgrade information</span>
+                <span class="o">.</span><span class="na">setNegativeButton</span><span class="o">(</span><span class="s">&quot;upgrade&quot;</span><span class="o">,</span>
+                    <span class="k">new</span> <span class="n">DialogInterface</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+                        <span class="nd">@Override</span>
+                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">DialogInterface</span> <span class="n">dialog</span><span class="o">,</span> <span class="kt">int</span> <span class="n">which</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span> <span class="n">Intent</span><span class="o">.</span><span class="na">ACTION_VIEW</span><span class="o">,</span> <span class="n">Uri</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getUrl</span><span class="o">())</span> <span class="o">);</span>
+                            <span class="n">intent</span><span class="o">.</span><span class="na">addFlags</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">FLAG_ACTIVITY_NEW_TASK</span><span class="o">);</span>
+                            <span class="n">mContext</span><span class="o">.</span><span class="na">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+
+                            <span class="c1">// Sample:  Click button &quot;Upgrade Now&quot;,</span>
+                            <span class="c1">// it will use system&#39;s browser to download the newest version.</span>
+                            <span class="c1">// But it is strongly suggested that developers implement</span>
+                            <span class="c1">// their own download management overflow, with which</span>
+                            <span class="c1">// it can bring better user experience.</span>
+                        <span class="o">}</span>
+                <span class="o">})</span>
+                <span class="o">.</span><span class="na">setPositiveButton</span><span class="o">(</span><span class="s">&quot;next time&quot;</span><span class="o">,</span>
+                    <span class="k">new</span> <span class="n">DialogInterface</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+                        <span class="nd">@Override</span>
+                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">DialogInterface</span> <span class="n">dialog</span><span class="o">,</span> <span class="kt">int</span> <span class="n">which</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="n">dialog</span><span class="o">.</span><span class="na">cancel</span><span class="o">();</span>
+                        <span class="o">}</span>
+                <span class="o">}).</span><span class="na">create</span><span class="o">().</span><span class="na">show</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="asynchronous-method-usuage">
+<h3>2) Asynchronous method usuage<a class="headerlink" href="#asynchronous-method-usuage" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.AdManager</span>
+<span class="kn">import</span> <span class="nn">net.youmi.android.update.AppUpdateInfo</span>
+<span class="kn">import</span> <span class="nn">net.youmi.android.update.CheckAppUpdateCallBack</span><span class="o">;</span>
+
+<span class="c1">// After invoke this method, it will call back CheckAppUpdateCallBack interface when there is a result</span>
+<span class="c1">// this method can be invoked in any thread</span>
+<span class="n">AdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">asyncCheckAppUpdate</span><span class="o">(</span><span class="k">new</span> <span class="n">CheckAppUpdateCallBack</span><span class="o">());</span>
+</pre></div>
+</div>
+<p><strong>Example:</strong> (Asynchronous interface, can be used in any thread)</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.AdManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">net.youmi.android.update.AppUpdateInfo</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">net.youmi.android.update.CheckAppUpdateCallBack</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.app.Activity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.net.Uri</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UpdateActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="kd">implements</span> <span class="n">CheckAppUpdateCallBack</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Invoke the checking update interface, this can be use in both UI and non-UI thread.</span>
+        <span class="n">AdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">asyncCheckAppUpdate</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCheckAppUpdateFinish</span><span class="o">(</span><span class="n">AppUpdateInfo</span> <span class="n">updateInfo</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Checking update call-back, be noticed, this is callback in UI thread,</span>
+        <span class="c1">// so you can interact with UI, but you can&#39;t operate for a long time</span>
+        <span class="c1">// (eg. you can&#39;t access to network here)</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">updateInfo</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">updateInfo</span><span class="o">.</span><span class="na">getUrl</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// Current version is the latest version</span>
+        <span class="o">}</span>
+        <span class="k">else</span> <span class="o">{</span>
+            <span class="c1">// There is new update information, developer should download the newest version here</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ym-class-appupdateinfo">
+<h3>3) AppUpdateInfo<a class="headerlink" href="#ym-class-appupdateinfo" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">package</span> <span class="nn">net.youmi.android.update</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppUpdateInfo</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * get the latest version&#39; code</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVersionCode</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * get the latest version&#39; code</span>
+<span class="cm">         */</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getVersionName</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * get update hints</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getUpdateTips</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * get latest version apk download url</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getUrl</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ym-class-checkappupdatecallback">
+<h3>4) CheckAppUpdateCallBack<a class="headerlink" href="#ym-class-checkappupdatecallback" title="Permalink to this headline">¶</a></h3>
+<p>used in asynchronous method:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">package</span> <span class="nn">net.youmi.android.update</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CheckAppUpdateCallBack</span> <span class="o">{</span>
+    <span class="cm">/**</span>
+<span class="cm">     * Call back after checking update information, this call-back method will be executed in UI thread</span>
+<span class="cm">     */</span>
+    <span class="kt">void</span> <span class="nf">onCheckAppUpdateFinish</span><span class="o">(</span><span class="n">AppUpdateInfo</span> <span class="n">updateInfo</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+</div>
+<div class="section" id="online-configuration">
+<span id="chap-2"></span><h2>2. Online Configuration<a class="headerlink" href="#online-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="use-online-parameters">
+<h3>1) Use online parameters<a class="headerlink" href="#use-online-parameters" title="Permalink to this headline">¶</a></h3>
+<p><strong>Introduction：</strong> Online parameters configuration is the new service offered by Youmi platform. It allows developers to change the configuration item dynamically, like welcome notes, price of game property, switch of advertisement and so on. It will be used as a form of Key-Value.</p>
+<p><strong>Usage：</strong> Developers can set specific online parameters in developers control panel from  <a class="reference external" href="https://www.youmi.net">「Youmi home site」</a>  and then use the parameters in coding.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.AdManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">net.youmi.android.onlineconfig.OnlineConfigCallBack</span><span class="o">;</span> <span class="c1">// call back listener</span>
+<span class="o">...</span>
+
+<span class="n">String</span> <span class="n">mykey</span> <span class="o">=</span> <span class="s">&quot;mycustomkey&quot;</span><span class="o">;</span>  <span class="c1">// key</span>
+<span class="n">String</span> <span class="n">defaultValue</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>    <span class="c1">// Default value. When the online parameters can&#39;t be acquired, it will return this value</span>
+
+<span class="c1">// Usage 1: Synchronous invoke, must be invoked in non-UI thread, otherwise, it might fail.</span>
+<span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">AdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">syncGetOnlineConfig</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">defaultValue</span><span class="o">);</span>
+
+<span class="c1">// Usage 2: Asynchronous invoke (can be invoked in any thread)</span>
+<span class="n">AdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">asyncGetOnlineConfig</span><span class="o">(</span><span class="n">mykey</span><span class="o">,</span> <span class="k">new</span> <span class="n">OnlineConfigCallBack</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onGetOnlineConfigSuccessful</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// TODO Auto-generated method stub</span>
+        <span class="c1">// Success to acquire online parameters</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onGetOnlineConfigFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// TODO Auto-generated method stub</span>
+        <span class="c1">// Fail to acquire online parameters, possible reasons can be:</span>
+        <span class="c1">// * value of key hasn&#39;t been set or is null,</span>
+        <span class="c1">// * abnormal network status,</span>
+        <span class="c1">// * abnormal server status</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><strong>Be Noticed:</strong> There will be some delay when config service cache online, so it will take some time to get response when changing configuration item in developer control panel.</p>
+</div>
+</div>
+<div class="section" id="implement-online-time-checking">
+<span id="chap-2-2"></span><h3>2) implement online time checking<a class="headerlink" href="#implement-online-time-checking" title="Permalink to this headline">¶</a></h3>
+<p><strong>P.S</strong> Since <strong>Youmi Android SDK v5.0.0</strong>, Youmi starts to launch the online time checking service; By checking the online time, developer could set some of the in-app function &#8220;enabled&#8221;.
+e.g. Enable mysterious tasks, or set the ad switch.</p>
+<p><strong>Usage:</strong> Developer set a target date(YEAR, MONTH, DAY), and check the online time via following coding:</p>
+<p><em>Example:</em></p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.AdManager</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="c1">// Set targeting date</span>
+<span class="kd">final</span> <span class="kt">int</span> <span class="n">targetYear</span> <span class="o">=</span> <span class="mi">2014</span><span class="o">;</span>
+<span class="kd">final</span> <span class="kt">int</span> <span class="n">targetMonth</span> <span class="o">=</span> <span class="mi">11</span><span class="o">;</span>
+<span class="kd">final</span> <span class="kt">int</span> <span class="n">targetMonthDay</span> <span class="o">=</span> <span class="mi">24</span><span class="o">;</span>
+
+<span class="c1">// and then invoke following method to check if the the online time is the targeting time</span>
+
+<span class="c1">// Method 1: Synchronous invoke, please MUST invoke on the non-UI thread, otherwise you may fail.</span>
+<span class="kt">boolean</span> <span class="n">isReach</span> <span class="o">=</span> <span class="n">AdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">syncCheckIsReachNtpTime</span><span class="o">(</span><span class="n">targetYear</span><span class="o">,</span> <span class="n">targetMonth</span><span class="o">,</span> <span class="n">targetMonthDay</span><span class="o">);</span>
+
+<span class="c1">// Method 2:  asynchronous invoke (invoke in any thread)</span>
+<span class="n">AdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">asyncCheckIsReachNtpTime</span><span class="o">(</span><span class="n">targetYear</span><span class="o">,</span> <span class="n">targetMonth</span><span class="o">,</span> <span class="n">targetMonthDay</span><span class="o">,</span>
+    <span class="k">new</span> <span class="n">NtpResultListener</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         * when get the online time, this method will be invoked (executed in UI thread)</span>
+<span class="cm">         */</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCheckNtpFinish</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;ntp_&quot;</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;If get to the targeting date: %d-%d-%d %s&quot;</span><span class="o">,</span> <span class="n">targetYear</span><span class="o">,</span> <span class="n">targetMonth</span><span class="o">,</span> <span class="n">targetMonthDay</span><span class="o">,</span> <span class="n">result</span> <span class="o">?</span> <span class="s">&quot;YES&quot;</span> <span class="o">:</span> <span class="s">&quot;NO&quot;</span><span class="o">););</span>
+        <span class="o">}</span>
+    <span class="o">});</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><strong>P.S.</strong> Targeting date is based on (GMT+8) time.</p>
+</div>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+</div>
+<div class="section" id="end-youmi-debug-log">
+<span id="chap-3"></span><h2>3. End Youmi Debug Log<a class="headerlink" href="#end-youmi-debug-log" title="Permalink to this headline">¶</a></h2>
+<p>If need to close the debug log in Youmi SDK, please use the below code to close the log output of SDK, please make sure you invoking this method you use any other Youmi code</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.AdManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="c1">// Setting for open the Youmi ADs SDK Log or not.</span>
+<span class="c1">// The default value is true, which means open. False means close log.</span>
+<span class="n">AdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">setEnableDebugLog</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last"><strong>Be Noticed:</strong> Please make sure to open debug open before uploading for audit. Otherwise, it can&#8217;t pass the audit.</p>
+</div>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+<div class="section" id="configure-setting-switch-of-push-notification">
+<span id="chap-4"></span><h2>4. Configure Setting Switch of Push Notification<a class="headerlink" href="#configure-setting-switch-of-push-notification" title="Permalink to this headline">¶</a></h2>
+<p>Developers can control to show Youmi notification bar hint or not, <strong>normally we don&#8217;t suggest developers to close the notification bar hint</strong> 。</p>
+<div class="section" id="download-notification">
+<h3>1) Download notification<a class="headerlink" href="#download-notification" title="Permalink to this headline">¶</a></h3>
+<p>Developers can invoke the below method to set if or not to show the download hint message on notification bar, which includes: start download notification, download progress notification, successfully download notification, download fail notification and other download related notification.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.AdManager</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="c1">// Setting of showing the download related hint in notification bar.</span>
+<span class="c1">// Default value is true, which means enable, false means disable.</span>
+<span class="n">AdManager</span><span class="o">.</span><span class="na">setIsDownloadTipsDisplayOnNotification</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">flag</span><span class="o">);</span>
+
+<span class="c1">// Acquire the value which on behalf of if showing the download related hint in notification bar or not.</span>
+<span class="n">AdManager</span><span class="o">.</span><span class="na">isDownloadTipsDisplayOnNotification</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-completion-notification">
+<h3>2) Install completion notification<a class="headerlink" href="#install-completion-notification" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">net.youmi.android.AdManager</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="c1">// If showing the successfully install hint in notification bar after install an application.</span>
+<span class="c1">// The default value is true, which means enable, false means disable.</span>
+<span class="n">AdManager</span><span class="o">.</span><span class="na">setIsInstallationSuccessTipsDisplayOnNotification</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">flag</span><span class="o">);</span>
+
+<span class="c1">// Acquire the value which on behalf of if showing the successfully install hint in notification bar.</span>
+<span class="n">AdManager</span><span class="o">.</span><span class="na">isInstallationSuccessTipsDisplayOnNotification</span><span class="o">();</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="javascript:history.back();">Previous</a></p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-right"><a href="#">Top</a></p>
+            <p>© Copyright 2015, Youmi.net</p>
+        </div>
+    </footer>
+    <script>
+        $("#dLabelLocalToc").html('Navigation <b class="caret"></b>');
+        $(".admonition-title").html('Attention:');
+    </script>
+
+  </body>
+</html>
