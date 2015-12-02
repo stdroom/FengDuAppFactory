@@ -11,9 +11,11 @@ package com.fengdu.ui.slide;
 
 import com.fengdu.BaseApplication;
 import com.fengdu.R;
+import com.fengdu.ui.activity.FeedbackActivity;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
@@ -83,6 +85,7 @@ public class DrawerView implements View.OnClickListener{
 //			night_mode_text.setText(activity.getResources().getString(R.string.action_day_mode));
 //		}
 		localSlidingMenu.findViewById(R.id.menu_item_theme).setOnClickListener(this);
+		localSlidingMenu.findViewById(R.id.feedback_btn).setOnClickListener(this);
 		setting_btn =(RelativeLayout)localSlidingMenu.findViewById(R.id.setting_btn);
 		setting_btn.setOnClickListener(this);
 	}
@@ -101,6 +104,9 @@ public class DrawerView implements View.OnClickListener{
 		int id = v.getId();
 		if(id == R.id.menu_item_theme){
 			switchTheme();
+		}else if(id == R.id.feedback_btn){
+			activity.startActivity(new Intent(activity,FeedbackActivity.class));
+//			activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 		}
 	}
 	

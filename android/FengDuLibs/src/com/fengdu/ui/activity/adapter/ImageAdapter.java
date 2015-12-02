@@ -28,6 +28,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import uk.co.senab.photoview.PhotoView;
+import uk.co.senab.photoview.PhotoViewAttacher.OnPhotoTapListener;
 
 /**
  * 类名: ImageAdapter <br/>
@@ -42,8 +43,9 @@ public class ImageAdapter extends PagerAdapter{
 	private LayoutInflater inflater;
 	private ArrayList<String> list;
 	private Context mContext;
-	
-	public ImageAdapter(ArrayList<String> list,Context context) {
+	private OnPhotoTapListener clickListenerCallback;
+	public ImageAdapter(ArrayList<String> list,Context context,OnPhotoTapListener listener) {
+		this.clickListenerCallback = listener;
 		inflater = LayoutInflater.from(context);
 		this.list = list;
 	}
@@ -55,7 +57,7 @@ public class ImageAdapter extends PagerAdapter{
 
 	@Override
 	public int getCount() {
-		return list.size();
+		return list!=null? list.size():0;
 	}
 
 	@Override
@@ -64,6 +66,7 @@ public class ImageAdapter extends PagerAdapter{
 		assert imageLayout != null;
 		PhotoView imageView = (PhotoView) imageLayout.findViewById(R.id.photoView);
 		final TextView tv = (TextView)imageLayout.findViewById(R.id.ratio);
+		imageView.setOnPhotoTapListener(clickListenerCallback);
 		ImageLoader.getInstance().displayImage(list.get(position), imageView,
 				new ImageLoadingListener() {
 			

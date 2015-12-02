@@ -36,6 +36,8 @@
         </activity>
         <activity
             android:name="com.fengdu.ui.activity.PictureItemActivity"/>
+        <activity
+            android:name="com.fengdu.ui.activity.FeedbackActivity"/>
         
         <activity
             android:name="com.fengdu.ui.activity.SearchActivity"/>

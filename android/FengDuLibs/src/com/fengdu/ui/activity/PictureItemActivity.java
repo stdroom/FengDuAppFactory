@@ -20,7 +20,12 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import uk.co.senab.photoview.PhotoViewAttacher.OnPhotoTapListener;
 
 /**
  * 类名: PictureItemActivity <br/>
@@ -30,7 +35,8 @@ import android.widget.TextView;
  * @author   leixun
  * @version  	 
  */
-public class PictureItemActivity extends BaseFragmentActivity implements ViewPager.OnPageChangeListener{
+public class PictureItemActivity extends BaseFragmentActivity implements ViewPager.OnPageChangeListener
+	,View.OnClickListener{
 	private ArrayList<ImageBean> mList;
 	private DisplayImageOptions mOptions;
 	private ViewPager viewPager;
@@ -39,6 +45,9 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 	TextView titleTv;
 	TextView pageNumTv;
 	int totalSize;
+	RelativeLayout bottom_menu_rl;
+	private ImageView mBackImg;
+	private ImageView mFavorImg;
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +60,26 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 		viewPager = (ViewPager)findViewById(R.id.viewpager);
 		pageNumTv = (TextView)findViewById(R.id.pageNumTv);
 		titleTv = (TextView)findViewById(R.id.titleTv);
-		imgAdapter = new ImageAdapter(bean.getPagePaths(),this);
+		bottom_menu_rl = (RelativeLayout)findViewById(R.id.bottom_menu_rl);
+		mBackImg = (ImageView)findViewById(R.id.bottom_back);
+		mFavorImg = (ImageView)findViewById(R.id.bottom_favor);
+		mBackImg.setOnClickListener(this);
+		imgAdapter = new ImageAdapter(bean.getPagePaths(),this,new OnPhotoTapListener() {
+			
+			@Override
+			public void onPhotoTap(View view, float x, float y) {
+				if(bottom_menu_rl.getVisibility() == View.VISIBLE){
+					bottom_menu_rl.startAnimation(AnimationUtils.loadAnimation(PictureItemActivity.this, 
+							R.anim.anim_push_bottom_out));
+					bottom_menu_rl.setVisibility(View.GONE);
+				}else{
+					bottom_menu_rl.startAnimation(AnimationUtils.loadAnimation(PictureItemActivity.this, 
+							R.anim.anim_push_bottom_in));
+					bottom_menu_rl.setVisibility(View.VISIBLE);
+				}
+			}
+		});
+		
 		viewPager.setAdapter(imgAdapter);
 		totalSize = bean.getPagePaths().size();
 		viewPager.setOffscreenPageLimit(totalSize);
@@ -86,6 +114,16 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 	public void onPageSelected(int arg0) {
 		int num = arg0+1;
 		pageNumTv.setText(num+"/"+totalSize);
+	}
+
+	@Override
+	public void onClick(View arg0) {
+		if(arg0.getId() == R.id.bottom_favor){
+			
+		}else if(arg0.getId() == R.id.bottom_back){
+			finish();
+		}
+		
 	}
 }
 
