@@ -72,7 +72,7 @@ public abstract class BaseSecondMainActivity extends BaseFragmentActivity implem
 	
 	private long exitTime = 0;
 	
-	SlidingMenu side_drawer;
+	protected SlidingMenu side_drawer;
 	ImageView mTopHead;
 	ImageView mTopMore;
 	@Override
@@ -252,9 +252,6 @@ public abstract class BaseSecondMainActivity extends BaseFragmentActivity implem
 		return super.onKeyDown(keyCode, event);
 	}
 	
-	private void initSlidingMenu() {
-		side_drawer = new DrawerView(this).initSlidingMenu();
-		
-	}
+	protected abstract void initSlidingMenu();
 }
 

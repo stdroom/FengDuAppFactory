@@ -12,6 +12,7 @@ package com.fengdu.ui;
 import com.fengdu.BaseApplication;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
+import com.fengdu.android.AppConstant;
 import com.fengdu.ui.menu.MyFragmentTabHost;
 import com.fengdu.ui.slide.DrawerView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -25,6 +26,9 @@ import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Toast;
 import android.widget.ImageView;
+import net.youmi.android.AdManager;
+import net.youmi.android.offers.OffersManager;
+import net.youmi.android.offers.PointsManager;
 import net.youmi.android.spot.SpotManager;
 
 /**
@@ -39,13 +43,16 @@ public abstract class BaseMainActivity extends BaseFragmentActivity implements O
 	long exitTime;
 
 	protected MyFragmentTabHost mTabHost = null;
-	SlidingMenu side_drawer;
+	protected SlidingMenu side_drawer;
 	ImageView mTopHead;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-//		AdManager.getInstance(this).init(AppConstant.YOUMI_APPID, AppConstant.YOUMI_APPSECRET, false);
+		AdManager.getInstance(this).init(AppConstant.YOUMI_APPID, AppConstant.YOUMI_APPSECRET, false);
+		// 如果使用积分广告，请务必调用积分广告的初始化接口:
+		OffersManager.getInstance(this).onAppLaunch();
+
 		SpotManager.getInstance(this).loadSpotAds();
 		SpotManager.getInstance(this).setAnimationType(
 				SpotManager.ANIM_ADVANCE);
@@ -84,10 +91,7 @@ public abstract class BaseMainActivity extends BaseFragmentActivity implements O
 		return false;
 	}
 	
-	private void initSlidingMenu() {
-		side_drawer = new DrawerView(this).initSlidingMenu();
-		
-	}
+	protected abstract void initSlidingMenu();
 	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -106,5 +110,14 @@ public abstract class BaseMainActivity extends BaseFragmentActivity implements O
 	    }
 		return super.onKeyDown(keyCode, event);
 	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		// 回收积分广告占用的资源
+		OffersManager.getInstance(this).onAppExit();
+	}
+	
+	
 }
 

@@ -11,6 +11,7 @@ package com.fengduman.android;
 
 import com.fengdu.android.URLs;
 import com.fengdu.ui.BaseMainActivity;
+import com.fengdu.ui.slide.DrawerView;
 import com.fengduman.android.menu.MainTabs;
 
 import android.graphics.drawable.Drawable;
@@ -60,6 +61,11 @@ public class MainActivity extends BaseMainActivity{
 
 //          mTabHost.getTabWidget().getChildAt(i).setOnTouchListener(this);
 		}
+	}
+
+	@Override
+	protected void initSlidingMenu() {
+		side_drawer = new DrawerView(this).initSlidingMenu();
 	}
 
 }

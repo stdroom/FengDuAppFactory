@@ -12,16 +12,9 @@ package com.yesemeinvsuite.android;
 import com.fengdu.android.URLs;
 import com.fengdu.ui.BaseSecondMainActivity;
 import com.fengdu.ui.fragment.PhotosViewPagerFragment;
-import com.yesemeinvsuite.android.menu.MainTabs;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.TabHost.TabContentFactory;
-import android.widget.TabHost.TabSpec;
 
 /**
  * 类名: MainActivity <br/>
@@ -74,6 +67,13 @@ public class MainActivity extends BaseSecondMainActivity{
 		bundle.putString("key", URLs.URL_GET_IMAGE+urls);
         return bundle;
     }
+
+
+	@Override
+	protected void initSlidingMenu() {
+		side_drawer = new DrawView(this).initSlidingMenu();
+	}
+	
 	
 
 }

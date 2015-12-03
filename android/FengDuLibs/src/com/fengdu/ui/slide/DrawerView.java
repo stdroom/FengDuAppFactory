@@ -15,12 +15,16 @@ import com.fengdu.ui.activity.FeedbackActivity;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import net.youmi.android.listener.Interface_ActivityListener;
+import net.youmi.android.offers.OffersManager;
 /**
  * 类名: DrawerView <br/>
  * 功能: TODO 添加功能描述. <br/>
@@ -86,6 +90,7 @@ public class DrawerView implements View.OnClickListener{
 //		}
 		localSlidingMenu.findViewById(R.id.menu_item_theme).setOnClickListener(this);
 		localSlidingMenu.findViewById(R.id.feedback_btn).setOnClickListener(this);
+		localSlidingMenu.findViewById(R.id.appstore_btn).setOnClickListener(this);
 		setting_btn =(RelativeLayout)localSlidingMenu.findViewById(R.id.setting_btn);
 		setting_btn.setOnClickListener(this);
 	}
@@ -106,7 +111,17 @@ public class DrawerView implements View.OnClickListener{
 			switchTheme();
 		}else if(id == R.id.feedback_btn){
 			activity.startActivity(new Intent(activity,FeedbackActivity.class));
-//			activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+			activity.overridePendingTransition(R.anim.anim_activity_left_in, R.anim.anim_activity_left_out);
+		}else if(id == R.id.appstore_btn){
+			OffersManager.getInstance(activity).showOffersWall(new Interface_ActivityListener() {
+				/**
+				 * 当积分墙销毁的时候，即积分墙的Activity调用了onDestory的时候回调
+				 */
+				@Override
+				public void onActivityDestroy(Context context) {
+					
+				}
+			});
 		}
 	}
 	

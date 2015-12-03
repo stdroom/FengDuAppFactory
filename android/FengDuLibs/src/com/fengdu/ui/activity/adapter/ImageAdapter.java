@@ -61,28 +61,63 @@ public class ImageAdapter extends PagerAdapter{
 	}
 
 	@Override
-	public Object instantiateItem(ViewGroup view, int position) {
+	public Object instantiateItem(ViewGroup view, final int position) {
 		View imageLayout = inflater.inflate(R.layout.viewpager_item, view, false);
 		assert imageLayout != null;
-		PhotoView imageView = (PhotoView) imageLayout.findViewById(R.id.photoView);
+		final PhotoView imageView = (PhotoView) imageLayout.findViewById(R.id.photoView);
+		final ImageView defaultImg = (ImageView)imageLayout.findViewById(R.id.default_img);
 		final TextView tv = (TextView)imageLayout.findViewById(R.id.ratio);
 		imageView.setOnPhotoTapListener(clickListenerCallback);
+		defaultImg.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				ImageLoader.getInstance().displayImage(list.get(position), imageView,
+						new ImageLoadingListener() {
+					
+					@Override
+					public void onLoadingStarted(String imageUri, View view) {
+						defaultImg.setImageResource(R.drawable.meizi_default);
+						defaultImg.setVisibility(View.VISIBLE);
+					}
+					
+					@Override
+					public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+						defaultImg.setImageResource(R.drawable.loading_fail);
+						defaultImg.setVisibility(View.VISIBLE);
+					}
+					
+					@Override
+					public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+						tv.setText(loadedImage.getWidth()+"x"+loadedImage.getHeight());
+						defaultImg.setVisibility(View.GONE);
+					}
+					
+					@Override
+					public void onLoadingCancelled(String imageUri, View view) {
+						
+					}
+				});
+			}
+		});
 		ImageLoader.getInstance().displayImage(list.get(position), imageView,
 				new ImageLoadingListener() {
 			
 			@Override
 			public void onLoadingStarted(String imageUri, View view) {
-				((ImageView)view).setImageResource(R.drawable.meizi_default);
+				defaultImg.setImageResource(R.drawable.meizi_default);
+				defaultImg.setVisibility(View.VISIBLE);
 			}
 			
 			@Override
 			public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
-				((ImageView)view).setImageResource(R.drawable.loading_fail);
+				defaultImg.setImageResource(R.drawable.loading_fail);
+				defaultImg.setVisibility(View.VISIBLE);
 			}
 			
 			@Override
 			public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
 				tv.setText(loadedImage.getWidth()+"x"+loadedImage.getHeight());
+				defaultImg.setVisibility(View.GONE);
 			}
 			
 			@Override
