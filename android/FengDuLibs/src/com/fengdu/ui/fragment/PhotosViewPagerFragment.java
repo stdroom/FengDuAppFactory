@@ -291,6 +291,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 		// 1 初始化数据
 		this.urls = urls;
 		list = new ArrayList<ImageBean>();
+		mAdapter = null;
 		pageSize = 1;
 		initData(urls+"&page="+pageSize+"&pageSize=20");
 	}

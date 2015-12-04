@@ -29,14 +29,28 @@
 	        android:id="@+id/news_title"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:singleLine="false"
-	        android:textColor="?attr/infoTextColor" />
-        <TextView
-	        android:id="@+id/news_time"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:textSize="12sp"
-	        android:textColor="?attr/infoTextColor" />
+	        android:maxLines="2"
+	        android:ellipsize="end"
+	        android:textSize="13sp"
+	        android:textColor="#d4d4d4" />
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+	        <TextView
+		        android:id="@+id/news_time"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textSize="12sp"
+		        android:layout_centerVertical="true"
+		        android:textColor="#d4d4d4" />
+	        <TextView 
+	            android:id="@+id/pageNum"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textSize="14sp"
+	            android:layout_alignParentRight="true"
+	            android:textColor="#d4d4d4"/>
+        </RelativeLayout>
     </LinearLayout>
     
 </RelativeLayout>

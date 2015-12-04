@@ -62,14 +62,16 @@ public class StaggeredGridAdapter extends BaseAdapter{
 			viewHolder.mImageView = (DynamicHeightImageView) convertView.findViewById(R.id.child_image);
 			viewHolder.mTitleTv = (TextView)convertView.findViewById(R.id.news_title);
 			viewHolder.mTimeTv = (TextView)convertView.findViewById(R.id.news_time);
+			viewHolder.mPageNum = (TextView)convertView.findViewById(R.id.pageNum);
 			convertView.setTag(viewHolder);
 		}else{
 			viewHolder = (ViewHolder) convertView.getTag();
 			viewHolder.mImageView.setImageResource(R.drawable.friends_sends_pictures_no);
 		}
 		viewHolder.mImageView.setHeightRatio(bean.getImage_height()/bean.getImage_width());
-		viewHolder.mTitleTv.setText(bean.getDesc()+"("+bean.getTotalNum()+"P)");
+		viewHolder.mTitleTv.setText(bean.getDesc());
 		viewHolder.mTimeTv.setText(StringUtils.friendly_time(bean.getUpdatedTime()));
+		viewHolder.mPageNum.setText(bean.getTotalNum()+"P");
 		ImageLoader.getInstance().displayImage(bean.getImage_url(), viewHolder.mImageView, mOption);
 		
 		return convertView;
@@ -79,6 +81,7 @@ public class StaggeredGridAdapter extends BaseAdapter{
 		public DynamicHeightImageView mImageView;
 		private TextView mTitleTv;
 		private TextView mTimeTv;
+		private TextView mPageNum;
 	}
 	
 }

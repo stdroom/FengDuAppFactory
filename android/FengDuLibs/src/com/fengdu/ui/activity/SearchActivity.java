@@ -112,7 +112,6 @@ public class SearchActivity extends BaseFragmentActivity implements View.OnClick
 	public void onClick(View arg0) {
 		if(arg0.getId() == R.id.btn_searching){
 			showResult();
-			Toast.makeText(SearchActivity.this, "点击了搜索", Toast.LENGTH_SHORT).show();
 		}else if(arg0.getId() == R.id.clear_search_text){
 			btn_search.setText("");
 			mSearchText = "";
