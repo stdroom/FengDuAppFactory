@@ -50,6 +50,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import net.youmi.android.banner.AdSize;
 import net.youmi.android.banner.AdView;
 import net.youmi.android.banner.AdViewListener;
@@ -72,12 +73,14 @@ public class PhotosViewPagerFragment extends BaseFragment{
     
 	private String urls = "";
 	RequestQueue mQueue= null;
-	int pageSize = 0;
+	int page = 0;
+	final int pageSize = 21;
 	
 	private boolean isRequest = false;
 	
 	private View view = null;
 	private FrameLayout mAdContainer;
+	private boolean hasMoreData = true;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -116,8 +119,8 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			
 			@Override
 			public void onClick(View v) {
-				pageSize = 1;
-				initData(urls+"&page="+pageSize+"&pageSize=20");
+				page = 1;
+				initData(urls+"&page="+page+"&pageSize="+pageSize,true);
 			}
 		});
 		mGridView = (PullToRefreshStaggeredGridView) view.findViewById(R.id.pull_grid_view);
@@ -140,11 +143,15 @@ public class PhotosViewPagerFragment extends BaseFragment{
 		mGridView.setOnLoadmoreListener(new OnLoadmoreListener() {
 			@Override
 			public void onLoadmore() {
-				if(!isRequest){
-					pageSize = pageSize+1;
-					String url = urls+"&page="+pageSize+"&pageSize=20";
-					initData(url);
+				if(!isRequest && hasMoreData){
+					page = page+1;
+					String url = urls+"&page="+page+"&pageSize="+pageSize;
+					mGridView.getRefreshableView().showFooterView();
+					initData(url,false);
 				}else{
+					mGridView.getRefreshableView().hideFooterView();
+					Toast.makeText(getActivity(), "已加载完毕", Toast.LENGTH_SHORT).show();
+					mGridView.onRefreshComplete();
 				}
 			}
 		});
@@ -152,7 +159,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 
 			@Override
 			public void onRefresh(PullToRefreshBase<StaggeredGridView> refreshView) {
-				initData(urls+"&page="+1+"&pageSize=20");
+				initData(urls+"&page="+1+"&pageSize="+pageSize,true);
 			}
 		});
 		MKLog.d("PhotosViewPagerFragment", "onCreateView");
@@ -171,12 +178,15 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			return;
 		}else{
 			list = new ArrayList<ImageBean>();
-			pageSize = 1;
-			initData(urls+"&page="+pageSize+"&pageSize=20");
+			page = 1;
+			initData(urls+"&page="+page+"&pageSize="+pageSize,false);
 		}
 	}
 	
-	public void initData(final String urls){
+	public void initData(final String urls,final boolean refreshFlag){
+		if(page == 1 || refreshFlag == true){
+			hasMoreData = true;
+		}
 		if(!isRequest){
 			isRequest = true;
 			if(list==null || list.size()==0){
@@ -192,11 +202,14 @@ public class PhotosViewPagerFragment extends BaseFragment{
 						public void onResponse(JSONObject obj,
 								String executeMethod, String flag,
 								boolean dialogFlag) {
+							ArrayList<ImageBean> tempList = new ArrayList<ImageBean>();
 							if (obj!=null){
 								
 								JSONArray arrays = obj.getJSONArray("data");
 								int size = arrays!=null ? arrays.size():0;
-								
+								if(size < pageSize){
+									hasMoreData = false;
+								}
 								MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), urls+"");
 								MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), obj+"");
 								for(int i = 0 ; i < size ;i++){
@@ -207,6 +220,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 									bean.setImage_width(json.getIntValue("width"));
 									bean.setImage_url(json.getString("thumbNail"));
 									bean.setTotalNum(json.getIntValue("pageNum"));
+									bean.setId(json.getIntValue("id"));
 									String imgPaths = json.getString("imgPaths");
 									
 									bean.setUpdatedTime(SystemTool.getTimFromStamps(json.getLong("updateed_at"))+"");
@@ -233,7 +247,49 @@ public class PhotosViewPagerFragment extends BaseFragment{
 											bean.setPagePaths(paths);
 										}
 									}
-									list.add(bean);
+									tempList.add(bean);
+								}
+								if(refreshFlag){	// 刷新
+									if(size <= 0){	// 刷新的时候没有获取到数据
+										Toast.makeText(getActivity(), "暂无最新数据", Toast.LENGTH_SHORT).show();
+										return;
+									}
+									if(list==null || list.size() == 0){
+										list = tempList;
+									}else{
+										int j = size -1;
+										for(; j>=0 ;j--){
+											int length = list.size();
+											for(int i = 0; i < length ; i++){
+												if(tempList.get(j).getId() != list.get(i).getId()){
+													break;
+												}
+											}
+										}
+										if(j < 0){	// 所有的数据都已加载
+											Toast.makeText(getActivity(), "暂无最新数据", Toast.LENGTH_SHORT).show();
+										}else{
+											list.addAll(tempList.subList(0, j));
+										}
+									}
+								}else{
+									if(list == null){
+										list = tempList;
+									}else{
+										list.addAll(tempList);
+									}
+									if(size <=0){
+										if(list == null || list.size() ==0){
+										}else{
+											Toast.makeText(getActivity(), "暂无更多数据",Toast.LENGTH_SHORT).show();
+										}
+										hasMoreData = false;
+									}else if(size < pageSize){
+//										Toast.makeText(getActivity(), "数据已加载完毕",Toast.LENGTH_SHORT).show();
+										hasMoreData = false;
+									}else{
+										hasMoreData = true;
+									}
 								}
 								myHandler.sendEmptyMessage(0x110);
 							} else {
@@ -263,7 +319,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 						mGridView.setAdapter(mAdapter);
 					}
 					mAdapter.notifyDataSetChanged();
-					mGridView.getRefreshableView().showFooterView();
+					mGridView.getRefreshableView().hideFooterView();
 					mGridView.onRefreshComplete();
 					mGridView.setVisibility(View.VISIBLE);
 					setNoNetVisible(false);
@@ -280,7 +336,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 					mGridView.setVisibility(View.GONE);
 					setLoadingVisible(false);
 				}
-				mGridView.getRefreshableView().showFooterView();
+				mGridView.getRefreshableView().hideFooterView();
 				mGridView.onRefreshComplete();
 			}
 		}
@@ -292,8 +348,8 @@ public class PhotosViewPagerFragment extends BaseFragment{
 		this.urls = urls;
 		list = new ArrayList<ImageBean>();
 		mAdapter = null;
-		pageSize = 1;
-		initData(urls+"&page="+pageSize+"&pageSize=20");
+		page = 1;
+		initData(urls+"&page="+page+"&pageSize="+pageSize,true);
 	}
 	
 	private void showBanner() {

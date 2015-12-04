@@ -16,6 +16,7 @@ import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
 import com.fengdu.android.URLs;
 import com.fengdu.ui.fragment.PhotosViewPagerFragment;
+import com.mike.aframe.utils.SystemTool;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -92,7 +93,7 @@ public class SearchActivity extends BaseFragmentActivity implements View.OnClick
 		btn_search.setOnEditorActionListener(new OnEditorActionListener() {
 		    @Override
 		    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-		    	Toast.makeText(SearchActivity.this, "点击了键盘搜索", Toast.LENGTH_SHORT).show();
+		    	SystemTool.hideKeyBoard(SearchActivity.this);
 		    	showResult();
 				return true;
 		    }

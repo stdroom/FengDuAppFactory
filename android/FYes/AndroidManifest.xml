@@ -27,6 +27,7 @@
             android:name="com.yesemeinvsuite.android.MainActivity"/>
         <activity
             android:name="com.yesemeinvsuite.android.WelcomeActivity"
+            android:alwaysRetainTaskState="true"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
