@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import com.fengdu.BaseApplication;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
+import com.fengdu.android.AppConstant;
 import com.fengdu.ui.activity.SearchActivity;
 import com.fengdu.ui.adapter.MyFragmentAdapter;
 import com.fengdu.ui.slide.DrawerView;
@@ -42,6 +43,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.RelativeLayout.LayoutParams;
+import net.youmi.android.AdManager;
 import net.youmi.android.banner.AdSize;
 import net.youmi.android.banner.AdView;
 import net.youmi.android.banner.AdViewListener;
@@ -79,7 +81,7 @@ public abstract class BaseSecondMainActivity extends BaseFragmentActivity implem
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_second_main);
-//		AdManager.getInstance(this).init(AppConstant.YOUMI_APPID, AppConstant.YOUMI_APPSECRET, false);
+		AdManager.getInstance(this).init(AppConstant.YOUMI_APPID, AppConstant.YOUMI_APPSECRET, false);
 		SpotManager.getInstance(this).loadSpotAds();
 		SpotManager.getInstance(this).setAnimationType(
 				SpotManager.ANIM_ADVANCE);

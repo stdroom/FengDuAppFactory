@@ -111,7 +111,7 @@ public class DrawerView implements View.OnClickListener{
 			switchTheme();
 		}else if(id == R.id.feedback_btn){
 			activity.startActivity(new Intent(activity,FeedbackActivity.class));
-			activity.overridePendingTransition(R.anim.anim_activity_left_in, R.anim.anim_activity_left_out);
+			activity.overridePendingTransition(R.anim.anim_activity_right_in, R.anim.anim_activity_left_out);
 		}else if(id == R.id.appstore_btn){
 			OffersManager.getInstance(activity).showOffersWall(new Interface_ActivityListener() {
 				/**

@@ -12,6 +12,7 @@ package com.yesemeinvsuite.android;
 import com.fengdu.android.URLs;
 import com.fengdu.ui.BaseSecondMainActivity;
 import com.fengdu.ui.fragment.PhotosViewPagerFragment;
+import com.fengdu.ui.slide.DrawerView;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -71,7 +72,7 @@ public class MainActivity extends BaseSecondMainActivity{
 
 	@Override
 	protected void initSlidingMenu() {
-		side_drawer = new DrawView(this).initSlidingMenu();
+		side_drawer = new DrawerView(this).initSlidingMenu();
 	}
 	
 	

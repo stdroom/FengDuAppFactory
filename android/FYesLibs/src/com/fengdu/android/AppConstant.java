@@ -51,6 +51,10 @@ public class AppConstant {
 	public static final String YOUMI_APPSECRET = "84ee18e82eb0378a";
 	
 	public static final String KEY_NIGHT_MODE_SWITCH="night_mode_switch";
+	
+	// 高通key
+	public static final String GAOTONG = "a52db076d24d484ff1c64b2fbae3f6ed";
+	
 	  /**
      * QQ登录ID
      */

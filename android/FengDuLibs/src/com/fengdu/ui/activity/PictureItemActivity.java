@@ -21,6 +21,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -54,6 +55,8 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_picture_item); 
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,    
+		        WindowManager.LayoutParams.FLAG_FULLSCREEN); 
 		initOptions();
 		Intent intent = getIntent();
 		bean = (ImageBean)intent.getExtras().getSerializable("key");
@@ -82,7 +85,8 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 		
 		viewPager.setAdapter(imgAdapter);
 		totalSize = bean.getPagePaths().size();
-		viewPager.setOffscreenPageLimit(totalSize);
+		int size = totalSize>5? 5:totalSize;
+		viewPager.setOffscreenPageLimit(size);
 		titleTv.setText(bean.getDesc());
 		pageNumTv.setText(1+"/"+totalSize);
 		viewPager.setOnPageChangeListener(this);

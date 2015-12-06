@@ -2,7 +2,7 @@
 <resources>
 
     <!-- day -->
-    <color name="day_colorPrimary">#40AA53</color>
+    <color name="day_colorPrimary">#c8c8c8</color>
     <color name="day_colorPrimaryDark">#0b751e</color>
     <color name="day_textColor">#333333</color>
     <color name="day_infoTextColor">#999999</color>
@@ -12,7 +12,7 @@
     <color name="day_windows_bg">#fafafa</color>
     <color name="day_edit_color">#333333</color>
     <color name="day_edit_hit_color">#999999</color>
-    <color name="day_title_bar_bg_color">#aaea8598</color>
+    <color name="day_title_bar_bg_color">#ED4035</color>
     <color name="day_app_bg_color">#F4F4F4</color>
     <color name="day_common_divider_color">#FFCCCCCC</color>
     <color name="day_has_read_text_color">#8391a6</color>

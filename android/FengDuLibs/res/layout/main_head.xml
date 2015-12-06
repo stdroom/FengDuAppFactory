@@ -39,6 +39,7 @@
         android:layout_height="fill_parent"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+        android:layout_marginRight="8dp"
         android:gravity="center"
         android:scaleType="centerInside"
         android:src="@drawable/actionbar_search_icon" />
@@ -59,7 +60,6 @@
                 android:paddingLeft="6.0dip"
                 android:paddingRight="6.0dip"
                 android:visibility="gone" />
-
     </RelativeLayout>
 
 </RelativeLayout>

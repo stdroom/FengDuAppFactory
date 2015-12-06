@@ -27,6 +27,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import uk.co.senab.photoview.PhotoView;
 import uk.co.senab.photoview.PhotoViewAttacher.OnPhotoTapListener;
 
@@ -83,6 +84,7 @@ public class ImageAdapter extends PagerAdapter{
 					@Override
 					public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
 						defaultImg.setImageResource(R.drawable.loading_fail);
+						Toast.makeText(mContext, list.get(position), Toast.LENGTH_LONG).show();
 						defaultImg.setVisibility(View.VISIBLE);
 					}
 					

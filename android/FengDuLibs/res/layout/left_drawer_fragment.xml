@@ -10,7 +10,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.0"
-        android:minHeight="102.0dip"
+        android:minHeight="52.0dip"
         android:orientation="horizontal"
         android:visibility="visible" >
 
@@ -28,7 +28,7 @@
                 android:layout_height="@dimen/left_drawer_avatar_size"
                 android:layout_marginLeft="32.0dip"
                 android:layout_marginRight="16.0dip"
-                android:background="@drawable/round_avatar_bg"
+                android:src="@drawable/default_head"
                 android:padding="1.0dip" />
 
             <TextView
@@ -38,7 +38,8 @@
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:textColor="@color/left_drawer_user_name"
-                android:textSize="16.0sp" />
+                android:textSize="16.0sp" 
+                android:text="匿名用户"/>
         </LinearLayout>
     </LinearLayout>
 
