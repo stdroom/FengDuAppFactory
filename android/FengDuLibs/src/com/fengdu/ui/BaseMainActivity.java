@@ -49,7 +49,7 @@ public abstract class BaseMainActivity extends BaseFragmentActivity implements O
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		AdManager.getInstance(this).init(AppConstant.YOUMI_APPID, AppConstant.YOUMI_APPSECRET, false);
+//		AdManager.getInstance(this).init(AppConstant.YOUMI_APPID, AppConstant.YOUMI_APPSECRET, false);
 		// 如果使用积分广告，请务必调用积分广告的初始化接口:
 		OffersManager.getInstance(this).onAppLaunch();
 
