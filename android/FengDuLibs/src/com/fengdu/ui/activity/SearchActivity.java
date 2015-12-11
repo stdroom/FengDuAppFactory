@@ -112,6 +112,7 @@ public class SearchActivity extends BaseFragmentActivity implements View.OnClick
 	@Override
 	public void onClick(View arg0) {
 		if(arg0.getId() == R.id.btn_searching){
+			SystemTool.hideKeyBoard(SearchActivity.this);
 			showResult();
 		}else if(arg0.getId() == R.id.clear_search_text){
 			btn_search.setText("");
