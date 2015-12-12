@@ -84,7 +84,7 @@ public class ImageAdapter extends PagerAdapter{
 					@Override
 					public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
 						defaultImg.setImageResource(R.drawable.loading_fail);
-						Toast.makeText(mContext, list.get(position), Toast.LENGTH_LONG).show();
+//						Toast.makeText(mContext, list.get(position), Toast.LENGTH_LONG).show();
 						defaultImg.setVisibility(View.VISIBLE);
 					}
 					
