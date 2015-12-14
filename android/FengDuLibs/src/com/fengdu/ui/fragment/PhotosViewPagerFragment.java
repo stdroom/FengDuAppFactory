@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
 import com.android.volley.Response.ErrorListener;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.fengdu.BaseFragment;
 import com.fengdu.R;
@@ -24,8 +24,8 @@ import com.fengdu.bean.ImageBean;
 import com.fengdu.ui.activity.PictureItemActivity;
 import com.fengdu.ui.fragment.adapter.StaggeredGridAdapter;
 import com.fengdu.volley.FastJSONRequest;
-import com.fengdu.volley.VolleyManager;
 import com.fengdu.volley.FastResponse.Listener;
+import com.fengdu.volley.VolleyManager;
 import com.fengdu.widgets.pullview.PullToRefreshBase;
 import com.fengdu.widgets.pullview.PullToRefreshBase.OnRefreshListener;
 import com.fengdu.widgets.pullview.PullToRefreshStaggeredGridView;
@@ -36,7 +36,6 @@ import com.mike.aframe.MKLog;
 import com.mike.aframe.utils.SystemTool;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -47,7 +46,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -80,6 +79,8 @@ public class PhotosViewPagerFragment extends BaseFragment{
 	
 	private View view = null;
 	private FrameLayout mAdContainer;
+	private RelativeLayout mAdRl;
+	private ImageView mAdCloseImg;
 	private boolean hasMoreData = true;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -113,6 +114,15 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			view = inflater.inflate(R.layout.staggered_grid, container,false);
 		}
 		mAdContainer = (FrameLayout)view.findViewById(R.id.frame_ad);
+		mAdRl = (RelativeLayout)view.findViewById(R.id.rl_ad);
+		mAdCloseImg = (ImageView)view.findViewById(R.id.img_ad_close);
+		mAdCloseImg.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				mAdRl.setVisibility(View.GONE);
+			}
+		});
 		mLoadingLayout = (RelativeLayout)view.findViewById(R.id.layout_loading_bar);
 		mNoNetLayout = (RelativeLayout)view.findViewById(R.id.layout_refresh_onclick);
 		mNoNetLayout.setOnClickListener(new View.OnClickListener() {
