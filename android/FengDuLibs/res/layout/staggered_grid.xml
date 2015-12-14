@@ -6,10 +6,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="?attr/app_bg_color" >
-    <FrameLayout 
-        android:id="@+id/frame_ad"
+    <RelativeLayout
+        android:id="@+id/rl_ad"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+	    <FrameLayout 
+	        android:id="@+id/frame_ad"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"/>
+	    <ImageView 
+	        android:id="@+id/img_ad_close"
+	        android:layout_width="14dp"
+	        android:layout_height="14dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_margin="4dp"
+	        android:src="@drawable/ic_close_small_light"/>
+    </RelativeLayout>
     <com.fengdu.widgets.pullview.PullToRefreshStaggeredGridView
         android:layout_below="@id/frame_ad"
         android:id="@+id/pull_grid_view"
