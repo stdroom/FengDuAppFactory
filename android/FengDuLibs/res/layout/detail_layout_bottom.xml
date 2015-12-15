@@ -42,6 +42,6 @@
         android:layout_toLeftOf="@id/right"
         android:layout_centerVertical="true"
         android:layout_marginRight="16dp"
-        android:src="@drawable/bottom_collection_icon" android:visibility="gone"/>
+        android:src="@drawable/bottom_collection_icon"/>
 
 </RelativeLayout>

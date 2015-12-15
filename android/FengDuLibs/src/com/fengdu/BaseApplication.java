@@ -61,6 +61,7 @@ public class BaseApplication extends Application{
 			headers = new HashMap<String,String>();
 			headers.put("appid", AppConstant.APPID+"");
 			headers.put("osversion", android.os.Build.VERSION.RELEASE+"");
+			headers.put("appversion", SystemTool.getAppVersion(this));
 			headers.put("client_type", "android");
 			headers.put("imei",SystemTool.getPhoneIMEI(this)); //手机序列号
 			headers.put("lang",SystemTool.getLang(this)); //手机语言

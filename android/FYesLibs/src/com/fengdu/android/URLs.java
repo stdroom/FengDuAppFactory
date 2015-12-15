@@ -28,11 +28,20 @@ public class URLs {
 	public static final String IMAGE_HOST = "http://7xo27p.com1.z0.glb.clouddn.com/teamimg/native/";
 	
 //	public static final String MY_HOST = "http://192.168.1.9:8080";
-//	public static final String MY_HOST = "http://172.26.194.1:8080";
-	public static final String MY_HOST = "http://115.28.224.54:8080";
+	public static final String MY_HOST = "http://172.26.194.1:8080";
+//	public static final String MY_HOST = "http://115.28.224.54:8080";
 	
 	public static final String URL_GET_IMAGE = MY_HOST + "/web/image/getImage";
 	
 	public static final String URL_SEARCH_IMAGE = MY_HOST + "/web/image/searchImage";
+	
+	// 发送app信息
+	public static final String URL_SEND_APP_INFO = MY_HOST+"/web/luser/updateInfo";
+	
+	// 收藏取消收藏 图片
+	public static final String URL_FAVOR_IMG = MY_HOST+"/web/image/favorImage";
+	
+	// 是否是收藏图片
+	public static final String URL_IS_FAVOR_IMG = MY_HOST+"/web/image/isFavorImage";
 }
 

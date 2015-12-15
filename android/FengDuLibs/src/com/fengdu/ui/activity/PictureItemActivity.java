@@ -11,10 +11,19 @@ package com.fengdu.ui.activity;
 
 import java.util.ArrayList;
 
+import com.alibaba.fastjson.JSONObject;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
+import com.fengdu.android.URLs;
 import com.fengdu.bean.ImageBean;
 import com.fengdu.ui.activity.adapter.ImageAdapter;
+import com.fengdu.volley.FastJSONRequest;
+import com.fengdu.volley.FastResponse.Listener;
+import com.fengdu.volley.VolleyManager;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 import android.content.Intent;
@@ -49,6 +58,9 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 	RelativeLayout bottom_menu_rl;
 	private ImageView mBackImg;
 	private ImageView mFavorImg;
+	
+	RequestQueue mQueue;
+	
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +78,7 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 		bottom_menu_rl = (RelativeLayout)findViewById(R.id.bottom_menu_rl);
 		mBackImg = (ImageView)findViewById(R.id.bottom_back);
 		mFavorImg = (ImageView)findViewById(R.id.bottom_favor);
+		mFavorImg.setOnClickListener(this);
 		mBackImg.setOnClickListener(this);
 		imgAdapter = new ImageAdapter(bean.getPagePaths(),this,new OnPhotoTapListener() {
 			
@@ -90,6 +103,9 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 		titleTv.setText(bean.getDesc());
 		pageNumTv.setText(1+"/"+totalSize);
 		viewPager.setOnPageChangeListener(this);
+		
+		mQueue = Volley.newRequestQueue(this);
+		mQueue.start();
 	}
 	
 	private void initOptions(){
@@ -123,7 +139,17 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 	@Override
 	public void onClick(View arg0) {
 		if(arg0.getId() == R.id.bottom_favor){
-			
+			VolleyManager.getInstance().beginSubmitRequest(mQueue, new FastJSONRequest(
+					URLs.URL_GET_IMAGE, "", new Listener<JSONObject>() {
+						@Override
+						public void onResponse(JSONObject obj, String executeMethod, String flag, boolean dialogFlag) {
+							obj.toJSONString();
+						}
+					}, new ErrorListener() {
+						@Override
+						public void onErrorResponse(VolleyError error) {
+						}
+					}));
 		}else if(arg0.getId() == R.id.bottom_back){
 			finish();
 		}
