@@ -6,6 +6,14 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="21" />
+    
+    <!-- 高德start -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 高德end -->
 
     <uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -63,6 +71,15 @@
 		    </intent-filter>
 		</receiver>
       <!-- 有米ad end -->
+        
+        <!-- 定位start -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="a52db076d24d484ff1c64b2fbae3f6ed" />
+        <service android:name="com.amap.api.location.APSService" >
+        </service>
+        
+        <!-- 定位 end -->
         
         <meta-data android:value="56455aede0f55af416004099" android:name="UMENG_APPKEY"/>
 		<meta-data android:value="小米" android:name="UMENG_CHANNEL"/>

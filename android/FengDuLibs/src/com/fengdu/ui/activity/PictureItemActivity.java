@@ -11,6 +11,7 @@ package com.fengdu.ui.activity;
 
 import java.util.ArrayList;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response.ErrorListener;
@@ -19,6 +20,7 @@ import com.android.volley.toolbox.Volley;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
 import com.fengdu.android.URLs;
+import com.fengdu.bean.Favor;
 import com.fengdu.bean.ImageBean;
 import com.fengdu.ui.activity.adapter.ImageAdapter;
 import com.fengdu.volley.FastJSONRequest;
@@ -29,6 +31,8 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.WindowManager;
@@ -62,7 +66,8 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 	private ImageView mDownloadImg;
 	
 	RequestQueue mQueue;
-	
+	Favor favor = null;
+	boolean fave = true;
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +113,7 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 		
 		mQueue = Volley.newRequestQueue(this);
 		mQueue.start();
+		fechIsFavor();
 	}
 	
 	private void initOptions(){
@@ -141,12 +147,22 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 	@Override
 	public void onClick(View arg0) {
 		if(arg0.getId() == R.id.bottom_favor){
+			if(favor != null){
+				fave = !favor.getEnable();
+			}
 			VolleyManager.getInstance().beginSubmitRequest(mQueue, new FastJSONRequest(
-					URLs.URL_FAVOR_IMG+"?imgId="+bean.getId(), "", new Listener<JSONObject>() {
+					URLs.URL_FAVOR_IMG+"?imgId="+bean.getIid()+"&isFavor="+fave, "", new Listener<JSONObject>() {
 						@Override
 						public void onResponse(JSONObject obj, String executeMethod, String flag, boolean dialogFlag) {
-							obj.toJSONString();
-							MKLog.d("on Favor", obj.toJSONString());
+							if(obj!=null){
+								if(fave){	//收藏
+									mHandler.sendEmptyMessage(0x1003);
+								}else{
+									mHandler.sendEmptyMessage(0x1002);
+								}
+								obj.toJSONString();
+								MKLog.d("on Favor", obj.toJSONString());
+							}
 						}
 					}, new ErrorListener() {
 						@Override
@@ -159,5 +175,60 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 		}
 		
 	}
+	
+	private void fechIsFavor(){
+		VolleyManager.getInstance().beginSubmitRequest(mQueue, new FastJSONRequest(
+				URLs.URL_IS_FAVOR_IMG+"?imgId="+bean.getIid(), "", new Listener<JSONObject>() {
+					@Override
+					public void onResponse(JSONObject obj, String executeMethod, String flag, boolean dialogFlag) {
+						if(obj!=null){
+							if(obj.containsKey("isFavor")){
+								if(obj.get("isFavor")!=null){
+									Message msg = new Message();
+									msg.what = 0x1001;
+									msg.obj = JSON.parseObject(obj.getString("isFavor"),Favor.class);
+									mHandler.sendMessage(msg);
+								}else{
+									mHandler.sendEmptyMessage(0x1002);
+								}
+							}else{
+								mHandler.sendEmptyMessage(0x1002);
+							}
+						}
+					}
+				}, new ErrorListener() {
+					@Override
+					public void onErrorResponse(VolleyError error) {
+						MKLog.d("on Favor", error.toString());
+					}
+				}));
+	}
+	
+	private Handler mHandler = new Handler(){
+
+		@Override
+		public void handleMessage(Message msg) {
+			switch(msg.what){
+			case 0x1001:
+				favor= (Favor)msg.obj;
+				if(favor!=null){
+					if(favor.getEnable()){	// 已收藏
+						mFavorImg.setImageResource(R.drawable.bottom_collectioned_icon);
+					}else{	// 未收藏
+						mFavorImg.setImageResource(R.drawable.bottom_collection_icon);
+					}
+				}else{
+					mFavorImg.setImageResource(R.drawable.bottom_collection_icon);
+				}
+				break;
+			case 0x1002:
+				mFavorImg.setImageResource(R.drawable.bottom_collection_icon);
+				break;
+			case 0x1003:
+				mFavorImg.setImageResource(R.drawable.bottom_collectioned_icon);
+				break;
+			}
+		}
+	};
 }
 

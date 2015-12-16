@@ -26,6 +26,7 @@ import java.util.HashMap;
 import com.fengdu.android.AppConfig;
 import com.fengdu.android.AppConstant;
 import com.fengdu.android.URLs;
+import com.fengdu.bean.MyLocation;
 import com.fengdu.config.CommonConfig;
 import com.mike.aframe.utils.PreferenceHelper;
 import com.mike.aframe.utils.SystemTool;
@@ -53,6 +54,7 @@ public class BaseApplication extends Application{
 	public static BaseApplication globalContext;
 	
 	private HashMap<String,String> headers;
+	private MyLocation location;
 	@Override
 	public void onCreate() {
 		super.onCreate();
@@ -71,6 +73,20 @@ public class BaseApplication extends Application{
 			headers.put("lang",SystemTool.getLang(this)); //手机语言
 			headers.put("phone_type", android.os.Build.MODEL);	// 手机型号
 			headers.put("timestamp", SystemTool.getTimeStamp()+""); //时间戳　可用于判断是否是同一次启动
+		}
+		if(location == null){
+			location = (MyLocation) readObject(AppConstant.addressFile);
+			if(location!=null){
+				headers.put("address", location.getAddress());
+				headers.put("city", location.getCity());
+				headers.put("country", location.getCountry());
+				headers.put("district", location.getDistrict());
+				headers.put("province", location.getProvince());
+				headers.put("latitude", location.getLatitude());
+				headers.put("longitude", location.getLongitude());
+			}else{
+				location = null;
+			}
 		}
 		return headers;
 	}

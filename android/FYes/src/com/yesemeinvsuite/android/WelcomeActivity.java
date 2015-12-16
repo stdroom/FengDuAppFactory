@@ -24,10 +24,11 @@ import net.youmi.android.spot.SpotManager;
 
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.android.AppConstant;
+import com.fengdu.ui.BaseWelcomeActivity;
 import com.mike.aframe.MKLog;
 import com.umeng.analytics.MobclickAgent;
 
-public class WelcomeActivity extends BaseFragmentActivity{
+public class WelcomeActivity extends BaseWelcomeActivity{
 	
 	SplashView splashView;
 	View splash;
@@ -80,20 +81,6 @@ public class WelcomeActivity extends BaseFragmentActivity{
 			}
 		});
 	}
-	
-//	View splash;
-//	RelativeLayout splashLayout;
-//	String platform = "";
-//	@Override
-//	protected void onCreate(Bundle arg0) {
-//		// TODO Auto-generated method stub
-//		super.onCreate(arg0);
-//		setContentView(R.layout.splash_activity);
-//		
-//		
-//		mHandler.sendEmptyMessageDelayed(0x01, 500);
-//		
-//	}
 	
 
 public static String getDeviceInfo(Context context) {

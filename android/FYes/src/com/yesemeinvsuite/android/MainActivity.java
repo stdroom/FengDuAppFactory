@@ -63,6 +63,10 @@ public class MainActivity extends BaseSecondMainActivity{
 		mFragmentPagerAdapter.setFragments(mFragmentList);
 	}
 	
+	
+
+
+
 	private Bundle getBundle(String urls) {
         Bundle bundle = new Bundle();
 		bundle.putString("key", URLs.URL_GET_IMAGE+urls);
@@ -74,8 +78,7 @@ public class MainActivity extends BaseSecondMainActivity{
 	protected void initSlidingMenu() {
 		side_drawer = new DrawerView(this).initSlidingMenu();
 	}
-	
-	
 
+	
 }
 

@@ -230,7 +230,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 									bean.setImage_width(json.getIntValue("width"));
 									bean.setImage_url(json.getString("thumbNail"));
 									bean.setTotalNum(json.getIntValue("pageNum"));
-									bean.setId(json.getIntValue("id"));
+									bean.setId(json.getIntValue("iid"));
 									String imgPaths = json.getString("imgPaths");
 									
 									bean.setUpdatedTime(SystemTool.getTimFromStamps(json.getLong("updateed_at"))+"");
@@ -271,7 +271,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 										for(; j>=0 ;j--){
 											int length = list.size();
 											for(int i = 0; i < length ; i++){
-												if(tempList.get(j).getId() != list.get(i).getId()){
+												if(tempList.get(j).getIid() != list.get(i).getIid()){
 													break;
 												}
 											}

@@ -25,6 +25,8 @@ public class AppConstant {
 	// 表单密钥
 	public static final String formApiSecret = "/LfWYSGfXOD1md3eIcXB9pHUBPE=";
 	
+	public static final String addressFile = "addressFile";
+	
 	public static final String SHARE_HTML = "footer.mp3";
 	
 	/** 下一页的存放地址 */

@@ -22,7 +22,7 @@ import java.util.ArrayList;
  */
 public class ImageBean implements Serializable{
 
-	int id = 0;
+	Integer iid = 0;
 	String desc = "";
 	
 	String image_url = "";
@@ -97,11 +97,11 @@ public class ImageBean implements Serializable{
 	public void setUpdatedTime(String updatedTime) {
 		this.updatedTime = updatedTime;
 	}
-	public int getId() {
-		return id;
+	public Integer getIid() {
+		return iid;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setId(Integer iid) {
+		this.iid = iid;
 	}
 }
 

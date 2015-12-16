@@ -12,6 +12,7 @@ package com.fengdu.ui;
 import java.util.ArrayList;
 
 import com.alibaba.fastjson.JSONObject;
+import com.amap.api.location.AMapLocationListener;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.VolleyError;
