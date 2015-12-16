@@ -59,6 +59,7 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 	RelativeLayout bottom_menu_rl;
 	private ImageView mBackImg;
 	private ImageView mFavorImg;
+	private ImageView mDownloadImg;
 	
 	RequestQueue mQueue;
 	

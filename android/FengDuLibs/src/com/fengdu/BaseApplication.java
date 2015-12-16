@@ -26,10 +26,14 @@ import java.util.HashMap;
 import com.fengdu.android.AppConfig;
 import com.fengdu.android.AppConstant;
 import com.fengdu.android.URLs;
+import com.fengdu.config.CommonConfig;
 import com.mike.aframe.utils.PreferenceHelper;
 import com.mike.aframe.utils.SystemTool;
+import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
+import com.nostra13.universalimageloader.cache.disc.naming.FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 import android.app.Application;
 import android.content.Context;
@@ -175,9 +179,19 @@ public class BaseApplication extends Application{
 				.threadPriority(Thread.NORM_PRIORITY - 2)
 				.denyCacheImageMultipleSizesInMemory()
 				.memoryCacheSize(8 * 1024 * 1024)
-//				.discCacheFileNameGenerator(new HashCodeFileNameGenerator())
-//				.diskCacheSize(50 * 1024 * 1024) // 50 Mb
-//				.tasksProcessingOrder(QueueProcessingType.LIFO)
+				.diskCacheSize(100 * 1024 * 1024) // 50 Mb
+				.diskCacheFileNameGenerator(new FileNameGenerator() {
+					@Override
+					public String generate(String imageUri) {
+						StringBuffer buffer = new StringBuffer();
+						buffer.append(String.valueOf(imageUri.hashCode()));
+						buffer.append(".");
+						buffer.append(imageUri.substring(imageUri.lastIndexOf("."), imageUri.length()));
+						return buffer.toString();
+					}
+				})
+				.discCache(new UnlimitedDiskCache(new File(CommonConfig.getDownloadImgPath())))
+				.tasksProcessingOrder(QueueProcessingType.LIFO)
 //				.writeDebugLogs() // Remove for release app
 				.build();
 		// Initialize ImageLoader with configuration.

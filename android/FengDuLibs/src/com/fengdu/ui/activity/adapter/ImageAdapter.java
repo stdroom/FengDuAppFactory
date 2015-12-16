@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fengdu.R;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
@@ -45,10 +46,16 @@ public class ImageAdapter extends PagerAdapter{
 	private ArrayList<String> list;
 	private Context mContext;
 	private OnPhotoTapListener clickListenerCallback;
+	private DisplayImageOptions mOptions;
 	public ImageAdapter(ArrayList<String> list,Context context,OnPhotoTapListener listener) {
 		this.clickListenerCallback = listener;
 		inflater = LayoutInflater.from(context);
 		this.list = list;
+		mOptions = new DisplayImageOptions.Builder()
+				.cacheInMemory(true)
+				.cacheOnDisk(true)
+				.considerExifParams(true)
+				.build();
 	}
 
 	@Override
@@ -72,7 +79,7 @@ public class ImageAdapter extends PagerAdapter{
 		defaultImg.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				ImageLoader.getInstance().displayImage(list.get(position), imageView,
+				ImageLoader.getInstance().displayImage(list.get(position), imageView,mOptions,
 						new ImageLoadingListener() {
 					
 					@Override
