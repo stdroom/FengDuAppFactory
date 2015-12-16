@@ -23,6 +23,7 @@ import com.fengdu.bean.ImageBean;
 import com.fengdu.ui.activity.adapter.ImageAdapter;
 import com.fengdu.volley.FastJSONRequest;
 import com.fengdu.volley.FastResponse.Listener;
+import com.mike.aframe.MKLog;
 import com.fengdu.volley.VolleyManager;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
@@ -140,14 +141,16 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 	public void onClick(View arg0) {
 		if(arg0.getId() == R.id.bottom_favor){
 			VolleyManager.getInstance().beginSubmitRequest(mQueue, new FastJSONRequest(
-					URLs.URL_GET_IMAGE, "", new Listener<JSONObject>() {
+					URLs.URL_FAVOR_IMG+"?imgId="+bean.getId(), "", new Listener<JSONObject>() {
 						@Override
 						public void onResponse(JSONObject obj, String executeMethod, String flag, boolean dialogFlag) {
 							obj.toJSONString();
+							MKLog.d("on Favor", obj.toJSONString());
 						}
 					}, new ErrorListener() {
 						@Override
 						public void onErrorResponse(VolleyError error) {
+							MKLog.d("on Favor", error.toString());
 						}
 					}));
 		}else if(arg0.getId() == R.id.bottom_back){
