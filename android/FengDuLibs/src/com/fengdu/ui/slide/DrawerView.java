@@ -95,6 +95,19 @@ public class DrawerView implements View.OnClickListener{
 		localSlidingMenu.findViewById(R.id.favorite_btn).setOnClickListener(this);
 		setting_btn =(RelativeLayout)localSlidingMenu.findViewById(R.id.setting_btn);
 		setting_btn.setOnClickListener(this);
+		
+		// 帮助
+		// 评分
+		// wifi联网
+		// 下载管理
+		// 关于我们
+		// 清除缓存
+		// 检查新版本
+		// 锁屏
+		// 信息推送
+		// 首页逻辑强化
+		// 二维码
+		// 摇一摇 送女神
 	}
 
 	@Override
