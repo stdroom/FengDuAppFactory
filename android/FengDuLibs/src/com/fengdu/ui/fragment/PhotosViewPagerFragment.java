@@ -130,7 +130,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			@Override
 			public void onClick(View v) {
 				page = 1;
-				initData(urls+"&page="+page+"&pageSize="+pageSize,true);
+				initData(getUrls(urls)+"page="+page+"&pageSize="+pageSize,true);
 			}
 		});
 		mGridView = (PullToRefreshStaggeredGridView) view.findViewById(R.id.pull_grid_view);
@@ -155,7 +155,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			public void onLoadmore() {
 				if(!isRequest && hasMoreData){
 					page = page+1;
-					String url = urls+"&page="+page+"&pageSize="+pageSize;
+					String url = getUrls(urls)+"page="+page+"&pageSize="+pageSize;
 					mGridView.getRefreshableView().showFooterView();
 					initData(url,false);
 				}else{
@@ -169,7 +169,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 
 			@Override
 			public void onRefresh(PullToRefreshBase<StaggeredGridView> refreshView) {
-				initData(urls+"&page="+1+"&pageSize="+pageSize,true);
+				initData(getUrls(urls)+"page="+1+"&pageSize="+pageSize,true);
 			}
 		});
 		MKLog.d("PhotosViewPagerFragment", "onCreateView");
@@ -189,7 +189,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 		}else{
 			list = new ArrayList<ImageBean>();
 			page = 1;
-			initData(urls+"&page="+page+"&pageSize="+pageSize,false);
+			initData(getUrls(urls)+"page="+page+"&pageSize="+pageSize,false);
 		}
 	}
 	
@@ -392,6 +392,18 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			}
 		});
 		mAdContainer.addView(adView, layoutParams);
+	}
+	
+	private String getUrls(String url){
+		if(url.contains("?")){
+			if(url.lastIndexOf("?") < url.length()-1){
+				return url+"&";
+			}else{
+				return url;
+			}
+		}else{
+			return url+"?";
+		}
 	}
 }
 

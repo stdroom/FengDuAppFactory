@@ -21,6 +21,8 @@ import java.io.InvalidClassException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 
 import com.fengdu.android.AppConfig;
@@ -73,15 +75,16 @@ public class BaseApplication extends Application{
 			headers.put("lang",SystemTool.getLang(this)); //手机语言
 			headers.put("phone_type", android.os.Build.MODEL);	// 手机型号
 			headers.put("timestamp", SystemTool.getTimeStamp()+""); //时间戳　可用于判断是否是同一次启动
+			headers.put("channel", encodingUtf8(SystemTool.getAppMetaData(this, "UMENG_CHANNEL")));
 		}
 		if(location == null){
 			location = (MyLocation) readObject(AppConstant.addressFile);
 			if(location!=null){
-				headers.put("address", location.getAddress());
-				headers.put("city", location.getCity());
-				headers.put("country", location.getCountry());
-				headers.put("district", location.getDistrict());
-				headers.put("province", location.getProvince());
+				headers.put("address", encodingUtf8(location.getAddress()));
+				headers.put("city",  encodingUtf8(location.getCity()));
+				headers.put("country",  encodingUtf8(location.getCountry()));
+				headers.put("district",  encodingUtf8(location.getDistrict()));
+				headers.put("province",  encodingUtf8(location.getProvince()));
 				headers.put("latitude", location.getLatitude());
 				headers.put("longitude", location.getLongitude());
 			}else{
@@ -212,6 +215,15 @@ public class BaseApplication extends Application{
 				.build();
 		// Initialize ImageLoader with configuration.
 		ImageLoader.getInstance().init(config);
+	}
+	
+	private String encodingUtf8(String str){
+		try {
+			str = URLEncoder.encode(str, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		return str;
 	}
 }
 

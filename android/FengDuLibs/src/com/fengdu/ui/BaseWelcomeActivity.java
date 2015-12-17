@@ -51,6 +51,7 @@ public class BaseWelcomeActivity extends BaseFragmentActivity implements AMapLoc
 		super.onResume();
 		locationClient = new AMapLocationClient(this.getApplicationContext());
 		locationOption = new AMapLocationClientOption();
+		locationOption.setOnceLocation(true);
 		// 设置定位模式为低功耗模式
 		locationOption.setLocationMode(AMapLocationMode.Battery_Saving);
 		// 设置定位监听

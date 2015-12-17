@@ -49,6 +49,8 @@
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
         <activity
             android:name="com.fengdu.ui.activity.FeedbackActivity"/>
+        <activity
+            android:name="com.fengdu.ui.activity.FavoriteActivity"/>
         
         <activity
             android:name="com.fengdu.ui.activity.SearchActivity"/>

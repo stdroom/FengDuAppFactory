@@ -110,9 +110,8 @@ public static String getDeviceInfo(Context context) {
     }catch(Exception e){
       e.printStackTrace();
     }
-  return null;
+    return null;
 }
-                
 
 	private Handler mHandler = new Handler(){
 

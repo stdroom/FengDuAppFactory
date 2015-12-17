@@ -11,6 +11,7 @@ package com.fengdu.ui.slide;
 
 import com.fengdu.BaseApplication;
 import com.fengdu.R;
+import com.fengdu.ui.activity.FavoriteActivity;
 import com.fengdu.ui.activity.FeedbackActivity;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
@@ -91,6 +92,7 @@ public class DrawerView implements View.OnClickListener{
 		localSlidingMenu.findViewById(R.id.menu_item_theme).setOnClickListener(this);
 		localSlidingMenu.findViewById(R.id.feedback_btn).setOnClickListener(this);
 		localSlidingMenu.findViewById(R.id.appstore_btn).setOnClickListener(this);
+		localSlidingMenu.findViewById(R.id.favorite_btn).setOnClickListener(this);
 		setting_btn =(RelativeLayout)localSlidingMenu.findViewById(R.id.setting_btn);
 		setting_btn.setOnClickListener(this);
 	}
@@ -122,6 +124,9 @@ public class DrawerView implements View.OnClickListener{
 					
 				}
 			});
+		}else if(id == R.id.favorite_btn){
+			activity.startActivity(new Intent(activity,FavoriteActivity.class));
+			activity.overridePendingTransition(R.anim.anim_activity_right_in, R.anim.anim_activity_left_out);
 		}
 	}
 	

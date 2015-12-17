@@ -43,5 +43,7 @@ public class URLs {
 	
 	// 是否是收藏图片
 	public static final String URL_IS_FAVOR_IMG = MY_HOST+"/web/image/isFavorImage";
+	// 获取收藏的图片
+	public static final String URL_GET_FAVOR_IMGS = MY_HOST+"/web/image/getFavorImage";
 }
 

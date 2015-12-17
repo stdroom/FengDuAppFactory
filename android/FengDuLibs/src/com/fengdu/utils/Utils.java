@@ -61,10 +61,10 @@ public class Utils {
 			} else {
 				// 供者是GPS时是没有以下信息的
 				loc.setAddress(location.getAddress());
-				loc.setDistrict(loc.getDistrict());
+				loc.setDistrict(location.getDistrict());
 				loc.setProvince(location.getProvince());
-				loc.setCity(loc.getCity());
-				loc.setCountry(loc.getCountry());
+				loc.setCity(location.getCity());
+				loc.setCountry(location.getCountry());
 				sb.append("国    家    : " + location.getCountry() + "\n");
 				sb.append("省            : " + location.getProvince() + "\n");
 				sb.append("市            : " + location.getCity() + "\n");
