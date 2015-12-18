@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <include 
+        layout="@layout/app_header"/>
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:scrollbars="none">
+	    <LinearLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+			<RelativeLayout 
+			    android:layout_width="match_parent"
+		    	android:layout_height="wrap_content"
+		    	android:background="@color/normal_background"
+		    	android:padding="10dp">
+			    <TextView style="@style/common_mid_black_textview"
+			        android:text="仅wifi下载"
+			        android:gravity="center_vertical"
+			        android:paddingLeft="2dp"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentLeft="true"/>
+			    <com.fengdu.widgets.SwitchButton
+			        android:id="@+id/switch_no_img"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerVertical="true"
+			        android:focusable="false"
+			        android:layout_alignParentRight="true"/>
+			</RelativeLayout> 
+			<include layout="@layout/mine_line_margin_linear"/>
+			<RelativeLayout 
+			    android:layout_width="match_parent"
+		    	android:layout_height="wrap_content"
+		    	android:background="@color/normal_background"
+		    	android:padding="10dp">
+			    <TextView style="@style/common_mid_black_textview"
+			        android:text="消息推送"
+			        android:gravity="center_vertical"
+			        android:paddingLeft="2dp"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentLeft="true"/>
+			    <com.fengdu.widgets.SwitchButton  
+			        android:id="@+id/switch_no_window"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentRight="true"
+			        android:focusable="false"/>
+			</RelativeLayout> 
+			<include layout="@layout/mine_line_margin_linear"/>
+			<RelativeLayout 
+			    android:id="@+id/mine_font_size_rl"
+			    android:layout_width="match_parent"
+		    	android:layout_height="wrap_content"
+		    	android:background="@color/normal_background"
+		    	android:padding="10dp">
+			    <TextView style="@style/common_mid_black_textview"
+			        android:text="清除缓存"
+			        android:gravity="center_vertical"
+			        android:paddingLeft="2dp"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentLeft="true"/>
+			    <ImageView 
+			        android:id="@+id/dis_address_right_img"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentRight="true"
+			        android:focusable="false"
+			        android:background="@drawable/right_jump"/>
+			</RelativeLayout> 
+			<include layout="@layout/mine_line_margin_linear"/>
+			<RelativeLayout 
+			    android:id="@+id/mine_download_rl"
+			    android:layout_width="match_parent"
+		    	android:layout_height="wrap_content"
+		    	android:background="@color/normal_background"
+		    	android:padding="10dp">
+			    <TextView style="@style/common_mid_black_textview"
+			        android:text="下载管理"
+			        android:gravity="center_vertical"
+			        android:paddingLeft="2dp"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentLeft="true"/>
+			    <ImageView 
+			        android:id="@+id/dis_download_img"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentRight="true"
+			        android:focusable="false"
+			        android:background="@drawable/right_jump"/>
+			</RelativeLayout> 
+			<include layout="@layout/mine_line_linear"/>
+			<include layout="@layout/common_line_margintop_linear"/>
+			<RelativeLayout 
+			    android:id="@+id/setting_check_version_rl"
+			    android:layout_width="match_parent"
+		    	android:layout_height="wrap_content"
+		    	android:background="@color/normal_background"
+		    	android:padding="10dp">
+			    <TextView style="@style/common_mid_black_textview"
+			        android:gravity="center_vertical"
+			        android:text="检查新版本"
+			        android:paddingLeft="2dp"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentLeft="true"/>
+			    <ImageView 
+			        android:id="@+id/dis_express_right_img"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerVertical="true"
+			        android:focusable="false"
+			        android:layout_alignParentRight="true"
+			        android:src="@drawable/right_jump"/>
+			</RelativeLayout> 
+			<include layout="@layout/mine_line_margin_linear"/>
+			 
+			<RelativeLayout 
+			    android:id="@+id/mine_msg_rl"
+			    android:layout_width="match_parent"
+		    	android:layout_height="wrap_content"
+		    	android:background="@color/normal_background"
+		    	android:padding="10dp">
+			    <TextView style="@style/common_mid_black_textview"
+			        android:text="关于我们"
+			        android:gravity="center_vertical"
+			        android:paddingLeft="2dp"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentLeft="true"/>
+			    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentRight="true"
+			        android:focusable="false"
+			        android:background="@drawable/right_jump"/>
+			</RelativeLayout> 
+			<include layout="@layout/mine_line_margin_linear"/>
+			<RelativeLayout 
+			    android:id="@+id/setting_load_recomm_rl"
+			    android:layout_width="match_parent"
+		    	android:layout_height="wrap_content"
+		    	android:background="@color/normal_background"
+		    	android:padding="10dp">
+			    <TextView style="@style/common_mid_black_textview"
+			        android:text="帮助"
+			        android:gravity="center_vertical"
+			        android:paddingLeft="2dp"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentLeft="true"/>
+			    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerVertical="true"
+			        android:focusable="false"
+			        android:layout_alignParentRight="true"
+			        android:src="@drawable/right_jump"/>
+			</RelativeLayout>  -->
+			<include layout="@layout/mine_line_linear"/>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

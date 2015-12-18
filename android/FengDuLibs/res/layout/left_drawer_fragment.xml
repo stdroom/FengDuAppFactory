@@ -166,7 +166,7 @@
 
             <RelativeLayout
                 android:id="@+id/setting_btn"
-                style="@style/left_drawer_item_layout" android:visibility="gone">
+                style="@style/left_drawer_item_layout" android:visibility="visible">
 
                 <TextView
                     style="@style/left_drawer_item_text"
@@ -174,7 +174,7 @@
                     android:text="@string/left_drawer_item_setting" />
             </RelativeLayout>
 
-            <ImageView style="@style/left_drawer_item_line" android:visibility="gone"/>
+            <ImageView style="@style/left_drawer_item_line" android:visibility="visible"/>
 
             <RelativeLayout
                 android:id="@+id/feedback_btn"

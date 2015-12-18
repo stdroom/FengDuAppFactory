@@ -13,6 +13,7 @@ import com.fengdu.BaseApplication;
 import com.fengdu.R;
 import com.fengdu.ui.activity.FavoriteActivity;
 import com.fengdu.ui.activity.FeedbackActivity;
+import com.fengdu.ui.activity.SettingActivity;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import android.app.Activity;
@@ -93,11 +94,9 @@ public class DrawerView implements View.OnClickListener{
 		localSlidingMenu.findViewById(R.id.feedback_btn).setOnClickListener(this);
 		localSlidingMenu.findViewById(R.id.appstore_btn).setOnClickListener(this);
 		localSlidingMenu.findViewById(R.id.favorite_btn).setOnClickListener(this);
+		localSlidingMenu.findViewById(R.id.setting_btn).setOnClickListener(this);
 		setting_btn =(RelativeLayout)localSlidingMenu.findViewById(R.id.setting_btn);
 		setting_btn.setOnClickListener(this);
-		
-		// 帮助
-		// 评分
 		// wifi联网
 		// 下载管理
 		// 关于我们
@@ -105,9 +104,13 @@ public class DrawerView implements View.OnClickListener{
 		// 检查新版本
 		// 锁屏
 		// 信息推送
-		// 首页逻辑强化
+		
+		// 帮助
+		// 评分
 		// 二维码
 		// 摇一摇 送女神
+		
+		// 首页逻辑强化
 	}
 
 	@Override
@@ -140,6 +143,10 @@ public class DrawerView implements View.OnClickListener{
 		}else if(id == R.id.favorite_btn){
 			activity.startActivity(new Intent(activity,FavoriteActivity.class));
 			activity.overridePendingTransition(R.anim.anim_activity_right_in, R.anim.anim_activity_left_out);
+		}else if(id == R.id.setting_btn){
+			activity.startActivity(new Intent(activity,SettingActivity.class));
+			activity.overridePendingTransition(R.anim.anim_activity_right_in, R.anim.anim_activity_left_out);
+			
 		}
 	}
 	
