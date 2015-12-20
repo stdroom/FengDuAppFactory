@@ -34,6 +34,7 @@ import com.mike.aframe.utils.PreferenceHelper;
 import com.mike.aframe.utils.SystemTool;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.FileNameGenerator;
+import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
@@ -197,6 +198,7 @@ public class BaseApplication extends Application{
 		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
 				.threadPriority(Thread.NORM_PRIORITY - 2)
 				.denyCacheImageMultipleSizesInMemory()
+				.memoryCache(new WeakMemoryCache())
 				.memoryCacheSize(8 * 1024 * 1024)
 				.diskCacheSize(100 * 1024 * 1024) // 50 Mb
 				.diskCacheFileNameGenerator(new FileNameGenerator() {

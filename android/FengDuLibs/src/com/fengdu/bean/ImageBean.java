@@ -35,6 +35,9 @@ public class ImageBean implements Serializable{
 	int totalNum = 0;
 	String updatedTime= "";
 	
+	Integer cata_id = 0;
+	String thumbYun = "";
+	
 	ArrayList<String> pagePaths;
 	
 	public String getDesc() {
@@ -101,6 +104,21 @@ public class ImageBean implements Serializable{
 		return iid;
 	}
 	public void setId(Integer iid) {
+		this.iid = iid;
+	}
+	public Integer getCata_id() {
+		return cata_id;
+	}
+	public void setCata_id(Integer cata_id) {
+		this.cata_id = cata_id;
+	}
+	public String getThumbYun() {
+		return thumbYun;
+	}
+	public void setThumbYun(String thumbYun) {
+		this.thumbYun = thumbYun;
+	}
+	public void setIid(Integer iid) {
 		this.iid = iid;
 	}
 }

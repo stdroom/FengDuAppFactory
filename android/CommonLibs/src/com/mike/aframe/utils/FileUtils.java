@@ -29,6 +29,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.channels.FileChannel;
+import java.text.DecimalFormat;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -447,4 +448,62 @@ public final class FileUtils {
 			file.mkdirs();
 		}
 	}
+	
+	/**   
+     * 获取文件夹大小   
+     * @param file File实例   
+     * @return long      
+     */     
+    public static long getFolderSize(java.io.File file){    
+   
+        long size = 0;    
+        try {  
+            java.io.File[] fileList = file.listFiles();     
+            for (int i = 0; i < fileList.length; i++)     
+            {     
+                if (fileList[i].isDirectory())     
+                {     
+                    size = size + getFolderSize(fileList[i]);    
+   
+                }else{     
+                    size = size + fileList[i].length();    
+   
+                }     
+            }  
+        } catch (Exception e) {  
+            // TODO Auto-generated catch block  
+            e.printStackTrace();  
+        }     
+       //return size/1048576;    
+        return size;    
+    }
+    
+    /**
+     * 转换文件大小
+     * @param fileS
+     * @return
+     */
+    public static String FormetFileSize(long fileS)
+    {
+	    DecimalFormat df = new DecimalFormat("#.00");
+	    String fileSizeString = "";
+	    String wrongSize="0B";
+	    if(fileS==0){
+	    return wrongSize;
+	    }
+	    if (fileS < 1024){
+	    fileSizeString = df.format((double) fileS) + "B";
+	     }
+	    else if (fileS < 1048576){
+	    fileSizeString = df.format((double) fileS / 1024) + "KB";
+	    }
+	    else if (fileS < 1073741824){
+	        fileSizeString = df.format((double) fileS / 1048576) + "MB";
+	      }
+	    else{
+	        fileSizeString = df.format((double) fileS / 1073741824) + "GB";
+	      }
+	    return fileSizeString;
+    }
+    
 }

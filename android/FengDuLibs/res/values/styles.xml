@@ -134,5 +134,12 @@
         <item name="android:textColor">#333333</item>
         <item name="android:textSize">14sp</item>
     </style>
-
+ <!-- 中号浅黑色字体 -->
+    <style name="common_mid_light_black_textview">
+         <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#666666</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    
 </resources>

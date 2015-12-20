@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fengdu.R;
+import com.mike.aframe.utils.SystemTool;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
@@ -79,6 +80,7 @@ public class ImageAdapter extends PagerAdapter{
 		defaultImg.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
+				SystemTool.gc(mContext);
 				ImageLoader.getInstance().displayImage(list.get(position), imageView,mOptions,
 						new ImageLoadingListener() {
 					

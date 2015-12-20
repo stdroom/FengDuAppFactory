@@ -231,6 +231,10 @@ public class PhotosViewPagerFragment extends BaseFragment{
 									bean.setImage_url(json.getString("thumbNail"));
 									bean.setTotalNum(json.getIntValue("pageNum"));
 									bean.setId(json.getIntValue("iid"));
+									bean.setCata_id(json.getIntValue("cata_id"));
+									bean.setThumbYun(json.getString("thumbYun"));
+									bean.setThumbnail_height(json.getIntValue("thumbHeight"));
+									bean.setThumbnail_width(json.getIntValue("thumbWidth"));
 									String imgPaths = json.getString("imgPaths");
 									
 									bean.setUpdatedTime(SystemTool.getTimFromStamps(json.getLong("updateed_at"))+"");

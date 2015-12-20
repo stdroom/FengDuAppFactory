@@ -64,7 +64,7 @@ public class FavoriteActivity extends BaseFragmentActivity implements View.OnCli
 
 	@Override
 	public void onClick(View arg0) {
-		 if(arg0.getId() == R.id.back_img){
+		 if(arg0.getId() == R.id.img_title_back){
 			finish();
 		}
 	}

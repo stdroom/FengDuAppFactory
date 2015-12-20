@@ -42,7 +42,7 @@ public class PullToRefreshStaggeredGridView extends PullToRefreshBase<StaggeredG
         }
 
      //   int margin = getResources().getDimensionPixelSize(R.dimen.stgv_margin);
-        stgv.setColumnCount(3);
+        stgv.setColumnCount(2);
       //  stgv.setItemMargin(margin);
       //  stgv.setPadding(margin, 0, margin, 0);
         stgv.setId(R.id.stgv);

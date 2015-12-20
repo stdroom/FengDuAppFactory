@@ -23,7 +23,20 @@ public class UpdateBean {
 	private int versionCode;
 	private String versionName;
 	private String downloadUrl;
+	
+	// 
 	private String updateLog;
+	
+	// 一句话 提示日志
+	private String simpleLog;
+	
+	// 是否强制更新
+	private Boolean isForce;
+	// 点击更新
+	private Boolean isClickUpdate;
+
+	// 提示更新
+	private Boolean isTipUpdate;
 	
 	public UpdateBean(){
 	}

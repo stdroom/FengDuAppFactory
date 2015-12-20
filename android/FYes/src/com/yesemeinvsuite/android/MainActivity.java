@@ -13,9 +13,12 @@ import com.fengdu.android.URLs;
 import com.fengdu.ui.BaseSecondMainActivity;
 import com.fengdu.ui.fragment.PhotosViewPagerFragment;
 import com.fengdu.ui.slide.DrawerView;
+import com.mike.aframe.utils.FileUtils;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.widget.Toast;
 
 /**
  * 类名: MainActivity <br/>

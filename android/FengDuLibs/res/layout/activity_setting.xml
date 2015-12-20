@@ -54,7 +54,7 @@
 			</RelativeLayout> 
 			<include layout="@layout/mine_line_margin_linear"/>
 			<RelativeLayout 
-			    android:id="@+id/mine_font_size_rl"
+			    android:id="@+id/mine_clear_cache_rl"
 			    android:layout_width="match_parent"
 		    	android:layout_height="wrap_content"
 		    	android:background="@color/normal_background"
@@ -65,14 +65,12 @@
 			        android:paddingLeft="2dp"
 			        android:layout_centerVertical="true"
 			        android:layout_alignParentLeft="true"/>
-			    <ImageView 
-			        android:id="@+id/dis_address_right_img"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
+			    <TextView 
+			        android:id="@+id/clear_cache_tv"
+			        style="@style/common_mid_light_black_textview"
 			        android:layout_centerVertical="true"
 			        android:layout_alignParentRight="true"
-			        android:focusable="false"
-			        android:background="@drawable/right_jump"/>
+			        android:focusable="false"/>
 			</RelativeLayout> 
 			<include layout="@layout/mine_line_margin_linear"/>
 			<RelativeLayout 
