@@ -22,11 +22,9 @@ import net.youmi.android.spot.SplashView;
 import net.youmi.android.spot.SpotDialogListener;
 import net.youmi.android.spot.SpotManager;
 
-import com.fengdu.BaseFragmentActivity;
 import com.fengdu.android.AppConstant;
+import com.fengdu.bean.WelcomeBean;
 import com.fengdu.ui.BaseWelcomeActivity;
-import com.mike.aframe.MKLog;
-import com.umeng.analytics.MobclickAgent;
 
 public class WelcomeActivity extends BaseWelcomeActivity{
 	
@@ -35,6 +33,7 @@ public class WelcomeActivity extends BaseWelcomeActivity{
 	RelativeLayout splashLayout;
 	String platform = "";
 	private long exitTime = 0;
+	WelcomeBean welcomeBean;
 	@Override
 	protected void onCreate(Bundle arg0) {
 		// TODO Auto-generated method stub
@@ -43,7 +42,7 @@ public class WelcomeActivity extends BaseWelcomeActivity{
 		splashView = new SplashView(this, null);
 		splashView.setShowReciprocal(true);
 		splashView.hideCloseBtn(true);
-
+		
 		Intent intent = new Intent(this, MainActivity.class);
 		splashView.setIntent(intent);
 		splashView.setIsJumpTargetWhenFail(true);
