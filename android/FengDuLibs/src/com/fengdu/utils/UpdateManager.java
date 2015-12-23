@@ -142,12 +142,17 @@ public class UpdateManager {
 		return updateManager;
 	}
 	
+	
+	public void checkAppUpdate(final Context context,final boolean isShowMsg){
+		checkAppUpdate(context,isShowMsg,false);
+	}
 	/**
 	 * 检查App更新
 	 * @param context
-	 * @param isShowMsg 是否显示提示消息
+	 * @param isShowMsg 是否弹加载框
+	 * @param tankuang 弹框提示更新
 	 */
-	public void checkAppUpdate(Context context, final boolean isShowMsg){
+	public void checkAppUpdate(final Context context, final boolean isShowMsg,final boolean tankuang){
 		RequestQueue mQueue = Volley.newRequestQueue(context);
 		mQueue.start();
 		this.mContext = context;
@@ -177,7 +182,17 @@ public class UpdateManager {
 						if(curVersionCode < mUpdate.getVersionCode()){
 							apkUrl = mUpdate.getDownloadUrl();
 							updateMsg = mUpdate.getUpdateLog();
-							showNoticeDialog();
+							if(tankuang){
+								showNoticeDialog();
+							}else{
+								if(mUpdate.getUpdateLevel() == 2){	// 点击更新
+									showNoticeDialog();
+								}else if(mUpdate.getUpdateLevel() == 1){	// 强制更新
+									startDownload();
+								}else{	// 提示更新
+									Toast.makeText(context, mUpdate.getSimpleLog(), Toast.LENGTH_SHORT).show();
+								}
+							}
 						}else if(isShowMsg){
 							showLatestOrFailDialog(DIALOG_TYPE_LATEST);
 						}
@@ -287,16 +302,21 @@ public class UpdateManager {
 			@Override
 			public void onClick(View v) {
 				dialog.cancel();
-				Intent intent = new Intent(mContext,UpgradeService.class);
-				Bundle bundle = new Bundle();
-				bundle.putString("downloadurl", mUpdate.getDownloadUrl());
-				intent.putExtras(bundle);
-				mContext.startService(intent);
+				startDownload();
 			}
 		});
 		dialog.show();
 		
 //		builder.setMessage("待测版本"+mUpdate.getVersionCode()+"\n\n"+mUpdate.getUpdateLog());
+	}
+	
+	// 强制更新开始
+	private void startDownload(){
+		Intent intent = new Intent(mContext,UpgradeService.class);
+		Bundle bundle = new Bundle();
+		bundle.putString("downloadurl", mUpdate.getDownloadUrl());
+		intent.putExtras(bundle);
+		mContext.startService(intent);
 	}
 	
 	

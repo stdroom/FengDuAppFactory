@@ -22,6 +22,8 @@ import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
 import com.fengdu.android.AppConstant;
 import com.fengdu.android.URLs;
+import com.fengdu.bean.WelcomeBean;
+import com.fengdu.config.CommonConfig;
 import com.fengdu.ui.activity.SearchActivity;
 import com.fengdu.ui.adapter.MyFragmentAdapter;
 import com.fengdu.ui.slide.DrawerView;
@@ -106,10 +108,10 @@ public abstract class BaseSecondMainActivity extends BaseFragmentActivity implem
 		initMenu();
 		initFragment();
 		UpdateManager.getUpdateManager().checkAppUpdate(this, false);
-		
 		mQueue = Volley.newRequestQueue(this);
 		mQueue.start();
 		sendAppInfo();
+		getWelcomAppInfo();
 	}
 
 
@@ -282,9 +284,27 @@ public abstract class BaseSecondMainActivity extends BaseFragmentActivity implem
 		}, new ErrorListener() {
 			@Override
 			public void onErrorResponse(VolleyError error) {
-				
-				// TODO Auto-generated method stub
-				
+			}
+		}));
+	}
+	
+	// 获取首页控制信息
+	private void getWelcomAppInfo(){
+		VolleyManager.getInstance().beginSubmitRequest(mQueue, new FastJSONRequest(URLs.URL_GET_WELCOME_INFO, 
+				"", new Listener<JSONObject>(){
+			@Override
+			public void onResponse(JSONObject obj, String executeMethod, String flag, boolean dialogFlag) {
+				if(obj.containsKey("status")){
+					if("1".equals(obj.getString("status")) && obj.containsKey("results")){
+						String resulss = obj.getString("results");
+						WelcomeBean bean = JSONObject.parseObject(resulss, WelcomeBean.class);
+						BaseApplication.globalContext.saveObject(bean, AppConstant.welcomeFile);
+					}
+				}
+			}
+		}, new ErrorListener() {
+			@Override
+			public void onErrorResponse(VolleyError error) {
 			}
 		}));
 	}

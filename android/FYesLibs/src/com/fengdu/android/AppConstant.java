@@ -17,6 +17,9 @@ public class AppConstant {
 	/** 后台注册的appid */
 	public static final int APPID = 102601;
 	
+	// 欢迎页的WelcomBean 对象存放文件
+	public static final String welcomeFile = "ysmv.zip";
+	
 	public static final String UPYUN = "http://xmpigai.b0.upaiyun.com";
 	public static final String SHARE_ICON = "http://xmpigai.b0.upaiyun.com/test/img/enjoyread.png";
 	

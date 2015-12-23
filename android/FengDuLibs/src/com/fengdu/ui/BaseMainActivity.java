@@ -9,12 +9,23 @@
 
 package com.fengdu.ui;
 
+import com.alibaba.fastjson.JSONObject;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.toolbox.Volley;
 import com.fengdu.BaseApplication;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
 import com.fengdu.android.AppConstant;
+import com.fengdu.android.URLs;
+import com.fengdu.bean.WelcomeBean;
 import com.fengdu.ui.menu.MyFragmentTabHost;
 import com.fengdu.ui.slide.DrawerView;
+import com.fengdu.utils.UpdateManager;
+import com.fengdu.volley.FastJSONRequest;
+import com.fengdu.volley.VolleyManager;
+import com.fengdu.volley.FastResponse.Listener;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.umeng.analytics.MobclickAgent;
 
@@ -45,6 +56,7 @@ public abstract class BaseMainActivity extends BaseFragmentActivity implements O
 	protected MyFragmentTabHost mTabHost = null;
 	protected SlidingMenu side_drawer;
 	ImageView mTopHead;
+	RequestQueue mQueue;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -63,6 +75,11 @@ public abstract class BaseMainActivity extends BaseFragmentActivity implements O
 		findViewById();
 		initSlidingMenu();
 		initTabs();
+		UpdateManager.getUpdateManager().checkAppUpdate(this, false);
+		mQueue = Volley.newRequestQueue(this);
+		mQueue.start();
+		sendAppInfo();
+		getWelcomAppInfo();
 	}
 	
 	private void findViewById(){
@@ -118,6 +135,40 @@ public abstract class BaseMainActivity extends BaseFragmentActivity implements O
 		OffersManager.getInstance(this).onAppExit();
 	}
 	
+	private void sendAppInfo(){
+		VolleyManager.getInstance().beginSubmitRequest(mQueue, new FastJSONRequest(URLs.URL_SEND_APP_INFO, 
+				"", new Listener<JSONObject>(){
+
+					@Override
+					public void onResponse(JSONObject obj, String executeMethod, String flag, boolean dialogFlag) {
+						
+					}
+		}, new ErrorListener() {
+			@Override
+			public void onErrorResponse(VolleyError error) {
+			}
+		}));
+	}
 	
+	// 获取首页控制信息
+	private void getWelcomAppInfo(){
+		VolleyManager.getInstance().beginSubmitRequest(mQueue, new FastJSONRequest(URLs.URL_GET_WELCOME_INFO, 
+				"", new Listener<JSONObject>(){
+			@Override
+			public void onResponse(JSONObject obj, String executeMethod, String flag, boolean dialogFlag) {
+				if(obj.containsKey("status")){
+					if("1".equals(obj.getString("status")) && obj.containsKey("results")){
+						String resulss = obj.getString("results");
+						WelcomeBean bean = JSONObject.parseObject(resulss, WelcomeBean.class);
+						BaseApplication.globalContext.saveObject(bean, AppConstant.welcomeFile);
+					}
+				}
+			}
+		}, new ErrorListener() {
+			@Override
+			public void onErrorResponse(VolleyError error) {
+			}
+		}));
+	}
 }
 

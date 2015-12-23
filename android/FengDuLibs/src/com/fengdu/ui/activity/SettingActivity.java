@@ -12,6 +12,7 @@ package com.fengdu.ui.activity;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
 import com.fengdu.service.UpgradeService;
+import com.fengdu.utils.UpdateManager;
 import com.fengdu.widgets.CustomDialog;
 import com.mike.aframe.utils.FileUtils;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -40,6 +41,7 @@ implements View.OnClickListener{
 	private TextView mTitleTv;
 	private TextView mClearCacheTv;
 	private RelativeLayout mClearCacheRl;
+	private RelativeLayout mCheckVersionRl;
 	
 	private CustomDialog dialog;
 	@Override
@@ -61,6 +63,9 @@ implements View.OnClickListener{
 		mClearCacheTv = (TextView)findViewById(R.id.clear_cache_tv);
 		mClearCacheTv.setText(FileUtils.FormetFileSize(FileUtils.getFolderSize(
 				ImageLoader.getInstance().getDiskCache().getDirectory()))+"");
+		
+		mCheckVersionRl = (RelativeLayout)findViewById(R.id.setting_check_version_rl);
+		mCheckVersionRl.setOnClickListener(this);
 	}
 
 
@@ -70,6 +75,8 @@ implements View.OnClickListener{
 			finish();
 		}else if(arg0.getId() == R.id.mine_clear_cache_rl){
 			showNoticeDialog();
+		}else if(arg0.getId() == R.id.setting_check_version_rl){
+			UpdateManager.getUpdateManager().checkAppUpdate(this, true,true);
 		}
 	}
 	

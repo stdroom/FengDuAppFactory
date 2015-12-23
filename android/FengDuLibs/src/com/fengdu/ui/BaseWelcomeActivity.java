@@ -18,10 +18,17 @@ import com.fengdu.BaseApplication;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.android.AppConstant;
 import com.fengdu.bean.MyLocation;
+import com.fengdu.bean.WelcomeBean;
 import com.fengdu.utils.Utils;
+import com.mike.aframe.MKLog;
 
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 import android.widget.Toast;
 
 /**
@@ -32,10 +39,20 @@ import android.widget.Toast;
  * @author   leixun
  * @version  	 
  */
-public class BaseWelcomeActivity extends BaseFragmentActivity implements AMapLocationListener{
+public abstract class BaseWelcomeActivity extends BaseFragmentActivity implements AMapLocationListener{
 	private AMapLocationClient locationClient = null;
 	private AMapLocationClientOption locationOption = null;
+	protected WelcomeBean welcomeBean;
 	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		Object obj = BaseApplication.globalContext.readObject(AppConstant.welcomeFile);
+		if(obj!=null){
+			welcomeBean = (WelcomeBean)obj;
+		}
+	}
+
 	@Override
 	public void onLocationChanged(AMapLocation loc) {
 		if (null != loc) {
@@ -70,7 +87,7 @@ public class BaseWelcomeActivity extends BaseFragmentActivity implements AMapLoc
 			switch (msg.what) {
 			case Utils.MSG_LOCATION_START:
 //				tvReult.setText("正在定位...");
-				Toast.makeText(BaseWelcomeActivity.this, "正在定位...", Toast.LENGTH_SHORT).show();
+				MKLog.d("welcome", "正在定位...");
 				break;
 			//定位完成
 			case Utils.MSG_LOCATION_FINISH:
@@ -78,10 +95,10 @@ public class BaseWelcomeActivity extends BaseFragmentActivity implements AMapLoc
 				MyLocation result = Utils.getLocationStr(loc);
 				BaseApplication.globalContext.saveObject(result, AppConstant.addressFile);
 //				tvReult.setText(result);
-				Toast.makeText(BaseWelcomeActivity.this, result.getAddress(), Toast.LENGTH_SHORT).show();
+				MKLog.d("welcome", result.getAddress()+"");
 				break;
 			case Utils.MSG_LOCATION_STOP:
-				Toast.makeText(BaseWelcomeActivity.this, "定位停止", Toast.LENGTH_SHORT).show();
+				MKLog.d("welcome", "定位停止");
 				break;
 			default:
 				break;
@@ -102,6 +119,27 @@ public class BaseWelcomeActivity extends BaseFragmentActivity implements AMapLoc
 			locationOption = null;
 		}
 	}
+	
+	protected void alphaJump(View view , int time){
+		 // 渐变展示启动屏
+        AlphaAnimation aa = new AlphaAnimation(0.5f, 1.0f);
+        aa.setDuration(time * 100);
+        view.startAnimation(aa);
+        aa.setAnimationListener(new AnimationListener() {
+            @Override
+            public void onAnimationEnd(Animation arg0) {
+                redirectTo();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+
+            @Override
+            public void onAnimationStart(Animation animation) {}
+        });
+	}
+	
+	protected abstract void redirectTo();
 	
 }
 
