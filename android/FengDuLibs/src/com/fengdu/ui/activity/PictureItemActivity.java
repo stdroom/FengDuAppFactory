@@ -40,6 +40,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import uk.co.senab.photoview.PhotoViewAttacher.OnPhotoTapListener;
 
 /**
@@ -64,6 +65,7 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 	private ImageView mBackImg;
 	private ImageView mFavorImg;
 	private ImageView mDownloadImg;
+	private ImageView mRemoveImg;
 	
 	RequestQueue mQueue;
 	Favor favor = null;
@@ -85,8 +87,12 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 		bottom_menu_rl = (RelativeLayout)findViewById(R.id.bottom_menu_rl);
 		mBackImg = (ImageView)findViewById(R.id.bottom_back);
 		mFavorImg = (ImageView)findViewById(R.id.bottom_favor);
+		mRemoveImg = (ImageView)findViewById(R.id.bottom_remove);
+		mDownloadImg = (ImageView)findViewById(R.id.bottom_download);
+		mDownloadImg.setOnClickListener(this);
 		mFavorImg.setOnClickListener(this);
 		mBackImg.setOnClickListener(this);
+		mRemoveImg.setOnClickListener(this);
 		imgAdapter = new ImageAdapter(bean.getPagePaths(),this,new OnPhotoTapListener() {
 			
 			@Override
@@ -172,6 +178,23 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 					}));
 		}else if(arg0.getId() == R.id.bottom_back){
 			finish();
+		}else if(arg0.getId() == R.id.bottom_remove){
+			VolleyManager.getInstance().beginSubmitRequest(mQueue, new FastJSONRequest(
+					URLs.URL_FAVOR_IMG+"?imgId="+bean.getIid()+"&report="+true, "", new Listener<JSONObject>() {
+						@Override
+						public void onResponse(JSONObject obj, String executeMethod, String flag, boolean dialogFlag) {
+							if(obj!=null){
+								mHandler.sendEmptyMessage(0x1004);
+								obj.toJSONString();
+								MKLog.d("on Favor", obj.toJSONString());
+							}
+						}
+					}, new ErrorListener() {
+						@Override
+						public void onErrorResponse(VolleyError error) {
+							MKLog.d("on Favor", error.toString());
+						}
+					}));
 		}
 		
 	}
@@ -226,6 +249,9 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 				break;
 			case 0x1003:
 				mFavorImg.setImageResource(R.drawable.bottom_collectioned_icon);
+				break;
+			case 0x1004:
+				Toast.makeText(PictureItemActivity.this, "图片举报成功，感谢您的配合", Toast.LENGTH_SHORT).show();
 				break;
 			}
 		}

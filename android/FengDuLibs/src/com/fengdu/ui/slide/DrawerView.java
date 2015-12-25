@@ -14,6 +14,7 @@ import com.fengdu.R;
 import com.fengdu.ui.activity.FavoriteActivity;
 import com.fengdu.ui.activity.FeedbackActivity;
 import com.fengdu.ui.activity.SettingActivity;
+import com.fengdu.widgets.AlwaysMarqueeTextView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import android.app.Activity;
@@ -42,6 +43,7 @@ public class DrawerView implements View.OnClickListener{
 //	private SwitchButton night_mode_btn;
 	private TextView night_mode_text;
 	private RelativeLayout setting_btn;
+	private AlwaysMarqueeTextView alwaysMarqueeTv;
 	public DrawerView(Activity activity) {
 		this.activity = activity;
 	}
@@ -95,6 +97,7 @@ public class DrawerView implements View.OnClickListener{
 		localSlidingMenu.findViewById(R.id.appstore_btn).setOnClickListener(this);
 		localSlidingMenu.findViewById(R.id.favorite_btn).setOnClickListener(this);
 		localSlidingMenu.findViewById(R.id.setting_btn).setOnClickListener(this);
+		alwaysMarqueeTv = (AlwaysMarqueeTextView)localSlidingMenu.findViewById(R.id.tips);
 		setting_btn =(RelativeLayout)localSlidingMenu.findViewById(R.id.setting_btn);
 		setting_btn.setOnClickListener(this);
 		// wifi联网

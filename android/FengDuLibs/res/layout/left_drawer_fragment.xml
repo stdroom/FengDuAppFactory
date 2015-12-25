@@ -43,6 +43,19 @@
         </LinearLayout>
     </LinearLayout>
 
+    <com.fengdu.widgets.AlwaysMarqueeTextView
+        android:id="@+id/tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color_white"
+        android:textSize="12sp"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:layout_margin="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:text="本软件严格禁止色情黄色漏点图片，如有发现，请及时举报，我们工作人员会在第一时间屏蔽这些图片，谢谢配合！"
+        android:marqueeRepeatLimit="marquee_forever"/>
     <LinearLayout
         android:id="@+id/logout_layout"
         android:layout_width="fill_parent"

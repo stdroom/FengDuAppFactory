@@ -2215,6 +2215,9 @@ public class StaggeredGridView extends ViewGroup {
             super(in);
             firstId = in.readLong();
             position = in.readInt();
+            if(in == null || topOffsets == null){
+            	return ;
+            }
             in.readIntArray(topOffsets);
             in.readTypedList(mapping, ColMap.CREATOR);
 

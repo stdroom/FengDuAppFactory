@@ -25,7 +25,7 @@
 			        android:layout_centerVertical="true"
 			        android:layout_alignParentLeft="true"/>
 			    <com.fengdu.widgets.SwitchButton
-			        android:id="@+id/switch_no_img"
+			        android:id="@+id/switch_no_wifi"
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 			        android:layout_centerVertical="true"
@@ -45,7 +45,7 @@
 			        android:layout_centerVertical="true"
 			        android:layout_alignParentLeft="true"/>
 			    <com.fengdu.widgets.SwitchButton  
-			        android:id="@+id/switch_no_window"
+			        android:id="@+id/switch_no_text"
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 			        android:layout_centerVertical="true"

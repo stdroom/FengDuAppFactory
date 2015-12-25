@@ -45,6 +45,12 @@ public class AppConstant {
 	/** 无悬浮窗�?�? */
 	public static final String FLAG_WINDOW = "no_window";
 	
+	// 无标题
+	public static final String FLAG_TEXT = "no_text";
+	
+	// 仅wifi
+	public static final String FLAG_ONLY_WIFI = "only_wifi";
+	
 	/** 文章推送 */
 	public static final String FLAG_NOTIFICATION = "notify_artile";
 	

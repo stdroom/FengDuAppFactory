@@ -11,10 +11,14 @@ package com.fengdu.ui.activity;
 
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
+import com.fengdu.android.AppConstant;
 import com.fengdu.service.UpgradeService;
 import com.fengdu.utils.UpdateManager;
 import com.fengdu.widgets.CustomDialog;
+import com.fengdu.widgets.SwitchButton;
+import com.fengdu.widgets.SwitchButton.OnChangeListener;
 import com.mike.aframe.utils.FileUtils;
+import com.mike.aframe.utils.PreferenceHelper;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import android.app.Dialog;
@@ -22,6 +26,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -44,10 +49,19 @@ implements View.OnClickListener{
 	private RelativeLayout mCheckVersionRl;
 	
 	private CustomDialog dialog;
+	
+	// 不显示文字
+	private SwitchButton noTextButton;
+	private Boolean mSwitchNoTextFlag;
+	private SwitchButton onlyWifiButton;
+	private Boolean mSwitchOnlyWifiFlag;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_setting);
+		mSwitchNoTextFlag = PreferenceHelper.readBoolean(this, AppConstant.FLAG_TEXT, AppConstant.FLAG_TEXT, false);
+		mSwitchOnlyWifiFlag = PreferenceHelper.readBoolean(this, AppConstant.FLAG_ONLY_WIFI, AppConstant.FLAG_ONLY_WIFI, false);
+		
 		findViewById();
 	}
 
@@ -66,12 +80,32 @@ implements View.OnClickListener{
 		
 		mCheckVersionRl = (RelativeLayout)findViewById(R.id.setting_check_version_rl);
 		mCheckVersionRl.setOnClickListener(this);
+		
+		noTextButton = (SwitchButton)findViewById(R.id.switch_no_text);
+		noTextButton.setBoolean(mSwitchNoTextFlag);
+		noTextButton.setOnChangeListener(new OnChangeListener() {
+			
+			@Override
+			public void onChange(SwitchButton sb, boolean state) {
+				mSwitchNoTextFlag = state;
+			}
+		});
+		onlyWifiButton = (SwitchButton)findViewById(R.id.switch_no_wifi);
+		onlyWifiButton.setBoolean(mSwitchOnlyWifiFlag);
+		onlyWifiButton.setOnChangeListener(new OnChangeListener() {
+			
+			@Override
+			public void onChange(SwitchButton sb, boolean state) {
+				mSwitchOnlyWifiFlag = state;
+			}
+		});
 	}
 
 
 	@Override
 	public void onClick(View arg0) {
 		 if(arg0.getId() == R.id.img_title_back){
+			goBack();
 			finish();
 		}else if(arg0.getId() == R.id.mine_clear_cache_rl){
 			showNoticeDialog();
@@ -128,5 +162,19 @@ implements View.OnClickListener{
 		}
 		
 	};
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){ 
+			goBack();
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+	
+	private void goBack(){
+		PreferenceHelper.write(this, AppConstant.FLAG_TEXT, AppConstant.FLAG_TEXT, mSwitchNoTextFlag);
+		PreferenceHelper.write(this, AppConstant.FLAG_ONLY_WIFI, AppConstant.FLAG_ONLY_WIFI, mSwitchOnlyWifiFlag);
+		finish();
+	}
 }
 
