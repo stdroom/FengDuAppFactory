@@ -26,9 +26,9 @@ public class URLs {
 	// 缩略图信息地址
 	public static final String IMAGE_HOST = "http://7xo27p.com1.z0.glb.clouddn.com/teamimg/native/";
 	
-	public static final String MY_HOST = "http://192.168.1.11:8080";
+//	public static final String MY_HOST = "http://192.168.1.11:8080";
 //	public static final String MY_HOST = "http://172.26.194.1:8080";
-//	public static final String MY_HOST = "http://115.28.224.54:8080";
+	public static final String MY_HOST = "http://115.28.224.54:8080";
 	
 	// 获取版本更新信息
 	public static final String URL_GET_CHECK_VERSION =MY_HOST+ "/web/luser/upgradeInfo";
@@ -52,5 +52,8 @@ public class URLs {
 	public static final String URL_IS_FAVOR_IMG = MY_HOST+"/web/image/isFavorImage";
 	// 获取收藏的图片
 	public static final String URL_GET_FAVOR_IMGS = MY_HOST+"/web/image/getFavorImage";
+	
+	// 热门词搜索
+	public static final String URL_GET_KEY_SEARCH = MY_HOST+"/web/image/keywordsSearch";
 }
 
