@@ -19,7 +19,7 @@
 		    	android:background="@color/normal_background"
 		    	android:padding="10dp">
 			    <TextView style="@style/common_mid_black_textview"
-			        android:text="仅wifi下载"
+			        android:text="仅wifi下载图片"
 			        android:gravity="center_vertical"
 			        android:paddingLeft="2dp"
 			        android:layout_centerVertical="true"
@@ -39,7 +39,7 @@
 		    	android:background="@color/normal_background"
 		    	android:padding="10dp">
 			    <TextView style="@style/common_mid_black_textview"
-			        android:text="消息推送"
+			        android:text="隐藏图集文字"
 			        android:gravity="center_vertical"
 			        android:paddingLeft="2dp"
 			        android:layout_centerVertical="true"
@@ -51,6 +51,26 @@
 			        android:layout_centerVertical="true"
 			        android:layout_alignParentRight="true"
 			        android:focusable="false"/>
+			</RelativeLayout> 
+			<include layout="@layout/mine_line_margin_linear"/>
+			<RelativeLayout 
+			    android:layout_width="match_parent"
+		    	android:layout_height="wrap_content"
+		    	android:background="@color/normal_background"
+		    	android:padding="10dp">
+			    <TextView style="@style/common_mid_black_textview"
+			        android:text="启动时检查更新"
+			        android:gravity="center_vertical"
+			        android:paddingLeft="2dp"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentLeft="true"/>
+			    <com.fengdu.widgets.SwitchButton  
+			        android:id="@+id/switch_boot_check"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentRight="true"
+			        android:focusable="true"/>
 			</RelativeLayout> 
 			<include layout="@layout/mine_line_margin_linear"/>
 			<RelativeLayout 
@@ -71,28 +91,6 @@
 			        android:layout_centerVertical="true"
 			        android:layout_alignParentRight="true"
 			        android:focusable="false"/>
-			</RelativeLayout> 
-			<include layout="@layout/mine_line_margin_linear"/>
-			<RelativeLayout 
-			    android:id="@+id/mine_download_rl"
-			    android:layout_width="match_parent"
-		    	android:layout_height="wrap_content"
-		    	android:background="@color/normal_background"
-		    	android:padding="10dp">
-			    <TextView style="@style/common_mid_black_textview"
-			        android:text="下载管理"
-			        android:gravity="center_vertical"
-			        android:paddingLeft="2dp"
-			        android:layout_centerVertical="true"
-			        android:layout_alignParentLeft="true"/>
-			    <ImageView 
-			        android:id="@+id/dis_download_img"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:layout_centerVertical="true"
-			        android:layout_alignParentRight="true"
-			        android:focusable="false"
-			        android:background="@drawable/right_jump"/>
 			</RelativeLayout> 
 			<include layout="@layout/mine_line_linear"/>
 			<include layout="@layout/common_line_margintop_linear"/>
@@ -120,7 +118,7 @@
 			<include layout="@layout/mine_line_margin_linear"/>
 			 
 			<RelativeLayout 
-			    android:id="@+id/mine_msg_rl"
+			    android:id="@+id/mine_about_us_rl"
 			    android:layout_width="match_parent"
 		    	android:layout_height="wrap_content"
 		    	android:background="@color/normal_background"
@@ -139,27 +137,6 @@
 			        android:focusable="false"
 			        android:background="@drawable/right_jump"/>
 			</RelativeLayout> 
-			<include layout="@layout/mine_line_margin_linear"/>
-			<RelativeLayout 
-			    android:id="@+id/setting_load_recomm_rl"
-			    android:layout_width="match_parent"
-		    	android:layout_height="wrap_content"
-		    	android:background="@color/normal_background"
-		    	android:padding="10dp">
-			    <TextView style="@style/common_mid_black_textview"
-			        android:text="帮助"
-			        android:gravity="center_vertical"
-			        android:paddingLeft="2dp"
-			        android:layout_centerVertical="true"
-			        android:layout_alignParentLeft="true"/>
-			    <ImageView 
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:layout_centerVertical="true"
-			        android:focusable="false"
-			        android:layout_alignParentRight="true"
-			        android:src="@drawable/right_jump"/>
-			</RelativeLayout>  -->
 			<include layout="@layout/mine_line_linear"/>
 		</LinearLayout>
 	</ScrollView>

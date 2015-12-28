@@ -45,6 +45,7 @@ import com.android.volley.Response.ErrorListener;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.fengdu.R;
+import com.fengdu.android.AppConstant;
 import com.fengdu.android.URLs;
 import com.fengdu.bean.UpdateBean;
 import com.fengdu.service.UpgradeService;
@@ -53,6 +54,7 @@ import com.fengdu.volley.FastResponse.Listener;
 import com.fengdu.volley.VolleyManager;
 import com.fengdu.widgets.CustomDialog;
 import com.mike.aframe.MKLog;
+import com.mike.aframe.utils.PreferenceHelper;
 
 /**
  * 类名: UpdateManager <br/>
@@ -177,6 +179,9 @@ public class UpdateManager {
 				}
 				//显示检测结果
 				if(msg.what == 1){
+					if(!PreferenceHelper.readBoolean(context, AppConstant.FLAG_BOOTED_CHECK, AppConstant.FLAG_BOOTED_CHECK, true)){
+						return;
+					}
 					mUpdate = (UpdateBean)msg.obj;
 					if(mUpdate != null){
 						if(curVersionCode < mUpdate.getVersionCode()){

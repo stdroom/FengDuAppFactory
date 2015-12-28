@@ -32,6 +32,7 @@ import com.fengdu.volley.FastJSONRequest;
 import com.fengdu.volley.VolleyManager;
 import com.fengdu.volley.FastResponse.Listener;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.mike.aframe.utils.PreferenceHelper;
 import com.umeng.analytics.MobclickAgent;
 
 import android.content.Intent;

@@ -51,6 +51,9 @@ public class AppConstant {
 	// 仅wifi
 	public static final String FLAG_ONLY_WIFI = "only_wifi";
 	
+	// 启动时检查更新
+	public static final String FLAG_BOOTED_CHECK = "booted_check";
+	
 	/** 文章推送 */
 	public static final String FLAG_NOTIFICATION = "notify_artile";
 	

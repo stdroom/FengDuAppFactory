@@ -57,6 +57,8 @@
             android:name="com.fengdu.ui.activity.SearchActivity"/>
         <activity
             android:name="com.fengdu.ui.activity.SettingActivity"/>
+        <activity
+            android:name="com.fengdu.ui.activity.AboutUsActivity"/>
         
         <!-- 有米ad start-->
         <activity

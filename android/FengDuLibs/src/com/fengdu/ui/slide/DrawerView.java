@@ -112,8 +112,6 @@ public class DrawerView implements View.OnClickListener{
 		// 评分
 		// 二维码
 		// 摇一摇 送女神
-		
-		// 首页逻辑强化
 	}
 
 	@Override

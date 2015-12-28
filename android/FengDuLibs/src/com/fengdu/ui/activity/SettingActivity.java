@@ -47,6 +47,7 @@ implements View.OnClickListener{
 	private TextView mClearCacheTv;
 	private RelativeLayout mClearCacheRl;
 	private RelativeLayout mCheckVersionRl;
+	private RelativeLayout mAboutUsRl;
 	
 	private CustomDialog dialog;
 	
@@ -55,13 +56,15 @@ implements View.OnClickListener{
 	private Boolean mSwitchNoTextFlag;
 	private SwitchButton onlyWifiButton;
 	private Boolean mSwitchOnlyWifiFlag;
+	private SwitchButton mBootCheck;
+	private Boolean mBootCheckFlag;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_setting);
 		mSwitchNoTextFlag = PreferenceHelper.readBoolean(this, AppConstant.FLAG_TEXT, AppConstant.FLAG_TEXT, false);
 		mSwitchOnlyWifiFlag = PreferenceHelper.readBoolean(this, AppConstant.FLAG_ONLY_WIFI, AppConstant.FLAG_ONLY_WIFI, false);
-		
+		mBootCheckFlag = PreferenceHelper.readBoolean(this, AppConstant.FLAG_BOOTED_CHECK, AppConstant.FLAG_BOOTED_CHECK, true);
 		findViewById();
 	}
 
@@ -80,6 +83,8 @@ implements View.OnClickListener{
 		
 		mCheckVersionRl = (RelativeLayout)findViewById(R.id.setting_check_version_rl);
 		mCheckVersionRl.setOnClickListener(this);
+		mAboutUsRl = (RelativeLayout)findViewById(R.id.mine_about_us_rl);
+		mAboutUsRl.setOnClickListener(this);
 		
 		noTextButton = (SwitchButton)findViewById(R.id.switch_no_text);
 		noTextButton.setBoolean(mSwitchNoTextFlag);
@@ -99,6 +104,15 @@ implements View.OnClickListener{
 				mSwitchOnlyWifiFlag = state;
 			}
 		});
+		mBootCheck = (SwitchButton)findViewById(R.id.switch_boot_check);
+		mBootCheck.setBoolean(mBootCheckFlag);
+		mBootCheck.setOnChangeListener(new OnChangeListener() {
+			
+			@Override
+			public void onChange(SwitchButton sb, boolean state) {
+				mBootCheckFlag = state;
+			}
+		});
 	}
 
 
@@ -111,6 +125,8 @@ implements View.OnClickListener{
 			showNoticeDialog();
 		}else if(arg0.getId() == R.id.setting_check_version_rl){
 			UpdateManager.getUpdateManager().checkAppUpdate(this, true,true);
+		}else if(arg0.getId() == R.id.mine_about_us_rl){
+			startActivity(new Intent(this,AboutUsActivity.class));
 		}
 	}
 	
@@ -174,6 +190,7 @@ implements View.OnClickListener{
 	private void goBack(){
 		PreferenceHelper.write(this, AppConstant.FLAG_TEXT, AppConstant.FLAG_TEXT, mSwitchNoTextFlag);
 		PreferenceHelper.write(this, AppConstant.FLAG_ONLY_WIFI, AppConstant.FLAG_ONLY_WIFI, mSwitchOnlyWifiFlag);
+		PreferenceHelper.write(this, AppConstant.FLAG_BOOTED_CHECK, AppConstant.FLAG_BOOTED_CHECK, mBootCheckFlag);
 		finish();
 	}
 }
