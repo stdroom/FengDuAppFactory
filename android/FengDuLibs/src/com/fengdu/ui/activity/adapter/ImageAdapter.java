@@ -80,7 +80,6 @@ public class ImageAdapter extends PagerAdapter{
 		defaultImg.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				SystemTool.gc(mContext);
 				ImageLoader.getInstance().displayImage(list.get(position), imageView,mOptions,
 						new ImageLoadingListener() {
 					

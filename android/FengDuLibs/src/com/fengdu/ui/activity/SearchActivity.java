@@ -200,7 +200,7 @@ public class SearchActivity extends BaseFragmentActivity implements View.OnClick
 		public void handleMessage(Message msg) {
 			switch(msg.what){
 			case 0x1001:
-				mViewFactory = new TextViewFactory(R.drawable.step_third_circle_rectangle_green_bg,R.color.text_color_green);
+				mViewFactory = new TextViewFactory(R.drawable.step_third_circle_rectangle_green_bg,R.color.text_color_search);
 				mViewDisplay = new TextViewDisplay();
 				mTextViewArrays = mViewDisplay.displayAtRelativeLayout(mTvContainer, 
 						mViewFactory.createFactory(SearchActivity.this, mKeyWords), 
