@@ -139,7 +139,7 @@ Context mContext;
 		// 设置mTextView的文字
 		mTextView.setText(word);
 		// 设置字体大小
-		mTextView.setTextSize(20);
+		mTextView.setTextSize(16);
 		// 设置背景
 		if(Build.VERSION.SDK_INT >= 16){
 			mTextView.setBackground(mContext.getResources().getDrawable(drawable));

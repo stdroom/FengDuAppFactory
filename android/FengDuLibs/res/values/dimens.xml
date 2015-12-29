@@ -35,7 +35,7 @@
     <dimen name="custom_textview_padding_left">15dp</dimen>
     <dimen name="custom_textview_padding_right">15dp</dimen>
     <dimen name="custom_textview_padding_top">2dp</dimen>
-    <dimen name="custom_textview_padding_bottom">3dp</dimen>
+    <dimen name="custom_textview_padding_bottom">2dp</dimen>
     <dimen name="custom_textview_gaps_x">5dp</dimen>
-    <dimen name="custom_textview_gaps_y">5dp</dimen>
+    <dimen name="custom_textview_gaps_y">2dp</dimen>
 </resources>
