@@ -19,8 +19,10 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
+import com.fengdu.BaseApplication;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
+import com.fengdu.android.AppConstant;
 import com.fengdu.android.URLs;
 import com.fengdu.bean.SearchWord;
 import com.fengdu.ui.fragment.PhotosViewPagerFragment;
@@ -81,7 +83,12 @@ public class SearchActivity extends BaseFragmentActivity implements View.OnClick
 		findViewById();
 		mQueue = Volley.newRequestQueue(this);
 		mQueue.start();
-		sendRequest();
+		mKeyWords = (ArrayList<String>) BaseApplication.globalContext.readObject(AppConstant.FILE_KEY_SEARCH);
+		if(mKeyWords!=null){
+			mHandler.sendEmptyMessage(0x1001);
+		}else{
+			sendRequest();
+		}
 	}
 	
 	private void findViewById(){
@@ -176,11 +183,18 @@ public class SearchActivity extends BaseFragmentActivity implements View.OnClick
 					public void onResponse(JSONObject obj, String executeMethod, String flag, boolean dialogFlag) {
 						if(obj!=null && obj.containsKey("status") && obj.getInteger("status")==200){
 							ArrayList<SearchWord> searchWord = (ArrayList<SearchWord>)JSONArray.parseArray(obj.getString("results"),SearchWord.class);
+							boolean hasflag = false;
+							if(mKeyWords!=null && mKeyWords.size()>0){
+								hasflag = true;
+							}
 							mKeyWords = new ArrayList<String>();
 							for(SearchWord bean : searchWord){
 								mKeyWords.add(bean.getWord());
 							}
-							mHandler.sendEmptyMessage(0x1001);
+							BaseApplication.globalContext.saveObject(mKeyWords, AppConstant.FILE_KEY_SEARCH);
+							if(!hasflag){
+								mHandler.sendEmptyMessage(0x1001);
+							}
 						}else{
 						}
 					}

@@ -22,6 +22,8 @@ import com.fengdu.R;
 import com.fengdu.android.URLs;
 import com.fengdu.bean.Favor;
 import com.fengdu.bean.ImageBean;
+import com.fengdu.service.DownloadService;
+import com.fengdu.service.UpgradeService;
 import com.fengdu.ui.activity.adapter.ImageAdapter;
 import com.fengdu.volley.FastJSONRequest;
 import com.fengdu.volley.FastResponse.Listener;
@@ -195,6 +197,14 @@ public class PictureItemActivity extends BaseFragmentActivity implements ViewPag
 							MKLog.d("on Favor", error.toString());
 						}
 					}));
+		}else if(arg0.getId() == R.id.bottom_download){
+			arg0.setEnabled(false);
+			Toast.makeText(this, "开始下载...", Toast.LENGTH_SHORT).show();
+			Intent intent = new Intent(this,DownloadService.class);
+			Bundle bundle = new Bundle();
+			bundle.putSerializable("key", bean);
+			intent.putExtras(bundle);
+			startService(intent);
 		}
 		
 	}
