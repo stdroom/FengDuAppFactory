@@ -11,29 +11,42 @@ package com.fengdu.ui.activity;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
+import com.fengdu.BaseApplication;
 import com.fengdu.BaseFragmentActivity;
 import com.fengdu.R;
+import com.fengdu.android.AppConstant;
 import com.fengdu.android.URLs;
+import com.fengdu.bean.SearchWord;
 import com.fengdu.ui.fragment.PhotosViewPagerFragment;
+import com.fengdu.volley.FastJSONRequest;
+import com.fengdu.volley.VolleyManager;
+import com.fengdu.widgets.customgrid.TextViewDisplay;
+import com.fengdu.widgets.customgrid.TextViewFactory;
+import com.fengdu.volley.FastResponse.Listener;
 import com.mike.aframe.utils.SystemTool;
 
-import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.SearchView.OnQueryTextListener;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
 
 /**
@@ -51,8 +64,15 @@ public class SearchActivity extends BaseFragmentActivity implements View.OnClick
 	private ImageView backImage;
 	private ImageView clearImage;
 	private ImageView searchImage;
-	
+	private RelativeLayout mTvContainer;
 	private PhotosViewPagerFragment photsViewPagerFragment;
+	
+	private RequestQueue mQueue;
+	
+	private ArrayList<String> mKeyWords;
+	private TextViewFactory mViewFactory;
+	private TextViewDisplay mViewDisplay;
+	private ArrayList<TextView> mTextViewArrays;
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +81,14 @@ public class SearchActivity extends BaseFragmentActivity implements View.OnClick
 		setContentView(R.layout.activity_search);
 		
 		findViewById();
+		mQueue = Volley.newRequestQueue(this);
+		mQueue.start();
+		mKeyWords = (ArrayList<String>) BaseApplication.globalContext.readObject(AppConstant.FILE_KEY_SEARCH);
+		if(mKeyWords!=null){
+			mHandler.sendEmptyMessage(0x1001);
+		}else{
+			sendRequest();
+		}
 	}
 	
 	private void findViewById(){
@@ -70,23 +98,19 @@ public class SearchActivity extends BaseFragmentActivity implements View.OnClick
 		searchImage = (ImageView)findViewById(R.id.btn_searching);
 		searchImage.setOnClickListener(this);
 		clearImage.setOnClickListener(this);
+		mTvContainer = (RelativeLayout)findViewById(R.id.tv_container_rl);
 		backImage.setOnClickListener(this);
-		
 		btn_search.addTextChangedListener(new TextWatcher() {
-			
 			@Override
 			public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-				
 			}
 			
 			@Override
 			public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-				
 			}
 			
 			@Override
 			public void afterTextChanged(Editable arg0) {
-				
 			}
 		});
 		
@@ -149,5 +173,76 @@ public class SearchActivity extends BaseFragmentActivity implements View.OnClick
 		bundle.putString("key", URLs.URL_SEARCH_IMAGE+urls);
         return bundle;
     }
+	
+	private void sendRequest(){
+		VolleyManager.getInstance().beginSubmitRequest(
+				mQueue,
+				new FastJSONRequest(URLs.URL_GET_KEY_SEARCH, "", new Listener<JSONObject>(){
+
+					@Override
+					public void onResponse(JSONObject obj, String executeMethod, String flag, boolean dialogFlag) {
+						if(obj!=null && obj.containsKey("status") && obj.getInteger("status")==200){
+							ArrayList<SearchWord> searchWord = (ArrayList<SearchWord>)JSONArray.parseArray(obj.getString("results"),SearchWord.class);
+							boolean hasflag = false;
+							if(mKeyWords!=null && mKeyWords.size()>0){
+								hasflag = true;
+							}
+							mKeyWords = new ArrayList<String>();
+							for(SearchWord bean : searchWord){
+								mKeyWords.add(bean.getWord());
+							}
+							BaseApplication.globalContext.saveObject(mKeyWords, AppConstant.FILE_KEY_SEARCH);
+							if(!hasflag){
+								mHandler.sendEmptyMessage(0x1001);
+							}
+						}else{
+						}
+					}
+					
+				},new ErrorListener() {
+
+					@Override
+					public void onErrorResponse(VolleyError error) {
+						
+					}
+				}));
+	}
+	
+	Handler mHandler = new Handler(){
+
+		@Override
+		public void handleMessage(Message msg) {
+			switch(msg.what){
+			case 0x1001:
+				mViewFactory = new TextViewFactory(R.drawable.step_third_circle_rectangle_green_bg,R.color.text_color_search);
+				mViewDisplay = new TextViewDisplay();
+				mTextViewArrays = mViewDisplay.displayAtRelativeLayout(mTvContainer, 
+						mViewFactory.createFactory(SearchActivity.this, mKeyWords), 
+						SearchActivity.this, 
+						getScreenWidth()-(int)getResources().getDimension(R.dimen.custom_textview_gaps_x));
+				if(mTextViewArrays!=null){
+					for(int i = 0 ;i < mTextViewArrays.size() ;i++){
+						mTextViewArrays.get(i).setOnClickListener(new View.OnClickListener() {
+							
+							@Override
+							public void onClick(View arg0) {
+								btn_search.setText(((TextView)arg0).getText());
+								showResult();
+							}
+						});
+					}
+				}
+				break;
+			}
+		}
+	};
+	
+	public int getScreenWidth(){
+		DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        return dm.widthPixels;
+	}
+	
+	
 }
 

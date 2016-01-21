@@ -57,6 +57,9 @@ public class AppConstant {
 	/** 文章推送 */
 	public static final String FLAG_NOTIFICATION = "notify_artile";
 	
+	/** 关键词搜索  */
+	public static final String FILE_KEY_SEARCH = "key_search_word";
+	
 
 	public static final int WEBVIEW_WIDTH = 320;
 	public static final int JUMP_CODE = 0x02;

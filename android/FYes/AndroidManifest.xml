@@ -60,6 +60,11 @@
         <activity
             android:name="com.fengdu.ui.activity.AboutUsActivity"/>
         
+        <service
+            android:name="com.fengdu.service.UpgradeService"/>
+        <service
+            android:name="com.fengdu.service.DownloadService"/>
+        
         <!-- 有米ad start-->
         <activity
 		    android:name="net.youmi.android.AdBrowser"

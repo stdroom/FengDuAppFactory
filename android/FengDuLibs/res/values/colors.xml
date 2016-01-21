@@ -54,6 +54,7 @@
     <color name="text_color_gray">#b8b8b8</color>
     <color name="text_color_grayer">#999999</color>
     <color name="text_color_grayest">#c6c6c6</color>
+    <color name="text_color_search">#ED4035</color>
     
 	<color name="subscribe_bg">#fff5f5f5</color>    
     <color name="subscribe_tip_text">#ff2e2e2e</color>
