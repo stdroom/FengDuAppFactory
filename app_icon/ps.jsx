@@ -26,6 +26,7 @@ if(destFolder != null){
 	{"dir": "144",             "size":"144px"},
 	{"dir": "168",             "size":"168px"},
 	{"dir": "192",             "size":"192px"},
+	{"dir": "224",             "size":"224px"},
 	{"dir": "512",             "size":"512px"}
     ];
 
