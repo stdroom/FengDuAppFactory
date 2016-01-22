@@ -23,12 +23,35 @@ public class URLs {
 
 	public static final String HOST = "http://www.fengdu100.com/paoniu";
 	
-	public static final String URL_GET_CHECK_VERSION = "";
 	
 	public static final String IMAGE_HOST = "http://7xo27p.com1.z0.glb.clouddn.com/teamimg/native/";
 	
 	public static final String MY_HOST = "http://121.42.204.13:8080";
 	
-	public static final String URL_GET_IMAGE = MY_HOST + "/ms/image/getList.do";
+	// 获取版本更新信息
+	public static final String URL_GET_CHECK_VERSION =MY_HOST+ "/web/luser/upgradeInfo";
+	
+	// 获取首页信息
+	public static final String URL_GET_WELCOME_INFO = MY_HOST+"/web/luser/welcomeInfo";
+	
+	// 获取图片信息
+	public static final String URL_GET_IMAGE = MY_HOST + "/web/image/getImage";
+	
+	// 搜索图片
+	public static final String URL_SEARCH_IMAGE = MY_HOST + "/web/image/searchImage";
+	
+	// 发送app信息
+	public static final String URL_SEND_APP_INFO = MY_HOST+"/web/luser/updateInfo";
+	
+	// 收藏取消收藏 图片
+	public static final String URL_FAVOR_IMG = MY_HOST+"/web/image/favorImage";
+	
+	// 是否是收藏图片
+	public static final String URL_IS_FAVOR_IMG = MY_HOST+"/web/image/isFavorImage";
+	// 获取收藏的图片
+	public static final String URL_GET_FAVOR_IMGS = MY_HOST+"/web/image/getFavorImage";
+	
+	// 热门词搜索
+	public static final String URL_GET_KEY_SEARCH = MY_HOST+"/web/image/keywordsSearch";
 }
 

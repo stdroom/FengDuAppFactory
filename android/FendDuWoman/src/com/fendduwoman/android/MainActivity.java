@@ -62,5 +62,12 @@ public class MainActivity extends BaseMainActivity{
 		}
 	}
 
+	@Override
+	protected void initSlidingMenu() {
+		
+		// TODO Auto-generated method stub
+		
+	}
+
 }
 

@@ -1,15 +1,19 @@
 package com.yesemeinvsuite.android;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import net.youmi.android.AdManager;
 import net.youmi.android.spot.SplashView;
@@ -19,6 +23,7 @@ import net.youmi.android.spot.SpotManager;
 import com.fengdu.R;
 import com.fengdu.android.AppConstant;
 import com.fengdu.ui.BaseWelcomeActivity;
+import com.fengdu.widgets.PointWidget;
 import com.mike.aframe.utils.SystemTool;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -27,11 +32,15 @@ public class WelcomeActivity extends BaseWelcomeActivity{
 	
 	SplashView splashView;
 	View splash;
-	RelativeLayout splashLayout,bottomRl;
+	RelativeLayout splashLayout,bottomRl,mGuideRl;
 	String platform = "";
 	private long exitTime = 0;
 	private DisplayImageOptions mOptions;
 	private ImageView halfImageView,fullImageView;
+    // 寮曞椤�
+    private ViewPager mGuideViewPager;
+    private TextView mJumpTv;
+
 	@Override
 	protected void onCreate(Bundle arg0) {
 		// TODO Auto-generated method stub
@@ -41,6 +50,10 @@ public class WelcomeActivity extends BaseWelcomeActivity{
 		halfImageView = (ImageView)findViewById(R.id.halfull_imgview);
 		fullImageView = (ImageView)findViewById(R.id.full_imgview);
 		bottomRl = (RelativeLayout)findViewById(R.id.bottom_rl);
+		mGuideRl = (RelativeLayout)findViewById(R.id.viewpager_rl);
+        mGuideViewPager = (ViewPager)findViewById(R.id.viewPager);
+        mJumpTv = (TextView)findViewById(R.id.guide_jump);
+        mGuidePoint = (PointWidget)findViewById(R.id.litu_welcome_ponit);
 		mOptions = new DisplayImageOptions.Builder()
 				.cacheInMemory(true)
 				.cacheOnDisk(true)
@@ -51,33 +64,38 @@ public class WelcomeActivity extends BaseWelcomeActivity{
 			if(Math.random() < welcomeBean.getShowAdRate()){
 				halfImageView.setVisibility(View.GONE);
 				fullImageView.setVisibility(View.GONE);
+                mGuideRl.setVisibility(View.GONE);
 				showAds();
 			}else{
 				Date showDate = new Date(welcomeBean.getWelcomeShowDate());
 				Date nowDate = new Date();
-				if(SystemTool.isSameDate(showDate, nowDate)){	// ͬһ�� չʾ������
-					if(welcomeBean.getIsWelcomeFullScreen()){	// ȫ��
+				if(SystemTool.isSameDate(showDate, nowDate)){	// 同一锟斤拷 展示锟斤拷锟斤拷锟斤拷
+					if(welcomeBean.getIsWelcomeFullScreen()){	// 全锟斤拷
 						halfImageView.setVisibility(View.GONE);
 						fullImageView.setVisibility(View.VISIBLE);
 						bottomRl.setVisibility(View.GONE);
+                        mGuideRl.setVisibility(View.GONE);
 						ImageLoader.getInstance().displayImage(welcomeBean.getWelcomeImgUrl(),fullImageView,mOptions);
 						alphaJump(fullImageView, welcomeBean.getWelcomeSeconds());
 					}else{
 						halfImageView.setVisibility(View.VISIBLE);
 						fullImageView.setVisibility(View.GONE);
+                        mGuideRl.setVisibility(View.GONE);
 						ImageLoader.getInstance().displayImage(welcomeBean.getWelcomeImgUrl(),halfImageView,mOptions);
 						alphaJump(halfImageView, welcomeBean.getWelcomeSeconds());
 					}
-				}else{ // չʾĬ������ҳ
+				}else{ // 展示默锟斤拷锟斤拷锟斤拷页
 					if(welcomeBean.getIsDefaultFullScreen()){
 						halfImageView.setVisibility(View.GONE);
 						fullImageView.setVisibility(View.VISIBLE);
 						bottomRl.setVisibility(View.GONE);
+                        mGuideRl.setVisibility(View.GONE);
 						ImageLoader.getInstance().displayImage(welcomeBean.getDefaultImgUrl(),fullImageView,mOptions);
 						alphaJump(fullImageView, welcomeBean.getDefaultSeconds());
 					}else{
 						halfImageView.setVisibility(View.VISIBLE);
 						fullImageView.setVisibility(View.GONE);
+                        mGuideRl.setVisibility(View.GONE);
 						ImageLoader.getInstance().displayImage(welcomeBean.getDefaultImgUrl(),halfImageView,mOptions);
 						alphaJump(halfImageView, welcomeBean.getDefaultSeconds());
 					}
@@ -86,8 +104,28 @@ public class WelcomeActivity extends BaseWelcomeActivity{
 		}else{
 			halfImageView.setVisibility(View.GONE);
 			fullImageView.setVisibility(View.GONE);
-			showAds();
-		}
+            mGuideRl.setVisibility(View.VISIBLE);
+            ViewPagerList = new ArrayList<View>();
+            LinearLayout.LayoutParams image_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+            ImageView view1 = new ImageView(this);
+		    ImageView view2 = new ImageView(this);
+            ImageView view3 = new ImageView(this);
+            ImageView view4 = new ImageView(this);
+            view1.setLayoutParams(image_params);
+            view2.setLayoutParams(image_params);
+            view3.setLayoutParams(image_params);
+            view1.setBackgroundResource(R.drawable.guide1);
+            view2.setBackgroundResource(R.drawable.guide2);
+            view3.setBackgroundResource(R.drawable.guide3);
+
+            ViewPagerList.add(view1);
+            ViewPagerList.add(view2);
+            ViewPagerList.add(view3);
+            ViewPagerList.add(view4);
+            mGuidePoint.setPointCount(ViewPagerList.size()-1);
+            mGuideViewPager.setAdapter(pagerAdapter);
+            mGuideViewPager.setOnPageChangeListener(onPageChangeListener);
+        }
 	}
 	
 	private void showAds(){
@@ -165,11 +203,11 @@ public static String getDeviceInfo(Context context) {
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		/** һ�����˸о��������˳�����*/
+		/** 一锟斤拷锟斤拷锟剿感撅拷锟斤拷锟斤拷锟斤拷顺锟斤拷锟斤拷锟�*/
 		if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){   
 	        if((System.currentTimeMillis()-exitTime) > 2000){  
 	            exitTime = System.currentTimeMillis();
-	            Toast.makeText(this, "�Բ��𣬿�����������", Toast.LENGTH_SHORT).show();
+	            Toast.makeText(this, "锟皆诧拷锟金，匡拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷", Toast.LENGTH_SHORT).show();
 	        } else {
 	        	if(splashView!=null){
 	        		splashView.setIntent(null);
@@ -184,10 +222,10 @@ public static String getDeviceInfo(Context context) {
 
 	@Override
 	protected void redirectTo() {
-		Intent intent2 = new Intent(WelcomeActivity.this, MainActivity.class);
-		startActivity(intent2);
-		finish();
-	}
+        Intent intent2 = new Intent(WelcomeActivity.this, MainActivity.class);
+        startActivity(intent2);
+        finish();
+    }
 
 	
 }

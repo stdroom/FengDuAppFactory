@@ -14,13 +14,20 @@
 package com.fengdu.android;
 public class AppConstant {
 	
+	/** 后台注册的appid */
+	public static final int APPID = 102602;
+	
 	public static final String UPYUN = "http://xmpigai.b0.upaiyun.com";
 	public static final String SHARE_ICON = "http://xmpigai.b0.upaiyun.com/test/img/enjoyread.png";
 	
+	// 欢迎页的WelcomBean 对象存放文件
+	public static final String welcomeFile = "welcomeFile.zip";
 	// 空间名
 	public static final String bucket = "xmpigai"; 
 	// 表单密钥
 	public static final String formApiSecret = "/LfWYSGfXOD1md3eIcXB9pHUBPE=";
+	
+	public static final String addressFile = "addressFile";
 	
 	public static final String SHARE_HTML = "footer.mp3";
 	
@@ -36,6 +43,19 @@ public class AppConstant {
 	
 	/** 无悬浮窗�?�? */
 	public static final String FLAG_WINDOW = "no_window";
+	
+	// 无标题
+	public static final String FLAG_TEXT = "no_text";
+	
+	// 仅wifi
+	public static final String FLAG_ONLY_WIFI = "only_wifi";
+	
+	// 启动时检查更新
+	public static final String FLAG_BOOTED_CHECK = "booted_check";
+	
+	
+	/** 关键词搜索  */
+	public static final String FILE_KEY_SEARCH = "key_search_word";
 	
 	/** 文章推送 */
 	public static final String FLAG_NOTIFICATION = "notify_artile";

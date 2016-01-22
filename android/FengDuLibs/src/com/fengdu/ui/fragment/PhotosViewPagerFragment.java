@@ -82,6 +82,8 @@ public class PhotosViewPagerFragment extends BaseFragment{
 	private RelativeLayout mAdRl;
 	private ImageView mAdCloseImg;
 	private boolean hasMoreData = true;
+
+    private FastJSONRequest request = null;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -182,6 +184,10 @@ public class PhotosViewPagerFragment extends BaseFragment{
 		lazyLoad();
 		super.onResume();
 	}
+
+    public void onPause(){
+        super.onPause();
+    }
 	
 	public void lazyLoad(){
 		if(mAdapter!=null && mAdapter.getCount()>0 && list!=null && list.size()>0){
@@ -204,120 +210,121 @@ public class PhotosViewPagerFragment extends BaseFragment{
 				setNoNetVisible(false);
 				mGridView.setVisibility(View.GONE);
 			}
-			VolleyManager.getInstance().beginSubmitRequest(
-					mQueue, 
-					new FastJSONRequest(urls, "", new Listener<JSONObject>() {
-						
-						@Override
-						public void onResponse(JSONObject obj,
-								String executeMethod, String flag,
-								boolean dialogFlag) {
-							ArrayList<ImageBean> tempList = new ArrayList<ImageBean>();
-							if (obj!=null){
-								
-								JSONArray arrays = obj.getJSONArray("data");
-								int size = arrays!=null ? arrays.size():0;
-								if(size < pageSize){
-									hasMoreData = false;
-								}
-								MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), urls+"");
-								MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), obj+"");
-								for(int i = 0 ; i < size ;i++){
-									ImageBean bean = new ImageBean();
-									JSONObject json = (JSONObject)arrays.get(i);
-									bean.setDesc(json.getString("title"));
-									bean.setImage_height(json.getIntValue("height"));
-									bean.setImage_width(json.getIntValue("width"));
-									bean.setImage_url(json.getString("thumbNail"));
-									bean.setTotalNum(json.getIntValue("pageNum"));
-									bean.setId(json.getIntValue("iid"));
-									bean.setCata_id(json.getIntValue("cata_id"));
-									bean.setThumbYun(json.getString("thumbYun"));
-									bean.setThumbnail_height(json.getIntValue("thumbHeight"));
-									bean.setThumbnail_width(json.getIntValue("thumbWidth"));
-									String imgPaths = json.getString("imgPaths");
-									
-									bean.setUpdatedTime(SystemTool.getTimFromStamps(json.getLong("updateed_at"))+"");
-									if(!"".equals(imgPaths)){
-										String[] img = imgPaths.split(";");
-										int length = img.length;
-										ArrayList<String> paths = new ArrayList<String>();
-										for(int j=0 ;j < length;j++){
-											String path = URLs.IMAGE_HOST+json.getString("cata_id")+"/"+img[j];
-											paths.add(path);
-										}	
-										bean.setPagePaths(paths);
-									}else{
-										
-										imgPaths = json.getString("srcImgpaths");
-										if(!"".equals(imgPaths)){
-											String[] img = imgPaths.split(";");
-											int length = img.length;
-											ArrayList<String> paths = new ArrayList<String>();
-											for(int j=0 ;j < length;j++){
-												String path = img[j];
-												paths.add(path);
-											}
-											bean.setPagePaths(paths);
-										}
-									}
-									tempList.add(bean);
-								}
-								if(refreshFlag){	// 刷新
-									if(size <= 0){	// 刷新的时候没有获取到数据
-										Toast.makeText(getActivity(), "暂无最新数据", Toast.LENGTH_SHORT).show();
-										return;
-									}
-									if(list==null || list.size() == 0){
-										list = tempList;
-									}else{
-										int j = size -1;
-										for(; j>=0 ;j--){
-											int length = list.size();
-											for(int i = 0; i < length ; i++){
-												if(tempList.get(j).getIid() != list.get(i).getIid()){
-													break;
-												}
-											}
-										}
-										if(j < 0){	// 所有的数据都已加载
-											Toast.makeText(getActivity(), "暂无最新数据", Toast.LENGTH_SHORT).show();
-										}else{
-											list.addAll(tempList.subList(0, j));
-										}
-									}
-								}else{
-									if(list == null){
-										list = tempList;
-									}else{
-										list.addAll(tempList);
-									}
-									if(size <=0){
-										if(list == null || list.size() ==0){
-										}else{
-											Toast.makeText(getActivity(), "暂无更多数据",Toast.LENGTH_SHORT).show();
-										}
-										hasMoreData = false;
-									}else if(size < pageSize){
+            request = new FastJSONRequest(urls, "", new Listener<JSONObject>() {
+
+                @Override
+                public void onResponse(JSONObject obj,
+                                       String executeMethod, String flag,
+                                       boolean dialogFlag) {
+                    ArrayList<ImageBean> tempList = new ArrayList<ImageBean>();
+                    if (obj!=null){
+
+                        JSONArray arrays = obj.getJSONArray("data");
+                        int size = arrays!=null ? arrays.size():0;
+                        if(size < pageSize){
+                            hasMoreData = false;
+                        }
+                        MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), urls+"");
+                        MKLog.d(PhotosViewPagerFragment.class.getSimpleName(), obj+"");
+                        for(int i = 0 ; i < size ;i++){
+                            ImageBean bean = new ImageBean();
+                            JSONObject json = (JSONObject)arrays.get(i);
+                            bean.setDesc(json.getString("title"));
+                            bean.setImage_height(json.getIntValue("height"));
+                            bean.setImage_width(json.getIntValue("width"));
+                            bean.setImage_url(json.getString("thumbNail"));
+                            bean.setTotalNum(json.getIntValue("pageNum"));
+                            bean.setId(json.getIntValue("iid"));
+                            bean.setCata_id(json.getIntValue("cata_id"));
+                            bean.setThumbYun(json.getString("thumbYun"));
+                            bean.setThumbnail_height(json.getIntValue("thumbHeight"));
+                            bean.setThumbnail_width(json.getIntValue("thumbWidth"));
+                            String imgPaths = json.getString("imgPaths");
+
+                            bean.setUpdatedTime(SystemTool.getTimFromStamps(json.getLong("updateed_at"))+"");
+                            if(!"".equals(imgPaths)){
+                                String[] img = imgPaths.split(";");
+                                int length = img.length;
+                                ArrayList<String> paths = new ArrayList<String>();
+                                for(int j=0 ;j < length;j++){
+                                    String path = URLs.IMAGE_HOST+json.getString("cata_id")+"/"+img[j];
+                                    paths.add(path);
+                                }
+                                bean.setPagePaths(paths);
+                            }else{
+
+                                imgPaths = json.getString("srcImgpaths");
+                                if(!"".equals(imgPaths)){
+                                    String[] img = imgPaths.split(";");
+                                    int length = img.length;
+                                    ArrayList<String> paths = new ArrayList<String>();
+                                    for(int j=0 ;j < length;j++){
+                                        String path = img[j];
+                                        paths.add(path);
+                                    }
+                                    bean.setPagePaths(paths);
+                                }
+                            }
+                            tempList.add(bean);
+                        }
+                        if(refreshFlag){	// 刷新
+                            if(size <= 0){	// 刷新的时候没有获取到数据
+                                Toast.makeText(getActivity(), "暂无最新数据", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                            if(list==null || list.size() == 0){
+                                list = tempList;
+                            }else{
+                                int j = size -1;
+                                for(; j>=0 ;j--){
+                                    int length = list.size();
+                                    for(int i = 0; i < length ; i++){
+                                        if(tempList.get(j).getIid() != list.get(i).getIid()){
+                                            break;
+                                        }
+                                    }
+                                }
+                                if(j < 0){	// 所有的数据都已加载
+                                    Toast.makeText(getActivity(), "暂无最新数据", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    list.addAll(tempList.subList(0, j));
+                                }
+                            }
+                        }else{
+                            if(list == null){
+                                list = tempList;
+                            }else{
+                                list.addAll(tempList);
+                            }
+                            if(size <=0){
+                                if(list == null || list.size() ==0){
+                                }else{
+                                    Toast.makeText(getActivity(), "暂无更多数据",Toast.LENGTH_SHORT).show();
+                                }
+                                hasMoreData = false;
+                            }else if(size < pageSize){
 //										Toast.makeText(getActivity(), "数据已加载完毕",Toast.LENGTH_SHORT).show();
-										hasMoreData = false;
-									}else{
-										hasMoreData = true;
-									}
-								}
-								myHandler.sendEmptyMessage(0x110);
-							} else {
-								MKLog.e(getClass().getName(), "can't get data"); 
-								myHandler.sendEmptyMessage(0x111);
-							}
-						}
-					}, new ErrorListener() {
-						@Override
-						public void onErrorResponse(VolleyError error) {
-							MKLog.d("", error.toString());
-							myHandler.sendEmptyMessage(0x112);
-						}
-					}));
+                                hasMoreData = false;
+                            }else{
+                                hasMoreData = true;
+                            }
+                        }
+                        myHandler.sendEmptyMessage(0x110);
+                    } else {
+                        MKLog.e(getClass().getName(), "can't get data");
+                        myHandler.sendEmptyMessage(0x111);
+                    }
+                }
+            }, new ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    MKLog.d("", error.toString());
+                    myHandler.sendEmptyMessage(0x112);
+                }
+            });
+			VolleyManager.getInstance().beginSubmitRequest(
+					mQueue,
+					request);
 		}else{	// 直接结束
 			
 		}
@@ -409,5 +416,13 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			return url+"?";
 		}
 	}
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if(request!=null){
+            request.cancel();
+        }
+    }
 }
 

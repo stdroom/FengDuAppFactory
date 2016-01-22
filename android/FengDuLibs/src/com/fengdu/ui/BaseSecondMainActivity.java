@@ -265,7 +265,6 @@ public abstract class BaseSecondMainActivity extends BaseFragmentActivity implem
 	            Toast.makeText(BaseSecondMainActivity.this, "再按一次退出"+getString(R.string.app_name), Toast.LENGTH_SHORT).show();
 	        } else {
 	            finish();
-	            System.exit(0);
 	        }
 	        return true;   
 	    }

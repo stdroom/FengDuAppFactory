@@ -61,7 +61,6 @@ public class AppConstant {
 	public static final String FILE_KEY_SEARCH = "key_search_word";
 	
 
-	public static final int WEBVIEW_WIDTH = 320;
 	public static final int JUMP_CODE = 0x02;
 	
 	public static final String YOUMI_APPID = "d30e8f03d789cd48";

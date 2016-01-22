@@ -25,6 +25,7 @@ import com.fengdu.bean.ArticleItemBean;
 import com.fengdu.bean.PagesInfo;
 import com.fengdu.parse.ArticleItemListParse;
 import com.fengdu.parse.ArticleItemPagesParse;
+import com.fengdu.ui.activity.ArticleDetailActivity;
 import com.fengdu.ui.fragment.adapter.ArticleListAdapter;
 import com.fengdu.utils.ExcutorServiceUtils;
 import com.fengdu.utils.SettingsManager;
@@ -137,9 +138,9 @@ public class ArticleFragment  extends BaseFragment implements SwipeRefreshLayout
 						mArticleAdapter.notifyDataSetChanged();
 					}
 				});
-//				Intent intent = new Intent(mContext,ArticleDetailActivity.class);
-//				intent.putExtra("key", mArticleList.get(position));
-//				startActivity(intent);
+				Intent intent = new Intent(mContext,ArticleDetailActivity.class);
+				intent.putExtra("key", mArticleList.get(position));
+				startActivity(intent);
 			}
 		});
 		mArticle_listview.setOnBottomListener(new OnClickListener() {
