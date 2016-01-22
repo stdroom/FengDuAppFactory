@@ -1,0 +1,207 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:1:1-100:12
+	xmlns:android
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:1:11-69
+	package
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:2:5-41
+	android:versionName
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:4:5-30
+	android:versionCode
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:3:5-28
+		INJECTED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml
+		INJECTED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml
+uses-sdk
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:6:5-8:41
+MERGED from [android:FengDuLibs:unspecified] E:\leixun\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\FengDuLibs\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [android:CommonLibs:unspecified] E:\leixun\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\CommonLibs\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [android:appcompat_v7:unspecified] E:\leixun\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\appcompat_v7\unspecified\AndroidManifest.xml:20:5-43
+MERGED from [android:FYesLibs:unspecified] E:\leixun\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\FYesLibs\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [android:appcompat_v7:unspecified] E:\leixun\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\appcompat_v7\unspecified\AndroidManifest.xml:20:5-43
+	android:targetSdkVersion
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:8:9-38
+	android:minSdkVersion
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:7:9-35
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:12:5-76
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:12:22-73
+uses-permission#android.permission.CHANGE_CONFIGURATION
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:13:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:14:5-68
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:14:22-65
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:15:5-73
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:15:22-70
+uses-permission#android.permission.INTERNET
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:18:5-67
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:18:22-64
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:19:2-72
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:19:19-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:20:2-76
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:20:19-73
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:21:2-73
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:21:19-70
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:22:2-78
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:22:19-75
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:23:2-75
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:23:19-72
+uses-permission#com.android.launcher.permission.INSTALL_SHORTCUT
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:25:2-85
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:25:19-82
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:26:2-76
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:26:19-73
+uses-permission#android.permission.VIBRATE
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:27:2-62
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:27:19-60
+application
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:28:5-98:19
+MERGED from [android:FengDuLibs:unspecified] E:\leixun\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\FengDuLibs\unspecified\AndroidManifest.xml:11:5-14:19
+MERGED from [android:CommonLibs:unspecified] E:\leixun\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\CommonLibs\unspecified\AndroidManifest.xml:11:5-12:19
+MERGED from [android:appcompat_v7:unspecified] E:\leixun\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\appcompat_v7\unspecified\AndroidManifest.xml:22:5-20
+MERGED from [android:FYesLibs:unspecified] E:\leixun\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\FYesLibs\unspecified\AndroidManifest.xml:11:5-14:19
+MERGED from [android:appcompat_v7:unspecified] E:\leixun\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\appcompat_v7\unspecified\AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:33:9-41
+	android:allowBackup
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:31:9-35
+	android:icon
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:32:9-38
+	android:theme
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:34:9-40
+	android:largeHeap
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:30:9-33
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:29:9-50
+activity#com.yesemeinvsuite.android.MainActivity
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:35:9-36:69
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:36:13-67
+activity#com.yesemeinvsuite.android.WelcomeActivity
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:37:9-47:20
+	android:label
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:41:13-45
+	android:theme
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:40:13-77
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:38:13-70
+	android:alwaysRetainTaskState
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:39:13-49
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:42:13-46:29
+action#android.intent.action.MAIN
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:43:17-69
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:43:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:45:17-77
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:45:27-74
+activity#com.fengdu.ui.activity.PictureItemActivity
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:48:9-50:79
+	android:theme
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:50:13-77
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:49:13-70
+activity#com.fengdu.ui.activity.FeedbackActivity
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:51:9-52:69
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:52:13-67
+activity#com.fengdu.ui.activity.FavoriteActivity
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:53:9-54:69
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:54:13-67
+activity#com.fengdu.ui.activity.SearchActivity
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:56:9-57:67
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:57:13-65
+activity#com.fengdu.ui.activity.SettingActivity
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:58:9-59:68
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:59:13-66
+activity#com.fengdu.ui.activity.AboutUsActivity
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:60:9-61:68
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:61:13-66
+service#com.fengdu.service.UpgradeService
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:63:9-64:63
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:64:13-61
+service#com.fengdu.service.DownloadService
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:65:9-66:64
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:66:13-62
+activity#net.youmi.android.AdBrowser
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:69:9-73:14
+	android:configChanges
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:71:7-77
+	android:theme
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:72:7-60
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:70:7-49
+service#net.youmi.android.AdService
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:74:3-77:13
+	android:exported
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:76:7-31
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:75:7-49
+receiver#net.youmi.android.AdReceiver
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:78:3-84:14
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:79:7-50
+intent-filter#android.intent.action.PACKAGE_ADDED
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:80:7-83:23
+action#android.intent.action.PACKAGE_ADDED
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:81:11-72
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:81:19-69
+data
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:82:11-44
+	android:scheme
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:82:17-41
+meta-data#com.amap.api.v2.apikey
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:88:9-90:64
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:89:13-50
+	android:value
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:90:13-61
+service#com.amap.api.location.APSService
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:91:9-92:19
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:91:18-65
+meta-data#UMENG_APPKEY
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:96:9-90
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:96:61-88
+	android:value
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:96:20-60
+meta-data#UMENG_CHANNEL
+ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:97:3-63
+	android:name
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:97:33-61
+	android:value
+		ADDED from E:\leixun\FengDuAppFactory\android\FYes\AndroidManifest.xml:97:14-32

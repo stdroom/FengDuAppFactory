@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="oval"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#ffffffff" />
+</shape><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/drawable/left_drawer_count_bg.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/drawable/left_drawer_count_bg.xml -->

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:shape="rectangle">
+    <corners android:radius="2dp"/>
+
+    <stroke android:width="1dp" android:color="#ED4035"/>
+</shape>
+<!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/drawable/step_third_circle_rectangle_green_pressed.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/drawable/step_third_circle_rectangle_green_pressed.xml -->

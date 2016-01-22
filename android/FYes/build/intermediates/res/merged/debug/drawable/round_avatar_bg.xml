@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="ring"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/white" />
+</shape><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/drawable/round_avatar_bg.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/drawable/round_avatar_bg.xml -->

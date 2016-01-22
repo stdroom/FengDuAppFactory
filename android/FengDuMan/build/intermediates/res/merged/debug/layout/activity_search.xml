@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="?attr/title_bar_bg_color">
+        <ImageView
+	        android:id="@+id/back_img"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:padding="10dip"
+	        android:src="@drawable/btn_back"
+	        android:visibility="visible" />
+        
+        <EditText
+            android:id="@+id/btn_search"
+            android:layout_width="match_parent"
+            android:layout_toRightOf="@id/back_img"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="68dp"
+            android:singleLine="true"
+            android:hint="请输入关键词搜索"
+            android:background="@color/white"
+            android:textColorHint="#c8c8c8"
+            android:textColor="#333333"
+            android:textSize="17sp"
+            android:imeOptions="actionSearch"/>
+        
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/btn_search"
+            android:layout_alignBottom="@id/btn_search"
+            android:layout_alignRight="@id/btn_search">
+            <ImageView
+                android:id="@+id/clear_search_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close_small_light"/>
+            <TextView
+                android:id="@+id/shuxian"
+                android:layout_width="2px"
+                android:layout_height="match_parent"
+                android:background="#c8c8c8"
+                android:layout_toRightOf="@id/clear_search_text"/>
+            <ImageView
+	            android:id="@+id/btn_searching"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_toRightOf="@id/shuxian"
+	            android:src="@drawable/search_btn"/>
+        </RelativeLayout>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/hot_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="热门搜索："/>
+	    <RelativeLayout
+	        android:id="@+id/tv_container_rl"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingBottom="10dp"
+	        android:visibility="visible"/>
+    </LinearLayout>
+</LinearLayout>
+<!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/layout/activity_search.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuMan/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/layout/activity_search.xml -->

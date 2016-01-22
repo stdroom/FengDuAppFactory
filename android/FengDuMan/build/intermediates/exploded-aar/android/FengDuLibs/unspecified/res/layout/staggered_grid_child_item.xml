@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/grid_img_bg" >
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+	    <com.fengdu.widgets.strageview.DynamicHeightImageView
+	        android:id="@+id/child_image"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"/>
+	    <RelativeLayout 
+	        android:layout_alignTop="@id/child_image"
+	        android:layout_alignBottom="@id/child_image"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:background="?attr/img_item_bg"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/title_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#aa000000"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <TextView
+	        android:id="@+id/news_title"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:maxLines="2"
+	        android:ellipsize="end"
+	        android:textSize="13sp"
+	        android:textColor="#d4d4d4" />
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+	        <TextView
+		        android:id="@+id/news_time"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textSize="12sp"
+		        android:layout_centerVertical="true"
+		        android:textColor="#d4d4d4" />
+	        <TextView 
+	            android:id="@+id/pageNum"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textSize="14sp"
+	            android:layout_alignParentRight="true"
+	            android:textColor="#d4d4d4"/>
+        </RelativeLayout>
+    </LinearLayout>
+    
+</RelativeLayout>
+<!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/layout/staggered_grid_child_item.xml -->

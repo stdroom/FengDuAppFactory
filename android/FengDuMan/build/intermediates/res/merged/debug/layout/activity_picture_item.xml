@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        style="@style/fill_fill">
+    </android.support.v4.view.ViewPager>
+    <RelativeLayout
+        android:id="@+id/bottom_menu_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <TextView
+	        android:id="@+id/pageNumTv"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="8dp"
+	        android:text=""
+	        android:textColor="?attr/colorPrimary"/>
+	    <TextView
+	        android:id="@+id/titleTv"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@id/pageNumTv"
+	        android:layout_alignBottom="@id/pageNumTv"
+	        android:text=""
+	        android:textColor="?attr/colorPrimary"/>
+	    
+	    <include
+	        android:layout_width="match_parent"
+	        android:layout_height="50dp"
+	        android:layout_below="@id/pageNumTv"
+			android:id="@+id/bottom_rl"
+	        layout="@layout/detail_layout_bottom"/>
+    </RelativeLayout>
+</RelativeLayout>
+<!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/layout/activity_picture_item.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuMan/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/layout/activity_picture_item.xml -->

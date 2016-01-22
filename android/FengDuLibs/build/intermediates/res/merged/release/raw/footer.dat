@@ -1,0 +1,53 @@
+<head>
+	<meta name="viewport"
+　　content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+	<meta content="text/html; charset=utf8" http-equiv="Content-Type">
+	 <link rel="stylesheet" href="http://xmpigai.b0.upaiyun.com/test/html/default.css" type="text/css" />
+	<title>悦读圈--成熟人士的读者APP</title>
+</head>
+<body>
+	<div id="nav">
+		<a href="http://www.de99.cn/" class="home_new">首页</a>
+
+	      	<a href="http://www.de99.cn/news/1/">家事</a>
+	      	
+	      	<a href="http://www.de99.cn/news/2/">国事</a>
+	      	
+	      	<a href="http://www.de99.cn/news/3/">天下事</a>
+	      	
+	      	<a href="http://www.de99.cn/news/5/">有趣的事</a>
+	      	
+	      	<a href="http://www.de99.cn/news/6/">历史故事</a>
+	      	
+	      	<a href="http://www.de99.cn/news/11/">书中事</a>
+	      	
+	      	<a href="http://www.de99.cn/news/7/">心事</a>
+	      	
+	      	<a href="http://www.de99.cn/news/4/">男人的事</a>
+	      	<a href="http://www.de99.cn/news/8/"><em></em>女人的事</a>
+	      	<a href="http://www.de99.cn/news/12/">读者文摘</a>
+	      	
+	      	<a href="http://www.de99.cn/news/9/">看点</a>
+	      	
+	      	<a href="http://www.de99.cn/news/10/">侃点</a>
+	      	
+	      	<a href="http://www.de99.cn/news/17/">段子</a>
+	      	
+	      	<a href="http://www.de99.cn/news/13/">经典语句</a>
+      	                     
+                </div>
+                <div>
+	               <div id="tagss"></div>
+		<div id="title" class="title">
+		</div>
+		<div id="span">
+		</div>
+		<div id="article" class="content">
+		</div>
+		<div id="footer">
+		<a style="width:80%; height:100px;color:white;font-size:36px;line-height:100px; display: block;background:#ff5c3d url(http://enjoyread.b0.upaiyun.com/testimg/pink.png) repeat-y;border-radius:12px; text-align: center; margin:50px auto;text-decoration:none;" href="http://www.pgyer.com/enjoyread">下载悦读圈一起阅读吧！</a>
+		</div>
+                </div>
+            
+</body>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetLeft="10dp"
+    android:insetRight="10dp"
+    android:drawable="@color/common_divider_color">
+</inset>
+<!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/drawable/list_gray_line.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuMan/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/drawable/list_gray_line.xml -->

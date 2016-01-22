@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg_color">
+    <include
+        android:id="@+id/main_head"
+        layout="@layout/main_head"/>
+    <RelativeLayout 
+        android:id="@+id/head_rl"
+        android:layout_width="match_parent"
+        android:layout_below="@id/main_head"
+        android:layout_height="50dp">
+	    <HorizontalScrollView 
+		    android:id="@+id/hsv_view"
+		    android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:fadingEdge="@null"
+			android:scrollbars="none"
+			android:background="@android:color/white"
+		    >
+		    <RelativeLayout 
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+			    <LinearLayout 
+			        android:id="@+id/hsv_content"
+			        android:layout_width="match_parent"
+			        android:layout_height="match_parent"
+			        android:orientation="horizontal"
+			        android:gravity="center_vertical"
+			        ></LinearLayout>
+			    </RelativeLayout>
+		</HorizontalScrollView>
+    </RelativeLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/fragment_viewpager"
+        android:layout_below="@id/head_rl"
+        android:layout_width="match_parent"
+        android:background="@color/app_bg_color"
+        android:layout_height="match_parent"/>
+    
+</RelativeLayout>
+<!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/layout/activity_second_main.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/layout/activity_second_main.xml -->

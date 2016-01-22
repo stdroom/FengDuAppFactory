@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../CommonLibs/CommonLibs.iml" filepath="$PROJECT_DIR$/../CommonLibs/CommonLibs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FYes.iml" filepath="$PROJECT_DIR$/FYes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../FYesLibs/FYesLibs.iml" filepath="$PROJECT_DIR$/../FYesLibs/FYesLibs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../FendDuWomaLibs/FendDuWomaLibs.iml" filepath="$PROJECT_DIR$/../FendDuWomaLibs/FendDuWomaLibs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../FendDuWoman/FendDuWoman.iml" filepath="$PROJECT_DIR$/../FendDuWoman/FendDuWoman.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../FengDuLibs/FengDuLibs.iml" filepath="$PROJECT_DIR$/../FengDuLibs/FengDuLibs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../FengDuMan/FengDuMan.iml" filepath="$PROJECT_DIR$/../FengDuMan/FengDuMan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../FengDuManLibs/FengDuManLibs.iml" filepath="$PROJECT_DIR$/../FengDuManLibs/FengDuManLibs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../android.iml" filepath="$PROJECT_DIR$/../android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../appcompat_v7/appcompat_v7.iml" filepath="$PROJECT_DIR$/../appcompat_v7/appcompat_v7.iml" />
+    </modules>
+  </component>
+</project>

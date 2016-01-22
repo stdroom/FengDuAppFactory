@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <include 
+        layout="@layout/app_header"/>
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:scrollbars="none">
+	    
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+	    <ImageView 
+	        android:id="@+id/about_us_head"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:scaleType="center"
+	        android:layout_margin="40dp"
+			android:layout_centerHorizontal="true"
+	        android:src="@drawable/about_us"/>
+	     <TextView style="@style/common_mid_black_textview"
+	        android:id="@+id/about_us_app_name"
+	        android:layout_below="@id/about_us_head"
+	        android:gravity="center_vertical"
+	        android:layout_centerHorizontal="true"
+	        android:text="夜色美女套图_V1.0"
+	        />
+	    <TextView style="@style/common_mid_black_textview"
+	        android:id="@+id/about_us_contact"
+	        android:layout_below="@id/about_us_app_name"
+	        android:gravity="center_vertical"
+	        android:layout_alignLeft="@id/about_us_app_name"
+	        android:text="QQ:378640336"
+	        />
+	     <TextView
+	        style="@style/common_mid_black_textview"
+	        android:id="@+id/about_us_app_desc"
+	        android:layout_below="@id/about_us_contact"
+	        android:layout_margin="20dp"
+	        android:textSize="13sp"
+	        android:text="​   夜色美女套图——精心收集各类美女套图合集，24小时不间断更新， ​细致分类，精准定位，不同美女不同风格，每日更新，及时发现，不断给你惊喜，最多的美女，最硬的套图，全为你呈现，赶快加入我们吧！"/>
+	    <TextView
+	        style="@style/common_mid_black_textview"
+	        android:id="@+id/about_us_app_hh"
+	        android:layout_below="@id/about_us_app_desc"
+	        android:textSize="13sp"
+	        android:singleLine="true"
+	        android:focusable="true"
+	        android:focusableInTouchMode="true"
+	        android:ellipsize="marquee"
+	        android:textColor="#FF0000"
+	        android:layout_margin="20dp"
+	        android:text="​郑重声明：本软件禁止淫秽色情露点等图片，如有发现，请及时在图片详情页，进行举报，我们工作人员会在第一时间处理，谢谢配合！"/>
+	    <LinearLayout 
+	        android:layout_below="@id/about_us_app_hh"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+			<include layout="@layout/common_line_margintop_linear"/>
+			<RelativeLayout 
+			    android:id="@+id/mianze_pub_rl"
+			    android:layout_width="match_parent"
+		    	android:layout_height="wrap_content"
+		    	android:background="@color/normal_background"
+		    	android:padding="10dp">
+			    <TextView style="@style/common_mid_black_textview"
+			        android:gravity="center_vertical"
+			        android:text="免责声明"
+			        android:paddingLeft="2dp"
+			        android:layout_centerVertical="true"
+			        android:layout_alignParentLeft="true"/>
+			    <ImageView 
+			        android:id="@+id/dis_express_right_img"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerVertical="true"
+			        android:focusable="false"
+			        android:layout_alignParentRight="true"
+			        android:src="@drawable/right_jump"/>
+			</RelativeLayout> 
+			<include layout="@layout/mine_line_linear"/>
+	    </LinearLayout>
+		</RelativeLayout>
+	</ScrollView>
+</LinearLayout>
+<!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/layout/activity_about_us.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuMan/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/layout/activity_about_us.xml -->

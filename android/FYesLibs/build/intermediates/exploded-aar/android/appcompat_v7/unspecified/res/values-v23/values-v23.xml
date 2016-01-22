@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/leixun/FengDuAppFactory/android/appcompat_v7/res/values-v23/themes_base.xml -->
+    <eat-comment/>
+    <style name="Base.Theme.AppCompat" parent="Base.V23.Theme.AppCompat"/>
+    <style name="Base.Theme.AppCompat.Light" parent="Base.V23.Theme.AppCompat.Light"/>
+    <style name="Base.V23.Theme.AppCompat" parent="Base.V22.Theme.AppCompat">
+        <!-- We can use the platform drawable on v23+ -->
+        <item name="actionBarItemBackground">?android:attr/actionBarItemBackground</item>
+
+        <item name="controlBackground">@drawable/abc_control_background_material</item>
+    </style>
+    <style name="Base.V23.Theme.AppCompat.Light" parent="Base.V22.Theme.AppCompat.Light">
+        <!-- We can use the platform drawable on v23+ -->
+        <item name="actionBarItemBackground">?android:attr/actionBarItemBackground</item>
+
+        <item name="controlBackground">@drawable/abc_control_background_material</item>
+    </style>
+</resources>

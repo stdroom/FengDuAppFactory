@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="D:\android-studio\gradle\gradle-2.8" />
+        <option name="gradleJvm" value="1.7" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/.." />
+            <option value="$PROJECT_DIR$/../CommonLibs" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/../FYesLibs" />
+            <option value="$PROJECT_DIR$/../FendDuWomaLibs" />
+            <option value="$PROJECT_DIR$/../FendDuWoman" />
+            <option value="$PROJECT_DIR$/../FengDuLibs" />
+            <option value="$PROJECT_DIR$/../FengDuMan" />
+            <option value="$PROJECT_DIR$/../FengDuManLibs" />
+            <option value="$PROJECT_DIR$/../appcompat_v7" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

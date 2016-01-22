@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:shape="oval"
+    android:useLevel= "false" >
+      <!-- 填充的颜色 --> 
+    <solid android:color="#fd8b70" />
+    <size android:width= "10dp"
+          android:height= "10dp" />
+
+</shape><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/drawable/shape_dot_press.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/drawable/shape_dot_press.xml -->

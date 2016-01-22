@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title_bar"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/title_bar_height"
+    android:background="?attr/title_bar_bg_color"
+     >
+
+    <ImageView
+        android:id="@+id/back_img"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:padding="10dip"
+        android:src="@drawable/btn_back"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/top_more"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        android:src="@drawable/actionbar_search_icon" />
+
+
+    <RelativeLayout
+        android:id="@+id/title_click_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingLeft="13.0dip" >
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="1.5dip"
+            android:paddingLeft="6.0dip"
+            android:paddingRight="6.0dip"
+            android:text="搜索"/>
+
+    </RelativeLayout>
+
+</RelativeLayout><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/layout/main_common_head.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuMan/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/layout/main_common_head.xml -->

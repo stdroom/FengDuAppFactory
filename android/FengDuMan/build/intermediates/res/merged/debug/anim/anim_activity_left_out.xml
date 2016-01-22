@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+	<translate android:fromXDelta="0%" 
+	           android:toXDelta="-100%" 
+	           android:duration="300"/>
+</set>
+<!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/anim/anim_activity_left_out.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuMan/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/anim/anim_activity_left_out.xml -->

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/splashview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:layout_marginBottom="110dp" >
+
+    </RelativeLayout>
+
+    <com.fengdu.widgets.NoClickRelativeLayout
+        android:id="@+id/myRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/splashview"
+        android:background="@color/transparent">
+        
+    </com.fengdu.widgets.NoClickRelativeLayout>
+    <ImageView 
+        android:id="@+id/halfull_imgview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="110dp"/>
+    <RelativeLayout
+        android:id="@+id/bottom_rl"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="#ffffff">
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/splash_bg"/>
+    </RelativeLayout>
+    <ImageView 
+        android:id="@+id/full_imgview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"/>
+    <RelativeLayout
+        android:id="@+id/viewpager_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v4.view.ViewPager>
+        <TextView
+            android:id="@+id/guide_jump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:text="跳过"
+            android:textColor="#ffffff"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/arrow_right_guide"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"/>
+
+        <com.fengdu.widgets.PointWidget
+            android:id="@+id/litu_welcome_ponit"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="24dp" />
+    </RelativeLayout>
+</RelativeLayout><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/layout/splash_activity.xml -->

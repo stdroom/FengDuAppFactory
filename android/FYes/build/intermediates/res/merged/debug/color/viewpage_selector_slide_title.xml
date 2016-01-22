@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_pressed="true" android:color="#0b9a27"/>
+    <item android:state_selected="true" android:color="#0b9a27"/>
+    <item android:state_checked="true" android:color="#0b9a27"/>
+    <item android:color="#999"/>
+</selector><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/color/viewpage_selector_slide_title.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/color/viewpage_selector_slide_title.xml -->
