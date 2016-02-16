@@ -2,11 +2,123 @@
 <items version="2" >
 
     <item
-        jar="E:\leixun\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\FengDuLibs\unspecified\jars\classes.jar"
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\FYesLibs\unspecified\jars\libs\YoumiSdk_v5.3.3_2015-10-10.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="55caa8c45c59a24107f413ce3e8414a56594c1a5">
-        <dex dex="E:\leixun\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\classes-258fe1e0acc35f0c845ef7b1c9f9fe4db6c38fda.jar" />
+        sha1="f838907012dc1818b8943976dc291d8860f8e859">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\YoumiSdk_v5.3.3_2015-10-10-cc7bc503bee33a81d0ac97469e9c0dd82e4bee77.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\FengDuLibs\unspecified\jars\libs\AMap_Location_v2.1.0_20151202.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="42e29bc09e0685e4712d74b7c8ea45451fe6ed24">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\AMap_Location_v2.1.0_20151202-982ea64df8a9a7394f86ff70e0917c1713572069.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\CommonLibs\unspecified\jars\libs\universal-image-loader-1.9.4-with-sources.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="40595dbd3e3f1b87b27e914340d0e7dfd2d5b3d3">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.4-with-sources-c76b244037cb2004d2068d7bb87f634d39cb75aa.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\FYesLibs\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="98497e1020f338e67ac65d4eeb358d888931af13">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\classes-51421a644f0b0c650bde134f211662e4aa0bb162.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\CommonLibs\unspecified\jars\libs\nineoldandroids-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\nineoldandroids-2.4.0-56a3f79b6516a50368254a82f956d27e56674c24.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\FengDuLibs\unspecified\jars\libs\com.umeng.message.lib.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="367a2cbbd4d00c5af644b52189fdb115c1c915e7">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\com.umeng.message.lib-511498a494ed250c25224a0aa7d72aee73ad7ce3.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\appcompat_v7\unspecified\jars\libs\android-support-v4.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="91a1b1aabf740a6f64c2f73f5b0dc6611779ac8b">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\android-support-v4-37dcf481258e0ba6618080184ef1d6506a5c44d7.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\CommonLibs\unspecified\jars\libs\jsoup-1.8.3.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3a86e137575e4a45f5a9eec407f8135512e823a2">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\jsoup-1.8.3-eb26681a34655f5b911bfba48ac98f34fe947afa.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\FYesLibs\unspecified\jars\libs\libammsdk.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="47f4993168154fa73377d7470b9f6887d48a8023">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\libammsdk-41e5786d826894e74fe8242813f55ed1efd3bde7.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\CommonLibs\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e236330c8f5e5246fd553739e690af313b22d485">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\classes-e55bf6aa97801cd33f61af2e838c4c462ce5bb93.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\CommonLibs\unspecified\jars\libs\volley.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8fe882960b965e57557d564d96ae9f19161f6916">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\volley-708add27a584200669ccf5012989d15b721391b4.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\appcompat_v7\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="735673a5858f656ae51b9c3f55850237a5057d82">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\classes-bdab3eb5326f46810ba3aff2967586e2a06694b0.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\appcompat_v7\unspecified\jars\libs\android-support-v7-appcompat.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fd6ac205cfe8e64d1811c9d1404703a239d9bc96">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\android-support-v7-appcompat-46aff06a64b22a94e4291caa48b5dee62eaeeb8d.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\CommonLibs\unspecified\jars\libs\fastjson-1.1.26.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="b2b3f3739af181d3c191b19ecb3f32fcb31af98f">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\fastjson-1.1.26-b70f9fce8be2f0228b45ce565ec3e2272cff39cb.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\FengDuLibs\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="df1de52da1ffafe9e8ef4067f5e34a10dd54e189">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\classes-d186037debac0fa83c6b96ea79cab2fbe393c1b9.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\FengDuLibs\unspecified\jars\libs\umeng-analytics-v5.2.4.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0f9eccf79ae6006e4346725b09114182dca0c023">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\umeng-analytics-v5.2.4-b0e932e5cddd7e32a8b274509782fd0aed37b42d.jar" />
+    </item>
+    <item
+        jar="E:\FengDuAppFactory\android\FYes\build\intermediates\exploded-aar\android\FengDuLibs\unspecified\jars\libs\com.umeng.fb.5.3.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ae496d887109ef6f07ac593478266068ae1bcd29">
+        <dex dex="E:\FengDuAppFactory\android\FYes\build\intermediates\pre-dexed\debug\com.umeng.fb.5.3.0-e77165294ca997e01b7ee36120c0632b4108d5f8.jar" />
     </item>
 
 </items>

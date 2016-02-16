@@ -31,4 +31,4 @@
                  android:drawableStart="?android:attr/listChoiceIndicatorMultiple"
                  android:drawablePadding="20dp"
                  android:ellipsize="marquee" />
-<!-- From: file:/E:/leixun/FengDuAppFactory/android/appcompat_v7/res/layout/select_dialog_multichoice_material.xml -->
+<!-- From: file:/E:/FengDuAppFactory/android/appcompat_v7/res/layout/select_dialog_multichoice_material.xml -->

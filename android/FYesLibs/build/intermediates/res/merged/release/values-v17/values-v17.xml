@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYesLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values-v17/values-v17.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYesLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values-v17/values-v17.xml -->
     <eat-comment/>
     <style name="RtlOverlay.DialogWindowTitle.AppCompat" parent="Base.DialogWindowTitle.AppCompat">
         <item name="android:textAlignment">viewStart</item>

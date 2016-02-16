@@ -3,4 +3,4 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true" android:drawable="@drawable/btn_category_pressed" />
     <item android:drawable="@drawable/btn_category_normal" />
-</selector><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/drawable/btn_category.xml -->
+</selector><!-- From: file:/E:/FengDuAppFactory/android/FengDuLibs/res/drawable/btn_category.xml -->

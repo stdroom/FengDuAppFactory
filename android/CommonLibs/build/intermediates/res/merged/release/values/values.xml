@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/CommonLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/CommonLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -168,11 +168,11 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/CommonLibs/res/values/dimens.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/CommonLibs/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/CommonLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/CommonLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
@@ -190,10 +190,10 @@
     <item name="home" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/CommonLibs/res/values/ids.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/CommonLibs/res/values/ids.xml -->
     <eat-comment/>
     <item name="selected_view" type="id"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/CommonLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/CommonLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item name="split_action_bar" type="id"/>
     <item name="up" type="id"/>

@@ -18,4 +18,4 @@
     <item android:state_pressed="true" android:color="@color/abc_search_url_text_pressed"/>
     <item android:state_selected="true" android:color="@color/abc_search_url_text_selected"/>
     <item android:color="@color/abc_search_url_text_normal"/> <!-- not selected -->
-</selector><!-- From: file:/E:/leixun/FengDuAppFactory/android/appcompat_v7/res/color/abc_search_url_text_holo.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/color/abc_search_url_text_holo.xml -->
+</selector><!-- From: file:/E:/FengDuAppFactory/android/appcompat_v7/res/color/abc_search_url_text_holo.xml --><!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/color/abc_search_url_text_holo.xml -->

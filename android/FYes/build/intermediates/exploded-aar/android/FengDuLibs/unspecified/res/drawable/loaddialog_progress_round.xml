@@ -11,4 +11,4 @@
     <item android:drawable="@drawable/progress_7" android:duration="130"></item>
     <item android:drawable="@drawable/progress_8" android:duration="130"></item>
 
-</animation-list><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/drawable/loaddialog_progress_round.xml -->
+</animation-list><!-- From: file:/E:/FengDuAppFactory/android/FengDuLibs/res/drawable/loaddialog_progress_round.xml -->

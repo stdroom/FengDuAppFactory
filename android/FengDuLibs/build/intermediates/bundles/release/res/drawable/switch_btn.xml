@@ -3,4 +3,4 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_checked="true" android:drawable="@drawable/switch_btn_on" />
     <item android:drawable="@drawable/switch_btn_off" />
-</selector><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/drawable/switch_btn.xml -->
+</selector><!-- From: file:/E:/FengDuAppFactory/android/FengDuLibs/res/drawable/switch_btn.xml -->

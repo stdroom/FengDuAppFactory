@@ -4,4 +4,4 @@
     <item android:state_selected="true" android:color="@color/left_drawer_item_text_pressed" />
     <item android:state_pressed="true" android:color="@color/left_drawer_item_text_pressed" />
     <item android:color="@color/left_drawer_item_text_normal" />
-</selector><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/color/left_drawer_item_text.xml -->
+</selector><!-- From: file:/E:/FengDuAppFactory/android/FengDuLibs/res/color/left_drawer_item_text.xml -->

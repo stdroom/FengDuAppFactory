@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string-array name="first_viewpage_arrays">
         <item>丝袜美腿</item>
@@ -21,7 +21,7 @@
         <item>西洋美女</item>
         <item>网友自拍</item>
     </string-array>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string-array name="umeng_fb_contact_key_array">
         <item>@string/umeng_fb_contact_key_email</item>
@@ -39,29 +39,29 @@
         <item>用户反馈</item>
         <item>常见问题</item>
     </string-array>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="app_bg_color"/>
     <attr format="reference" name="comment_reply_container_bg"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="editor_color"/>
     <attr format="reference" name="editor_hit_color"/>
     <attr format="reference" name="has_read_text_color"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <attr format="dimension" name="height"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="img_item_bg"/>
     <attr format="reference" name="infoTextColor"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <attr format="boolean" name="isLightTheme"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="layout_bg_normal"/>
     <attr format="reference" name="layout_item_bg"/>
@@ -78,14 +78,14 @@
     <attr format="reference" name="quickoption_icon_voice_selector"/>
     <attr format="reference" name="sliding_block_bg"/>
     <attr format="reference" name="textColor"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <attr format="string" name="title"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="title_bar_bg_color"/>
     <attr format="reference" name="windows_bg"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <bool name="abc_action_bar_embed_tabs">true</bool>
     <bool name="abc_action_bar_embed_tabs_pre_jb">false</bool>
@@ -101,10 +101,10 @@
     <color name="abc_search_url_text_selected">@android:color/black</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="app_bg_color">#F4F4F4</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="app_color">#27C5A4</color>
     <color name="app_color_theme">#27C5A4</color>
@@ -115,18 +115,18 @@
     <color name="app_gray">#f4f4f4</color>
     <color name="app_shouye_bg_color">#ffffff</color>
     <color name="app_shouye_color">#e9fbf7</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="black">#000000</color>
     <color name="blank">#00ffffff</color>
     <color name="blue">#000099</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
@@ -136,7 +136,7 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="common_divider_color">#FFCCCCCC</color>
     <color name="day_app_bg_color">#F4F4F4</color>
@@ -155,44 +155,44 @@
     <color name="day_textColor">#333333</color>
     <color name="day_title_bar_bg_color">#ED4035</color>
     <color name="day_windows_bg">#fafafa</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="default_text">#ff454545</color>
     <color name="default_text_night">#ff747474</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="divideline_gray">#c0c0c0</color>
     <color name="diving_gray">#eae9e7</color>
     <color name="drop_down_list_footer_font_color">#A2A3A2</color>
     <color name="drop_down_list_header_font_color">#000000</color>
     <color name="drop_down_list_header_second_font_color">#000000</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="gray">#808080</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="green">#009900</color>
     <color name="guide_login_back">#f8f8f8</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="has_read_text_color">#8391a6</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="left_drawer_item_bg_normal">#ff393939</color>
     <color name="left_drawer_item_bg_pressed">#ff292929</color>
@@ -205,7 +205,7 @@
     <color name="left_drawer_offline_hint">#ff6699cc</color>
     <color name="left_drawer_offline_line">#ff4bbff6</color>
     <color name="left_drawer_user_name">#ffd4d4d4</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
@@ -219,10 +219,10 @@
     <color name="material_grey_800">#ff424242</color>
     <color name="material_grey_850">#ff303030</color>
     <color name="material_grey_900">#ff212121</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="micro_series_bg">#909e9e9e</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="night_app_bg_color">#222222</color>
     <color name="night_colorPrimary">#008000</color>
@@ -241,19 +241,19 @@
     <color name="night_title_bar_bg_color">#fdea8598</color>
     <color name="night_windows_bg">#1f1f1f</color>
     <color name="normal_background">#FFFdFEFF</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="not_read_content_text_color">#666666</color>
     <color name="not_read_tags_text_color">#ff00ff</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="not_read_text_color">#003e73</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="orange">#FF9900</color>
     <color name="person_center_text">#565656</color>
     <color name="pop_color">#7D7D7D</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
@@ -263,7 +263,7 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="radiobutton_checked">#27C5A4</color>
     <color name="radiobutton_normal">#ffffff</color>
@@ -271,7 +271,7 @@
     <color name="readed_tags_text_color">#b4b4b4</color>
     <color name="record_title_1">#F7F7F7</color>
     <color name="record_title_2">#D2D2D2</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
@@ -279,7 +279,7 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="subscribe_activity_bg">#ffefefef</color>
     <color name="subscribe_activity_bg_night">#ff252525</color>
@@ -314,13 +314,13 @@
     <color name="subscribe_seperate_line">#ffcdcdcd</color>
     <color name="subscribe_seperate_line_night">#ff464646</color>
     <color name="subscribe_tip_text">#ff2e2e2e</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="switchtextcolor">#FFFFFF</color>
     <color name="text_color_black">#333333</color>
@@ -342,10 +342,10 @@
     <color name="umeng_fb_tab_bg_pressed">#6633B5E5</color>
     <color name="umeng_fb_white">#FFFFFF</color>
     <color name="white">#FFFFFF</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="window_background">#EBEBEB</color>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <color name="zt_text_bg">#768082</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode"><enum name="normal" value="0"/><enum name="listMode" value="1"/><enum name="tabMode" value="2"/></attr><attr name="displayOptions"><flag name="none" value="0"/><flag name="useLogo" value="0x1"/><flag name="showHome" value="0x2"/><flag name="homeAsUp" value="0x4"/><flag name="showTitle" value="0x8"/><flag name="showCustom" value="0x10"/><flag name="disableHome" value="0x20"/></attr><attr name="title"/><attr format="string" name="subtitle"/><attr format="reference" name="titleTextStyle"/><attr format="reference" name="subtitleTextStyle"/><attr format="reference" name="icon"/><attr format="reference" name="logo"/><attr format="reference" name="divider"/><attr format="reference" name="background"/><attr format="reference|color" name="backgroundStacked"/><attr format="reference|color" name="backgroundSplit"/><attr format="reference" name="customNavigationLayout"/><attr name="height"/><attr format="reference" name="homeLayout"/><attr format="reference" name="progressBarStyle"/><attr format="reference" name="indeterminateProgressStyle"/><attr format="dimension" name="progressBarPadding"/><attr name="homeAsUpIndicator"/><attr format="dimension" name="itemPadding"/><attr format="boolean" name="hideOnContentScroll"/><attr format="dimension" name="contentInsetStart"/><attr format="dimension" name="contentInsetEnd"/><attr format="dimension" name="contentInsetLeft"/><attr format="dimension" name="contentInsetRight"/><attr format="dimension" name="elevation"/><attr format="reference" name="popupTheme"/></declare-styleable>
@@ -382,7 +382,7 @@
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/><attr format="reference" name="theme"/><attr name="android:theme"/></declare-styleable>
     <declare-styleable name="ViewBackgroundHelper"><attr name="android:background"/><attr format="color" name="backgroundTint"/><attr name="backgroundTintMode"><enum name="src_over" value="3"/><enum name="src_in" value="5"/><enum name="src_atop" value="9"/><enum name="multiply" value="14"/><enum name="screen" value="15"/></attr></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -451,7 +451,7 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
@@ -461,11 +461,11 @@
     <dimen name="custom_textview_padding_left">15dp</dimen>
     <dimen name="custom_textview_padding_right">15dp</dimen>
     <dimen name="custom_textview_padding_top">2dp</dimen>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <dimen name="drop_down_list_footer_font_size">14sp</dimen>
     <dimen name="drop_down_list_footer_progress_bar_height">36dp</dimen>
@@ -473,21 +473,21 @@
     <dimen name="head_size">28.0dip</dimen>
     <dimen name="header_footer_left_right_padding">24dp</dimen>
     <dimen name="header_footer_top_bottom_padding">12dp</dimen>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <dimen name="left_drawer_avatar_size">45.0dip</dimen>
     <dimen name="navigation_drawer_width">240dp</dimen>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <dimen name="shadow_height">5.0dip</dimen>
     <dimen name="shadow_width">15.0dip</dimen>
@@ -505,47 +505,47 @@
     <dimen name="umeng_fb_record_btn_text_size">20sp</dimen>
     <dimen name="umeng_fb_spinner_padding_left">12dp</dimen>
     <drawable name="blank">#00ffffff</drawable>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item name="gridview" type="id"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item name="home" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item name="scrollview" type="id"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/CommonLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/CommonLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item name="selected_view" type="id"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item name="split_action_bar" type="id"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item name="stgv" type="id"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item name="up" type="id"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item name="webview" type="id"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <integer name="abc_config_activityDefaultDur">220</integer>
     <integer name="abc_config_activityShortDur">150</integer>
     <integer name="abc_max_action_buttons">2</integer>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="UMAppUpdate">App updating</string>
     <string name="UMBreak_Network">Please make sure you are connected to internet,update failed</string>
@@ -561,7 +561,7 @@
     <string name="UMUpdateNow">Update now</string>
     <string name="UMUpdateSize">Update size: </string>
     <string name="UMUpdateTitle">New version found</string>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
@@ -582,15 +582,15 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="action_day_mode">日间模式</string>
     <string name="action_night_mode">夜间模式</string>
     <string name="app_copyright">© 头条网 toutiao.com</string>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="app_name">夜色美女套图</string>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="dev_tips">你好，欢迎您反馈使用产品的感受和建议，我们会在24小时之内回复。</string>
     <string name="dislike_dlg_lable_speech">读文章</string>
@@ -623,14 +623,14 @@
     <string name="left_drawer_item_search">搜索</string>
     <string name="left_drawer_item_setting">设置</string>
     <string name="left_drawer_no_login_tip">登录后，将推荐给你更多感兴趣的文章</string>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="main_tab_name_five">我</string>
     <string name="main_tab_name_four">男人气质</string>
     <string name="main_tab_name_one">美眉养眼</string>
     <string name="main_tab_name_three">男士养生</string>
     <string name="main_tab_name_two">男士约会</string>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="mine_feedback_str">疯狂吐槽</string>
     <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
@@ -659,10 +659,10 @@
     <string name="setting_use_swipe">左右翻页</string>
     <string name="ss_have_a_rest">暂无更新, 休息一会儿</string>
     <string name="ss_pattern_update">发现%1$d条更新</string>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="switch_off"/>
     <string name="switch_on"/>
@@ -726,13 +726,13 @@
     <string name="version_download_sd_str">无法下载安装文件，请检查SD卡是否挂载</string>
     <string name="version_neednot_str">您当前已经是最新版本</string>
     <string name="version_tips_str">系统提示</string>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/res/values/styles.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
@@ -741,7 +741,7 @@
             backward-compatibility can go here.
         -->
     </style>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <style name="AppBaseTheme_Light" parent="@style/Theme.AppCompat.Light">
         <item name="colorPrimary">@color/day_colorPrimary</item>
@@ -796,12 +796,12 @@
         <item name="not_read_text_color">@color/night_not_read_text_color</item>
         <item name="img_item_bg">@color/night_img_item_bg</item>
     </style>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/res/values/styles.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -1738,7 +1738,7 @@
         <item name="android:minWidth">56dp</item>
         <item name="android:scaleType">center</item>
     </style>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <style name="MenuItemImageViewStyle">
         <item name="android:layout_width">24dip</item>
@@ -1752,7 +1752,7 @@
         <item name="android:drawablePadding">10dp</item>
         <item name="android:textSize">16sp</item>
     </style>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>
@@ -1898,7 +1898,7 @@
         <item name="android:paddingLeft">@dimen/abc_action_bar_overflow_padding_start_material</item>
         <item name="android:paddingRight">@dimen/abc_action_bar_overflow_padding_end_material</item>
     </style>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <style name="TeamMenuItemImageViewStyle">
         <item name="android:layout_width">32dip</item>
@@ -1923,7 +1923,7 @@
         <item name="android:textColor">#333</item>
         <item name="android:textSize">18sp</item>
     </style>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>
@@ -2014,7 +2014,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <style name="Theme.Transparent" parent="@android:style/Theme">
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -2024,7 +2024,7 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:backgroundDimEnabled">false</item>
     </style>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values/values.xml -->
     <eat-comment/>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>
@@ -2124,7 +2124,7 @@
     <style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <style name="common_mid_black_textview">
          <item name="android:layout_width">wrap_content</item>
@@ -2227,7 +2227,7 @@
         <item name="android:indeterminateDuration">1000</item>
         <item name="android:indeterminateOnly">true</item>
     </style>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/res/values/styles.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/res/values/styles.xml -->
     <eat-comment/>
     <style name="navitext">
         <item name="android:layout_width">fill_parent</item>
@@ -2236,7 +2236,7 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:textSize">16sp</item>
     </style>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/values/values.xml -->
     <eat-comment/>
     <style name="team_issue_detail_info_layout">
         <item name="android:layout_width">fill_parent</item>

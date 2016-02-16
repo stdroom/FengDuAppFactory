@@ -22,4 +22,4 @@
     <item android:id="@android:id/progress"
         android:drawable="@drawable/abc_btn_rating_star_on_mtrl_alpha" />
 </layer-list>
-<!-- From: file:/E:/leixun/FengDuAppFactory/android/appcompat_v7/res/drawable/abc_ratingbar_full_material.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/drawable/abc_ratingbar_full_material.xml -->
+<!-- From: file:/E:/FengDuAppFactory/android/appcompat_v7/res/drawable/abc_ratingbar_full_material.xml --><!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/drawable/abc_ratingbar_full_material.xml -->

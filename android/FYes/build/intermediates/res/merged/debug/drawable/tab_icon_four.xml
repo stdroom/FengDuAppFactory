@@ -6,4 +6,4 @@
     <item android:state_selected="true" android:drawable="@drawable/widget_bar_me_over" />
     <item android:drawable="@drawable/widget_bar_me_nor" />
 </selector>
-<!-- From: file:/E:/leixun/FengDuAppFactory/android/FYesLibs/res/drawable/tab_icon_four.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/drawable/tab_icon_four.xml -->
+<!-- From: file:/E:/FengDuAppFactory/android/FYesLibs/res/drawable/tab_icon_four.xml --><!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FYesLibs/unspecified/res/drawable/tab_icon_four.xml -->

@@ -16,4 +16,4 @@
 <translate xmlns:android="http://schemas.android.com/apk/res/android"
            android:interpolator="@android:anim/decelerate_interpolator"
            android:fromYDelta="-50%p" android:toYDelta="0"
-           android:duration="@android:integer/config_mediumAnimTime"/><!-- From: file:/E:/leixun/FengDuAppFactory/android/appcompat_v7/res/anim/abc_slide_in_top.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/CommonLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/anim/abc_slide_in_top.xml -->
+           android:duration="@android:integer/config_mediumAnimTime"/><!-- From: file:/E:/FengDuAppFactory/android/appcompat_v7/res/anim/abc_slide_in_top.xml --><!-- From: file:/E:/FengDuAppFactory/android/CommonLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/anim/abc_slide_in_top.xml -->

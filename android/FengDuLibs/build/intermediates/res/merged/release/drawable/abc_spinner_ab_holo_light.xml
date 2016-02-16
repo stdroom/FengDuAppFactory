@@ -23,4 +23,4 @@
           android:drawable="@drawable/abc_spinner_ab_focused_holo_light" />
     <item android:drawable="@drawable/abc_spinner_ab_default_holo_light" />
 </selector>
-<!-- From: file:/E:/leixun/FengDuAppFactory/android/appcompat_v7/res/drawable/abc_spinner_ab_holo_light.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/drawable/abc_spinner_ab_holo_light.xml -->
+<!-- From: file:/E:/FengDuAppFactory/android/appcompat_v7/res/drawable/abc_spinner_ab_holo_light.xml --><!-- From: file:/E:/FengDuAppFactory/android/FengDuLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/drawable/abc_spinner_ab_holo_light.xml -->

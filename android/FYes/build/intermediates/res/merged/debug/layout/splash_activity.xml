@@ -75,4 +75,4 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="24dp" />
     </RelativeLayout>
-</RelativeLayout><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/layout/splash_activity.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/layout/splash_activity.xml -->
+</RelativeLayout><!-- From: file:/E:/FengDuAppFactory/android/FengDuLibs/res/layout/splash_activity.xml --><!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/layout/splash_activity.xml -->

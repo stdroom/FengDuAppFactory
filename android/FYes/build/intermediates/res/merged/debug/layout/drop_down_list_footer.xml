@@ -25,4 +25,4 @@
         android:gravity="center"
         android:text="@string/drop_down_list_footer_default_text" />
 
-</RelativeLayout><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/layout/drop_down_list_footer.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/layout/drop_down_list_footer.xml -->
+</RelativeLayout><!-- From: file:/E:/FengDuAppFactory/android/FengDuLibs/res/layout/drop_down_list_footer.xml --><!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/layout/drop_down_list_footer.xml -->

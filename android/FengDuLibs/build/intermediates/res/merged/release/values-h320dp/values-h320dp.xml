@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values-h320dp/values-h320dp.xml -->
+    <!-- From: file:/E:/FengDuAppFactory/android/FengDuLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/values-h320dp/values-h320dp.xml -->
     <eat-comment/>
     <bool name="abc_allow_stacked_button_bar">true</bool>
 </resources>

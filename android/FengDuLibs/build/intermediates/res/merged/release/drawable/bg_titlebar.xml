@@ -2,4 +2,4 @@
 <shape android:shape="rectangle"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="?attr/title_bar_bg_color" />
-</shape><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/drawable/bg_titlebar.xml -->
+</shape><!-- From: file:/E:/FengDuAppFactory/android/FengDuLibs/res/drawable/bg_titlebar.xml -->

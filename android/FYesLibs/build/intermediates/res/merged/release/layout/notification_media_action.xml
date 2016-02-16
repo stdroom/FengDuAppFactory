@@ -22,4 +22,4 @@
     android:layout_marginLeft="2dp"
     android:layout_marginRight="2dp"
     android:layout_weight="1"
-    android:gravity="center"/><!-- From: file:/E:/leixun/FengDuAppFactory/android/appcompat_v7/res/layout/notification_media_action.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYesLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/layout/notification_media_action.xml -->
+    android:gravity="center"/><!-- From: file:/E:/FengDuAppFactory/android/appcompat_v7/res/layout/notification_media_action.xml --><!-- From: file:/E:/FengDuAppFactory/android/FYesLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/layout/notification_media_action.xml -->

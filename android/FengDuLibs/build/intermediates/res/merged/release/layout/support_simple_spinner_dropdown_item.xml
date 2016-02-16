@@ -22,4 +22,4 @@
           android:singleLine="true"
           android:layout_width="match_parent"
           android:layout_height="?attr/dropdownListPreferredItemHeight"
-          android:ellipsize="marquee"/><!-- From: file:/E:/leixun/FengDuAppFactory/android/appcompat_v7/res/layout/support_simple_spinner_dropdown_item.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/layout/support_simple_spinner_dropdown_item.xml -->
+          android:ellipsize="marquee"/><!-- From: file:/E:/FengDuAppFactory/android/appcompat_v7/res/layout/support_simple_spinner_dropdown_item.xml --><!-- From: file:/E:/FengDuAppFactory/android/FengDuLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/layout/support_simple_spinner_dropdown_item.xml -->

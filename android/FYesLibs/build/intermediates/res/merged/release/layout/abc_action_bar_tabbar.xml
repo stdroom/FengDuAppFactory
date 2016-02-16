@@ -20,4 +20,4 @@ limitations under the License.
         android:layout_height="match_parent"
         android:gravity="center"
         style="?attr/actionBarTabBarStyle"/>
-<!-- From: file:/E:/leixun/FengDuAppFactory/android/appcompat_v7/res/layout/abc_action_bar_tabbar.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYesLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/layout/abc_action_bar_tabbar.xml -->
+<!-- From: file:/E:/FengDuAppFactory/android/appcompat_v7/res/layout/abc_action_bar_tabbar.xml --><!-- From: file:/E:/FengDuAppFactory/android/FYesLibs/build/intermediates/exploded-aar/android/appcompat_v7/unspecified/res/layout/abc_action_bar_tabbar.xml -->

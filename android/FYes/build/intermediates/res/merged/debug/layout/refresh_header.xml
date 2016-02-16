@@ -45,4 +45,4 @@
         android:textSize="12sp"
         android:visibility="visible" />
 
-</RelativeLayout><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/layout/refresh_header.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/layout/refresh_header.xml -->
+</RelativeLayout><!-- From: file:/E:/FengDuAppFactory/android/FengDuLibs/res/layout/refresh_header.xml --><!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/layout/refresh_header.xml -->

@@ -37,4 +37,4 @@
         android:textColor="@color/text_color_gray"
         android:textSize="12sp"/>
 
-</RelativeLayout><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/layout/refresh_footer.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/layout/refresh_footer.xml -->
+</RelativeLayout><!-- From: file:/E:/FengDuAppFactory/android/FengDuLibs/res/layout/refresh_footer.xml --><!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/layout/refresh_footer.xml -->

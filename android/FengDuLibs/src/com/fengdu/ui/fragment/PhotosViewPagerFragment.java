@@ -175,7 +175,7 @@ public class PhotosViewPagerFragment extends BaseFragment{
 			}
 		});
 		MKLog.d("PhotosViewPagerFragment", "onCreateView");
-		showBanner();
+//		showBanner();
 		return view;
 	}
 

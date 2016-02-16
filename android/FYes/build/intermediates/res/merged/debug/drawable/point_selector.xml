@@ -4,4 +4,4 @@
     <item android:drawable="@drawable/shape_dot_press" android:state_enabled="true"></item>
     <item android:drawable="@drawable/shape_dot_normal" android:state_enabled="false"></item>
 
-</selector><!-- From: file:/E:/leixun/FengDuAppFactory/android/FengDuLibs/res/drawable/point_selector.xml --><!-- From: file:/E:/leixun/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/drawable/point_selector.xml -->
+</selector><!-- From: file:/E:/FengDuAppFactory/android/FengDuLibs/res/drawable/point_selector.xml --><!-- From: file:/E:/FengDuAppFactory/android/FYes/build/intermediates/exploded-aar/android/FengDuLibs/unspecified/res/drawable/point_selector.xml -->
