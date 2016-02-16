@@ -5,7 +5,34 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="1.7" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/CommonLibs" />
+            <option value="$PROJECT_DIR$/FYes" />
+            <option value="$PROJECT_DIR$/FYesLibs" />
+            <option value="$PROJECT_DIR$/FendDuWomaLibs" />
+            <option value="$PROJECT_DIR$/FendDuWoman" />
+            <option value="$PROJECT_DIR$/FengDuLibs" />
+            <option value="$PROJECT_DIR$/FengDuMan" />
+            <option value="$PROJECT_DIR$/FengDuManLibs" />
+            <option value="$PROJECT_DIR$/appcompat_v7" />
+          </set>
+        </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/CommonLibs" />
+            <option value="$PROJECT_DIR$/FYes" />
+            <option value="$PROJECT_DIR$/FYesLibs" />
+            <option value="$PROJECT_DIR$/FendDuWomaLibs" />
+            <option value="$PROJECT_DIR$/FendDuWoman" />
+            <option value="$PROJECT_DIR$/FengDuLibs" />
+            <option value="$PROJECT_DIR$/FengDuMan" />
+            <option value="$PROJECT_DIR$/FengDuManLibs" />
+            <option value="$PROJECT_DIR$/appcompat_v7" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>
